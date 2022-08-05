@@ -72,11 +72,17 @@ const config = {
           {to: '/changelog', label: 'Changelog', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/reviewpad/',
             label: 'GitHub',
             position: 'right',
           },
         ],
+      },
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
       },
       footer: {
         style: 'dark',
