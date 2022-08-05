@@ -72,6 +72,17 @@ const config = {
           {to: '/changelog', label: 'Changelog', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
           {
+            href: 'https://github.com/reviewpad/reviewpad/discussions',
+            label: 'Discussions',
+            position: 'left',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position:'right',
+            to: '/path',
+            label: 'label',
+          },
+          {
             href: 'https://github.com/reviewpad/',
             label: 'GitHub',
             position: 'right',
