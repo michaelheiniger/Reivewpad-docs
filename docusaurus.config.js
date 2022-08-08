@@ -9,7 +9,7 @@ const config = {
   title: 'Reviewpad Documentation',
   tagline: 'Documentation for Reviewpad',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/maester',
+  baseUrl: '/maester/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
