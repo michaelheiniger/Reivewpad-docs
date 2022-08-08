@@ -7,7 +7,7 @@ Reviewpad is an easy-to-use GitHub Action to accelerate the software delivery li
 
 Reviewpad reads a `reviewpad.yml` configuration file from your repository where you can specify pull request workflows. The action enforces and automates those processes so that developers can have more time for the things that really matter!
 
-![Reviewpad Preview](../../static/img/0f78539-Reviewpad_Preview_A2x_1.png)
+![Reviewpad Preview](/img/0f78539-Reviewpad_Preview_A2x_1.png)
 
 ## Why Reviewpad?
 
