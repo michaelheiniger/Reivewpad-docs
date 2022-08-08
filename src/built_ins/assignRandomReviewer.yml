@@ -1,0 +1,7 @@
+workflows:
+  - name: assign-random-reviewer
+    description: Assign random reviewer
+    if:
+      - rule: tautology
+    then:
+      - $assignRandomReviewer()

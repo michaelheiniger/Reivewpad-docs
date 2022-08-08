@@ -65,12 +65,12 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'getting-started/welcome-to-reviewpad',
             position: 'left',
             label: 'Documentation',
           },
           {to: '/changelog', label: 'Changelog', position: 'left'},
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: 'https://reviewpad.com/blog/', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/reviewpad/reviewpad/discussions',
             label: 'Discussions',

@@ -1,0 +1,5 @@
+rules:
+  - name: reviewpad-successful
+    kind: patch
+    description: Verifies if reviewpad run was successful
+    spec: '$workflowStatus("reviewpad") == "success"'

@@ -1,0 +1,5 @@
+rules:
+  - name: changesTooManyFiles
+    kind: patch
+    description: Verifies if it has than 3 files
+    spec: $fileCount() > 3

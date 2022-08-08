@@ -1,0 +1,7 @@
+workflows:
+  - name: review-core-code
+    description: Assign review to core team when changes are made in critical code
+    if:
+      - rule: changesCritical
+    then:
+      - $assignTeamReviewer(["core"])

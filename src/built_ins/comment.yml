@@ -1,0 +1,7 @@
+workflows:
+  - name: conflict
+    description: Ask to resolve conflict
+    if:
+      - rule: hasConflicts
+    then:
+      - $comment("This pull request has git conflicts. Please resolve them.")

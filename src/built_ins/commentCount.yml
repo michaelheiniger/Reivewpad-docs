@@ -1,0 +1,5 @@
+rules:
+  - name: hasNoComments
+    kind: patch
+    description: Verifies if it has no comments
+    spec: $commentCount() == 0

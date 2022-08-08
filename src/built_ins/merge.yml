@@ -1,0 +1,7 @@
+workflows:
+  - name: auto-merge-small-pull-request
+    description: Auto-merge small pull request
+    if:
+      - rule: isSmall
+    then:
+      - $merge()

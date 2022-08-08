@@ -1,0 +1,5 @@
+rules:
+  - name: hasShipItComment
+    kind: patch
+    description: Verifies if any of the comment body of the pull request contains "ship it"
+    spec: $elemContains("ship it", $comments())

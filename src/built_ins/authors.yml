@@ -1,0 +1,5 @@
+rules:
+  - name: isAuthoredByTechLead
+    kind: patch
+    description: Verifies if authored by tech lead
+    spec: $author() == "john"

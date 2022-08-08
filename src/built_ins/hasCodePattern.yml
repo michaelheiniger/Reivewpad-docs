@@ -1,0 +1,5 @@
+rules:
+  - name: usesPlaceBet
+    kind: patch
+    description: Verifies if uses placeBet
+    spec: $hasCodePattern("placeBet\(.*\)")

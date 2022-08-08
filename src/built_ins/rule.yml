@@ -1,0 +1,10 @@
+rules:
+  - name: isSmall
+    description: Small pull request
+    kind: patch
+    spec: '$size() > 10'
+
+  - name: isNotSmall
+    description: Not a small pull request
+    kind: patch
+    spec: '!$rule(isSmall)'

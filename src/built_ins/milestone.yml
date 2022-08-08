@@ -1,0 +1,5 @@
+rules:
+  - name: isPartOfBugFixesMilestone
+    kind: patch
+    description: Verifies if the pull request is associated with the bug fixes milestone
+    spec: $milestone() == "Bug fixes"

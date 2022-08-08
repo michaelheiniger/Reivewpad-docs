@@ -1,0 +1,5 @@
+rules:
+  - name: hasTitle
+    kind: patch
+    description: Verifies if the pull request title is "Test custom builtins"
+    spec: $title() == "Test custom builtins"

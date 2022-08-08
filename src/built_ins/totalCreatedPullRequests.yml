@@ -1,0 +1,5 @@
+rules:
+  - name: isJunior
+    kind: patch
+    description: Verifies if author is junior
+    spec: $totalCreatedPullRequests($author()) < 3

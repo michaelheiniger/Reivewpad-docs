@@ -1,0 +1,5 @@
+rules:
+  - name: skipCIOnCommitMention
+    kind: patch
+    description: Verifies if any of the commit messages of the pull request contains "skip-ci"
+    spec: $elemContains("skip-ci", $commits())

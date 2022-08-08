@@ -1,0 +1,5 @@
+rules:
+  - name: changesAreOnlyTests
+    kind: patch
+    description: Verifies if changes are only on test files
+    spec: $hasFileExtensions([".test.ts"])

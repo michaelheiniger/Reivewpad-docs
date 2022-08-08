@@ -1,0 +1,5 @@
+rules:
+  - name: authoredByJunior
+    description: Verifies if author is junior
+    kind: patch
+    spec: $isElementOf($author(), $group("junior"))

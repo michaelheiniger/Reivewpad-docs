@@ -1,0 +1,7 @@
+workflows:
+  - name: close-pull-request
+    description: Close pull request
+    if:
+      - rule: stalePullRequest
+    then:
+      - $close()

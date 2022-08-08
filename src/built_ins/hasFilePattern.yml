@@ -1,0 +1,5 @@
+rules:
+  - name: changesTransactions
+    kind: patch
+    description: Verifies if changes transactions
+    spec: $hasFilePattern("src/transactions/**")

@@ -1,0 +1,7 @@
+workflows:
+  - name: error-large-pull-requests
+    description: Error about large pull requests
+    if:
+      - rule: isLarge
+    then:
+      - $error("This pull request was considered too large.")
