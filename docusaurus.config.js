@@ -129,7 +129,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: '/blog',
+                to: 'https://reviewpad.com/blog/',
               },
               {
                 label: 'GitHub',
