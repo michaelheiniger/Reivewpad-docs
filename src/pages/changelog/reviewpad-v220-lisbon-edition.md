@@ -22,7 +22,7 @@
 
 ### Action
 
-- [`$assignRandomReviewer`](/docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignrandomreviewer) - Fetches assignees instead of collaborators. _This is because GitHub API does not provide the correct list of reposittory collaborators when using GitHub Action token._
+- [`assignRandomReviewer`](/docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignrandomreviewer) - Fetches assignees instead of collaborators. _This is because GitHub API does not provide the correct list of reposittory collaborators when using GitHub Action token._
 - [`addLabel`](/docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#addLabel) - Automatically creates the label if it does not exist and uses the labels section to retrieve name.
 - [`removeLabel`](/docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#removeLabel) - Uses the labels section to retrieve name.
 
