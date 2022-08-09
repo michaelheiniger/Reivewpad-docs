@@ -33,6 +33,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          //routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -59,8 +60,10 @@ const config = {
       navbar: {
         title: 'Reviewpad',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Reviewpad Logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo_dark_mode.svg',
+          href: 'https://reviewpad.com',
         },
         items: [
           {
@@ -79,8 +82,6 @@ const config = {
           {
             type: 'docsVersionDropdown',
             position:'right',
-            to: '/path',
-            label: 'label',
           },
           {
             href: 'https://github.com/reviewpad/',
@@ -138,7 +139,14 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Reviewpad, Inc. Built with Docusaurus.`,
+        logo: {
+          alt: 'Reviewpad logo',
+          src: 'img/logo_footer.svg',
+          href: 'https://reviewpad.com',
+          width: 160,
+          height: 51,
+        },
+        copyright: `Copyright © ${new Date().getFullYear()} Explore.dev. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
