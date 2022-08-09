@@ -9,8 +9,8 @@
 
 ### Action
 
-- [`assignTeamReviewer`](docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignteamreviewer) - Assign a review to the provided team(s).
-- [`startsWith`](docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#addlabel) - Check whether a text starts with a certain sentence.
+- [`assignTeamReviewer`](/docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignteamreviewer) - Assign a review to the provided team(s).
+- [`startsWith`](/docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#addlabel) - Check whether a text starts with a certain sentence.
 
 ## Improvements :rocket:
 
