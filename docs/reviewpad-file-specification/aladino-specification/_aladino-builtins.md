@@ -1396,7 +1396,7 @@ Length returns the length of an array.
 
 `int`
 
-Returns the lenght of the array.
+Returns the length of the array.
 
 **Examples**:
 

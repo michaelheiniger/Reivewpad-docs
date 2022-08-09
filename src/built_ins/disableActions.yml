@@ -1,0 +1,6 @@
+workflows:
+  - name: reviewer-assignment-config
+    if:
+      - rule: is-draft
+    then:
+      - '$disableActions(["assignReviewer", "assignTeamReviewer", "assignRandomReviewer"])'

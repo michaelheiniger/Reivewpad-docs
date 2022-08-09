@@ -24,7 +24,6 @@ The functions are organized into 4 categories:
 
 ## Pull Request
 
-
 ***
 
 Set of functions to get pull request details.
@@ -579,6 +578,36 @@ A `reviewpad.yml` example:
 
 <CodeBlock language="yml">{Built_ins.HasLinkedIssues}</CodeBlock>
 
+### hasUnaddressedReviewThreads
+
+***
+
+**Description**:
+
+Verifies whether the pull request has review threads that are unaddressed, returning `true` or `false` as appropriate.
+
+A review thread is unaddressed when it is not `resolved` or `outdated`.
+
+**Parameters**:
+
+_none_
+
+**Return value**:
+
+`boolean`
+
+A boolean which is `true` if the pull request has any review thread that is not `resolved` or `outdated`, `false` otherwise.
+
+**Examples**:
+
+```yml
+$hasUnaddressedReviewThreads()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Built_ins.HasUnaddressedReviewThreads}</CodeBlock>
+
 ### head
 
 ***
@@ -636,6 +665,38 @@ $isDraft()
 A `reviewpad.yml` example:
 
 <CodeBlock language="yml">{Built_ins.IsDraft}</CodeBlock>
+
+### isWaitingForReview
+
+***
+
+**Description**:
+
+Verifies whether a pull request is waiting for review, returning `true` or `false` as appropriate.
+
+A pull request is set as waiting for review when there are **requested reviewers** or when there's at least of one reviewer whose last review is **outdated**.
+
+An outdated review is a review submitted before the last pull request update and whose state is not approved.
+
+**Parameters**:
+
+_none_
+
+**Return value**:
+
+`boolean`
+
+A boolean which is `true` if the pull request is waiting for review, `false` otherwise.
+
+**Examples**:
+
+```yml
+$isWaitingForReview()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Built_ins.IsWaitingForReview}</CodeBlock>
 
 ### labels
 
@@ -720,6 +781,41 @@ $reviewers()
 A `reviewpad.yml` example:
 
 <CodeBlock language="yml">{Built_ins.Reviewers}</CodeBlock>
+
+### reviewerStatus
+
+***
+
+**Description**:
+
+Returns the status of a reviewer in the pull request.
+
+**Parameters**:
+
+| variable        | type   | description                      |
+| --------------- | ------ | -------------------------------- |
+| `reviewerLogin` | string | the GitHub login of the reviewer |
+
+**Return value**:
+
+`string`
+
+The status of a reviewer. It can be one of four string values:
+
+1. `""`, if there was no review from the reviewer;
+2. `"COMMENTED"`, if all the reviews from the reviewer were comments;
+3. `"CHANGES_REQUESTED"`, if the last review that was not a comment requested changes;
+4. `"APPROVED"`, if the last review that was not a comment requested changes;
+
+**Examples**:
+
+```yml
+$reviewerStatus("marcelosousa")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Built_ins.ReviewerStatus}</CodeBlock>
 
 ### size
 
@@ -1028,6 +1124,36 @@ $isElementOf(3, [1, 2])                  # false
 A `reviewpad.yml` example:
 
 <CodeBlock language="yml">{Built_ins.IsElementOf}</CodeBlock>
+
+### length
+
+***
+
+**Description**:
+
+Length returns the length of an array.
+
+**Parameters**:
+
+| variable | type      | description       |
+| -------- | --------- | ----------------- |
+| `array`  | \[]string | array of elements |
+
+**Return value**:
+
+`int`
+
+Returns the lenght of the array.
+
+**Examples**:
+
+```yml
+$length(["a", "b"])  # 2
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Built_ins.Length}</CodeBlock>
 
 ### startsWith
 
@@ -1416,6 +1542,30 @@ $commentOnce("This is your first contribution! Thank you!")
 A `reviewpad.yml` example:
 
 <CodeBlock language="yml">{Built_ins.CommentOnce}</CodeBlock>
+
+### disableActions
+
+***
+
+**Description**:
+
+Disables the list of Aladino actions passed as argument.
+
+**Parameters**:
+
+| variable  | type      | description                        |
+| --------- | --------- | ---------------------------------- |
+| `actions` | \[]string | the list of actions to be disabled |
+
+**Examples**:
+
+```yml
+$disableActions(["assignReviewer"])
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Built_ins.DisableActions}</CodeBlock>
 
 ### error :zap: {#error}
 
