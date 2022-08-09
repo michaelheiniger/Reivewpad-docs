@@ -26,4 +26,4 @@ Use time as expression **`TIME year|month|day|week|hour|minute ago`**:
 
 > 📘 Aladino Syntax
 > 
-> Check [Aladino Syntax](../../reviewpad-file-specification/aladino-specification/aladino-syntax) for more details about timestamps.
+> Check [Aladino Syntax](../docs/reviewpad-file-specification/aladino-specification/aladino-syntax) for more details about timestamps.

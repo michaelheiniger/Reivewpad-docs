@@ -107,7 +107,7 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: 'docs/welcome-to-reviewpad',
+                to: '/intro',
               },
               {
                 label: 'Changelog',
