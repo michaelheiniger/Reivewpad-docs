@@ -9,7 +9,7 @@ const config = {
   title: 'Reviewpad Documentation',
   tagline: 'Documentation for Reviewpad',
   url: 'https://reviewpad.docs.github.io',
-  baseUrl: '/maester/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -33,7 +33,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: 'docs',
+          routeBasePath: '/',
           includeCurrentVersion: false,
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
