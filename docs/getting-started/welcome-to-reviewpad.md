@@ -1,6 +1,7 @@
 ---
 title: 'Welcome to Reviewpad'
 id: 'welcome-to-reviewpad'
+slug: /
 ---
 
 Reviewpad is an easy-to-use GitHub Action to accelerate the software delivery lifecycle. 
