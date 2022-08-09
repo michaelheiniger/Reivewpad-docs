@@ -1,8 +1,8 @@
 {
   "DocsSidebar": [
+    "welcome-to-reviewpad",
     {
       "Getting Started": [
-        "getting-started/welcome-to-reviewpad",
         "getting-started/first-revy-action:-pr-size-label"
       ]
     },

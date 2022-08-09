@@ -19,8 +19,9 @@ const sidebars = {
   // But you can create a sidebar manually
 
   DocsSidebar: [
+    'welcome-to-reviewpad',
     {
-      'Getting Started': ['getting-started/welcome-to-reviewpad', 'getting-started/first-revy-action:-pr-size-label'],
+      'Getting Started': ['getting-started/first-revy-action:-pr-size-label'],
     },
     {
       'Use Cases': [ 'use-cases/ship-show-ask',   

@@ -9,7 +9,7 @@ const config = {
   title: 'Reviewpad Documentation',
   tagline: 'Documentation for Reviewpad',
   url: 'https://reviewpad.docs.github.io',
-  baseUrl: '/maester/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -33,7 +33,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          //routeBasePath: '/',
+          routeBasePath: '/',
           includeCurrentVersion: false,
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
@@ -71,7 +71,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'getting-started/welcome-to-reviewpad',
+            docId: 'welcome-to-reviewpad',
             position: 'left',
             label: 'Documentation',
           },
@@ -107,7 +107,7 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: 'docs/getting-started/welcome-to-reviewpad',
+                to: 'docs/welcome-to-reviewpad',
               },
               {
                 label: 'Changelog',
