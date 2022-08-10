@@ -123,7 +123,7 @@ The specification of the rules only contains read-only actions.
 
 ### Program generation
 
-As we mentioned, the interpreter will produce an [Aladino](./aladino-specification) program that will be executed.  
+As we mentioned, the interpreter will produce an [Aladino](aladino-specification/aladino-specification.md) program that will be executed.  
 This program is simply a sequence of actions. 
 
 We will use an example to illustrate how this program is generated. Assume that we have the following workflow:

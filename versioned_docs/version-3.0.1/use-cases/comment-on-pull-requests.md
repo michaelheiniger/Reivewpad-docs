@@ -7,9 +7,9 @@ With Reviewpad, you can automatically add comments to the pull request.
 
 There are three different mechanisms to add a comment to the pull request:
 
-1. Using the [`comment` action](../reviewpad-file-specification/aladino-specification/aladino-built-ins#comment).
-2. Using the [`commentOnce` action](../reviewpad-file-specification/aladino-specification/aladino-built-ins#commentonce). 
-3. Using the [`error`](../reviewpad-file-specification/aladino-specification/aladino-built-ins#error), [`info`](../reviewpad-file-specification/aladino-specification/aladino-built-ins#info) or [`warn`](../reviewpad-file-specification/aladino-specification/aladino-built-ins#warn) actions.
+1. Using the [`comment` action](../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#comment).
+2. Using the [`commentOnce` action](../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#commentonce). 
+3. Using the [`error`](../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#error), [`info`](../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#info) or [`warn`](../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#warn) actions.
 
 The difference between the modes is that the `comment` action will add a comment every time the action is executed, `commentOnce` will add a comment once no matter the amount of times the action is executed, while the other commenting actions are bundled together in a comment which is also automatically updated. 
 

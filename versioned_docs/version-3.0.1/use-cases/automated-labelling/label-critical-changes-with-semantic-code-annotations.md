@@ -3,7 +3,7 @@ title: 'Label critical changes with semantic code annotations'
 id: 'label-critical-changes-with-semantic-code-annotations'
 ---
 
-The [hasAnnotation](../docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#hasannotation) built-in can be used to access code annotations in Reviewpad configurations. A key differentiator is that Reviewpad can understand the context of changes allowing for powerful checks.
+The [hasAnnotation](../../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#hasannotation) built-in can be used to access code annotations in Reviewpad configurations. A key differentiator is that Reviewpad can understand the context of changes allowing for powerful checks.
 
 To use the annotation in `reviewpad.yml` files, you need to annotate functions of interest with the comment `reviewpad-an: critical`. For example, consider the following [Go function](https://github.com/reviewpad/action-demo/blob/policies/go/quicksort.go#L6):
 

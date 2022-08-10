@@ -38,7 +38,7 @@ workflows:
 
 You can see the latest formal version of the format [here](https://github.com/reviewpad/schemas/blob/bf08b1000ca37a941c5d7533499f575be205c2db/latest/schema.json).
 
-If you use VSCode, we recommend that you [setup yaml.schemas](../tooling/vscode-reviewpad-yaml-schema) to enjoy syntax checking and auto-completion.
+If you use VSCode, we recommend that you [setup yaml.schemas](../tooling/vscode-reviewpad-yaml-schema.mdx) to enjoy syntax checking and auto-completion.
 
 The central concept in this specification is the **workflow**. 
 
@@ -127,7 +127,7 @@ There are two ways to specify a group:
 - `name` of a group is used to reference it in other entities.
 - `kind` of a group can only be _developers_ at the moment.
 - `description` is a string that can be used to provide more details about the group.
-- `spec` is an [Aladino](./aladino-specification) array.
+- `spec` is an [Aladino](aladino-specification/aladino-specification.md) array.
 
 ** Example. Group by Enumeration **
 
@@ -153,7 +153,7 @@ There are two ways to specify a group:
 - `kind` of a group can only be _developers_ at the moment.
 - `type` with filter specifies that we will require a _param_ and a boolean _spec_.
 - `param` declares the name of a variable representing a single developer.
-- `spec` is an [Aladino](./aladino-specification) boolean expression that uses the _param_ variable to define a condition on which developers should be part of the group.
+- `spec` is an [Aladino](aladino-specification/aladino-specification.md) boolean expression that uses the _param_ variable to define a condition on which developers should be part of the group.
 
 ** Example. Group by Filter **
 
@@ -182,7 +182,7 @@ The structure of a rule is as follows:
 - `name` of a rule is used to reference it in other rules and workflow. 
 - `kind` of a rule can be either _patch_ or _author._ The kind is related to different properties of pull requests that will be used in the evaluation of the _spec_ field.
 - `description` is a string that can be used to provide more details about the rule.
-- `spec` is a boolean expression in [Aladino](./aladino-specification).
+- `spec` is a boolean expression in [Aladino](aladino-specification/aladino-specification.md).
 
 ## Workflow
 
@@ -212,4 +212,4 @@ The structure of a workflow is as follows:
 - `description` is a string that can be used to provide more details about the rule.
 - `always-run` field is a boolean that specifies the workflow should always be checked or not. By default, this value is `false`.
 - `if` field specifies which rules should be checked. For each rule, we can also specify a list of **extra actions** that will be executed if this rule is activated by the pull request.
-- `then` field is a list of [Aladino actions](./aladino-specification/aladino-built-ins#actions) that should run.
+- `then` field is a list of [Aladino actions](aladino-specification/aladino-built-ins.mdx#actions) that should run.

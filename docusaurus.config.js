@@ -34,12 +34,12 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
-          includeCurrentVersion: false,
+          //  includeCurrentVersion: false,
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/reviewpad/maester/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: false,
         /*{
@@ -107,7 +107,7 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: '/intro',
+                to: '/',
               },
               {
                 label: 'Changelog',

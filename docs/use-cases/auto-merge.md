@@ -67,7 +67,7 @@ workflows:
 
 ## Auto-merge non-critical PRs
 
-The [**hasAnnotation**](../reviewpad-file-specification/aladino-specification/aladino-built-ins#hasannotation) built-in can be used to configure powerful auto-merges. See a more in-depth example of the usage of [**hasAnnotation**](../reviewpad-file-specification/aladino-specification/aladino-built-ins#hasannotation) in the [automated labelling section](./automated-labelling/label-critical-changes-with-semantic-code-annotations.md).
+The [**hasAnnotation**](../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#hasannotation) built-in can be used to configure powerful auto-merges. See a more in-depth example of the usage of [**hasAnnotation**](../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#hasannotation) in the [automated labelling section](automated-labelling/label-critical-changes-with-semantic-code-annotations.md).
 
 ```yaml
 api-version: reviewpad.com/v3.x

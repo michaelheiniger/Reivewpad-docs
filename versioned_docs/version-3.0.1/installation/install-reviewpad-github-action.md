@@ -93,7 +93,7 @@ workflows:
 
 This particular configuration will ask Reviewpad to label you PRs based on their size.
 
-You can do much more with Reviewpad. Start by looking at some of Reviewpad [use cases](../use-cases/ship-show-ask) or jump right into the available [built-ins](../reviewpad-file-specification/aladino-specification/aladino-built-ins).
+You can do much more with Reviewpad. Start by looking at some of Reviewpad [use cases](../use-cases/ship-show-ask) or jump right into the available [built-ins](../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx).
 
 > ❗ ️ Terms and Conditions
 > 
