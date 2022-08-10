@@ -5,7 +5,7 @@
 - Edition property 
 
 ### Aladino Language
-- [Timestamps](/docs/use-cases/timestamps) - RFC3339 timestamps or relative timestamps.
+- [Timestamps](../../../docs/use-cases/timestamps) - RFC3339 timestamps or relative timestamps.
 
 ### Aladino Built-ins
 

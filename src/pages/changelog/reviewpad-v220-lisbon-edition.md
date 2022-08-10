@@ -9,8 +9,8 @@
 
 ### Action
 
-- [`assignTeamReviewer`](/docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignteamreviewer) - Assign a review to the provided team(s).
-- [`startsWith`](/docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#startswith) - Check whether a text starts with a certain sentence.
+- [`assignTeamReviewer`](../../../docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignteamreviewer) - Assign a review to the provided team(s).
+- [`startsWith`](../../../docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#startswith) - Check whether a text starts with a certain sentence.
 
 ## Improvements :rocket:
 
@@ -22,9 +22,9 @@
 
 ### Action
 
-- [`assignRandomReviewer`](/docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignrandomreviewer) - Fetches assignees instead of collaborators. _This is because GitHub API does not provide the correct list of reposittory collaborators when using GitHub Action token._
-- [`addLabel`](/docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#addlabel) - Automatically creates the label if it does not exist and uses the labels section to retrieve name.
-- [`removeLabel`](/docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#removelabel) - Uses the labels section to retrieve name.
+- [`assignRandomReviewer`](../../../docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignrandomreviewer) - Fetches assignees instead of collaborators. _This is because GitHub API does not provide the correct list of reposittory collaborators when using GitHub Action token._
+- [`addLabel`](../../../docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#addlabel) - Automatically creates the label if it does not exist and uses the labels section to retrieve name.
+- [`removeLabel`](../../../docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#removelabel) - Uses the labels section to retrieve name.
 
 ## New Contributors :beers:
 

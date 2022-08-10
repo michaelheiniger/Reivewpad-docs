@@ -11,4 +11,4 @@ This is a major version of the Reviewpad Action.
 
 ### Functions
 
-[`workflowStatus`](/docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#workflowstatus) - Returns the result of a GitHub workflow run.
+[`workflowStatus`](../../../docs/reviewpad-file-specification/aladino-specification/aladino-built-ins#workflowstatus) - Returns the result of a GitHub workflow run.

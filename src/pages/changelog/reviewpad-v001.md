@@ -1,1 +1,1 @@
-Reviewpad v0.0.1. Check out the initial [Revy Specification](/docs/getting-started/welcome-to-reviewpad).
+Reviewpad v0.0.1. Check out the initial [Revy Specification](../../../docs/welcome-to-reviewpad.md)
