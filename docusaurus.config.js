@@ -9,7 +9,7 @@ const config = {
   title: 'Reviewpad Documentation',
   tagline: 'Documentation for Reviewpad',
   url: 'https://reviewpad.docs.github.io',
-  baseUrl: '/docs/',
+  baseUrl: '/maester/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
