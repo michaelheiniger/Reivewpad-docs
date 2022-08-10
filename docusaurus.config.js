@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Reviewpad Documentation',
   tagline: 'Documentation for Reviewpad',
-  url: 'https://reviewpad.docs.github.io',
+  url: 'docs.v2.reviewpad.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
