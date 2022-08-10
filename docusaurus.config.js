@@ -57,6 +57,7 @@ const config = {
     ],
   ],
 
+  themes: ['docusaurus-theme-search-typesense'],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -92,6 +93,21 @@ const config = {
             position: 'right',
           },
         ],
+      },
+      typesense: {
+        typesenseCollectionName: 'reviewpad', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+      
+        typesenseServerConfig: { 
+          nodes: [
+            {
+              host: 'lqetgadks30x62v4p-1.a1.typesense.net',
+              port: 443,
+              protocol: 'https'
+            },
+          ],
+          apiKey: 'FFR0wUwQ3laHdPMf0cdY9VNJVI9nEl5L',
+        },
+        contextualSearch: true,
       },
       docs: {
         sidebar: {
