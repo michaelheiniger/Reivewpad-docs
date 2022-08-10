@@ -10,7 +10,7 @@ const config = {
   tagline: 'Documentation for Reviewpad',
   url: 'https://reviewpad.docs.github.io',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
