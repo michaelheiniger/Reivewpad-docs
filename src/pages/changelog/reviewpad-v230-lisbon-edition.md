@@ -4,12 +4,12 @@
 
 ### Action
 
-[`assignAssignees`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignassignees) - Assigns up to 10 assignees to a pull request.
+[`assignAssignees`](/maester/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignassignees) - Assigns up to 10 assignees to a pull request.
 
-[`fail`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#fail) - Fails the action with a given fail message which will appear in the logs of the GitHub action.
+[`fail`](/maester/reviewpad-file-specification/aladino-specification/aladino-built-ins#fail) - Fails the action with a given fail message which will appear in the logs of the GitHub action.
 
 ### Functions
 
-[`commentCount`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#commentcount) -  Returns the total number of comments made into the pull request.
+[`commentCount`](/maester/reviewpad-file-specification/aladino-specification/aladino-built-ins#commentcount) -  Returns the total number of comments made into the pull request.
 
-[`comments`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#comments) -  List comment bodies of the pull request.
+[`comments`](/maester/reviewpad-file-specification/aladino-specification/aladino-built-ins#comments) -  List comment bodies of the pull request.

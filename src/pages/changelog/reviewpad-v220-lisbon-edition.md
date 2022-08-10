@@ -9,8 +9,8 @@
 
 ### Action
 
-- [`assignTeamReviewer`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignteamreviewer) - Assign a review to the provided team(s).
-- [`startsWith`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#startswith) - Check whether a text starts with a certain sentence.
+- [`assignTeamReviewer`](/maester/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignteamreviewer) - Assign a review to the provided team(s).
+- [`startsWith`](/maester/reviewpad-file-specification/aladino-specification/aladino-built-ins#startswith) - Check whether a text starts with a certain sentence.
 
 ## Improvements :rocket:
 
@@ -22,9 +22,9 @@
 
 ### Action
 
-- [`assignRandomReviewer`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignrandomreviewer) - Fetches assignees instead of collaborators. _This is because GitHub API does not provide the correct list of reposittory collaborators when using GitHub Action token._
-- [`addLabel`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#addlabel) - Automatically creates the label if it does not exist and uses the labels section to retrieve name.
-- [`removeLabel`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#removelabel) - Uses the labels section to retrieve name.
+- [`assignRandomReviewer`](/maester/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignrandomreviewer) - Fetches assignees instead of collaborators. _This is because GitHub API does not provide the correct list of reposittory collaborators when using GitHub Action token._
+- [`addLabel`](/maester/reviewpad-file-specification/aladino-specification/aladino-built-ins#addlabel) - Automatically creates the label if it does not exist and uses the labels section to retrieve name.
+- [`removeLabel`](/maester/reviewpad-file-specification/aladino-specification/aladino-built-ins#removelabel) - Uses the labels section to retrieve name.
 
 ## New Contributors :beers:
 
