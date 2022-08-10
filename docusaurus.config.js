@@ -10,7 +10,7 @@ const config = {
   tagline: 'Documentation for Reviewpad',
   url: 'https://reviewpad.docs.github.io',
   baseUrl: '/maester/',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
@@ -34,7 +34,7 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
-          //  includeCurrentVersion: false,
+          includeCurrentVersion: false,
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
