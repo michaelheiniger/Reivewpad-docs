@@ -1,10 +1,10 @@
 {
     "index_name": "reviewpad",
     "start_urls": [
-      "https://reviewpad.github.io/maester/"
+      "https://docs.v2.reviewpad.com/"
     ],
     "sitemap_urls": [
-      "https://reviewpad.github.io/maester/sitemap.xml"
+      "https://docs.v2.reviewpad.com/sitemap.xml"
     ],
     "sitemap_alternate_links": true,
     "stop_urls": [
