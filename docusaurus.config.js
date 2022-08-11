@@ -77,7 +77,12 @@ const config = {
             label: 'Documentation',
           },
           {to: '/changelog', label: 'Changelog', position: 'left'},
-          {to: 'https://reviewpad.com/blog/', label: 'Blog', position: 'left'},
+          //{to: 'https://reviewpad.com/blog/', label: 'Blog', position: 'left'},
+          {
+            href: 'https://reviewpad.com/blog/',
+            label: 'Blog',
+            position: 'left',
+          },
           {
             href: 'https://github.com/reviewpad/reviewpad/discussions',
             label: 'Discussions',
@@ -149,7 +154,8 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: 'https://reviewpad.com/blog/',
+                //to: 'https://reviewpad.com/blog/',
+                href: 'https://reviewpad.com/bloh/',
               },
               {
                 label: 'GitHub',
