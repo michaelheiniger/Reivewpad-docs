@@ -1,4 +1,4 @@
-## New features :fire:
+## New features :fire: {#new-features}
 
 ### YAML Specification
 
@@ -12,7 +12,7 @@
 - [`assignTeamReviewer`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#assignteamreviewer) - Assign a review to the provided team(s).
 - [`startsWith`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#startswith) - Check whether a text starts with a certain sentence.
 
-## Improvements :rocket:
+## Improvements :rocket: {#improvements}
 
 ### YAML Processing
 
@@ -26,7 +26,7 @@
 - [`addLabel`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#addlabel) - Automatically creates the label if it does not exist and uses the labels section to retrieve name.
 - [`removeLabel`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#removelabel) - Uses the labels section to retrieve name.
 
-## New Contributors :beers:
+## New Contributors :beers: {#new-contributors}
 
 Many thanks to our new contributors :clap:
 

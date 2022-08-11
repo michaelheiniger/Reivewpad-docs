@@ -1,4 +1,4 @@
-## New features :fire:
+## New features :fire: {#new-features}
 
 This is a major version of the Reviewpad Action. 
 

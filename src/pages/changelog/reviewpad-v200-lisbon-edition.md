@@ -1,9 +1,9 @@
-## New features :fire: 
+## New features :fire: {#new-features}
 
 ### YAML Specification
 - Groups and rules are now lists instead of sets.
 
-## Improvements :rocket: 
+## Improvements :rocket: {#improvements}
 
 - Fix LICENSE in open source files
 - Fix 'hasLinearHistory' built-in

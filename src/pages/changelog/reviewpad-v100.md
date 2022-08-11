@@ -1,4 +1,4 @@
-## New features :fire: 
+## New features :fire: {#new-features}
 
 ### YAML Specification
 - Updated protectionGates syntax to workflows format.

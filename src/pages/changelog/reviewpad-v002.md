@@ -1,4 +1,4 @@
-## New features :fire: 
+## New features :fire: {#new-features}
 
 ### Revy
 - Label specification
@@ -14,7 +14,7 @@
 ### Actions
  - removeLabel
 
-## Improvements :rocket: 
+## Improvements :rocket: {#improvements}
 
 ### Revy
  - Stop execution if head branch does not exist.
