@@ -10,7 +10,7 @@ Since not every PR needs the same review process, using the semantic features of
 Out of the box, Reviewpad supports a [merge action](../reviewpad-file-specification/aladino-specification/aladino-built-ins#merge) which can be used in multiple scenarios.
 
 | :warning: [Requires GitHub token](../installation/install-reviewpad-github-action-with-a-github-token) :warning: |
-| -------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------------------------------------------------------------------------------------- |
 
 ## Auto-merge based on file properties
 

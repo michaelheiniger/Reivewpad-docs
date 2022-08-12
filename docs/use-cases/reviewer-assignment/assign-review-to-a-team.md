@@ -3,8 +3,8 @@ title: "Assign review to a team"
 id: "assign-review-to-a-team"
 ---
 
-| :warning: [Requires GitHub token](../../installation/install-reviewpad-github-action-with-a-github-token.md) :warning: |
-| ---------------------------------------------------------------------------------------------------------------------- |
+| :warning: [Requires GitHub token](../../installation/install-reviewpad-github-action-with-a-github-token.md :warning: |
+| --------------------------------------------------------------------------------------------------------------------- |
 
 An example of assigning a review to a team when touching a specific folder.
 

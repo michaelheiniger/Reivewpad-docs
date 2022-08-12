@@ -34,7 +34,7 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
-          includeCurrentVersion: false,
+          //includeCurrentVersion: false,
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -67,7 +67,7 @@ const config = {
           alt: 'Reviewpad Logo',
           src: 'img/logo.svg',
           srcDark: 'img/logo_dark_mode.svg',
-          href: 'https://reviewpad.com',
+          href: '/'
         },
         items: [
           {
@@ -77,7 +77,6 @@ const config = {
             label: 'Documentation',
           },
           {to: '/changelog', label: 'Changelog', position: 'left'},
-          //{to: 'https://reviewpad.com/blog/', label: 'Blog', position: 'left'},
           {
             href: 'https://reviewpad.com/blog/',
             label: 'Blog',
@@ -154,8 +153,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                //to: 'https://reviewpad.com/blog/',
-                href: 'https://reviewpad.com/bloh/',
+                href: 'https://reviewpad.com/blog/',
               },
               {
                 label: 'GitHub',
