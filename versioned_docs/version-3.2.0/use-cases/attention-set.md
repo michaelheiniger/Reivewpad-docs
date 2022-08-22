@@ -81,7 +81,7 @@ jobs:
 
 ### Unavailable `pull_request_review_thread` event
 
-As for now github actions are not able to be triggered on `pull_request_review_thread` events. This limitation does not allow `reviewpad` to be triggered when a review thread status is updated (i.e. `resolved` or `unresolved`)
+As for now GitHub actions are not able to be triggered on `pull_request_review_thread` events. This limitation does not allow `reviewpad` to be triggered when a review thread status is updated (i.e. `resolved` or `unresolved`)
 
 To solve this issue one can comment a pull request with:
 

@@ -3,14 +3,16 @@ title: 'Auto-merge'
 id: 'auto-merge'
 ---
 
+:::caution Requires GitHub token
+
+Please note that this function requires the [Reviewpad Action to be installed with a GitHub token](/getting-started/installation-with-github-token)
+:::
+
 The ability to configure automatic PR merges can greatly unblock developers that typically wait for hours, or even days, to receive a LGTM review.
 
 Since not every PR needs the same review process, using the semantic features of Reviewpad, you can configure many scenarios where auto-merge seems natural.
 
-Out of the box, Reviewpad supports a [merge action](../reviewpad-file-specification/aladino-specification/aladino-built-ins#merge) which can be used in multiple scenarios.
-
-| :warning: [Requires GitHub token](../installation/install-reviewpad-github-action-with-a-github-token) :warning: |
-| ---------------------------------------------------------------------------------------------------------------- |
+Out of the box, Reviewpad supports a [merge action](/guides/built-ins#merge) which can be used in multiple scenarios.
 
 ## Auto-merge based on file properties
 
@@ -67,7 +69,7 @@ workflows:
 
 ## Auto-merge non-critical PRs
 
-The [**hasAnnotation**](../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#hasannotation) built-in can be used to configure powerful auto-merges. See a more in-depth example of the usage of [**hasAnnotation**](../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#hasannotation) in the [automated labelling section](automated-labelling/label-critical-changes-with-semantic-code-annotations.md).
+The [**hasAnnotation**/guides/built-ins#hasannotation) built-in can be used to configure powerful auto-merges. See a more in-depth example of the usage of [**hasAnnotation**/guides/built-ins#hasannotation) in the [automated labelling section](/use-cases/label-critical-changes-with-semantic-code-annotations).
 
 ```yaml
 api-version: reviewpad.com/v3.x

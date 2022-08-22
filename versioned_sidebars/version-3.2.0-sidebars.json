@@ -1,13 +1,45 @@
 {
   "DocsSidebar": [
-    "welcome-to-reviewpad",
+    "introduction",
     {
-      "Getting Started": [
-        "getting-started/first-action"
+      "type": "category",
+      "collapsed": false,
+      "label": "Getting Started",
+      "items": [
+        "getting-started/installation",
+        "getting-started/security"
       ]
     },
     {
-      "Use Cases": [
+      "type": "category",
+      "collapsed": false,
+      "label": "Guides",
+      "items": [
+        "guides/syntax",
+        "guides/semantics",
+        "guides/built-ins",
+        {
+          "type": "category",
+          "label": "Aladino",
+          "link": {
+            "type": "doc",
+            "id": "guides/aladino/specification"
+          },
+          "items": [
+            "guides/aladino/syntax",
+            "guides/aladino/semantics"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Use Cases",
+      "link": {
+        "type": "doc",
+        "id": "use-cases/use-cases"
+      },
+      "items": [
         "use-cases/ship-show-ask",
         {
           "type": "category",
@@ -58,96 +90,8 @@
       ]
     },
     {
-      "Reviewpad File Specification": [
-        "reviewpad-file-specification/introduction-to-reviewpad",
-        "reviewpad-file-specification/reviewpad-syntax",
-        "reviewpad-file-specification/reviewpad-semantics",
-        {
-          "type": "category",
-          "label": "Aladino Specification",
-          "link": {
-            "type": "doc",
-            "id": "reviewpad-file-specification/aladino-specification/aladino-specification"
-          },
-          "items": [
-            "reviewpad-file-specification/aladino-specification/aladino-syntax",
-            "reviewpad-file-specification/aladino-specification/aladino-semantics",
-            "reviewpad-file-specification/aladino-specification/aladino-built-ins"
-          ]
-        }
-      ]
-    },
-    {
-      "Installation": [
-        "installation/install-reviewpad-github-action",
-        "installation/install-reviewpad-github-action-with-a-github-token"
-      ]
-    },
-    {
       "Tooling": [
         "tooling/vscode-reviewpad-yaml-schema"
-      ]
-    },
-    {
-      "Product Development": [
-        "product-development/security-information"
-      ]
-    },
-    {
-      "Contact us": [
-        {
-          "type": "link",
-          "label": "Community Discord",
-          "href": "https://reviewpad.com/discord"
-        }
-      ]
-    },
-    {
-      "Company": [
-        {
-          "type": "link",
-          "label": "About us",
-          "href": "https://reviewpad.com/about-us/"
-        },
-        {
-          "type": "link",
-          "label": "Blog",
-          "href": "https://reviewpad.com/blog"
-        },
-        {
-          "type": "link",
-          "label": "Code Review Interface",
-          "href": "https://reviewpad.com/interface-docs"
-        },
-        {
-          "type": "link",
-          "label": "Join Our Team",
-          "href": "https://reviewpad.com/about-us#careers"
-        },
-        {
-          "type": "link",
-          "label": "Press Kit",
-          "href": "https://reviewpad.com/press-kit"
-        }
-      ]
-    },
-    {
-      "Legal": [
-        {
-          "type": "link",
-          "label": "Terms and Conditions",
-          "href": "https://reviewpad.com/terms-and-conditions/"
-        },
-        {
-          "type": "link",
-          "label": "Privacy Policy",
-          "href": "https://reviewpad.com/privacy-policy"
-        },
-        {
-          "type": "link",
-          "label": "Legal information",
-          "href": "https://reviewpad.com/legal-information/"
-        }
       ]
     }
   ]

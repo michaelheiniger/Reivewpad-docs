@@ -7,7 +7,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Reviewpad Documentation',
-  tagline: 'Documentation for Reviewpad',
   url: 'https://docs.reviewpad.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -15,13 +14,9 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'reviewpad', // Usually your GitHub org/user name.
-  projectName: 'maester', // Usually your repo name.
+  organizationName: 'reviewpad',
+  projectName: 'maester',
   deploymentBranch: 'gh-pages',
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -35,23 +30,9 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/reviewpad/maester/tree/main',
+          editUrl: 'https://github.com/reviewpad/maester/tree/main',
         },
         blog: false,
-        /*{
-          
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/reviewpad/maester/tree/main/docs',
-        },*/
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
       }),
     ],
   ],
@@ -71,16 +52,11 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'welcome-to-reviewpad',
+            docId: 'introduction',
             position: 'left',
             label: 'Documentation',
           },
           { to: '/changelog', label: 'Changelog', position: 'left' },
-          {
-            href: 'https://reviewpad.com/blog/',
-            label: 'Blog',
-            position: 'left',
-          },
           {
             href: 'https://github.com/reviewpad/reviewpad/discussions',
             label: 'Discussions',
@@ -98,8 +74,7 @@ const config = {
         ],
       },
       typesense: {
-        typesenseCollectionName: 'reviewpad', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
-
+        typesenseCollectionName: 'reviewpad',
         typesenseServerConfig: {
           nodes: [
             {
@@ -122,15 +97,19 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Product',
+            title: 'Company',
             items: [
               {
-                label: 'Documentation',
-                to: '/',
+                label: 'About us',
+                to: 'https://reviewpad.com/about-us/',
               },
               {
-                label: 'Changelog',
-                to: '/changelog',
+                label: 'Join us',
+                to: 'https://reviewpad.com/about-us#careers',
+              },
+              {
+                label: 'Press kit',
+                to: 'https://reviewpad.com/press-kit',
               },
             ],
           },
@@ -139,30 +118,38 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.com/reviewpad',
+                to: 'https://discord.com/reviewpad',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/reviewpad',
+                to: 'https://twitter.com/reviewpad',
+              },
+              {
+                label: 'GitHub',
+                to: 'https://github.com/reviewpad',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Legal',
             items: [
               {
-                label: 'Blog',
-                href: 'https://reviewpad.com/blog/',
+                label: 'Terms and Conditions',
+                to: 'https://reviewpad.com/terms-and-conditions/',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/reviewpad',
+                label: 'Privacy Policy',
+                to: 'https://reviewpad.com/privacy-policy',
+              },
+              {
+                label: 'Legal information',
+                to: 'https://reviewpad.com/legal-information/',
               },
             ],
           },
         ],
         logo: {
-          alt: 'Reviewpad logo',
+          alt: 'Reviewpad Logo',
           src: 'img/logo_footer.svg',
           href: 'https://reviewpad.com',
           width: 160,

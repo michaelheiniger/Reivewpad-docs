@@ -10,6 +10,6 @@ However, the code reviewer suggestion is still a manual process for developers a
 
 1. You associate owners to files. For simple changes in those files or large files, CODEOWNERS can be extremely noisy. `reviewpad.yml` files allow you to specify ownership at the semantic level and also based on the nature of the changes.
 2. There can only have a CODEOWNERS file per repository; as opposed, `reviewpad.yml` files will be extensible and you will be able to import central configuration files.
-3. Rules have precedence, so you need to understand the context of previous rules for a given rule. Reviewpad workflows allow you to specify when a [workflow should always be](../../reviewpad-file-specification/reviewpad-syntax.md#workflow) considered regardless of the context.
+3. Rules have precedence, so you need to understand the context of previous rules for a given rule. Reviewpad workflows allow you to specify when a [workflow should always be](/guides/syntax#workflow) considered regardless of the context.
 
-Out of the box, Reviewpad supports two actions to assign reviewers, [assignReviewer](../../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#assignreviewer) and [assignRandomReviewer](../../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#assignrandomreviewer).
+Out of the box, Reviewpad supports two actions to assign reviewers, [assignReviewer/guides/built-ins#assignreviewer) and [assignRandomReviewer/guides/built-ins#assignrandomreviewer).

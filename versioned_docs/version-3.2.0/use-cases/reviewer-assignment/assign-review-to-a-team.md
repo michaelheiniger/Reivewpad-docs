@@ -4,8 +4,10 @@ id: "assign-review-to-a-team"
 slug: "/use-cases/assign-review-to-a-team"
 ---
 
-| :warning: [Requires GitHub token](../../installation/install-reviewpad-github-action-with-a-github-token.md :warning: |
-| --------------------------------------------------------------------------------------------------------------------- |
+:::caution Requires GitHub token
+
+Please note that this function requires the [Reviewpad Action to be installed with a GitHub token](/getting-started/installation-with-github-token)
+:::
 
 An example of assigning a review to a team when touching a specific folder.
 

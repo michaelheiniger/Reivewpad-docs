@@ -4,17 +4,17 @@
 
 ### Functions
 
-[` reviewerStatus`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#reviewerstatus) - Returns the status of a reviewer in the pull request.
+[` reviewerStatus`/guides/built-ins#reviewerstatus) - Returns the status of a reviewer in the pull request.
 
-[`hasUnaddressedReviewThreads`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#hasunaddressedreviewthreads) - Verifies whether the pull request has review threads that are unaddressed.
+[`hasUnaddressedReviewThreads`/guides/built-ins#hasunaddressedreviewthreads) - Verifies whether the pull request has review threads that are unaddressed.
 
-[`isWaitingForReview`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#iswaitingforreview) - Verifies whether a pull request is waiting for review.
+[`isWaitingForReview`/guides/built-ins#iswaitingforreview) - Verifies whether a pull request is waiting for review.
 
-[`length`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#length) - Returns the length of an array.
+[`length`/guides/built-ins#length) - Returns the length of an array.
 
 ### Actions
 
-[`disableActions`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#disableactions) - Disables the list of Aladino actions passed as argument.
+[`disableActions`/guides/built-ins#disableactions) - Disables the list of Aladino actions passed as argument.
 
 ## Improvements :rocket: {#improvements}
 

@@ -3,8 +3,8 @@
 ### Aladino Built-ins
 
 ### Functions
-- [`team`](/reviewpad-file-specification/aladino-specification/aladino-built-ins#team) - Returns the members of a team (*)
+- [`team`/guides/built-ins#team) - Returns the members of a team (*)
 
 :::caution (*) Requires GitHub token
 
-Please note that this function requires the [Reviewpad Action to be installed with a GitHub token](/installation/install-reviewpad-github-action-with-a-github-token)
+Please note that this function requires the [Reviewpad Action to be installed with a GitHub token](getting-started/installation-with-github-token)
