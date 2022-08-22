@@ -4,8 +4,8 @@
   <ShortName>Reviewpad Documentation</ShortName>
   <Description>Search Reviewpad Documentation</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://docs.v2.reviewpad.com/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://docs.v2.reviewpad.com/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.v2.reviewpad.com/opensearch.xml" />
-  <moz:SearchForm>https://docs.v2.reviewpad.com/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://docs.reviewpad.com/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://docs.reviewpad.com/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.reviewpad.com/opensearch.xml" />
+  <moz:SearchForm>https://docs.reviewpad.com/</moz:SearchForm>
 </OpenSearchDescription>
