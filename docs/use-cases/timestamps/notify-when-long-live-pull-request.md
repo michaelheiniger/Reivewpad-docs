@@ -1,6 +1,7 @@
 ---
 title: "Notify when long live pull request"
 id: "notify-when-long-live-pull-request"
+slug: "/use-cases/notify-when-long-live-pull-request"
 ---
 
 Here's an example of notifying the pull request author when the pull request has been opened for a long time.

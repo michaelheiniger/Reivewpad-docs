@@ -21,46 +21,47 @@ const sidebars = {
   DocsSidebar: [
     'welcome-to-reviewpad',
     {
-      'Getting Started': ['getting-started/first-revy-action:-pr-size-label'],
+      'Getting Started': ['getting-started/first-action'],
     },
     {
-      'Use Cases': [ 'use-cases/ship-show-ask',   
-      {
-        type: 'category',
-        label: 'Automated Labelling',
-        link: { type: 'doc', id: 'use-cases/automated-labelling/automated-labelling'},
-        items: [
-          'use-cases/automated-labelling/label-based-on-file-paths',
-          'use-cases/automated-labelling/label-based-on-author-groups',
-          'use-cases/automated-labelling/label-potential-missing-changes',
-          'use-cases/automated-labelling/label-critical-changes-with-code-pattern',
-          'use-cases/automated-labelling/label-critical-changes-with-semantic-code-annotations',
-          'use-cases/automated-labelling/remove-label-based-on-file-paths'
-        ],
-      },
-      {
-        type: 'category',
-        label: 'Reviewer Assignment',
-        link: { type: 'doc', id: 'use-cases/reviewer-assignment/reviewer-assignment'},
-        items: [
-          'use-cases/reviewer-assignment/assign-senior-reviewers-to-new-joiners',
-          'use-cases/reviewer-assignment/assign-review-to-3-developers',
-          'use-cases/reviewer-assignment/assign-review-to-a-team'
-        ],
-      },
-      'use-cases/auto-merge',
-      {
-        type: 'category',
-        label: 'Timestamps',
-        link: { type: 'doc', id: 'use-cases/timestamps/timestamps'},
-        items: [
-          'use-cases/timestamps/notify-when-long-live-pull-request',
-          'use-cases/timestamps/label-on-change-freeze',
-        ],
-      },
-      'use-cases/comment-on-pull-requests',
-      'use-cases/enforce-branch-conventions',
-      'use-cases/enforce-conventional-commits',
+      'Use Cases': ['use-cases/ship-show-ask',
+        {
+          type: 'category',
+          label: 'Automated Labelling',
+          link: { type: 'doc', id: 'use-cases/automated-labelling/automated-labelling' },
+          items: [
+            'use-cases/automated-labelling/label-based-on-file-paths',
+            'use-cases/automated-labelling/label-based-on-author-groups',
+            'use-cases/automated-labelling/label-potential-missing-changes',
+            'use-cases/automated-labelling/label-critical-changes-with-code-pattern',
+            'use-cases/automated-labelling/label-critical-changes-with-semantic-code-annotations',
+            'use-cases/automated-labelling/remove-label-based-on-file-paths'
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Reviewer Assignment',
+          link: { type: 'doc', id: 'use-cases/reviewer-assignment/reviewer-assignment' },
+          items: [
+            'use-cases/reviewer-assignment/assign-senior-reviewers-to-new-joiners',
+            'use-cases/reviewer-assignment/assign-review-to-3-developers',
+            'use-cases/reviewer-assignment/assign-review-to-a-team'
+          ],
+        },
+        'use-cases/auto-merge',
+        {
+          type: 'category',
+          label: 'Timestamps',
+          link: { type: 'doc', id: 'use-cases/timestamps/timestamps' },
+          items: [
+            'use-cases/timestamps/notify-when-long-live-pull-request',
+            'use-cases/timestamps/label-on-change-freeze',
+          ],
+        },
+        'use-cases/comment-on-pull-requests',
+        'use-cases/enforce-branch-conventions',
+        'use-cases/enforce-conventional-commits',
+        'use-cases/attention-set',
       ],
     },
     {
@@ -68,29 +69,29 @@ const sidebars = {
         'reviewpad-file-specification/introduction-to-reviewpad',
         'reviewpad-file-specification/reviewpad-syntax',
         'reviewpad-file-specification/reviewpad-semantics',
-      {
-        type: 'category',
-        label: 'Aladino Specification',
-        link: { type: 'doc', id: 'reviewpad-file-specification/aladino-specification/aladino-specification' },
-        items: [
-          'reviewpad-file-specification/aladino-specification/aladino-syntax',
-          'reviewpad-file-specification/aladino-specification/aladino-semantics',
-          'reviewpad-file-specification/aladino-specification/aladino-built-ins',
-        ],
-      },
+        {
+          type: 'category',
+          label: 'Aladino Specification',
+          link: { type: 'doc', id: 'reviewpad-file-specification/aladino-specification/aladino-specification' },
+          items: [
+            'reviewpad-file-specification/aladino-specification/aladino-syntax',
+            'reviewpad-file-specification/aladino-specification/aladino-semantics',
+            'reviewpad-file-specification/aladino-specification/aladino-built-ins',
+          ],
+        },
       ],
     },
     {
-      'Installation' : ['installation/install-reviewpad-github-action','installation/install-reviewpad-github-action-with-a-github-token'],
+      'Installation': ['installation/install-reviewpad-github-action', 'installation/install-reviewpad-github-action-with-a-github-token'],
     },
     {
-      'Tooling' : ['tooling/vscode-reviewpad-yaml-schema'],
+      'Tooling': ['tooling/vscode-reviewpad-yaml-schema'],
     },
     {
-      'Product Development' : ['product-development/security-information'],
+      'Product Development': ['product-development/security-information'],
     },
     {
-      'Contact us' : [
+      'Contact us': [
         {
           type: 'link',
           label: 'Community Discord',
@@ -99,7 +100,7 @@ const sidebars = {
       ],
     },
     {
-      'Company' : [
+      'Company': [
         {
           type: 'link',
           label: 'About us',
@@ -128,7 +129,7 @@ const sidebars = {
       ],
     },
     {
-      'Legal' : [
+      'Legal': [
         {
           type: 'link',
           label: 'Terms and Conditions',

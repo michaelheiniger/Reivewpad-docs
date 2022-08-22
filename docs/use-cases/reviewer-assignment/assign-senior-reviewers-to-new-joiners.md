@@ -1,6 +1,7 @@
 ---
 title: 'Assign senior reviewers to new joiners'
 id: 'assign-senior-reviewers-to-new-joiners'
+slug: '/use-cases/assign-senior-reviewers-to-new-joiners'
 ---
 
 Here's an example of assigning senior reviewers to new joiners pull requests.

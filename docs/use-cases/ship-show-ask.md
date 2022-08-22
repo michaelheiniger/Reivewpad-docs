@@ -1,6 +1,6 @@
 ---
-title: 'Ship/Show/Ask'
 id: 'ship-show-ask'
+title: 'Ship/Show/Ask'
 ---
 
 [Ship / Show / Ask](https://martinfowler.com/articles/ship-show-ask.html) is a methodology to increase the pace of software teams by not having to block developers for each pull request. 

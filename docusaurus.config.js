@@ -34,7 +34,7 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
-          includeCurrentVersion: false,
+          lastVersion: 'current',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -76,7 +76,7 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          {to: '/changelog', label: 'Changelog', position: 'left'},
+          { to: '/changelog', label: 'Changelog', position: 'left' },
           {
             href: 'https://reviewpad.com/blog/',
             label: 'Blog',
@@ -89,7 +89,7 @@ const config = {
           },
           {
             type: 'docsVersionDropdown',
-            position:'right',
+            position: 'right',
           },
           {
             href: 'https://github.com/reviewpad/',
@@ -100,8 +100,8 @@ const config = {
       },
       typesense: {
         typesenseCollectionName: 'reviewpad', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
-      
-        typesenseServerConfig: { 
+
+        typesenseServerConfig: {
           nodes: [
             {
               host: 'lqetgadks30x62v4p-1.a1.typesense.net',

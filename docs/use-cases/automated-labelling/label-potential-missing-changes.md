@@ -1,6 +1,7 @@
 ---
 title: 'Label potential missing changes'
 id: 'label-potential-missing-changes'
+slug: '/use-cases/label-potential-missing-changes'
 ---
 
 It is fairly common that changes in some files imply changes in other files.

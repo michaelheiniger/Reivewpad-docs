@@ -1,6 +1,7 @@
 ---
 title: "Assign review to a team"
 id: "assign-review-to-a-team"
+slug: "/use-cases/assign-review-to-a-team"
 ---
 
 | :warning: [Requires GitHub token](../../installation/install-reviewpad-github-action-with-a-github-token.md :warning: |

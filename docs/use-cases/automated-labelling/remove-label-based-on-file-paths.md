@@ -1,6 +1,7 @@
 ---
 title: 'Remove label based on file paths'
 id: 'remove-label-based-on-file-paths'
+slug: '/use-cases/remove-label-based-on-file-paths'
 ---
 
 Here's an example of a `reviewpad.yml` configuration that removes a label from a pull request that contains the proper changes based on the file path.

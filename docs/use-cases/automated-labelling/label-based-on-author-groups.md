@@ -1,6 +1,7 @@
 ---
 title: 'Label based on author groups'
 id: 'label-based-on-author-groups'
+slug: '/use-cases/label-based-on-author-groups'
 ---
 
 Here's an example of a `reviewpad.yml` configuration that label pull requests authored by a member of a group of developers.

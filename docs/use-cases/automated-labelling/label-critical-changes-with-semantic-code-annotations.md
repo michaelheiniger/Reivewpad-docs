@@ -1,6 +1,7 @@
 ---
 title: 'Label critical changes with semantic code annotations'
 id: 'label-critical-changes-with-semantic-code-annotations'
+slug: '/use-cases/label-critical-changes-with-semantic-code-annotations'
 ---
 
 The [hasAnnotation](../../reviewpad-file-specification/aladino-specification/aladino-built-ins.mdx#hasannotation) built-in can be used to access code annotations in Reviewpad configurations. A key differentiator is that Reviewpad can understand the context of changes allowing for powerful checks.

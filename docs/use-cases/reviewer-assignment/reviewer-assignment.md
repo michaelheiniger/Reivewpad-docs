@@ -1,6 +1,7 @@
 ---
 title: 'Reviewer Assignment'
 id: 'reviewer-assignment'
+slug: '/use-cases/reviewer-assignment'
 ---
 
 GitHub already provides code reviewer suggestions and the ability to use CODEOWNERS to automatically assign reviewers.

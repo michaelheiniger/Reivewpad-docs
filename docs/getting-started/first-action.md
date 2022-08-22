@@ -1,8 +1,11 @@
 ---
-title: 'First Revy Action: PR Size Label'
-id: 'first-revy-action:-pr-size-label'
+id: "first-action"
+slug: "/first-action"
+title: "First Action: Label based on size"
+hidden: false
+createdAt: "2022-03-25T11:41:26.268Z"
+updatedAt: "2022-08-02T11:09:18.903Z"
 ---
-
 This page will help you run your first Reviewpad Action to automatically label pull requests in a GitHub repository depending on their size.
 
 You can check this Reviewpad action in the GitHub repository [reviewpad/action-showcase](https://github.com/reviewpad/action-showcase).
@@ -18,6 +21,7 @@ Our goal is to automatically label PRs depending on their size:
 To do this, we just need to do two steps.
 
 ## Step 1. Configure the GitHub action
+===================================
 
 Configure Reviewpad as a GitHub Action in a `pull_request` workflow:
 
@@ -38,6 +42,7 @@ jobs:
 The source code of the GitHub Action can be found in the GitHub repository [reviewpad/action](https://github.com/reviewpad/action).
 
 ## Step 2. Add `reviewpad.yml` to the root of the repository
+=========================================================
 
 Add the configuration file `reviewpad.yml` to the root of your repository.
 

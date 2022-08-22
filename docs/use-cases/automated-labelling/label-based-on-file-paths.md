@@ -1,6 +1,7 @@
 ---
 title: 'Label based on file paths'
 id: 'label-based-on-file-paths'
+slug: '/use-cases/label-based-on-file-paths'
 ---
 
 Here's an example of a `reviewpad.yml` configuration that label pull requests that contain changes to a certain filepath.
