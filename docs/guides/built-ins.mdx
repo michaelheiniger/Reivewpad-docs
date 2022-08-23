@@ -956,6 +956,15 @@ Returns the members of a team and child teams.
 
 To list members in a team, the team must be visible to the authenticated user.
 
+| :warning: [Requires GitHub token](/getting-started/installation-with-github-token) :warning: |
+| ---------------------------------------------------------------------------------------------------------------------- |
+
+By default a GitHub action does not have permission to access organization members.
+
+Because of that, in order for the function `team` to work we need to provide a GitHub token to the Reviewpad action.
+
+[Please follow this link to know more](/getting-started/installation-with-github-token)
+
 **Parameters**:
 
 | variable   | type   | description                          |
@@ -1711,6 +1720,7 @@ A `reviewpad.yml` example:
 ***
 
 :::warning Professional Edition
+:::
 
 It requires Reviewpad `edition` to be set to `professional` on `reviewpad.yml`
 :::
