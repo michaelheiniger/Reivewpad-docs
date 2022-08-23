@@ -1,0 +1,100 @@
+{
+  "DocsSidebar": [
+    "introduction",
+    {
+      "type": "category",
+      "collapsible": false,
+      "label": "Getting Started",
+      "items": [
+        "getting-started/installation",
+        "getting-started/security"
+      ]
+    },
+    {
+      "type": "category",
+      "collapsible": false,
+      "label": "Guides",
+      "items": [
+        "guides/syntax",
+        "guides/semantics",
+        "guides/built-ins",
+        {
+          "type": "category",
+          "label": "Aladino",
+          "link": {
+            "type": "doc",
+            "id": "guides/aladino/specification"
+          },
+          "items": [
+            "guides/aladino/syntax",
+            "guides/aladino/semantics"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Use Cases",
+      "collapsible": false,
+      "link": {
+        "type": "doc",
+        "id": "use-cases/use-cases"
+      },
+      "items": [
+        "use-cases/ship-show-ask",
+        {
+          "type": "category",
+          "label": "Automated Labelling",
+          "link": {
+            "type": "doc",
+            "id": "use-cases/automated-labelling/automated-labelling"
+          },
+          "items": [
+            "use-cases/automated-labelling/label-based-on-file-paths",
+            "use-cases/automated-labelling/label-based-on-author-groups",
+            "use-cases/automated-labelling/label-potential-missing-changes",
+            "use-cases/automated-labelling/label-critical-changes-with-code-pattern",
+            "use-cases/automated-labelling/label-critical-changes-with-semantic-code-annotations",
+            "use-cases/automated-labelling/remove-label-based-on-file-paths"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Reviewer Assignment",
+          "link": {
+            "type": "doc",
+            "id": "use-cases/reviewer-assignment/reviewer-assignment"
+          },
+          "items": [
+            "use-cases/reviewer-assignment/assign-senior-reviewers-to-new-joiners",
+            "use-cases/reviewer-assignment/assign-review-to-3-developers",
+            "use-cases/reviewer-assignment/assign-review-to-a-team"
+          ]
+        },
+        "use-cases/auto-merge",
+        "use-cases/check-issue-description",
+        {
+          "type": "category",
+          "label": "Timestamps",
+          "link": {
+            "type": "doc",
+            "id": "use-cases/timestamps/timestamps"
+          },
+          "items": [
+            "use-cases/timestamps/notify-when-long-live-pull-request",
+            "use-cases/timestamps/label-on-change-freeze"
+          ]
+        },
+        "use-cases/comment-on-pull-requests",
+        "use-cases/enforce-branch-conventions",
+        "use-cases/enforce-conventional-commits",
+        "use-cases/attention-set"
+      ]
+    },
+    {
+      "Tooling": [
+        "tooling/vscode-reviewpad-yaml-schema"
+      ]
+    }
+  ]
+}

@@ -9,7 +9,7 @@ There are three different mechanisms to add a comment to the pull request:
 
 1. Using the [`comment` action/guides/built-ins#comment).
 2. Using the [`commentOnce` action/guides/built-ins#commentonce). 
-3. Using the [`error`/guides/built-ins#error), [`info`/guides/built-ins#info) or [`warn`/guides/built-ins#warn) actions.
+3. Using the [`error`](/guides/built-ins#error), [`info`](/guides/built-ins#info) or [`warn`](/guides/built-ins#warn) actions.
 
 The difference between the modes is that the `comment` action will add a comment every time the action is executed, `commentOnce` will add a comment once no matter the amount of times the action is executed, while the other commenting actions are bundled together in a comment which is also automatically updated. 
 
@@ -20,7 +20,6 @@ To the use the third set of comments (i.e. `error`, `warn` and `info`) you need 
 ```yaml
 api-version: reviewpad.com/v3.x
 
-edition: professional
 mode: verbose
 
 rules:

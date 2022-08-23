@@ -14,8 +14,6 @@ In order to define the attention set we will use the builtins [isWaitingForRevie
 ```yaml reviewpad.yml
 api-version: reviewpad.com/v3.x
 
-edition: professional
-
 rules:
   - name: waiting-review
     kind: patch

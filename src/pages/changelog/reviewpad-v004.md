@@ -3,7 +3,7 @@
 ### Aladino Built-ins
 
 ### Functions
-- [`team`/guides/built-ins#team) - Returns the members of a team (*)
+- [`team`](/guides/built-ins#team) - Returns the members of a team (*)
 
 :::caution (*) Requires GitHub token
 

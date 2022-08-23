@@ -12,9 +12,6 @@ Reviewpad can be used to check and provide an error message if a commit in a pul
 ```yaml
 api-version: reviewpad.com/v3.x
 
-mode: silent
-edition: professional
-
 rules:
   - name: tautology
     kind: patch

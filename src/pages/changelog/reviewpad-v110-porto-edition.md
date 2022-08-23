@@ -3,7 +3,7 @@
 ### Aladino Built-ins
 
 ### Functions
-- [`rule`/guides/built-ins#rule) - Evaluates a rule.
+- [`rule`](/guides/built-ins#rule) - Evaluates a rule.
 
 ## Improvements :rocket: {#improvements}
 

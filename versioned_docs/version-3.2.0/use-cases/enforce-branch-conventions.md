@@ -12,9 +12,6 @@ Reviewpad can be used enforce a branch naming policy and also automatically add 
 ```yaml
 api-version: reviewpad.com/v3.x
 
-mode: silent
-edition: professional
-
 labels:
   release-minor:
     name: 'release:minor :hash::arrow_up::hash:'

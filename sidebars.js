@@ -62,6 +62,7 @@ const sidebars = {
           ],
         },
         'use-cases/auto-merge',
+        'use-cases/check-issue-description',
         {
           type: 'category',
           label: 'Timestamps',

@@ -15,7 +15,7 @@ const config = {
 
   // GitHub pages deployment config.
   organizationName: 'reviewpad',
-  projectName: 'maester',
+  projectName: 'docs',
   deploymentBranch: 'gh-pages',
   i18n: {
     defaultLocale: 'en',
@@ -30,7 +30,7 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/reviewpad/maester/tree/main',
+          editUrl: 'https://github.com/reviewpad/docs/tree/main',
         },
         blog: false,
       }),

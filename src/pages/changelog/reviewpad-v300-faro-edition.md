@@ -11,4 +11,4 @@ This is a major version of the Reviewpad Action.
 
 ### Functions
 
-[`workflowStatus`/guides/built-ins#workflowstatus) - Returns the result of a GitHub workflow run.
+[`workflowStatus`](/guides/built-ins#workflowstatus) - Returns the result of a GitHub workflow run.
