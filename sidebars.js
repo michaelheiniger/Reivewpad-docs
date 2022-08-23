@@ -6,7 +6,7 @@ const sidebars = {
     'introduction',
     {
       type: 'category',
-      collapsed: false,
+      collapsible: false,
       label: 'Getting Started',
       items: [
         'getting-started/installation',
@@ -15,7 +15,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsible: false,
       label: 'Guides',
       items: [
         'guides/syntax',
@@ -35,6 +35,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Use Cases',
+      collapsible: false,
       link: { type: 'doc', id: 'use-cases/use-cases' },
       items: ['use-cases/ship-show-ask',
         {
