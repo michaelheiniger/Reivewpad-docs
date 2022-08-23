@@ -5,9 +5,9 @@ slug: "installation"
 
 This guide describes how to install Reviewpad :zap:
 
-:::tip Install with GitHub Token
+:::info INFO
 
-Some actions required a GitHub token.
+Some actions required a GitHub token :key:
 
 To install Reviewpad with a GitHub token please [follow this tutorial](/getting-started/installation-with-github-token)
 :::
