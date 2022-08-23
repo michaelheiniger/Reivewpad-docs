@@ -101,15 +101,15 @@ const config = {
             items: [
               {
                 label: 'About us',
-                to: 'https://reviewpad.com/about-us/',
+                href: 'https://reviewpad.com/about-us/',
               },
               {
                 label: 'Join us',
-                to: 'https://reviewpad.com/about-us#careers',
+                href: 'https://reviewpad.com/about-us#careers',
               },
               {
                 label: 'Press kit',
-                to: 'https://reviewpad.com/press-kit',
+                href: 'https://reviewpad.com/press-kit',
               },
             ],
           },
@@ -118,15 +118,15 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                to: 'https://discord.com/reviewpad',
+                href: 'https://discord.com/reviewpad',
               },
               {
                 label: 'Twitter',
-                to: 'https://twitter.com/reviewpad',
+                href: 'https://twitter.com/reviewpad',
               },
               {
                 label: 'GitHub',
-                to: 'https://github.com/reviewpad',
+                href: 'https://github.com/reviewpad',
               },
             ],
           },
@@ -135,15 +135,15 @@ const config = {
             items: [
               {
                 label: 'Terms and Conditions',
-                to: 'https://reviewpad.com/terms-and-conditions/',
+                href: 'https://reviewpad.com/terms-and-conditions/',
               },
               {
                 label: 'Privacy Policy',
-                to: 'https://reviewpad.com/privacy-policy',
+                href: 'https://reviewpad.com/privacy-policy',
               },
               {
                 label: 'Legal information',
-                to: 'https://reviewpad.com/legal-information/',
+                href: 'https://reviewpad.com/legal-information/',
               },
             ],
           },
