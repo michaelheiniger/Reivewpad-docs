@@ -77,6 +77,7 @@ const sidebars = {
         'use-cases/enforce-branch-conventions',
         'use-cases/enforce-conventional-commits',
         'use-cases/attention-set',
+        'use-cases/stale-issues-or-pull-requests'
       ],
     },
     {
