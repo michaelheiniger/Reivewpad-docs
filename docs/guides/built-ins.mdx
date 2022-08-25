@@ -1586,11 +1586,15 @@ A `reviewpad.yml` example:
 
 **Description**:
 
-Closes a pull request.
+Closes an issue / pull request with a given comment.
+
+By default, if no parameter is provided, it will close the issue / pull request without a comment.
 
 **Parameters**:
 
-_none_
+| variable  | type   | description         |
+| --------- | ------ | ------------------- |
+| `comment` | string | body of the comment |
 
 **Return value**:
 

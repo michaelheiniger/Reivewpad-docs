@@ -4,4 +4,4 @@ workflows:
     if:
       - rule: stalePullRequest
     then:
-      - $close()
+      - $close("Closing for inactivity.")
