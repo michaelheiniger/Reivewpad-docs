@@ -162,6 +162,21 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          // /docs/oldDoc -> /docs/newDoc
+          {
+            from: '/docs/install-github-action',
+            to: '/getting-started/installation',
+          },
+        ],
+      },
+    ],
+  ],
 };
 
 module.exports = config;
