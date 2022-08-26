@@ -1027,10 +1027,10 @@ Note that altough GitHub considers a pull request to be an issue, we exclude pul
 
 **Parameters**:
 
-| variable    | type              | description                           |
-| ----------- | ----------------- | ------------------------------------- |
-| `userLogin` | string            | the GitHub user login                 |
-| `state`     | string (optional) | the issue state (open, closed or all) |
+| variable           | type   | description                           |
+| ------------------ | ------ | ------------------------------------- |
+| `userLogin`        | string | the GitHub user login                 |
+| `state` (optional) | string | the issue state (open, closed or all) |
 
 Passing the empty string `""` to `userLogin` returns the number of issues with a given state in the repository.
 
@@ -1066,10 +1066,10 @@ Returns the total number of pull requests created by the given GitHub user login
 
 **Parameters**:
 
-| variable    | type              | description                           |
-| ----------- | ----------------- | ------------------------------------- |
-| `userLogin` | string            | the GitHub user login                 |
-| `state`     | string (optional) | the issue state (open, closed or all) |
+| variable           | type   | description                           |
+| ------------------ | ------ | ------------------------------------- |
+| `userLogin`        | string | the GitHub user login                 |
+| `state` (optional) | string | the issue state (open, closed or all) |
 
 Passing the empty string `""` to `userLogin` returns the number of pull requests with a given state in the repository.
 
@@ -1592,9 +1592,9 @@ By default, if no parameter is provided, it will close the issue / pull request 
 
 **Parameters**:
 
-| variable  | type   | description         |
-| --------- | ------ | ------------------- |
-| `comment` | string | body of the comment |
+| variable             | type   | description         |
+| -------------------- | ------ | ------------------- |
+| `comment` (optional) | string | body of the comment |
 
 **Return value**:
 
