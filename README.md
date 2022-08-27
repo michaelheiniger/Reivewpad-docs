@@ -1,6 +1,6 @@
 # Reviewpad Documentation
 
-This repo contains the source powering up [docs.reviewpad.com](https.docs.reviewpad.com).
+This repo contains the source powering up [docs.reviewpad.com](https://docs.reviewpad.com)
 
 ## Getting started
 
@@ -15,7 +15,7 @@ This repo contains the source powering up [docs.reviewpad.com](https.docs.review
 ### Installation
 
 1. Navigate into the project root
-   
+
 ```bash
 cd docs
 ```
@@ -35,12 +35,12 @@ yarn start
 ```
 
 > **Note**
-> 
->  You browser should open automatically. If that's not the case please navigate to [http://localhost:3000](http://localhost:3000).
+>
+> You browser should open automatically. If that's not the case please navigate to [http://localhost:3000](http://localhost:3000).
 
 > **Note**
-> 
->  Most changes are reflected live without having to restart the server.
+>
+> Most changes are reflected live without having to restart the server.
 
 ## Contributing
 
@@ -65,14 +65,14 @@ git checkout -b THE-NAME-OF-MY-BRANCH
 ```
 
 > **Warning**
-> 
->  Please replace `THE-NAME-OF-MY-BRANCH` with a suitable name for your branch
+>
+> Please replace `THE-NAME-OF-MY-BRANCH` with a suitable name for your branch
 
 ### Make the change
 
 1. Follow the ["Running locally"](#running-locally) instructions
 2. Save the files and check in the browser
-   
+
 ### Test the change
 
 If possible, test any visual changes in all latest versions of common browsers, on both desktop and mobile.
@@ -83,11 +83,11 @@ If possible, test any visual changes in all latest versions of common browsers, 
 
 ```bash
 git add -A && git commit -m "MY MESSAGE"
-``` 
+```
 
 > **Warning**
-> 
->  Please replace `MY MESSAGE` with a [conventional commit message](https://www.conventionalcommits.org/en/v1.0.0/), such as `fix: typo on installation section`
+>
+> Please replace `MY MESSAGE` with a [conventional commit message](https://www.conventionalcommits.org/en/v1.0.0/), such as `fix: typo on installation section`
 
 2. Push your changes
 
@@ -96,18 +96,18 @@ git push MY-FORK-NAME THE-NAME-OF-MY-BRANCH
 ```
 
 > **Warning**
-> 
->  Please replace `MY-FORK-NAME` with the name of your fork
->  Please replace `THE-NAME-OF-MY-BRANCH` with the name of your branch
+>
+> Please replace `MY-FORK-NAME` with the name of your fork
+> Please replace `THE-NAME-OF-MY-BRANCH` with the name of your branch
 
 3. Go to the [reviewpad/docs](https://github.com/reviewpad/docs) repo and you should see recently pushed branches.
 
-3. Follow GitHub's instructions.
+4. Follow GitHub's instructions.
 
-4. If possible, include screenshots of visual changes. A preview build is triggered after your pull request is opened.
+5. If possible, include screenshots of visual changes. A preview build is triggered after your pull request is opened.
 
 > **Note**
-> 
+>
 > After a pull request is created, a preview is built automatically.
 
 ## Troubleshooting
