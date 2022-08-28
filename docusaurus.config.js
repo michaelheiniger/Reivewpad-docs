@@ -31,6 +31,7 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/reviewpad/docs/tree/main',
+          editCurrentVersion: true,
         },
         blog: false,
       }),
