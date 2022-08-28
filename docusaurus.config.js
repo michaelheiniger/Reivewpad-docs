@@ -42,6 +42,27 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        { name: 'keywords', content: 'reviewpad, pull requests, code review, automation, github action' },
+        { name: 'description', content: 'Reviewpad is an easy to use GitHub Action to automate the GitHub workflow and accelerate the software delivery lifecycle.' },
+        { name: 'theme-color', content: '#00337e' },
+        { property: 'og:image', content: 'https://reviewpad.com/wp-content/uploads/2022/07/Reviewpad-SEO.png' },
+        { property: 'og:image:width', content: '2048' },
+        { property: 'og:image:height', content: '1024' },
+        { property: 'og:locale', content: 'en_US' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'Reviewpad | Documentation' },
+        { property: 'og:description', content: 'Reviewpad is an easy to use GitHub Action to automate the GitHub workflow and accelerate the software delivery lifecycle.' },
+        { property: 'og:url', content: 'https://docs.reviewpad.com/' },
+        { property: 'og:site_name', content: 'Reviewpad | Pull Request Automation' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@reviewpad' },
+        { name: 'twitter:title', content: 'Reviewpad | Documentation' },
+        { name: 'twitter:description', content: 'Reviewpad is an easy to use GitHub Action to automate the GitHub workflow and accelerate the software delivery lifecycle.' },
+        { name: 'twitter:image', content: 'https://reviewpad.com/wp-content/uploads/2022/07/Reviewpad-SEO.png' },
+        { name: 'twitter:image:width', content: '2048' },
+        { name: 'twitter:image:height', content: '1024' },
+      ],
       navbar: {
         title: 'Reviewpad',
         logo: {
