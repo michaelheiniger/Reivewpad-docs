@@ -9,7 +9,7 @@ For instance, a just created pull request with an assigned reviewer requires the
 
 ## reviewpad.yml
 
-In order to define the attention set we will use the builtins [isWaitingForReview](https://docs.reviewpad.com/docs/aladino-builtins#iswaitingforreview) and [hasUnaddressedThreads](https://docs.reviewpad.com/docs/aladino-builtins#hasunaddressedthreads).
+In order to define the attention set we will use the built-ins [isWaitingForReview](/guides/built-ins#iswaitingforreview) and [hasUnaddressedThreads](/guides/built-ins#hasunaddressedthreads).
 
 ```yaml reviewpad.yml
 api-version: reviewpad.com/v3.x
