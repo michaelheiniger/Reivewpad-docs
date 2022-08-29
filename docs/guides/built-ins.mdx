@@ -1015,13 +1015,103 @@ A `reviewpad.yml` example:
 
 Set of functions to get user details.
 
+### issueCountBy
+
+***
+
+**Description**:
+
+Returns the total number of issues created by the given GitHub user login and issue state.
+
+Note that altough GitHub considers a pull request to be an issue, we exclude pull requests in this request.
+
+**Parameters**:
+
+| variable    | type              | description                           |
+| ----------- | ----------------- | ------------------------------------- |
+| `userLogin` | string            | the GitHub user login                 |
+| `state`     | string (optional) | the issue state (open, closed or all) |
+
+Passing the empty string `""` to `userLogin` returns the number of issues with a given state in the repository.
+
+Passing the empty string `""` or nothing to `state` defaults to `all`.
+
+**Return value**:
+
+`int`
+
+The total number of created issues created by the given GitHub user login with the state.
+
+**Examples**:
+
+```yml
+$issueCountBy($author())
+```
+
+A `reviewpad.yml` example:
+
+```yml
+rules:
+  - name: author-has-more-than-10-issues-open
+    spec: $issueCountBy($author(), "open") > 10
+```
+
+### pullRequestCountBy
+
+***
+
+**Description**:
+
+Returns the total number of pull requests created by the given GitHub user login and state.
+
+**Parameters**:
+
+| variable    | type              | description                           |
+| ----------- | ----------------- | ------------------------------------- |
+| `userLogin` | string            | the GitHub user login                 |
+| `state`     | string (optional) | the issue state (open, closed or all) |
+
+Passing the empty string `""` to `userLogin` returns the number of pull requests with a given state in the repository.
+
+Passing the empty string `""` or nothing to `state` defaults to `all`.
+
+**Return value**:
+
+`int`
+
+The total number of created pull requests created by the given GitHub user login with the state.
+
+**Examples**:
+
+```yml
+$pullRequestCountBy($author())
+```
+
+A `reviewpad.yml` example:
+
+```yml
+rules:
+  - name: repo-has-more-than-10-pr-open
+    spec: $pullRequestCountBy("", "open") > 10
+```
+
 ### totalCreatedPullRequests
 
 ***
 
 **Description**:
 
-Returns the total number of pull requests created by the provided GitHub user login.
+Returns the total number of pull requests created by the given GitHub user login.
+
+:::info INFO
+
+This built-in will be deprecated in the upcoming 4.x series as it.
+
+Replace its usage by `$pullRequestCountBy(CURRENT_ARGUMENT, "all")`.
+
+:::
+
+
 
 **Parameters**:
 

@@ -27,7 +27,7 @@ rules:
     spec: '$description() == ""'
 
   - name: isFirstTimeContributor
-    spec: '$totalCreatedPullRequests($author()) == 1'
+    spec: '$pullRequestCountBy($author()) == 1'
 
 workflows:
   - name: welcome-user
