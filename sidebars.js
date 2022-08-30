@@ -58,7 +58,8 @@ const sidebars = {
           items: [
             'use-cases/reviewer-assignment/assign-senior-reviewers-to-new-joiners',
             'use-cases/reviewer-assignment/assign-review-to-3-developers',
-            'use-cases/reviewer-assignment/assign-review-to-a-team'
+            'use-cases/reviewer-assignment/assign-review-to-a-team',
+            'use-cases/reviewer-assignment/assign-sequential-reviewers',
           ],
         },
         'use-cases/auto-merge',

@@ -12,4 +12,4 @@ However, the code reviewer suggestion is still a manual process for developers a
 2. There can only have a CODEOWNERS file per repository; as opposed, `reviewpad.yml` files will be extensible and you will be able to import central configuration files.
 3. Rules have precedence, so you need to understand the context of previous rules for a given rule. Reviewpad workflows allow you to specify when a [workflow should always be](/guides/syntax#workflow) considered regardless of the context.
 
-Out of the box, Reviewpad supports two actions to assign reviewers, [assignReviewer/guides/built-ins#assignreviewer) and [assignRandomReviewer/guides/built-ins#assignrandomreviewer).
+Out of the box, Reviewpad supports three actions to assign reviewers, [assignReviewer](/guides/built-ins#assignreviewer), [assignTeamReviewer](/guides/built-ins#assignteamreviewer) and [assignRandomReviewer](/guides/built-ins#assignrandomreviewer).

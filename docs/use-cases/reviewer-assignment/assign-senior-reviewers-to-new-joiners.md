@@ -26,7 +26,7 @@ groups:
     kind: developers
     type: filter
     param: developer
-    where: $totalCreatedPullRequests($developer) < 10
+    where: $pullRequestCountBy($developer) < 10
 
 rules:
   - name: authoredByJunior

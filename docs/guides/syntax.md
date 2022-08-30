@@ -34,8 +34,13 @@ workflows:
   - workflow_2
   ...
   - workflow_N
-```
 
+pipelines:
+  - pipeline_1
+  - pipeline_2
+  ...
+  - pipeline_N
+```
 
 :::note note
 
@@ -219,7 +224,7 @@ The structure of a workflow is as follows:
 ```
 
 - `name` is a string that identifies the workflow.
-- `description` [OPTIONAL] is a string that can be used to provide more details about the rule.
+- `description` [OPTIONAL] is a string that can be used to provide more details about the workflow.
 - `always-run` [OPTIONAL] field is a boolean that specifies the workflow should always be checked or not. By default, this value is `false`.
 - `on` [OPTIONAL] field is a list of github entity types that should trigger the workflow. By default, the value is `pull_request`.
 - `if` field specifies which rules should be checked. For each rule, we can also specify a list of **extra actions** that will be executed if this rule is activated by the pull request.
@@ -241,3 +246,33 @@ workflows:
 ```
 
 This configuration specifies one workflow called `size-labelling` which automatically labels a `pull_request` with the label `small` if the inline rule `$size() < 90` is true. This means that the total number of changed lines i.e. `$size` is lower than 90.
+
+## Pipeline
+
+The structure of a pipeline is as follows:
+
+```yaml
+- name: STRING
+  description: STRING [OPTIONAL]
+  trigger: [STRING | RULE] # optional
+  stages:
+    - actions:
+        - ACTION_1
+        - ACTION_2
+        ...
+        - ACTION_N
+      until: [STRING | RULE] # optional
+    ...
+    - actions:
+        - ACTION_1
+        - ACTION_2
+        ...
+        - ACTION_N
+      until: [STRING | RULE] # optional
+```
+
+- `name` is a string that identifies the pipeline.
+- `description` [OPTIONAL] is a string that can be used to provide more details about the pipeline.
+- `trigger` [OPTIONAL] field is a rule that if true enables the pipeline.
+- `stages` is a list of stages of the pipeline. Each stage is a list of actions that will execute until the `until` condition is true.
+
