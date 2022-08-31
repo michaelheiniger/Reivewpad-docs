@@ -81,6 +81,13 @@ const sidebars = {
       ],
     },
     {
+      type: 'category',
+      label: 'Contributing',
+      items: [
+        'contributing/how-to-contribute',
+      ]
+    },
+    {
       'Tooling': ['tooling/vscode-reviewpad-yaml-schema'],
     },
   ],
