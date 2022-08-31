@@ -79,7 +79,7 @@ The [Reviewpad Action](https://github.com/reviewpad/action) is monitoring the pu
 
 ### Development Workflow {#development-workflow}
 
-After cloning React, run `go get` to fetch its dependencies.
+After cloning Reviewpad, run `go get` to fetch its dependencies.
 Then, you can run several commands:
 
 * `task format` formats your code.
@@ -142,5 +142,9 @@ Then, our formatter will catch most issues that may exist in your code.
 ### License {#license}
 
 By contributing to Reviewpad, you agree that your contributions will be licensed under its LGPL-3.0 license.
+
+### Kudos
+
+This documentation is based on [reactjs.org](https://reactjs.org/) contributing guidelines.
 
 <!-- Add What Next? -->
