@@ -2,6 +2,28 @@
 
 This documentation details the release process.
 
+## Prerequisites
+
+Please make sure that:
+
+1. You are on the `main` branch of the repository.
+
+```bash
+git checkout main
+```
+
+2. You have the **latest** version of `main` branch.
+
+```bash
+git pull
+```
+
+1. You don't have local changes.
+
+```bash
+git status
+```
+
 ## Create version
 
 The first step into the release is to defined which version of [docs.reviewpad.com](https://docs.reviewpad.com) is to be released.
@@ -18,9 +40,9 @@ This command will do the following:
 2. Create a copy of the current `sidebars` add it as a new file `version-VERSION-sidebars.json` under `versioned_sidebars`.
 3. Add the `VERSION` into `versions.json` file.
 
-## Push it
+## Commit and push it
 
-The next step is to push these changes into the `main` branch.
+The next step is to commit and push these changes into the `main` branch.
 
 For this please follow the commit syntax:
 
@@ -29,6 +51,12 @@ git commit -m "feat(release): version VERSION"
 ```
 
 Where `VERSION` is the version to be released, e.g. `3.3.1`.
+
+After this you can push the changes into the `main` branch.
+
+```bash
+git push origin main
+```
 
 ## Deploy it
 
