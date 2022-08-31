@@ -17,6 +17,7 @@ expr := expr BINOP expr
       | BOOLEAN
       | '[' expr_list ']'
       | '$' IDENTIFIER '(' expr_list ')'
+      | '(' expr_list '=>' expr  ')'
 
 TIMESTAMP := 
         YYYYMMDD 
@@ -45,3 +46,4 @@ This allows us to specify:
 
 1. Logical expressions: e.g. `"a" == "a"` or `$fun() == 1`;
 2. Function calls: e.g. `$label("bug")`
+3. Lambda functions: e.g. `($dev => $dev == $author())`
