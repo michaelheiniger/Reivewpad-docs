@@ -39,3 +39,21 @@ yarn deploy
 ```
 
 This will deploy the documentation into github pages which will be live at [docs.reviewpad.com](https://docs.reviewpad.com).
+
+## Deleting an existing version
+You can delete/remove versions as well.
+
+Remove the version from versions.json.
+
+Example:
+
+```diff
+[
+  "2.0.0",
+  "1.9.0",
+- "1.8.0"
+]
+```
+
+Delete the versioned docs directory. Example: `versioned_docs/version-1.8.0`.
+Delete the versioned sidebars file. Example: `versioned_sidebars/version-1.8.0-sidebars.json`.
