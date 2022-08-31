@@ -1,0 +1,26 @@
+## New features :fire:
+
+### Reviewpad
+
+- Feature: Extends cron job for issues and pull requests. Check the [stale pull request/issue use case](/use-cases/stale-issues-or-pull-requests)
+
+### Aladino Language
+
+[Lambda expressions](/guides/aladino/syntax) - Aladino now supports lambda functions.
+
+### Aladino Built-ins
+
+### Functions
+
+[`addToProject`](/guides/built-ins#addtoproject) - Adds a pull request to a project with a particular status. It is not supported for GitHub issues.
+[`issueCountBy`](/guides/built-ins#issuecountby) - Returns the total number of issues created by the given GitHub user login and issue state.
+[`pullRequestCountBy`](/guides/built-ins#pullrequestcountby) - Returns the total number of pull requests created by the given GitHub user login and state.
+
+### Actions
+
+[`titleLint`](/guides/built-ins#titlelint) - Checks if the pull request title follows the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
+
+
+## Improvements :rocket: {#improvements}
+
+- Fix `issue_comment` event handling to support GitHub issues and pull requests.
