@@ -184,7 +184,7 @@ The structure of a workflow is as follows:
 - `description` is a string that can be used to provide more details about the rule.
 - `always-run` field is a boolean that specifies the workflow should always be checked or not. By default, this value is `false`.
 - `if` field specifies which rules should be checked. For each rule, we can also specify a list of **extra actions** that will be executed if this rule is activated by the pull request.
-- `then` field is a list of [Reviewpad actions/guides/built-ins#actions) that should run.
+- `then` field is a list of [Reviewpad actions](/guides/built-ins#actions) that should run.
 
 A `workflow` is a specification of a list of actions to be executed if the pull request **satisfies** any of the specified rules.
 

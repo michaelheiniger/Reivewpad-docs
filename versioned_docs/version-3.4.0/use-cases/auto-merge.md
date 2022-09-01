@@ -69,7 +69,7 @@ workflows:
 
 ## Auto-merge non-critical PRs
 
-The [**hasAnnotation**/guides/built-ins#hasannotation) built-in can be used to configure powerful auto-merges. See a more in-depth example of the usage of [**hasAnnotation**/guides/built-ins#hasannotation) in the [automated labelling section](/use-cases/label-critical-changes-with-semantic-code-annotations).
+The [**hasAnnotation**](/guides/built-ins#hasannotation) built-in can be used to configure powerful auto-merges. See a more in-depth example of the usage of [**hasAnnotation**](/guides/built-ins#hasannotation) in the [automated labelling section](/use-cases/label-critical-changes-with-semantic-code-annotations).
 
 ```yaml
 api-version: reviewpad.com/v3.x
