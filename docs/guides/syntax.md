@@ -95,7 +95,7 @@ LABEL-ID:
 - `LABEL-ID` of a label is used to reference it in other entities. If no `name` is provided, then the `LABEL-ID` is considered the `name`.
 - `name` [OPTIONAL] is the name of the label as seen on GitHub.
 - `description` [OPTIONAL] is a short description of the label. Must be 100 characters or fewer.
-- `color` [OPTIONAL] is the [hexadecimal color code](https://www.color-hex.com/) for the label, without the leading #.
+- `color` [OPTIONAL] is the [hexadecimal color code](https://www.color-hex.com/) for the label, with or without the leading #.
 
 If the label does not exist in the repository, it will be created. If it already exists in the repository, no action will be taken.
 
