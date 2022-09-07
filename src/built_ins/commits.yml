@@ -1,5 +1,5 @@
 rules:
-  - name: skipCIOnCommitMention
+  - name: has-initial-commit-in-commit-body
     kind: patch
-    description: Verifies if any of the commit messages of the pull request contains "skip-ci"
-    spec: $elemContains("skip-ci", $commits())
+    description: Verifies if any of the commit messages of the pull request is "inital commit"
+    spec: $isElementOf("initial commit", $commits())
