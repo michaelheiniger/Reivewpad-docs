@@ -8,6 +8,17 @@ groups:
     kind: developers
     spec: '["marcelosousa", "ferreiratiago", "shay2025"]'
 
+rules:
+  - name: authored-by-maintainers
+    kind: patch
+    description: Issue / Pull request was authored by maintainers
+    spec: '$isElementOf($author(), $group("maintainers"))'
+
+  - name: authored-by-external-contributors
+    kind: patch
+    description: Issue / Pull request was authored by external contributors
+    spec: '!$isElementOf($author(), $group("maintainers"))'
+
 workflows:
   - name: first-time-issue-contributor
     on:
