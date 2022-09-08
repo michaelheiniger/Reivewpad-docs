@@ -1,0 +1,50 @@
+api-version: reviewpad.com/v3.x
+
+mode: silent
+
+groups:
+  - name: maintainers
+    description: Official maintainers
+    kind: developers
+    spec: '["marcelosousa", "ferreiratiago", "shay2025"]'
+
+workflows:
+  - name: first-time-issue-contributor
+    on:
+      - "issue"
+    always-run: true
+    if:
+      - rule: $issueCountBy($author(), "all") == 1
+        extra-actions:
+          - '$commentOnce($sprintf("Welcome @%v! Thank you so much for your first issue!", [$author()]))'
+
+  - name: first-time-pr-contributor
+    on:
+      - "pull_request"
+    always-run: true
+    if:
+      - rule: $pullRequestCountBy($author(), "all") == 1
+        extra-actions:
+          - '$commentOnce($sprintf("Welcome @%v! Thank you so much for your first pull request!", [$author()]))'
+          
+  - name: default-review-process
+    description: Default review process
+    always-run: true
+    if:
+      - rule: authored-by-maintainers
+        extra-actions:
+          - '$assignReviewer($group("maintainers"), 1)'
+          - '$assignAssignees([$author()])'
+      - rule: authored-by-external-contributors
+        extra-actions:
+          - '$addLabel("external-contribution")'
+          - '$assignReviewer($group("maintainers"), 1)'
+          - '$assignAssignees(["ferreiratiago"])'
+
+  - name: changes-to-usecases
+    description: Remember to update the sidebar if the use cases are modified
+    always-run: true
+    if:
+      - rule: '$hasFilePattern("docs/use-cases/**")'
+    then:
+      - '$info("If you are adding a new use case, please do not forget to update the `sidebar.js`")'
