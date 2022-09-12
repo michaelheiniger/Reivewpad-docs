@@ -113,3 +113,11 @@ git push MY-FORK-NAME THE-NAME-OF-MY-BRANCH
 ## Troubleshooting
 
 - `yarn reset` to clear the local cache
+
+## License
+This project is licensed under [GNU Lesser General Public License v3.0](LICENSE)
+
+## Thanks to all contributors ❤
+ <a href = "https://github.com/reviewpad/docs/graphs/contributors">
+   <img src = "https://contrib.rocks/image?repo=reviewpad/docs"/>
+ </a>
