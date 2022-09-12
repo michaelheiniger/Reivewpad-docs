@@ -1,6 +1,15 @@
 api-version: reviewpad.com/v3.x
 
-mode: silent
+labels:
+  ship:
+    description: Ship mode
+    color: "76dbbe"
+  show:
+    description: Show mode
+    color: "2986cc"
+  ask:
+    description: Ask mode
+    color: "c90076"
 
 groups:
   - name: maintainers
@@ -10,14 +19,22 @@ groups:
 
 rules:
   - name: authored-by-maintainers
-    kind: patch
-    description: Issue / Pull request was authored by maintainers
-    spec: '$isElementOf($author(), $group("maintainers"))'
+    spec: $isElementOf($author(), $group("maintainers"))
 
   - name: authored-by-external-contributors
-    kind: patch
-    description: Issue / Pull request was authored by external contributors
     spec: '!$isElementOf($author(), $group("maintainers"))'
+
+  - name: ship-state
+    spec: $contains($description(), "[x] Ship:") || $isElementOf("ship", $labels())
+
+  - name: show-state
+    spec: $contains($description(), "[x] Show:") || $isElementOf("show", $labels())
+
+  - name: explicit-ask-state
+    spec: $contains($description(), "[x] Ask:") || $isElementOf("ask", $labels()) || $rule("authored-by-external-contributors")
+
+  - name: ask-state
+    spec: '(!$rule("ship-state") && !$rule("show-state")) || $rule("explicit-ask-state")'
 
 workflows:
   - name: first-time-issue-contributor
@@ -27,7 +44,7 @@ workflows:
     if:
       - rule: $issueCountBy($author(), "all") == 1
         extra-actions:
-          - '$commentOnce($sprintf("Welcome @%v! Thank you so much for your first issue!", [$author()]))'
+          - $commentOnce($sprintf("Welcome @%v! Thank you so much for your first issue!", [$author()]))
 
   - name: first-time-pr-contributor
     on:
@@ -36,26 +53,51 @@ workflows:
     if:
       - rule: $pullRequestCountBy($author(), "all") == 1
         extra-actions:
-          - '$commentOnce($sprintf("Welcome @%v! Thank you so much for your first pull request!", [$author()]))'
-          
+          - $commentOnce($sprintf("Welcome @%v! Thank you so much for your first pull request!", [$author()]))
+
   - name: default-review-process
-    description: Default review process
     always-run: true
     if:
       - rule: authored-by-maintainers
         extra-actions:
-          - '$assignReviewer($group("maintainers"), 1)'
-          - '$assignAssignees([$author()])'
+          - $assignReviewer($group("maintainers"), 1)
+          - $assignAssignees([$author()])
       - rule: authored-by-external-contributors
         extra-actions:
-          - '$addLabel("external-contribution")'
-          - '$assignReviewer($group("maintainers"), 1)'
-          - '$assignAssignees(["ferreiratiago"])'
+          - $addLabel("external-contribution")
+          - $assignReviewer($group("maintainers"), 1)
+          - $assignAssignees(["ferreiratiago"])
 
-  - name: changes-to-usecases
-    description: Remember to update the sidebar if the use cases are modified
+  - name: changes-to-use-cases
     always-run: true
     if:
-      - rule: '$hasFilePattern("docs/use-cases/**")'
+      - rule: $hasFilePattern("docs/use-cases/**")
     then:
-      - '$info("If you are adding a new use case, please do not forget to update the `sidebar.js`")'
+      - $info("If you are adding a new use case, please do not forget to update the `sidebar.js`")
+
+  - name: label-ship-show-ask
+    # at all times we only have one label
+    always-run: true
+    if:
+      - rule: ship-state
+        extra-actions:
+          - $removeLabel("ask")
+          - $removeLabel("show")
+          - $addLabel("ship")
+      - rule: show-state
+        extra-actions:
+          - $removeLabel("ask")
+          - $removeLabel("ship")
+          - $addLabel("show")
+      - rule: ask-state
+        extra-actions:
+          - $removeLabel("ship")
+          - $removeLabel("show")
+          - $addLabel("ask")
+
+  - name: auto-merge-owner-pull-requests
+    if:
+      - rule: authored-by-maintainers
+      - rule: ship-state
+    then:
+      - $merge("rebase")
