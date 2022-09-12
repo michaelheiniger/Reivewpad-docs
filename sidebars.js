@@ -6,8 +6,8 @@ const sidebars = {
     'introduction',
     {
       type: 'category',
-      collapsible: false,
       label: 'Getting Started',
+      collapsed: false,
       items: [
         'getting-started/installation',
         'getting-started/security',
@@ -15,7 +15,6 @@ const sidebars = {
     },
     {
       type: 'category',
-      collapsible: false,
       label: 'Guides',
       items: [
         'guides/syntax',
@@ -35,7 +34,12 @@ const sidebars = {
     {
       type: 'category',
       label: 'Use Cases',
-      collapsible: false,
+      link: {
+        type: 'generated-index',
+        title: 'Use Cases',
+        description:
+          "See how Reviewpad can be used in different scenarios.",
+      },
       items: [
         'use-cases/auto-merge',
         {
