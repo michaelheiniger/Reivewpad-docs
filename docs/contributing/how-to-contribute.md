@@ -5,7 +5,10 @@ title: How to Contribute
 
 Reviewpad is an open source project to empower teams to automate their development process - issues and pull requests. We believe that teams should be able to contribute to a project the the most fast and efficient way. We are very excited to see your interest on how to help us make Reviewpad the best automation tool.
 
-<!-- Add Code of Conduct -->
+### Code of Conduct {#code-of-conduct}
+
+Reviewpad projects have a [Code of Conduct](https://github.com/reviewpad/.github/blob/main/docs/CODE_OF_CONDUCT.md) to which all contributors must adhere.
+Please read it before interacting with the repository or the community in any way.
 
 ### Open Development {#open-development}
 
@@ -29,7 +32,7 @@ We are using [GitHub Issues](https://github.com/reviewpad/reviewpad/issues) for 
 
 #### Reporting New Issues {#reporting-new-issues}
 
-The best way to get your bug fixed is to provide a good description and reduced test case.
+The best way to get your bug fixed is fill our [bug report template](https://github.com/reviewpad/reviewad/issues/new?assignees=&labels=bug&template=bug_report.md). Please follow the instructions in the template and provide as much information as possible. The more information you provide, the more likely someone will be successful reproducing the issue and finding a fix.
 
 ### How to Get in Touch {#how-to-get-in-touch}
 
@@ -40,7 +43,7 @@ Please note that the Reviewpad [Discord](https://reviewpad.com/discord) is the s
 
 ### Proposing a Change {#proposing-a-change}
 
-If you intend to change a piece of Reviewpad that is not yet being addressed on any issue we first invite you to [fill an issue](https://github.com/reviewpad/reviewpad/issues/new/choose). This lets us reach an agreement on your proposal before you put significant effort into it.
+If you intend to change a piece of Reviewpad that is not yet being addressed on any issue we first invite you to [fill an issue](https://github.com/reviewpad/reviewpad/issues/new?assignees=&labels=enhancement&template=feature_request.md). This lets us reach an agreement on your proposal before you put significant effort into it.
 
 If you're only fixing a bug, it's fine to submit a pull request right away but we still recommend to file an issue detailing what you're fixing. This is helpful in case we don't accept that specific fix but want to keep track of the issue.
 
@@ -130,6 +133,15 @@ Another great way to test your changes it to use `VSCode` debug tool. You can do
 
 We still require that your pull request contains unit tests for any new functionality. This way we can ensure that we don't break your code in the future.
 
+### Commit convention
+
+As commit convention, we adopt [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+This is not the case for all the commits in the history but any new commit should follow it.
+
+If you want to enforce it as a pre-hook commit you can use [tiger](https://github.com/marcelosousa/tiger).
+
+
 ### Style Guide {#style-guide}
 
 We use an automatic code formatter called [gofmt](https://pkg.go.dev/cmd/gofmt).
@@ -143,7 +155,7 @@ Then, our formatter will catch most issues that may exist in your code.
 
 By contributing to Reviewpad, you agree that your contributions will be licensed under its LGPL-3.0 license.
 
-### Kudos
+### Attribution
 
 This documentation is based on [reactjs.org](https://reactjs.org/) contributing guidelines.
 
