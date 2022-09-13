@@ -44,7 +44,13 @@ This command will do the following:
 
 The next step is to commit and push these changes into the `main` branch.
 
-For this please follow the commit syntax:
+Before commit please add the files that were created by the previous step:
+
+```bash
+git add .
+```
+
+Then commit the changes following the commit syntax:
 
 ```bash
 git commit -m "feat(release): version VERSION"
