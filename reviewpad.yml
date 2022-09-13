@@ -84,6 +84,7 @@ workflows:
           - $removeLabel("ask")
           - $removeLabel("show")
           - $addLabel("ship")
+          - $merge("rebase")
       - rule: show-state
         extra-actions:
           - $removeLabel("ask")
@@ -94,10 +95,3 @@ workflows:
           - $removeLabel("ship")
           - $removeLabel("show")
           - $addLabel("ask")
-
-  - name: auto-merge-owner-pull-requests
-    if:
-      - rule: authored-by-maintainers
-      - rule: ship-state
-    then:
-      - $merge("rebase")
