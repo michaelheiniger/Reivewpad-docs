@@ -1174,6 +1174,82 @@ A `reviewpad.yml` example:
 
 Set of functions to help handle the queried data.
 
+### all
+
+***
+
+**Description**:
+
+All determines if all elements of the slice satisfy the given predicate.
+
+**Parameters**:
+
+| variable   | type                | description           |
+| ---------- | ------------------- | --------------------- |
+| `slice`    | \[]string           | slice of strings      |
+| `predicate`| (string => boolean) | predicate over string |
+
+**Return value**:
+
+`boolean`
+
+Returns `true` if the predicate is true for all elements of the slice. Otherwise, it returns `false`.
+
+**Examples**:
+
+```yml
+$all(["a", "b"], ($el => $el == "a"))    # false
+```
+
+A `reviewpad.yml` example:
+
+```yml
+workflows:
+  - name: merge-pr-when-all-reviewers-approved
+    if:
+      - $all($reviewers(), ($rev => $reviewerStatus($rev) == "APPROVED"))
+    then:
+      - $merge()
+```
+
+### any
+
+***
+
+**Description**:
+
+Any determines if any element of the slice satisfies the given predicate.
+
+**Parameters**:
+
+| variable   | type                | description           |
+| ---------- | ------------------- | --------------------- |
+| `slice`    | \[]string           | slice of strings      |
+| `predicate`| (string => boolean) | predicate over string |
+
+**Return value**:
+
+`boolean`
+
+Returns `true` if the predicate is true for any element of the slice. Otherwise, it returns `false`.
+
+**Examples**:
+
+```yml
+$any(["a", "b"], ($el => $el == "a"))    # true
+```
+
+A `reviewpad.yml` example:
+
+```yml
+workflows:
+  - name: merge-pr-when-security-team-approves
+    if:
+      - $any($reviewers(), ($rev => $isElementOf($rev, $team("security")) && $reviewerStatus($rev) == "APPROVED"))
+    then:
+      - $merge()
+```
+
 ### append
 
 ***
@@ -1387,7 +1463,7 @@ Evaluates a rule. This rule needs to be defined in the same `reviewpad.yml` file
 
 **Return value**:
 
-`bool`
+`boolean`
 
 Returns the evaluation of the rule.
 
