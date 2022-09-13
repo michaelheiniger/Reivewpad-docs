@@ -18,7 +18,7 @@ git checkout main
 git pull
 ```
 
-1. You don't have local changes.
+3. You don't have local changes.
 
 ```bash
 git status
