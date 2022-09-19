@@ -97,7 +97,9 @@ LABEL-ID:
 - `description` [OPTIONAL] is a short description of the label. Must be 100 characters or fewer.
 - `color` [OPTIONAL] is the [hexadecimal color code](https://www.color-hex.com/) for the label, with or without the leading #.
 
-If the label does not exist in the repository, it will be created. If it already exists in the repository, no action will be taken.
+If the label does not exist in the repository, it will be created. 
+
+If the label already exists in the repository and the description set in the `reviewpad.yml` file is different from the description in the repository then this descritpion will be updated to the description defined in the `reviewpad.yml` file.
 
 #### Example
 
