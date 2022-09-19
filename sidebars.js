@@ -60,6 +60,7 @@ const sidebars = {
         'use-cases/comment-on-pull-requests',
         'use-cases/enforce-branch-conventions',
         'use-cases/enforce-conventional-commits',
+        'use-cases/label-pull-requests-with-git-conflicts',
         {
           type: 'category',
           label: 'Reviewer Assignment',
