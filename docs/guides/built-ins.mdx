@@ -1156,6 +1156,36 @@ rules:
     spec: $pullRequestCountBy("", "open") > 10
 ```
 
+### totalCodeReviews
+
+***
+
+**Description**:
+
+Returns the total number of code reviews made by the given GitHub user login.
+
+**Parameters**:
+
+| variable    | type   | description           |
+| ----------- | ------ | --------------------- |
+| `userLogin` | string | the GitHub user login |
+
+**Return value**:
+
+`int`
+
+The total number of code reviews made by GitHub user login.
+
+**Examples**:
+
+```yml
+$totalCodeReviews($author())
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Built_ins.TotalCodeReviews}</CodeBlock>
+
 ### totalCreatedPullRequests
 
 ***
