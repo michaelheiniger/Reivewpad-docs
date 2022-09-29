@@ -40,6 +40,16 @@ This command will do the following:
 2. Create a copy of the current `sidebars` add it as a new file `version-VERSION-sidebars.json` under `versioned_sidebars`.
 3. Add the `VERSION` into `versions.json` file.
 
+## Run it locally
+
+The next step is to run the documentation locally to make sure everything is working as expected.
+
+```bash
+yarn start
+```
+
+Make sure that the new version is available in the version selector.
+
 ## Commit and push it
 
 The next step is to commit and push these changes into the `main` branch.
@@ -74,7 +84,10 @@ yarn deploy
 
 This will deploy the documentation into github pages which will be live at [docs.reviewpad.com](https://docs.reviewpad.com).
 
+You can check the status of the deployment [here](https://github.com/reviewpad/docs/deployments).
+
 ## Deleting an existing version
+
 You can delete/remove versions as well.
 
 Remove the version from versions.json.
