@@ -1,7 +1,7 @@
 ---
-title: "Assign review to 3 developers"
-id: "assign-review-to-3-developers"
-slug: "/use-cases/assign-review-to-3-developers"
+id: assign-review-to-3-developers
+slug: /use-cases/assign-review-to-3-developers
+title: Assign review to 3 developers
 ---
 
 An example of assigning a review to at least 3 developers when changing critical code.

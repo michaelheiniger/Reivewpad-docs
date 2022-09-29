@@ -1,6 +1,7 @@
 ---
-title: 'Label pull requests with Git conflicts'
-id: 'label-pull-requests-with-git-conflicts'
+id: label-pull-requests-with-git-conflicts
+slug: label-pull-requests-with-git-conflicts
+title: Label pull requests with Git conflicts
 ---
 
 It can be tiresome to open a pull request and realize that it has Git conflicts.
@@ -13,7 +14,7 @@ api-version: reviewpad.com/v3.x
 workflows:
   - name: label-pull-requests-with-git-conflicts
     if:
-      - '$hasGitConflicts()'
+      - "$hasGitConflicts()"
     then:
       - '$addLabel("conflicts")'
 ```
@@ -28,7 +29,7 @@ name: Reviewpad
 on:
   push:
     branches:
-       - main
+      - main
 
 jobs:
   reviewpad:

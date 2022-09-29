@@ -1,6 +1,7 @@
 ---
-title: "Timestamps"
-id: "timestamps"
+id: timestamps
+slug: timestamps
+title: Timestamps
 ---
 
 Reviewpad timestamps allow us to trigger workflows based on time.
@@ -25,5 +26,5 @@ Use time as expression **`TIME year|month|day|week|hour|minute ago`**:
 - 1 hour ago
 
 > 📘 Aladino Syntax
-> 
+>
 > Check [Aladino Syntax](/guides/aladino/syntax) for more details about timestamps.

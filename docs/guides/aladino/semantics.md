@@ -1,6 +1,7 @@
 ---
-title: "Aladino Semantics"
-id: "semantics"
+id: semantics
+slug: semantics
+title: Aladino Semantics
 ---
 
 Aladino supports five types of values: `booleans`, `numbers`, `strings`, `arrays` and a special type `_action_`.

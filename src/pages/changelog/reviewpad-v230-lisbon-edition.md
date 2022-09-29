@@ -10,6 +10,6 @@
 
 ### Functions
 
-[`commentCount`](/guides/built-ins#commentcount) -  Returns the total number of comments made into the pull request.
+[`commentCount`](/guides/built-ins#commentcount) - Returns the total number of comments made into the pull request.
 
-[`comments`](/guides/built-ins#comments) -  List comment bodies of the pull request.
+[`comments`](/guides/built-ins#comments) - List comment bodies of the pull request.

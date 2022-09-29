@@ -1,7 +1,7 @@
 ---
-title: "Assign review to a team"
-id: "assign-review-to-a-team"
-slug: "/use-cases/assign-review-to-a-team"
+id: assign-review-to-a-team
+slug: /use-cases/assign-review-to-a-team
+title: Assign review to a team
 ---
 
 :::caution Requires GitHub token

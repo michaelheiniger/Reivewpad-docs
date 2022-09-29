@@ -1,6 +1,7 @@
 ---
-title: 'Check issue description'
-id: 'check-issue-description'
+id: check-issue-description
+slug: check-issue-description
+title: Check issue description
 ---
 
 Reviewpad can be used for workflows on both issues and pull requests.

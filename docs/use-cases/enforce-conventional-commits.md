@@ -1,6 +1,7 @@
 ---
-title: "Enforce conventional commits"
-id: "enforce-conventional-commits"
+id: enforce-conventional-commits
+slug: enforce-conventional-commits
+title: Enforce conventional commits
 ---
 
 [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) is a specification for adding human and machine readable meaning to commit messages
@@ -16,10 +17,10 @@ workflows:
   - name: lint-commits
     description: Lint commit messages
     if:
-      - rule: '!$hasLinearHistory()'
+      - rule: "!$hasLinearHistory()"
         extra-actions:
           - '$warn("This pull request does not have linear history - please fix this!")'
-      - rule: 'true'
+      - rule: "true"
         extra-actions:
-          - '$commitLint()'
+          - "$commitLint()"
 ```

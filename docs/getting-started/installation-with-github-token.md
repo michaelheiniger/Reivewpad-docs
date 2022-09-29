@@ -1,6 +1,7 @@
 ---
-title: "Installation with a GitHub Token"
-id: "installation-with-github-token"
+id: installation-with-github-token
+slug: installation-with-github-token
+title: Installation with a GitHub Token
 ---
 
 This guide describes how to install Reviewpad with a GitHub Token.
@@ -55,8 +56,7 @@ Add the file `reviewpad.yml` with the following content:
 ```yaml
 name: Reviewpad Action
 
-on:
-  pull_request
+on: pull_request
 
 jobs:
   reviewpad-action:

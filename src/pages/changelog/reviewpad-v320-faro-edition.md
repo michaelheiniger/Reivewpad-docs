@@ -8,7 +8,7 @@
 
 ### Utilities
 
-[`sprintf`](/guides/built-ins#sprintf) -  Returns a formatted string.
+[`sprintf`](/guides/built-ins#sprintf) - Returns a formatted string.
 
 ### Actions
 

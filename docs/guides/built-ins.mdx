@@ -1,16 +1,17 @@
 ---
-title: 'Built-ins'
-id: 'built-ins'
+id: built-ins
+slug: built-ins
+title: Built-ins
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import * as Built_ins from '@site/src/built_ins/index';
+import CodeBlock from "@theme/CodeBlock";
+import * as Built_ins from "@site/src/built_ins/index";
 
 One of the key advantages of using Reviewpad is that you can access a set of built-in functions and actions that allow for flexible specifications and actions.
 
 ## Functions
 
-***
+---
 
 Reviewpad functions allow to query data from a `pull request` or `organization` in order to act on it.
 
@@ -24,14 +25,13 @@ The functions are organized into 4 categories:
 
 ## Pull Request
 
-
-***
+---
 
 Set of functions to get pull request details.
 
 ### assignees
 
-***
+---
 
 **Description**:
 
@@ -59,7 +59,7 @@ A `reviewpad.yml` example:
 
 ### author
 
-***
+---
 
 **Description**:
 
@@ -87,7 +87,7 @@ A `reviewpad.yml` example:
 
 ### base
 
-***
+---
 
 **Description**:
 
@@ -115,7 +115,7 @@ A `reviewpad.yml` example:
 
 ### changed
 
-***
+---
 
 **Description**:
 
@@ -151,7 +151,7 @@ A `reviewpad.yml` example:
 
 ### commentCount
 
-***
+---
 
 **Description**:
 
@@ -179,7 +179,7 @@ A `reviewpad.yml` example:
 
 ### comments
 
-***
+---
 
 **Description**:
 
@@ -207,7 +207,7 @@ A `reviewpad.yml` example:
 
 ### commitCount
 
-***
+---
 
 **Description**:
 
@@ -235,7 +235,7 @@ A `reviewpad.yml` example:
 
 ### commits
 
-***
+---
 
 **Description**:
 
@@ -263,7 +263,7 @@ A `reviewpad.yml` example:
 
 ### createdAt
 
-***
+---
 
 **Description**:
 
@@ -291,7 +291,7 @@ A `reviewpad.yml` example:
 
 ### description
 
-***
+---
 
 **Description**:
 
@@ -319,7 +319,7 @@ A `reviewpad.yml` example:
 
 ### fileCount
 
-***
+---
 
 **Description**:
 
@@ -347,7 +347,7 @@ A `reviewpad.yml` example:
 
 ### hasAnnotation
 
-***
+---
 
 **Description**:
 
@@ -377,7 +377,7 @@ A `reviewpad.yml` example:
 
 ### hasCodePattern
 
-***
+---
 
 **Description**:
 
@@ -409,13 +409,13 @@ A `reviewpad.yml` example:
 
 ### hasFileExtensions
 
-***
+---
 
 **Description**:
 
 Determines whether all the extensions of the changed files on the patch are included on the provided list of file extensions, returning `true` or `false` as appropriate.
 
-Each extension provided on the list needs to be a [glob](https://en.wikipedia.org/wiki/Glob_(programming)).
+Each extension provided on the list needs to be a [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>).
 
 **Parameters**:
 
@@ -441,7 +441,7 @@ A `reviewpad.yml` example:
 
 ### hasFileName
 
-***
+---
 
 **Description**:
 
@@ -473,13 +473,13 @@ A `reviewpad.yml` example:
 
 ### hasFilePattern
 
-***
+---
 
 **Description**:
 
 Determines whether the provided file pattern matches any of the files in the patch, returning `true` or `false` as appropriate.
 
-The file pattern needs to be a [glob](https://en.wikipedia.org/wiki/Glob_(programming)).
+The file pattern needs to be a [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>).
 
 **Parameters**:
 
@@ -505,7 +505,7 @@ A `reviewpad.yml` example:
 
 ### hasGitConflicts
 
-***
+---
 
 **Description**:
 
@@ -533,7 +533,7 @@ A `reviewpad.yml` example:
 
 ### hasLinearHistory
 
-***
+---
 
 **Description**:
 
@@ -563,7 +563,7 @@ A `reviewpad.yml` example:
 
 ### hasLinkedIssues
 
-***
+---
 
 **Description**:
 
@@ -591,7 +591,7 @@ A `reviewpad.yml` example:
 
 ### hasUnaddressedThreads
 
-***
+---
 
 **Description**:
 
@@ -621,7 +621,7 @@ A `reviewpad.yml` example:
 
 ### head
 
-***
+---
 
 **Description**:
 
@@ -649,7 +649,7 @@ A `reviewpad.yml` example:
 
 ### isDraft
 
-***
+---
 
 **Description**:
 
@@ -679,7 +679,7 @@ A `reviewpad.yml` example:
 
 ### isWaitingForReview
 
-***
+---
 
 **Description**:
 
@@ -711,7 +711,7 @@ A `reviewpad.yml` example:
 
 ### labels
 
-***
+---
 
 **Description**:
 
@@ -738,7 +738,8 @@ A `reviewpad.yml` example:
 <CodeBlock language="yml">{Built_ins.Labels}</CodeBlock>
 
 ### lastEventAt
-______________
+
+---
 
 **Description**:
 
@@ -746,7 +747,7 @@ Returns the timestamp of the last event in the timeline.
 
 **Parameters**:
 
-*none*
+_none_
 
 **Return value**:
 
@@ -772,7 +773,7 @@ rules:
 
 ### milestone
 
-***
+---
 
 **Description**:
 
@@ -800,7 +801,7 @@ A `reviewpad.yml` example:
 
 ### requestedReviewers
 
-***
+---
 
 **Description**:
 
@@ -828,7 +829,7 @@ A `reviewpad.yml` example:
 
 ### reviewers
 
-***
+---
 
 **Description**:
 
@@ -856,7 +857,7 @@ A `reviewpad.yml` example:
 
 ### reviewerStatus
 
-***
+---
 
 **Description**:
 
@@ -891,7 +892,7 @@ A `reviewpad.yml` example:
 
 ### size
 
-***
+---
 
 **Description**:
 
@@ -910,10 +911,9 @@ function helloWorld() {
 
 **Parameters**:
 
-| variable                      | type     | description                            |
-| ----------------------------- | -------- | -------------------------------------- |
-| `excludedPatterns` (optional) | []string | file patterns to exclude from count    |
-
+| variable                      | type     | description                         |
+| ----------------------------- | -------- | ----------------------------------- |
+| `excludedPatterns` (optional) | []string | file patterns to exclude from count |
 
 **Return value**:
 
@@ -933,7 +933,7 @@ A `reviewpad.yml` example:
 
 ### title
 
-***
+---
 
 **Description**:
 
@@ -961,7 +961,7 @@ A `reviewpad.yml` example:
 
 ### workflowStatus
 
-***
+---
 
 **Description**:
 
@@ -991,13 +991,13 @@ A `reviewpad.yml` example:
 
 ## Organization
 
-***
+---
 
 Set of functions to get organization details.
 
 ### organization
 
-***
+---
 
 **Description**:
 
@@ -1027,7 +1027,7 @@ A `reviewpad.yml` example:
 
 ### team
 
-***
+---
 
 :::warning Requires GitHub token
 
@@ -1041,7 +1041,7 @@ Returns the members of a team and child teams.
 To list members in a team, the team must be visible to the authenticated user.
 
 | :warning: [Requires GitHub token](/getting-started/installation-with-github-token) :warning: |
-| ---------------------------------------------------------------------------------------------------------------------- |
+| -------------------------------------------------------------------------------------------- |
 
 By default a GitHub action does not have permission to access organization members.
 
@@ -1073,12 +1073,11 @@ A `reviewpad.yml` example:
 
 ## User
 
-
 Set of functions to get user details.
 
 ### issueCountBy
 
-***
+---
 
 **Description**:
 
@@ -1119,7 +1118,7 @@ rules:
 
 ### pullRequestCountBy
 
-***
+---
 
 **Description**:
 
@@ -1158,7 +1157,7 @@ rules:
 
 ### totalCodeReviews
 
-***
+---
 
 **Description**:
 
@@ -1188,7 +1187,7 @@ A `reviewpad.yml` example:
 
 ### totalCreatedPullRequests
 
-***
+---
 
 **Description**:
 
@@ -1201,8 +1200,6 @@ This built-in will be deprecated in the upcoming 4.x series as it.
 Replace its usage by `$pullRequestCountBy(CURRENT_ARGUMENT, "all")`.
 
 :::
-
-
 
 **Parameters**:
 
@@ -1228,13 +1225,13 @@ A `reviewpad.yml` example:
 
 ## Utilities
 
-***
+---
 
 Set of functions to help handle the queried data.
 
 ### all
 
-***
+---
 
 **Description**:
 
@@ -1242,10 +1239,10 @@ All determines if all elements of the slice satisfy the given predicate.
 
 **Parameters**:
 
-| variable   | type                | description           |
-| ---------- | ------------------- | --------------------- |
-| `slice`    | \[]string           | slice of strings      |
-| `predicate`| (string => boolean) | predicate over string |
+| variable    | type                | description           |
+| ----------- | ------------------- | --------------------- |
+| `slice`     | \[]string           | slice of strings      |
+| `predicate` | (string => boolean) | predicate over string |
 
 **Return value**:
 
@@ -1256,7 +1253,7 @@ Returns `true` if the predicate is true for all elements of the slice. Otherwise
 **Examples**:
 
 ```yml
-$all(["a", "b"], ($el => $el == "a"))    # false
+$all(["a", "b"], ($el => $el == "a")) # false
 ```
 
 A `reviewpad.yml` example:
@@ -1272,7 +1269,7 @@ workflows:
 
 ### any
 
-***
+---
 
 **Description**:
 
@@ -1280,10 +1277,10 @@ Any determines if any element of the slice satisfies the given predicate.
 
 **Parameters**:
 
-| variable   | type                | description           |
-| ---------- | ------------------- | --------------------- |
-| `slice`    | \[]string           | slice of strings      |
-| `predicate`| (string => boolean) | predicate over string |
+| variable    | type                | description           |
+| ----------- | ------------------- | --------------------- |
+| `slice`     | \[]string           | slice of strings      |
+| `predicate` | (string => boolean) | predicate over string |
 
 **Return value**:
 
@@ -1294,7 +1291,7 @@ Returns `true` if the predicate is true for any element of the slice. Otherwise,
 **Examples**:
 
 ```yml
-$any(["a", "b"], ($el => $el == "a"))    # true
+$any(["a", "b"], ($el => $el == "a")) # true
 ```
 
 A `reviewpad.yml` example:
@@ -1310,7 +1307,7 @@ workflows:
 
 ### append
 
-***
+---
 
 **Description**:
 
@@ -1332,7 +1329,7 @@ Returns a new slice by appending the slices passed to it.
 **Examples**:
 
 ```yml
-$append(["a", "b"], ["c"])    # ["a", "b", "c"]
+$append(["a", "b"], ["c"]) # ["a", "b", "c"]
 ```
 
 A `reviewpad.yml` example:
@@ -1341,7 +1338,7 @@ A `reviewpad.yml` example:
 
 ### contains
 
-***
+---
 
 **Description**:
 
@@ -1373,7 +1370,7 @@ A `reviewpad.yml` example:
 
 ### isElementOf
 
-***
+---
 
 **Description**:
 
@@ -1405,7 +1402,7 @@ A `reviewpad.yml` example:
 
 ### length
 
-***
+---
 
 **Description**:
 
@@ -1426,7 +1423,7 @@ Returns the length of the array.
 **Examples**:
 
 ```yml
-$length(["a", "b"])  # 2
+$length(["a", "b"]) # 2
 ```
 
 A `reviewpad.yml` example:
@@ -1435,7 +1432,7 @@ A `reviewpad.yml` example:
 
 ### startsWith
 
-***
+---
 
 **Description**:
 
@@ -1467,7 +1464,7 @@ A `reviewpad.yml` example:
 
 ## Engine
 
-***
+---
 
 Set of functions used to handle `reviewpad.yml` file.
 
@@ -1475,7 +1472,7 @@ This functions should be used to access and handle data declared into `reviewpad
 
 ### group
 
-***
+---
 
 **Description**:
 
@@ -1507,7 +1504,7 @@ A `reviewpad.yml` example:
 
 ### rule
 
-***
+---
 
 **Description**:
 
@@ -1537,11 +1534,11 @@ A `reviewpad.yml` example:
 
 ## Actions
 
-***
+---
 
 ### addLabel
 
-***
+---
 
 **Description**:
 
@@ -1579,11 +1576,11 @@ A `reviewpad.yml` example:
 
 <CodeBlock language="yml">{Built_ins.AddLabel2}</CodeBlock>
 
-***
+---
 
 ### addToProject
 
-***
+---
 
 **Description**:
 
@@ -1617,18 +1614,18 @@ workflows:
   - name: add-to-project
     description: Add to project pull requests without linked issues
     if:
-      - rule: '!$hasLinkedIssues()'
+      - rule: "!$hasLinkedIssues()"
     then:
       - $addToProject("reviewpad test", "in progress")
 ```
 
 ### assignAssignees
 
-***
+---
 
 **Description**:
 
-Assigns up to 10 assignees to a pull request. 
+Assigns up to 10 assignees to a pull request.
 
 Users already assigned to a pull request are not replaced.
 
@@ -1656,7 +1653,7 @@ A `reviewpad.yml` example:
 
 ### assignRandomReviewer
 
-***
+---
 
 **Description**:
 
@@ -1688,7 +1685,7 @@ A `reviewpad.yml` example:
 
 ### assignReviewer
 
-***
+---
 
 **Description**:
 
@@ -1721,7 +1718,7 @@ A `reviewpad.yml` example:
 
 ### assignTeamReviewer
 
-***
+---
 
 **Description**:
 
@@ -1749,7 +1746,7 @@ A `reviewpad.yml` example:
 
 ### close
 
-***
+---
 
 **Description**:
 
@@ -1779,8 +1776,7 @@ A `reviewpad.yml` example:
 
 ### commitLint
 
-***
-
+---
 
 **Description**:
 
@@ -1802,7 +1798,7 @@ A `reviewpad.yml` example:
 
 ### comment
 
-***
+---
 
 **Description**:
 
@@ -1832,7 +1828,7 @@ A `reviewpad.yml` example:
 
 ### commentOnce
 
-***
+---
 
 **Description**:
 
@@ -1862,7 +1858,7 @@ A `reviewpad.yml` example:
 
 ### disableActions
 
-***
+---
 
 **Description**:
 
@@ -1886,7 +1882,7 @@ A `reviewpad.yml` example:
 
 ### error
 
-***
+---
 
 **Description**:
 
@@ -1910,7 +1906,7 @@ A `reviewpad.yml` example:
 
 ### fail
 
-***
+---
 
 **Description**:
 
@@ -1936,9 +1932,9 @@ A `reviewpad.yml` example:
 
 <CodeBlock language="yml">{Built_ins.Fail}</CodeBlock>
 
-### info 
+### info
 
-***
+---
 
 **Description**:
 
@@ -1962,7 +1958,7 @@ A `reviewpad.yml` example:
 
 ### merge
 
-***
+---
 
 :::warning Requires GitHub token
 
@@ -1997,7 +1993,7 @@ A `reviewpad.yml` example:
 
 ### removeLabel
 
-***
+---
 
 **Description**:
 
@@ -2029,7 +2025,7 @@ A `reviewpad.yml` example:
 
 ### titleLint
 
-***
+---
 
 **Description**:
 
@@ -2053,14 +2049,14 @@ workflows:
     description: Lint PR title with conventional commits
     always-run: true
     if:
-      - 'true'
+      - "true"
     then:
       - $titleLint()
 ```
 
 ### warn
 
-***
+---
 
 **Description**:
 

@@ -1,12 +1,12 @@
 ---
-title: 'Assign reviewers in a sequence'
-id: 'assign-sequential-reviewers'
-slug: '/use-cases/assign-sequential-reviewers'
+id: assign-sequential-reviewers
+slug: /use-cases/assign-sequential-reviewers
+title: Assign reviewers in a sequence
 ---
 
 In certain cases, it is very useful to specify an order in which the pull request should be reviewed.
 
-For example, the following configuration enforces that changes to files in the database migration files will be first reviewed 
+For example, the following configuration enforces that changes to files in the database migration files will be first reviewed
 by john and only when john approves the changes it will be reviewed by the security team.
 
 ```yaml

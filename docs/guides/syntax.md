@@ -1,6 +1,7 @@
 ---
-title: "Syntax"
-id: "syntax"
+id: syntax
+slug: syntax
+title: Syntax
 ---
 
 A Reviewpad configuration file has the following shape:
@@ -81,7 +82,7 @@ ignore-errors: true # optional
 
 ## Label
 
-A label specifies a label that can be used as an argument to the label related functions. 
+A label specifies a label that can be used as an argument to the label related functions.
 
 The structure of a label is as follows:
 
@@ -89,7 +90,7 @@ The structure of a label is as follows:
 LABEL-ID:
   name: STRING [OPTIONAL]
   description: STRING [OPTIONAL]
-  color: STRING [OPTIONAL] 
+  color: STRING [OPTIONAL]
 ```
 
 - `LABEL-ID` of a label is used to reference it in other entities. If no `name` is provided, then the `LABEL-ID` is considered the `name`.
@@ -97,7 +98,7 @@ LABEL-ID:
 - `description` [OPTIONAL] is a short description of the label. Must be 100 characters or fewer.
 - `color` [OPTIONAL] is the [hexadecimal color code](https://www.color-hex.com/) for the label, with or without the leading #.
 
-If the label does not exist in the repository, it will be created. 
+If the label does not exist in the repository, it will be created.
 
 If the label already exists in the repository and the description set in the `reviewpad.yml` file is different from the description in the repository then this descritpion will be updated to the description defined in the `reviewpad.yml` file.
 
@@ -123,7 +124,7 @@ There are two ways to specify a group:
 - name: STRING
   description: STRING [OPTIONAL]
   kind: developers
-  spec: '[LIST OF GITHUB USERS]'
+  spec: "[LIST OF GITHUB USERS]"
 ```
 
 - `name` of a group is used to reference it in other entities.
@@ -173,7 +174,7 @@ groups:
 
 ## Rule
 
-A Reviewpad rule specifies a boolean condition on a pull request. 
+A Reviewpad rule specifies a boolean condition on a pull request.
 
 The structure of a rule is as follows:
 
@@ -184,7 +185,7 @@ The structure of a rule is as follows:
   spec: ALADINO-BOOLEAN-EXPRESSION
 ```
 
-- `name` of a rule is used to reference it in other rules and workflow. 
+- `name` of a rule is used to reference it in other rules and workflow.
 - `kind` [OPTIONAL] of a rule can be either _patch_ or _author._ The kind is related to different properties of pull requests that will be used in the evaluation of the _spec_ field.
 - `description` [OPTIONAL] is a string that can be used to provide more details about the rule.
 - `spec` is a boolean expression in [Aladino](/guides/aladino/specification).
@@ -196,7 +197,7 @@ rules:
   - name: small-change
     kind: patch # optional
     description: checks pr size is small # optional
-    spec: $size() < 30 
+    spec: $size() < 30
 ```
 
 ## Workflow
@@ -277,4 +278,3 @@ The structure of a pipeline is as follows:
 - `description` [OPTIONAL] is a string that can be used to provide more details about the pipeline.
 - `trigger` [OPTIONAL] field is a rule that if true enables the pipeline.
 - `stages` is a list of stages of the pipeline. Each stage is a list of actions that will execute until the `until` condition is true.
-

@@ -1,9 +1,10 @@
 ---
-id: 'ship-show-ask'
-title: 'Ship/Show/Ask'
+id: ship-show-ask
+slug: ship-show-ask
+title: Ship/Show/Ask
 ---
 
-**Ship/Show/Ask** is a methodology to increase the pace of software teams by not having to block developers for each pull request. 
+**Ship/Show/Ask** is a methodology to increase the pace of software teams by not having to block developers for each pull request.
 
 It can easily be implemented with this new solution by specifying policies for teams to allow them to automatically merge certain PRs.
 

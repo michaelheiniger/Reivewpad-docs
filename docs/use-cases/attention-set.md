@@ -1,9 +1,10 @@
 ---
-title: "Attention Set"
-id: "attention-set"
+id: attention-set
+slug: attention-set
+title: Attention Set
 ---
 
-The `Attention Set` defines **what kind of attention a pull request needs at a certain time**. 
+The `Attention Set` defines **what kind of attention a pull request needs at a certain time**.
 
 For instance, a just created pull request with an assigned reviewer requires the reviewer attention but not the author attention.
 
@@ -17,20 +18,20 @@ api-version: reviewpad.com/v3.x
 rules:
   - name: waiting-review
     kind: patch
-    spec: '$isWaitingForReview()'
+    spec: "$isWaitingForReview()"
   - name: not-waiting-review
     kind: patch
     spec: '!$rule("waiting-review")'
   - name: author-attention
     kind: patch
-    spec: '$hasUnaddressedThreads()'
+    spec: "$hasUnaddressedThreads()"
   - name: not-author-attention
     kind: patch
     spec: '!$rule("author-attention")'
 
 workflows:
   - name: attention-set
-    if:     
+    if:
       - rule: waiting-review
         extra-actions:
           - '$addLabel("waiting-review")'

@@ -1,6 +1,7 @@
 ---
-title: 'Auto-merge'
-id: 'auto-merge'
+id: auto-merge
+slug: auto-merge
+title: Auto-merge
 ---
 
 :::caution Requires GitHub token

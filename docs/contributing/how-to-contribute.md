@@ -1,4 +1,5 @@
 ---
+id: how-to-contribute
 slug: how-to-contribute
 title: How to Contribute
 ---
@@ -36,8 +37,8 @@ The best way to get your bug fixed is fill our [bug report template](https://git
 
 ### How to Get in Touch {#how-to-get-in-touch}
 
-* [Discord](https://reviewpad.com/discord)
-* [GitHub Discussions](https://github.com/reviewpad/reviewpad/discussions)
+- [Discord](https://reviewpad.com/discord)
+- [GitHub Discussions](https://github.com/reviewpad/reviewpad/discussions)
 
 Please note that the Reviewpad [Discord](https://reviewpad.com/discord) is the same used by the team. So you'll be talking directly with the team 💪
 
@@ -75,21 +76,21 @@ The [Reviewpad Action](https://github.com/reviewpad/action) is monitoring the pu
 
 ### Contribution Prerequisites {#contribution-prerequisites}
 
-* You have [GO](https://go.dev) installed with minimum version of 1.18.2.
-* You have [Taskfile](https://taskfile.dev/installation/) installed.
-* You have `gcc` installed or are comfortable installing a compiler if needed. Some of our dependencies may require a compilation step. On OS X, the Xcode Command Line Tools will cover this. On Ubuntu, `apt-get install build-essential` will install the required packages. Similar commands should work on other Linux distros. Windows will require some additional steps, see the [`node-gyp` installation instructions](https://github.com/nodejs/node-gyp#installation) for details.
-* You are familiar with Git.
+- You have [GO](https://go.dev) installed with minimum version of 1.18.2.
+- You have [Taskfile](https://taskfile.dev/installation/) installed.
+- You have `gcc` installed or are comfortable installing a compiler if needed. Some of our dependencies may require a compilation step. On OS X, the Xcode Command Line Tools will cover this. On Ubuntu, `apt-get install build-essential` will install the required packages. Similar commands should work on other Linux distros. Windows will require some additional steps, see the [`node-gyp` installation instructions](https://github.com/nodejs/node-gyp#installation) for details.
+- You are familiar with Git.
 
 ### Development Workflow {#development-workflow}
 
 After cloning Reviewpad, run `go get` to fetch its dependencies.
 Then, you can run several commands:
 
-* `task format` formats your code.
-* `task test` runs the complete test suite.
-* `task build` build the project (no output is generated).
-* `task build-ci` build Reviewpad CLI and creates the executable `reviewpad-cli`.
-* `task check` runs the code formatter, the complete test suite, and builds the project.
+- `task format` formats your code.
+- `task test` runs the complete test suite.
+- `task build` build the project (no output is generated).
+- `task build-ci` build Reviewpad CLI and creates the executable `reviewpad-cli`.
+- `task check` runs the code formatter, the complete test suite, and builds the project.
 
 We recommend running `task check -f` to make sure you don't introduce any issue.
 
@@ -99,35 +100,35 @@ Another great way to test your changes it to use `VSCode` debug tool. You can do
 
 ```json
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Launch cli",
-            "type": "go",
-            "request": "launch",
-            "mode": "debug",
-            "args": [
-                "run",
-                // Flag to run on dry run
-                "-d=true",
-                // Absolute path to reviewpad.yml file to run
-                "-f=REVIEWPAD_FILE",
-                // GitHub url to run the reviewpad.yml against to
-                // e.g. https://github.com/reviewpad/action-demo/pull/1
-                // e.g.https://github.com/reviewpad/action-demo/issue/1
-                "-u=PULL_REQUEST_URL",
-                // Absolute path to JSON file with GitHub event payload (OPTIONAL)
-                "-e=GITHUB_EVENT",
-                // GiHub PAT (Personal Access Token)
-                // https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
-                "-t=GITHUB_TOKEN",
-            ],
-            "program": "${workspaceFolder}/cli",
-        },
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch cli",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "args": [
+        "run",
+        // Flag to run on dry run
+        "-d=true",
+        // Absolute path to reviewpad.yml file to run
+        "-f=REVIEWPAD_FILE",
+        // GitHub url to run the reviewpad.yml against to
+        // e.g. https://github.com/reviewpad/action-demo/pull/1
+        // e.g.https://github.com/reviewpad/action-demo/issue/1
+        "-u=PULL_REQUEST_URL",
+        // Absolute path to JSON file with GitHub event payload (OPTIONAL)
+        "-e=GITHUB_EVENT",
+        // GiHub PAT (Personal Access Token)
+        // https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+        "-t=GITHUB_TOKEN"
+      ],
+      "program": "${workspaceFolder}/cli"
+    }
+  ]
 }
 ```
 
@@ -140,7 +141,6 @@ As commit convention, we adopt [Conventional Commits](https://www.conventionalco
 This is not the case for all the commits in the history but any new commit should follow it.
 
 If you want to enforce it as a pre-hook commit you can use [tiger](https://github.com/marcelosousa/tiger).
-
 
 ### Style Guide {#style-guide}
 

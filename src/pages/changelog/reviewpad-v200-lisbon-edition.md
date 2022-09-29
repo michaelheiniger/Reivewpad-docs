@@ -1,6 +1,7 @@
 ## New features :fire: {#new-features}
 
 ### YAML Specification
+
 - Groups and rules are now lists instead of sets.
 
 ## Improvements :rocket: {#improvements}

@@ -1,6 +1,7 @@
 ---
-title: 'Automated Labelling'
-id: 'automated-labelling'
+id: automated-labelling
+slug: automated-labelling
+title: Automated Labelling
 ---
 
 Pull Requests labels are widely used by software developers to communicate certain required actions.

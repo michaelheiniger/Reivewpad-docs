@@ -1,11 +1,12 @@
 ---
-title: "Aladino Syntax"
-id: "syntax"
+id: syntax
+slug: syntax
+title: Aladino Syntax
 ---
 
 The syntax of Aladino is quite simple. Here's the BNF grammar representation:
 
-```yaml
+```
 prog := stat_list
 stat := expr
 expr := expr BINOP expr
@@ -19,15 +20,15 @@ expr := expr BINOP expr
       | '$' IDENTIFIER '(' expr_list ')'
       | '(' expr_list '=>' expr  ')'
 
-TIMESTAMP := 
-        YYYYMMDD 
+TIMESTAMP :=
+        YYYYMMDD
       | YYYY-MM-DD
       | YYYYMMDDTHH:MM:SS
       | YYYY-MM-DDTHH:MM:SS
 
 RELATIVE_TIMESTAMP := NUMBER TIME_UNIT ago
 
-TIME_UNIT := 
+TIME_UNIT :=
         'year'   | 'years'
       | 'month'  | 'months'
       | 'week'   | 'weeks'
@@ -35,9 +36,9 @@ TIME_UNIT :=
       | 'hour'   | 'hours'
       | 'minute' | 'minutes'
 
-BINOP := 
-        '==' | '>=' | '>' | '<' | '<=' 
-      | '&&' | '||' 
+BINOP :=
+        '==' | '>=' | '>' | '<' | '<='
+      | '&&' | '||'
 
 UNARYOP := '!'
 ```

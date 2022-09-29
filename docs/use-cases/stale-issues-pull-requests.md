@@ -1,6 +1,7 @@
 ---
-title: "Stale Issues or Pull Requests"
-id: "stale-issues-or-pull-requests"
+id: stale-issues-or-pull-requests
+slug: stale-issues-or-pull-requests
+title: Stale Issues or Pull Requests
 ---
 
 A `stale issue / pull request` is one which does not have activity for X time duration.
@@ -38,7 +39,7 @@ workflows:
       - rule: '$rule("labeled-as-stale") && $lastEventAt() < 7 days ago'
         extra-actions:
           - '$commentOnce("Closing because this issue has been inactive for more than one month.")'
-          - '$close()'
+          - "$close()"
 ```
 
 ## Reviewpad Action

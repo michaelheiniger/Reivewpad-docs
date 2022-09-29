@@ -1,7 +1,7 @@
 ---
-title: "Label on change freeze"
-id: "label-on-change-freeze"
-slug: "/use-cases/label-on-change-freeze"
+id: label-on-change-freeze
+slug: /use-cases/label-on-change-freeze
+title: Label on change freeze
 ---
 
 Here's an example of adding a label to not merge a pull request when on change freeze.

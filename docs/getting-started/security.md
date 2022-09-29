@@ -1,6 +1,7 @@
 ---
-title: "Security"
-slug: "security"
+id: security
+slug: security
+title: Security
 ---
 
 Reviewpad is distributed through Docker images so that it can be executed easily with any runner. This can be either a GitHub action runner, developer machine, or a server in the organization.
