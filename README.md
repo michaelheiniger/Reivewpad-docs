@@ -61,15 +61,15 @@ Open the project in VSCode, open the command palette (Ctrl+Shift+P) and search f
 
 Paste the following configuration:
 
-````json
+```json
 {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "files.autoSave": "onFocusChange",
-    "licenser.license": "Custom",
-    "licenser.author": "Explore.dev, Unipessoal Lda",
-    "licenser.customHeader": "Copyright (C) @YEAR@ @AUTHOR@ - All Rights Reserved\nUse of this source code is governed by a license that can be\nfound in the LICENSE file.",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.autoSave": "onFocusChange",
+  "licenser.license": "Custom",
+  "licenser.author": "Explore.dev, Unipessoal Lda",
+  "licenser.customHeader": "Copyright (C) @YEAR@ @AUTHOR@ - All Rights Reserved\nUse of this source code is governed by a license that can be\nfound in the LICENSE file."
 }
 ```
 
@@ -79,7 +79,7 @@ Paste the following configuration:
 
 ```bash
 git checkout main
-````
+```
 
 2. Ensure you have the latest main code
 
