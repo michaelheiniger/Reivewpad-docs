@@ -52,7 +52,6 @@ We strongly recommend using [Visual Studio Code](https://code.visualstudio.com/)
 
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)
-- [licenser](https://marketplace.visualstudio.com/items?itemName=ymotongpoo.licenser)
 - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
 #### Configure VSCode
@@ -66,10 +65,7 @@ Paste the following configuration:
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.autoSave": "onFocusChange",
-  "licenser.license": "Custom",
-  "licenser.author": "Explore.dev, Unipessoal Lda",
-  "licenser.customHeader": "Copyright (C) @YEAR@ @AUTHOR@ - All Rights Reserved\nUse of this source code is governed by a license that can be\nfound in the LICENSE file."
+  "files.autoSave": "onFocusChange"
 }
 ```
 
@@ -146,9 +142,3 @@ git push MY-FORK-NAME THE-NAME-OF-MY-BRANCH
 ## License
 
 This project is licensed under [GNU Lesser General Public License v3.0](LICENSE)
-
-## Thanks to all contributors ❤
-
- <a href = "https://github.com/reviewpad/docs/graphs/contributors">
-   <img src = "https://contrib.rocks/image?repo=reviewpad/docs"/>
- </a>
