@@ -50,9 +50,9 @@ We strongly recommend using [Visual Studio Code](https://code.visualstudio.com/)
 
 #### Install extensions
 
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)
-- [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+-   [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting
+-   [MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting on MDX files
+-   [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) for enabling `reviewpad.yml` JSON schema.
 
 #### Configure VSCode
 
@@ -62,10 +62,13 @@ Paste the following configuration:
 
 ```json
 {
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.autoSave": "onFocusChange"
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[yaml]": {
+        "editor.defaultFormatter": "EditorConfig.EditorConfig"
+    },
+    "files.autoSave": "onFocusChange"
 }
 ```
 
@@ -137,7 +140,7 @@ git push MY-FORK-NAME THE-NAME-OF-MY-BRANCH
 
 ## Troubleshooting
 
-- `yarn reset` to clear the local cache
+-   `yarn reset` to clear the local cache
 
 ## License
 
