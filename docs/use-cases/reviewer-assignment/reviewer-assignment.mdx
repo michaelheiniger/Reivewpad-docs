@@ -4,6 +4,9 @@ slug: /use-cases/reviewer-assignment
 title: Reviewer Assignment
 ---
 
+import DocCardList from "@theme/DocCardList";
+import { useCurrentSidebarCategory } from "@docusaurus/theme-common";
+
 GitHub already provides code reviewer suggestions and the ability to use CODEOWNERS to automatically assign reviewers.
 
 However, the code reviewer suggestion is still a manual process for developers and the CODEOWNERS feature is very limited:
@@ -13,3 +16,5 @@ However, the code reviewer suggestion is still a manual process for developers a
 3. Rules have precedence, so you need to understand the context of previous rules for a given rule. Reviewpad workflows allow you to specify when a [workflow should always be](/guides/syntax#workflow) considered regardless of the context.
 
 Out of the box, Reviewpad supports three actions to assign reviewers, [assignReviewer](/guides/built-ins#assignreviewer), [assignTeamReviewer](/guides/built-ins#assignteamreviewer) and [assignRandomReviewer](/guides/built-ins#assignrandomreviewer).
+
+<DocCardList items={useCurrentSidebarCategory().items} />
