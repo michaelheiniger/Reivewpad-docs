@@ -1,0 +1,21 @@
+api-version: reviewpad.com/v3.x
+
+labels:
+  ship:
+    description: Ship mode
+    color: 76dbbe
+
+rules:
+  - name: is-small-patch
+    kind: patch
+    description: Patch has less than 90 changes and 6 files
+    spec: '$size() < 90 && $fileCount() <= 5'
+
+workflows:
+  - name: ship
+    description: Ship process - bypass the review and merge with rebase
+    if:
+      - rule: is-small-patch
+    then:
+      - '$addLabel("ship")'
+      - '$merge("rebase")'

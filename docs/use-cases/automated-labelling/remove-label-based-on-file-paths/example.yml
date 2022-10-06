@@ -1,0 +1,33 @@
+api-version: reviewpad.com/v3.x
+
+labels:
+  missing-tests:
+    description: Change misses the test specification
+    # color is the hexadecimal color code for the label, without the leading #.
+    color: fd5e53
+
+rules:
+  - name: code-changes-without-tests
+    kind: patch
+    description: Changes to src and not to test files
+    spec: '$hasFilePattern("src/**") && !$hasFilePattern("*_test.go")'
+
+  - name: code-changes-with-tests
+    kind: patch
+    description: Changes to src and to test files
+    spec: '$hasFilePattern("src/**") && $hasFilePattern("*_test.go")'
+
+workflows:
+  - name: require-tests
+    description: Tests are required
+    if:
+      - rule: code-changes-without-tests
+    then:
+      - '$addLabel("missing-tests")'
+
+  - name: clean
+    description: Clean up process
+    if:
+      - rule: code-changes-with-tests
+    then:
+      - '$removeLabel("missing-tests")'
