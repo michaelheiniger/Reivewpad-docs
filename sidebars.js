@@ -31,6 +31,7 @@ const sidebars = {
       link: {
         type: "generated-index",
         title: "Use Cases",
+        slug: "/use-cases",
         description: "See how Reviewpad can be used in different scenarios.",
       },
       items: [

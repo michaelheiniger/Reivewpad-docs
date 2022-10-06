@@ -1,6 +1,6 @@
 ---
 id: timestamps
-slug: timestamps
+slug: /use-cases/timestamps
 title: Timestamps
 ---
 
