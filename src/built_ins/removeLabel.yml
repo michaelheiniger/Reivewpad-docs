@@ -1,7 +1,6 @@
 workflows:
-  - name: remove-small-label-in-pull-request
-    description: Remove small label applied to pull request
+  - name: remove-size-small
     if:
-      - rule: isNotSmall
-    then:
-      - $removeLabel("small")
+      - rule: $size() > 10
+        extra-actions:
+          - $removeLabel("small")

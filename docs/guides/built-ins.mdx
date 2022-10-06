@@ -1999,9 +1999,19 @@ A `reviewpad.yml` example:
 
 Removes a label applied to a pull request.
 
-It will check if there is a label with this key in the labels section of reviewpad.yml.
+It will check if there is a label with this key in the labels section of `reviewpad.yml`.
 
-If such label exists, it will use name property of the label; if the property is not present, then it uses the key as the name.
+If such label exists, it will use the `name` property of the label; Otherwsise, it uses the key as the label name.
+
+If the label does not exist in the repository, no action will be taken.
+
+:::info INFO
+
+This built-in will be deprecated in the upcoming 4.x series.
+
+Replace its usage by [`$removeLabels`](#removelabels).
+
+:::
 
 **Parameters**:
 
@@ -2022,6 +2032,40 @@ $removeLabel("bug")
 A `reviewpad.yml` example:
 
 <CodeBlock language="yml">{Built_ins.RemoveLabel}</CodeBlock>
+
+### removeLabels
+
+---
+
+**Description**:
+
+Removes the provided labels from the issue or pull request.
+
+For each given label, it will check if there is a label with this key in the labels section of `reviewpad.yml`.
+
+If such label exists, it will use the `name` property of the label; Otherwsise, it uses the key as the label name.
+
+If the label does not exist in the repository, no action will be taken.
+
+**Parameters**:
+
+| variable | type      | description                      |
+| -------- | --------- | -------------------------------- |
+| `labels` | \[]string | list of the labels to be removed |
+
+**Return value**:
+
+_none_
+
+**Examples**:
+
+```yml
+$removeLabels(["bug", "p1"])
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Built_ins.RemoveLabels}</CodeBlock>
 
 ### titleLint
 
