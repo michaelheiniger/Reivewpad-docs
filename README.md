@@ -50,7 +50,7 @@ We strongly recommend using [Visual Studio Code](https://code.visualstudio.com/)
 
 #### Install extensions
 
--   [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting
+-   [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) for consistent coding styles
 -   [MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting on MDX files
 -   [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) for enabling `reviewpad.yml` JSON schema.
 
@@ -64,10 +64,6 @@ Paste the following configuration:
 {
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[yaml]": {
-        "editor.defaultFormatter": "EditorConfig.EditorConfig"
-    },
     "files.autoSave": "onFocusChange"
 }
 ```
