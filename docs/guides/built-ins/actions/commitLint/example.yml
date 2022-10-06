@@ -1,0 +1,7 @@
+workflows:
+  - name: check-conventional-commits
+    description: Check conventional commits
+    if:
+      - rule: tautology
+    then:
+      - '$commitLint()'

@@ -14,7 +14,7 @@ Although this generate token is enough to run most of Reviewpad functions, there
 
 _All functions that require a GitHub Token to be provided are marked with the following message:_
 
-:::caution Requires GitHub token
+:::warning Requires GitHub token
 
 Please note that this function requires the [Reviewpad to be installed with a GitHub token](/getting-started/installation-with-github-token)
 :::
@@ -36,8 +36,8 @@ Make sure that you give the following permissions when generating the token:
 3. On the left select `Actions` under `Secrets`
 4. Click the button `New Repository Secret`
 5. Add the new secret and then click on `Add secret`
-   - Name: `GH_TOKEN`
-   - Value: _THE_GENERATED_TOKEN_ON_STEP_1_
+    - Name: `GH_TOKEN`
+    - Value: _THE_GENERATED_TOKEN_ON_STEP_1_
 
 ![GitHub Secrets](/img/install-token-secrets.png)
 
@@ -59,13 +59,13 @@ name: Reviewpad Action
 on: pull_request
 
 jobs:
-  reviewpad-action:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Running reviewpad action
-        uses: reviewpad/action@v3.x
-        with:
-          token: ${{ secrets.GH_TOKEN }}
+    reviewpad-action:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Running reviewpad action
+              uses: reviewpad/action@v3.x
+              with:
+                  token: ${{ secrets.GH_TOKEN }}
 ```
 
 ## Step 5. Add `reviewpad.yml` to the root of the repository
@@ -78,25 +78,25 @@ On the root of your repository create the `reviewpad.yml` file and copy the foll
 api-version: reviewpad.com/v3.x
 
 labels:
-  small:
-    color: "294b69"
-  medium:
-    color: "a8c3f7"
-  large:
-    color: "8a2138"
+    small:
+        color: "294b69"
+    medium:
+        color: "a8c3f7"
+    large:
+        color: "8a2138"
 
 workflows:
-  - name: label-pull-request-with-size
-    if:
-      - rule: $size() <= 30
-        extra-actions:
-          - $addLabel("small")
-      - rule: $size() > 30 && $size() <= 100
-        extra-actions:
-          - $addLabel("medium")
-      - rule: $size() > 100
-        extra-actions:
-          - $addLabel("large")
+    - name: label-pull-request-with-size
+      if:
+          - rule: $size() <= 30
+            extra-actions:
+                - $addLabel("small")
+          - rule: $size() > 30 && $size() <= 100
+            extra-actions:
+                - $addLabel("medium")
+          - rule: $size() > 100
+            extra-actions:
+                - $addLabel("large")
 ```
 
 This particular configuration will ask Reviewpad to label you PRs based on their size.

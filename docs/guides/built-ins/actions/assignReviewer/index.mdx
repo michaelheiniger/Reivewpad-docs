@@ -1,0 +1,27 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Assigns a defined amount of reviewers to the pull request from the provided list of reviewers.
+
+When there are not enough reviewers to assign to, a warning is returned.
+
+If a reviewer from the defined list has performed a review, their review will be re-requested.
+
+**Parameters**:
+
+| Parameter          | Type      | Description                                                             |
+| ------------------ | --------- | ----------------------------------------------------------------------- |
+| `reviewers`        | \[]string | The list of GitHub logins to select from.                               |
+| `total` (optional) | int       | The total of reviewers to assign. By default, assigns to all reviewers. |
+
+**Examples**:
+
+```yml
+$assignReviewer(["john", "marie", "peter"], 2)
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Example}</CodeBlock>

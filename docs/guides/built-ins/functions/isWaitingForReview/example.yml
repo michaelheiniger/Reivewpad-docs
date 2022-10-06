@@ -1,0 +1,5 @@
+rules:
+  - name: is-waiting-for-review
+    kind: patch
+    description: Verifies if the pull request is waiting for review
+    spec: '$isWaitingForReview()'

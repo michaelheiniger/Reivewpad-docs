@@ -1,0 +1,5 @@
+rules:
+  - name: has-linked-issues
+    kind: patch
+    description: Verifies if the pull request has linked issues
+    spec: '$hasLinkedIssues()'

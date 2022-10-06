@@ -1,0 +1,5 @@
+rules:
+  - name: is-authored-by-tech-lead
+    kind: patch
+    description: Verifies if the pull request was authored by tech lead
+    spec: '$author() == "john"'
