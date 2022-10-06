@@ -1,7 +1,7 @@
 ---
-id: syntax
-slug: syntax
-title: Syntax
+title: "Syntax"
+id: "syntax"
+slug: "syntax"
 ---
 
 A Reviewpad configuration file has the following shape:
@@ -52,7 +52,9 @@ If you use VSCode, we recommend that you [setup yaml.schemas](/tooling/vscode-re
 
 ## API Version
 
-The `api-version` property is the version of Reviewpad specification format. The version is necessary so the format can be evolved, and the field is used for the parser to know how to interpret the content.
+The `api-version` property is the version of Reviewpad specification format.
+
+The version is necessary so the format can be evolved, and the field is used for the parser to know how to interpret the content.
 
 #### Example
 
@@ -62,7 +64,9 @@ api-version: reviewpad.com/v3.x
 
 ## Mode
 
-The `mode` property is a flag that allows you to enable or disable a report of Reviewpad as a pull request comment. By default, Reviewpad runs on `silent` mode. However, you can choose to use `verbose` mode and Reviewpad will comment on the pull request with the execution results.
+The `mode` property is a flag that allows you to enable or disable a report of Reviewpad as a pull request comment.
+
+By default, Reviewpad runs on `silent` mode. However, you can choose to use `verbose` mode and Reviewpad will comment on the pull request with the execution results.
 
 #### Example
 
@@ -72,7 +76,9 @@ mode: verbose # optional
 
 ## Ignore errors
 
-The `ignore-errors` property is a flag that allows you to specify if the GitHub action should ignore execution errors. By default, this flag is `false` which means the action will fail if an error is raised.
+The `ignore-errors` property is a flag that allows you to specify if the GitHub action should ignore execution errors.
+
+By default, this flag is `false` which means the action will fail if an error is raised.
 
 #### Example
 
@@ -88,15 +94,15 @@ The structure of a label is as follows:
 
 ```yaml
 LABEL-ID:
-  name: STRING [OPTIONAL]
-  description: STRING [OPTIONAL]
-  color: STRING [OPTIONAL]
+    name: STRING [OPTIONAL]
+    description: STRING [OPTIONAL]
+    color: STRING [OPTIONAL]
 ```
 
-- `LABEL-ID` of a label is used to reference it in other entities. If no `name` is provided, then the `LABEL-ID` is considered the `name`.
-- `name` [OPTIONAL] is the name of the label as seen on GitHub.
-- `description` [OPTIONAL] is a short description of the label. Must be 100 characters or fewer.
-- `color` [OPTIONAL] is the [hexadecimal color code](https://www.color-hex.com/) for the label, with or without the leading #.
+-   `LABEL-ID` of a label is used to reference it in other entities. If no `name` is provided, then the `LABEL-ID` is considered the `name`.
+-   `name` [OPTIONAL] is the name of the label as seen on GitHub.
+-   `description` [OPTIONAL] is a short description of the label. Must be 100 characters or fewer.
+-   `color` [OPTIONAL] is the [hexadecimal color code](https://www.color-hex.com/) for the label, with or without the leading #.
 
 If the label does not exist in the repository, it will be created.
 
@@ -106,10 +112,10 @@ If the label already exists in the repository and the description set in the `re
 
 ```yml
 labels:
-  small:
-    name: small # optional
-    description: defines a small pull request # optional
-    color: d2697a # optional
+    small:
+        name: small # optional
+        description: Defines a small pull request # optional
+        color: d2697a # optional
 ```
 
 ## Group
@@ -127,19 +133,19 @@ There are two ways to specify a group:
   spec: "[LIST OF GITHUB USERS]"
 ```
 
-- `name` of a group is used to reference it in other entities.
-- `description` [OPTIONAL] is a string that can be used to provide more details about the group.
-- `kind` of a group can only be _developers_ at the moment.
-- `spec` is an [Aladino](/guides/aladino/specification) array.
+-   `name` of a group is used to reference it in other entities.
+-   `description` [OPTIONAL] is a string that can be used to provide more details about the group.
+-   `kind` of a group can only be _developers_ at the moment.
+-   `spec` is an [Aladino](/guides/aladino/specification) array.
 
 #### Example
 
 ```yaml
 groups:
-  - name: seniors
-    description: project seniors # optional
-    kind: developers
-    spec: '["peter"]'
+    - name: seniors
+      description: project seniors # optional
+      kind: developers
+      spec: '["peter"]'
 ```
 
 ### Group By Filter
@@ -153,23 +159,23 @@ groups:
   spec: ALADINO-BOOLEAN-EXPRESSION
 ```
 
-- `name` of a group is used to reference it in other entities.
-- `description` [OPTIONAL] is a string that can be used to provide more details about the group.
-- `kind` of a group can only be _developers_ at the moment.
-- `type` with filter specifies that we will require a _param_ and a boolean _spec_.
-- `param` declares the name of a variable representing a single developer.
-- `spec` is an [Aladino](/guides/aladino/specification) boolean expression that uses the _param_ variable to define a condition on which developers should be part of the group.
+-   `name` of a group is used to reference it in other entities.
+-   `description` [OPTIONAL] is a string that can be used to provide more details about the group.
+-   `kind` of a group can only be _developers_ at the moment.
+-   `type` with filter specifies that we will require a _param_ and a boolean _spec_.
+-   `param` declares the name of a variable representing a single developer.
+-   `spec` is an [Aladino](/guides/aladino/specification) boolean expression that uses the _param_ variable to define a condition on which developers should be part of the group.
 
 #### Example
 
 ```yaml
 groups:
-  - name: new-joiners
-    description: groups of developers that have created less than 10 PRs # optional
-    kind: developers
-    type: filter
-    param: dev
-    where: $totalCreatedPRs($dev) < 10
+    - name: new-joiners
+      description: Groups of developers that have created less than 10 pull requests # optional
+      kind: developers
+      type: filter
+      param: dev
+      where: $totalCreatedPRs($dev) < 10
 ```
 
 ## Rule
@@ -185,22 +191,24 @@ The structure of a rule is as follows:
   spec: ALADINO-BOOLEAN-EXPRESSION
 ```
 
-- `name` of a rule is used to reference it in other rules and workflow.
-- `kind` [OPTIONAL] of a rule can be either _patch_ or _author._ The kind is related to different properties of pull requests that will be used in the evaluation of the _spec_ field.
-- `description` [OPTIONAL] is a string that can be used to provide more details about the rule.
-- `spec` is a boolean expression in [Aladino](/guides/aladino/specification).
+-   `name` of a rule is used to reference it in other rules and workflows.
+-   `kind` [OPTIONAL] of a rule can be either _patch_ or _author._ The kind is related to different properties of pull requests that will be used in the evaluation of the _spec_ field.
+-   `description` [OPTIONAL] is a string that can be used to provide more details about the rule.
+-   `spec` is a boolean expression in [Aladino](/guides/aladino/specification).
 
 #### Example
 
 ```yml
 rules:
-  - name: small-change
-    kind: patch # optional
-    description: checks pr size is small # optional
-    spec: $size() < 30
+    - name: small-change
+      kind: patch # optional
+      description: Checks if the pull request size is small # optional
+      spec: $size() < 30
 ```
 
 ## Workflow
+
+A `workflow` is a specification of a list of actions to be executed if the pull request **satisfies** any of the specified rules.
 
 The structure of a workflow is as follows:
 
@@ -226,26 +234,24 @@ The structure of a workflow is as follows:
     - ACTION_N
 ```
 
-- `name` is a string that identifies the workflow.
-- `description` [OPTIONAL] is a string that can be used to provide more details about the workflow.
-- `always-run` [OPTIONAL] field is a boolean that specifies the workflow should always be checked or not. By default, this value is `false`.
-- `on` [OPTIONAL] field is a list of github entity types that should trigger the workflow. By default, the value is `pull_request`.
-- `if` field specifies which rules should be checked. For each rule, we can also specify a list of **extra actions** that will be executed if this rule is activated by the pull request.
-- `then` field is a list of [Reviewpad actions](/guides/built-ins#actions) that should run.
-
-A `workflow` is a specification of a list of actions to be executed if the pull request **satisfies** any of the specified rules.
+-   `name` is a string that identifies the workflows.
+-   `description` [OPTIONAL] is a string that can be used to provide more details about the workflow.
+-   `always-run` [OPTIONAL] field is a boolean that specifies if the workflow should always be checked or not. By default, this value is `false`.
+-   `on` [OPTIONAL] field is a list of GitHub entity types that should trigger the workflow. By default, the value is `pull_request`.
+-   `if` field specifies which rules should be checked. For each rule, we can also specify a list of **extra actions** that will be executed if this rule is activated by the pull request.
+-   `then` field is a list of [Reviewpad actions](/guides/built-ins#actions) that should run.
 
 #### Example
 
 ```yaml
 workflows:
-  - name: size-labelling
-    description: label pr based on size # optional
-    on: # optional
-      - pull_request
-    if:
-      - rule: $size() < 90
-        extra-actions: $addLabel("small")
+    - name: size-labelling
+      description: Label pull request based on size # optional
+      on: # optional
+          - pull_request
+      if:
+          - rule: $size() < 90
+            extra-actions: $addLabel("small")
 ```
 
 This configuration specifies one workflow called `size-labelling` which automatically labels a `pull_request` with the label `small` if the inline rule `$size() < 90` is true. This means that the total number of changed lines i.e. `$size` is lower than 90.
@@ -264,17 +270,33 @@ The structure of a pipeline is as follows:
         - ACTION_2
         ...
         - ACTION_N
-      until: [STRING | RULE] # optional
+        until: [STRING | RULE] # optional
     ...
     - actions:
         - ACTION_1
         - ACTION_2
         ...
         - ACTION_N
-      until: [STRING | RULE] # optional
+        until: [STRING | RULE] # optional
 ```
 
-- `name` is a string that identifies the pipeline.
-- `description` [OPTIONAL] is a string that can be used to provide more details about the pipeline.
-- `trigger` [OPTIONAL] field is a rule that if true enables the pipeline.
-- `stages` is a list of stages of the pipeline. Each stage is a list of actions that will execute until the `until` condition is true.
+-   `name` is a string that identifies the pipeline.
+-   `description` [OPTIONAL] is a string that can be used to provide more details about the pipeline.
+-   `trigger` [OPTIONAL] field is a rule that if true enables the pipeline.
+-   `stages` is a list of stages of the pipeline. Each stage is a list of actions that will execute until the `until` condition is true.
+
+#### Example
+
+```yaml
+pipelines:
+    - name: security-changes
+      trigger: '$hasFilePattern("services/db/migrations/**")'
+      stages:
+          - actions:
+                - '$assignReviewer(["john"])'
+            until: $reviewerStatus("john") == "APPROVED"
+          - actions:
+                - '$assignTeamReviewer(["security"])'
+```
+
+This configuration specifies one pipeline called `security-changes` which is triggered when there are changes to the files in the database migration and these files will be first reviewed by john and only when john approves the changes, they will be reviewed by the security team.

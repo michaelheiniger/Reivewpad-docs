@@ -1,7 +1,7 @@
 ---
-id: specification
-slug: specification
-title: Aladino Specification
+title: "Aladino Specification"
+id: "specification"
+slug: "specification"
 ---
 
 Aladino is a simple language to specify steps in pull request workflows.

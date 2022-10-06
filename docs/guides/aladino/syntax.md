@@ -1,14 +1,16 @@
 ---
-id: syntax
-slug: syntax
-title: Aladino Syntax
+title: "Aladino Syntax"
+id: "syntax"
+slug: "syntax"
 ---
 
-The syntax of Aladino is quite simple. Here's the BNF grammar representation:
+The syntax of Aladino is quite simple. Here's the [BNF](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form) grammar representation:
 
 ```
 prog := stat_list
+
 stat := expr
+
 expr := expr BINOP expr
       | UNARYOP expr
       | TIMESTAMP
@@ -16,9 +18,15 @@ expr := expr BINOP expr
       | NUMBER
       | STRING
       | BOOLEAN
+      | '(' expr ')'
       | '[' expr_list ']'
       | '$' IDENTIFIER '(' expr_list ')'
       | '(' expr_list '=>' expr  ')'
+
+expr_list :=
+        expr ',' expr_list
+      | expr
+      |
 
 TIMESTAMP :=
         YYYYMMDD
