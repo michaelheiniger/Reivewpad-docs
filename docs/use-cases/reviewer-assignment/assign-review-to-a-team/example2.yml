@@ -13,4 +13,4 @@ workflows:
       - rule: changes-to-configurations
     then:
       # Assign the review to 3 random reviewers from devops team
-      - '$assignReviewer($team("devops"), 3)'
+      - '$assignReviewer($team("devops"), 3, "reviewpad")'

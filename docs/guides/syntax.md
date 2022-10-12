@@ -293,7 +293,7 @@ pipelines:
       trigger: '$hasFilePattern("services/db/migrations/**")'
       stages:
           - actions:
-                - '$assignReviewer(["john"])'
+                - '$assignReviewer(["john"], "reviewpad")'
             until: $reviewerStatus("john") == "APPROVED"
           - actions:
                 - '$assignTeamReviewer(["security"])'

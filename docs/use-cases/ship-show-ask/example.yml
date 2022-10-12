@@ -31,7 +31,7 @@ workflows:
     if:
       - rule: '$hasFileExtensions([".md"])'
         extra-actions:
-          - '$assignReviewer($group("seniors"))'
+          - '$assignReviewer($group("seniors"), "reviewpad")'
       - '$hasFileExtensions([".test.ts"])'
     then:
       - '$addLabel("show")'

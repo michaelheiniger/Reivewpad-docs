@@ -9,4 +9,4 @@ workflows:
     if:
       - rule: are-all-reviewers-juniors
     then:
-      - '$assignReviewer($group("seniors"), 1)'
+      - '$assignReviewer($group("seniors"), 1, "reviewpad")'

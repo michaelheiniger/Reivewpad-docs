@@ -32,4 +32,4 @@ workflows:
       - rule: authored-by-junior
     then:
       - '$addLabel("priority")'
-      - '$assignReviewer($group("seniors"))'
+      - '$assignReviewer($group("seniors"), "round-robin")'

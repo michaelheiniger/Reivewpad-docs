@@ -13,6 +13,6 @@ workflows:
       - rule: changes-to-configurations
     then:
       # Assign the review to john
-      - '$assignReviewer(["john"])'
+      - '$assignReviewer(["john"], "random")'
       # Assign the review to devops team
       - '$assignTeamReviewer("devops")'

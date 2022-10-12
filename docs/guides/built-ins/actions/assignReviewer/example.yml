@@ -1,7 +1,7 @@
 workflows:
   - name: review-code-from-new-joiners
-    description: Assign senior reviewers to pull requests from new joiners
+    description: Assign senior reviewers randomly to pull requests from new joiners
     if:
       - rule: authored-by-junior
     then:
-      - '$assignReviewer($group("seniors"), 2)'
+      - '$assignReviewer($group("seniors"), 2, "random")'

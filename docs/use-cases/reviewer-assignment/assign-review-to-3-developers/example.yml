@@ -12,4 +12,4 @@ workflows:
     if:
       - rule: changes-transactions-code
     then:
-      - '$assignReviewer($organization(), 3)'
+      - '$assignReviewer($organization(), 3, "reviewpad")'
