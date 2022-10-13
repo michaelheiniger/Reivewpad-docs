@@ -1,0 +1,5 @@
+rules:
+  - name: has-custom-keyword-in-title
+    kind: patch
+    description: Verifies if the pull request title has "custom" keyword
+    spec: '$contains($title(), "custom")'

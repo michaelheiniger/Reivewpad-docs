@@ -1,0 +1,12 @@
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: report-empty-description
+    on:
+      - issue
+      - pull_request
+    always-run: true
+    if:
+      - '$description() == ""'
+    then:
+      - '$error("The description is empty. Please add more information!")'

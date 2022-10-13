@@ -1,0 +1,5 @@
+rules:
+  - name: changes-placeBet
+    kind: patch
+    description: Verifies if changes placeBet file
+    spec: '$hasFileName("placeBet.js")'

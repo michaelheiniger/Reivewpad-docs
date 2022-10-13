@@ -1,0 +1,21 @@
+api-version: reviewpad.com/v3.x
+
+labels:
+  missing-specs:
+    description: Likely missing specs
+    # color is the hexadecimal color code for the label, without the leading #.
+    color: 294b69
+
+rules:
+  - name: code-changes-imply-spec-changes
+    kind: patch
+    description: Changes to src and not to spec
+    spec: '$hasFilePattern("src/**") && !$hasFilePattern("docs/**")'
+
+workflows:
+  - name: check-for-specs
+    description: Check for specs
+    if:
+      - rule: code-changes-imply-spec-changes
+    then:
+      - '$addLabel("missing-specs")'

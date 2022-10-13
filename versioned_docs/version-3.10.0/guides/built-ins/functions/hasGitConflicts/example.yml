@@ -1,0 +1,10 @@
+labels:
+  has-conflicts:
+    color: ff0000
+
+workflows:
+  - name: find-git-conflicts
+    if:
+      - rule: '$hasGitConflicts()'
+    then:
+      - '$addLabel("has-conflicts")'

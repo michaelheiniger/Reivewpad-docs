@@ -1,0 +1,5 @@
+rules:
+  - name: only-has-test-label-assigned
+    kind: patch
+    description: Verifies if the pull request only has "test" label assigned
+    spec: '$labels() == ["test"]'

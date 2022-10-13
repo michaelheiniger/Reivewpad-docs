@@ -1,0 +1,7 @@
+workflows:
+  - name: warn-large-pull-requests
+    description: Warn about large pull requests
+    if:
+      - rule: is-large
+    then:
+      - '$warn("This pull request was considered too large.")'
