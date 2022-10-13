@@ -21,7 +21,7 @@ Determines if any element of the slice satisfies the given predicate.
 **Examples**:
 
 ```yml
-$any(["a", "b"], ($el => $el == "a")) # true
+'$any(["a", "b"], ($el: String => $el == "a"))' # true
 ```
 
 A `reviewpad.yml` example:

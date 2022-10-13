@@ -2,7 +2,7 @@ rules:
   - name: are-all-reviewers-juniors
     description: Verifies if all reviewers are juniors
     kind: patch
-    spec: '$all($reviewers(), ($rev => $totalCodeReviews($rev) < 5))'
+    spec: '$all($reviewers(), ($rev: String => $totalCodeReviews($rev) < 5))'
 
 workflows:
   - name: requires-review-from-senior-dev

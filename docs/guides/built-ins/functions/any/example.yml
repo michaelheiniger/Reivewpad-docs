@@ -1,6 +1,6 @@
 workflows:
   - name: merge-pr-when-security-team-approves
     if:
-      - '$any($reviewers(), ($rev => $isElementOf($rev, $team("security")) && $reviewerStatus($rev) == "APPROVED"))'
+      - '$any($reviewers(), ($rev: String => $isElementOf($rev, $team("security")) && $reviewerStatus($rev) == "APPROVED"))'
     then:
       - '$merge()'
