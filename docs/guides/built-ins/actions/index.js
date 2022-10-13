@@ -14,6 +14,7 @@ import Fail from "./fail/index.mdx";
 import Info from "./info/index.mdx";
 import Merge from "./merge/index.mdx";
 import RemoveLabel from "./removeLabel/index.mdx";
+import Review from "./review/index.mdx";
 import TitleLint from "./titleLint/index.mdx";
 import Warn from "./warn/index.mdx";
 
@@ -33,5 +34,6 @@ export { Fail as Fail };
 export { Info as Info };
 export { Merge as Merge };
 export { RemoveLabel as RemoveLabel };
+export { Review as Review };
 export { TitleLint as TitleLint };
 export { Warn as Warn };
