@@ -1,0 +1,7 @@
+workflows:
+  - name: label-size-xs
+    if:
+      - rule: '$size() <= 9'
+        extra-actions:
+          - '$addLabel("size/XS")'
+          - '$removeLabels(["size/S", "size/M", "size/L", "size/XL", "size/XXL"])'
