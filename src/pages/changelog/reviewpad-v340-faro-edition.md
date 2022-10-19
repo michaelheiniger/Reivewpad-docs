@@ -2,7 +2,7 @@
 
 ### Reviewpad
 
-- Feature: Extends cron job for issues and pull requests. Check the [stale pull request/issue use case](/use-cases/stale-issues-or-pull-requests)
+- Feature: Extends cron job for issues and pull requests. Check the [stale pull request/issue use case](/use-cases/stale-issues-or-pull-requests).
 
 ### Aladino Language
 
