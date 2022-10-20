@@ -1,0 +1,5 @@
+rules:
+  - name: has-too-many-commits
+    kind: patch
+    description: Verifies if the pull request has more than 3 commits
+    spec: '$commitCount() > 3'

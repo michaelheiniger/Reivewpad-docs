@@ -1,0 +1,5 @@
+rules:
+  - name: has-comments
+    kind: patch
+    description: Verifies if the issue/pull request has comments
+    spec: '$comments() != []'

@@ -7,7 +7,7 @@
 
 ### Aladino Language
 
-- [Timestamps](/use-cases/timestamps/timestamps) - RFC3339 timestamps or relative timestamps.
+- [Timestamps](/use-cases/timestamps) - RFC3339 timestamps or relative timestamps.
 
 ### Aladino Built-ins
 

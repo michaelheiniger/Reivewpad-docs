@@ -1,0 +1,5 @@
+rules:
+  - name: is-author-by-devops
+    description: Verifies if author belongs to devops team
+    kind: patch
+    spec: '$isElementOf($author(), $team("devops"))'

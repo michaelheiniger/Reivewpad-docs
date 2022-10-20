@@ -1,0 +1,6 @@
+workflows:
+  - name: merge-pr-when-all-reviewers-approved
+    if:
+      - '$all($reviewers(), ($rev: String => $reviewerStatus($rev) == "APPROVED"))'
+    then:
+      - '$merge()'

@@ -1,0 +1,46 @@
+api-version: reviewpad.com/v3.x
+
+labels:
+  ask:
+    color: fd5e53
+  show:
+    color: ffd800
+  ship:
+    color: 76dbbe
+
+groups:
+  - name: juniors
+    kind: developers
+    type: filter
+    param: developer
+    where: '$totalCreatedPullRequests($developer) < 10'
+
+workflows:
+  - name: ask
+    description: Ask process - request a review before merge
+    if:
+      - '$hasFileName("main.js")'
+      - '$fileCount() > 5'
+      - '$isElementOf($author(), $group("juniors"))'
+    then:
+      - '$addLabel("ask")'
+      - '$assignRandomReviewer()'
+
+  - name: show
+    description: Show process - auto-merge and later review
+    if:
+      - rule: '$hasFileExtensions([".md"])'
+        extra-actions:
+          - '$assignReviewer($group("seniors"), "reviewpad")'
+      - '$hasFileExtensions([".test.ts"])'
+    then:
+      - '$addLabel("show")'
+      - '$merge("rebase")'
+
+  - name: ship
+    description: Ship process - auto-merge without need for review
+    if:
+      - '$size() < 50'
+    then:
+      - '$addLabel("ship")'
+      - '$merge("rebase")'
