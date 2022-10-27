@@ -86,6 +86,12 @@ This will deploy the documentation into github pages which will be live at [docs
 
 You can check the status of the deployment [here](https://github.com/reviewpad/docs/deployments).
 
+## Update algolia
+
+The last step is to update the search index in algolia.
+
+Go to [algolia crawler](https://crawler.algolia.com/admin/crawlers/efcdfdf9-be65-45b0-8fc1-c76dcac68fe2/overview) and click on `Restart crawling`.
+
 ## Deleting an existing version
 
 You can delete/remove versions as well.
