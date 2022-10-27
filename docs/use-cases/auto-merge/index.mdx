@@ -8,10 +8,11 @@ import CodeBlock from "@theme/CodeBlock";
 import Example1 from "!!raw-loader!./example1.yml";
 import Example2 from "!!raw-loader!./example2.yml";
 import Example3 from "!!raw-loader!./example3.yml";
+import Example4 from "!!raw-loader!./example4.yml";
 
 :::warning Requires GitHub token
 
-Please note that this function requires the [Reviewpad Action to be installed with a GitHub token](/getting-started/installation-with-github-token)
+Please note that this function requires the [Reviewpad Action to be installed with a GitHub token](/getting-started/installation-with-github-token).
 :::
 
 The ability to configure automatic pull requests merges can greatly unblock developers that typically wait for hours, or even days, to receive a LGTM review.
@@ -33,3 +34,15 @@ Out of the box, Reviewpad supports a [merge action](/guides/built-ins#merge) whi
 The [**hasAnnotation**](/guides/built-ins#hasannotation) built-in can be used to configure powerful auto-merges. See a more in-depth example of the usage of [**hasAnnotation**](/guides/built-ins#hasannotation) in the [automated labelling section](/use-cases/label-critical-changes-with-semantic-code-annotations).
 
 <CodeBlock language="yml">{Example3}</CodeBlock>
+
+## Auto-merge on required approvals
+
+In GitHub, repository administrators can require a minimum number of pull request approvals before merging into a protected branch.
+
+However, we may want the required number of approvals to come from a defined set of users/team. In this case, GitHub does not offer this ability.
+
+We can use Reviewpad to verify if a pull request has the required number of approvals from a specific team.
+
+Here's an example of a `reviewpad.yml` configuration that verifies if a pull request has at least 2 approvals from the core team when changes are critical.
+
+<CodeBlock language="yml">{Example4}</CodeBlock>
