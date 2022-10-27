@@ -1,0 +1,6 @@
+workflows:
+  - name: welcome-first-contributor
+    if:
+      - rule: is-first-contributor
+    then:
+      - '$commentOnce($sprintf("Thank you @%s for this first contribution!", [$author()]))'
