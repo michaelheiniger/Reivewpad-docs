@@ -1,0 +1,6 @@
+workflows:
+  - name: define-merge-ability
+    if:
+      - '$hasAnnotation("critical") && !$hasRequiredApprovals(2, $team("core"))'
+    then:
+      - '$disableActions(["merge"])'

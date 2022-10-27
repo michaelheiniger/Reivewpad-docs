@@ -1,0 +1,21 @@
+api-version: reviewpad.com/v3.x
+
+labels:
+  ship:
+    description: Ship mode
+    color: 76dbbe
+
+rules:
+  - name: not-critical-changes
+    kind: patch
+    description: Patch does not touch critical code
+    spec: '!$hasAnnotation("critical")'
+
+workflows:
+  - name: ship
+    description: Ship process - bypass the review and merge with rebase
+    if:
+      - rule: not-critical-changes
+    then:
+      - '$addLabel("ship")'
+      - '$merge("rebase")'

@@ -1,0 +1,5 @@
+rules:
+  - name: has-description
+    kind: patch
+    description: Verifies if the pull request description is "Testing description"
+    spec: '$description() == "Testing description"'

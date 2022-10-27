@@ -1,0 +1,5 @@
+rules:
+  - name: has-requested-reviewers
+    kind: patch
+    description: Verifies if the pull request has requested reviewers
+    spec: '$requestedReviewers() != []'

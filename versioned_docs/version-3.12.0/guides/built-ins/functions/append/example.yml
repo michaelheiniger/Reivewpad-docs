@@ -1,0 +1,11 @@
+groups:
+  - name: frontend-and-backend-devs
+    description: Frontend and backend developers
+    kind: developers
+    spec: '$append($team("frontend"), $team("backend"))'
+
+rules:
+  - name: authored-by-web-developer
+    kind: patch
+    description: Authored by web developers
+    spec: '$isElementOf($author(), $group("frontendAndBackendDevs"))'

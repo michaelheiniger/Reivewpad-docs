@@ -1,0 +1,5 @@
+rules:
+  - name: changes-critical
+    kind: patch
+    description: Verifies if the pull request contains changes to critical code
+    spec: '$hasAnnotation("critical")'

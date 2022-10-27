@@ -1,0 +1,9 @@
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: lint-commits
+    description: Lint commit messages
+    if:
+      - rule: 'true'
+    then:
+      - '$commitLint()'

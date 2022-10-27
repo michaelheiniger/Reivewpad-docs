@@ -1,0 +1,18 @@
+api-version: reviewpad.com/v3.x
+
+rules:
+  - name: changes-to-configurations
+    kind: patch
+    description: Changes code in configuration folder
+    spec: '$hasFilePattern("src/config/**")'
+
+workflows:
+  - name: ask
+    description: Ask John and devops team
+    if:
+      - rule: changes-to-configurations
+    then:
+      # Assign the review to john
+      - '$assignReviewer(["john"], "random")'
+      # Assign the review to devops team
+      - '$assignTeamReviewer("devops")'

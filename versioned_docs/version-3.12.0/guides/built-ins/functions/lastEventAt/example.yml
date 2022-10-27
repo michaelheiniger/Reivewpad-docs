@@ -1,0 +1,5 @@
+rules:
+    - name: check-if-inactive-for-a-month
+      kind: patch
+      description: Checks if the issue/pull request is inactive for a month
+      spec: '$lastEventAt() < 30 days ago'
