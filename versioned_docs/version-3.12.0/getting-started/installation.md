@@ -34,12 +34,14 @@ Add the file `reviewpad.yml` and copy the following content:
 ```yaml
 name: Reviewpad Action
 
+on: pull_request
+
 jobs:
-    reviewpad-action:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Running reviewpad action
-              uses: reviewpad/action@v3.x
+  reviewpad:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reviewpad
+        uses: reviewpad/action@v3.x
 ```
 
 ![file inside workspace folder](https://user-images.githubusercontent.com/43396684/186570845-52bf0570-567d-48eb-8855-019b2c2de54f.png)![reviewpad action](https://user-images.githubusercontent.com/43396684/186571129-83c04a46-85ea-46fb-8199-b3ead06f55f5.png)
