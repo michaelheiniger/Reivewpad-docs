@@ -50,6 +50,6 @@ echo "👉👉👉👉👉👉 Running reviewpad in dry-run mode"
 for file in $(find "$2" -name "*.yml")
 do
     echo "👉 Checking $file"
-    "$1" run -d -u="$4" -t="$2" -f="$file"
+    "$1" run -d -u="$4" -t="$3" -f="$file"
 done
 
