@@ -236,7 +236,7 @@ The structure of a workflow is as follows:
 
 -   `name` is a string that identifies the workflows.
 -   `description` [OPTIONAL] is a string that can be used to provide more details about the workflow.
--   `always-run` [OPTIONAL] field is a boolean that specifies if the workflow should always be checked or not. By default, this value is `false`.
+-   `always-run` [OPTIONAL] field is a boolean that specifies if the workflow should run regardless of whether the previous workflows ran or not. If `true` then the workflow will always run. If `false` then the workflow will run only if none of the previous workflows have run. By default, this field is `false`. For instance, if a workflow B has a precedent workflow A and both have `always-run: false` then workflow B will run only if workflow A has not run. If the workflow B has `always-run: true` then it will run regardless of whether workflow A has run or not.
 -   `on` [OPTIONAL] field is a list of GitHub entity types that should trigger the workflow. By default, the value is `pull_request`.
 -   `if` field specifies which rules should be checked. For each rule, we can also specify a list of **extra actions** that will be executed if this rule is activated by the pull request.
 -   `then` field is a list of [Reviewpad actions](/guides/built-ins#actions) that should run.
