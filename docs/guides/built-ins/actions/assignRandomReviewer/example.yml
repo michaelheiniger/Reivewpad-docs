@@ -1,7 +1,8 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: assign-random-reviewer
-    description: Assign random reviewer
+  - name: assign-reviewer
     if:
-      - rule: tautology
+      - $description() != ""
     then:
-      - '$assignRandomReviewer()'
+      - $assignRandomReviewer()

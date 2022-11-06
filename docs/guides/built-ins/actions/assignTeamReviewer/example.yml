@@ -1,7 +1,8 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: review-core-code
-    description: Assign review to core team when changes are made in critical code
+  - name: reviewers-assignment
     if:
-      - rule: changes-critical
+      - $hasCodePattern("critical\(.*\)")
     then:
-      - '$assignTeamReviewer(["core"])'
+      - $assignTeamReviewer(["core"])

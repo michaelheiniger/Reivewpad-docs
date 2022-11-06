@@ -1,5 +1,8 @@
-rules:
-  - name: authored-by-junior
-    description: Verifies if author is junior
-    kind: patch
-    spec: '$isElementOf($author(), $group("junior"))'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: requires-review
+    if:
+      - $isElementOf($author(), $team("juniors"))
+    then:
+      - $assignTeamReviewer(["seniors"])

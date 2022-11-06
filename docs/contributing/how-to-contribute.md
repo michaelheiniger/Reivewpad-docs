@@ -60,8 +60,6 @@ If you decide to fix an issue, please be sure to check the comment thread in cas
 
 ### Sending a Pull Request {#sending-a-pull-request}
 
-The [Reviewpad Action](https://github.com/reviewpad/action) is monitoring the pull requests and notifying the team. We will review your pull request and either merge it, request changes to it, or close it with an explanation. We'll do our best to provide updates and feedback throughout the process.
-
 **Before submitting a pull request,** please make sure the following is done:
 
 1. Fork [the repository](https://github.com/reviewpad/reviewpad) and create your branch from `main`.
@@ -117,8 +115,8 @@ Another great way to test your changes it to use `VSCode` debug tool. You can do
                 // Absolute path to reviewpad.yml file to run
                 "-f=REVIEWPAD_FILE",
                 // GitHub url to run the reviewpad.yml against to
-                // e.g. https://github.com/reviewpad/action-demo/pull/1
-                // e.g. https://github.com/reviewpad/action-demo/issue/1
+                // e.g. https://github.com/reviewpad/reviewpad/pull/1
+                // e.g. https://github.com/reviewpad/reviewpad/issue/1
                 "-u=PULL_REQUEST_URL",
                 // Absolute path to JSON file with GitHub event payload (OPTIONAL)
                 "-e=GITHUB_EVENT",

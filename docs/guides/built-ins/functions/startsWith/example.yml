@@ -1,5 +1,11 @@
-rules:
-  - name: is-dev-branch
-    kind: patch
-    description: Verifies if the head branch of the pull requests starts with dev
-    spec: '$startsWith($head(), "dev/")'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: label-change-type
+    if:
+      - rule: $startsWith($head(), "feature/")
+        extra-actions:
+          - $addLabel("feature")
+      - rule: $startsWith($head(), "fix/")
+        extra-actions:
+          - $addLabel("fix")

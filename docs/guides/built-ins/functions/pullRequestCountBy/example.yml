@@ -1,3 +1,8 @@
-rules:
-    - name: repo-has-more-than-10-pr-open
-      spec: '$pullRequestCountBy("", "open") > 10'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: check-workload
+    if:
+      - $pullRequestCountBy($author(), "open") > 2
+    then:
+      - $commentOnce("You have too many open pull requests.")

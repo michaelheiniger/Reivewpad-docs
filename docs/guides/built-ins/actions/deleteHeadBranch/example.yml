@@ -1,8 +1,14 @@
+api-version: reviewpad.com/v3.x
+
+rules:
+  - name: ready-to-merge
+    spec: $hasFileExtensions([".md"])
+
 workflows:
-  - name: delete-head-branch-after-merge
-    description: Merge and delete head branch if all changes are to markdown files
+  - name: check-compliance
     if:
-      - rule: '$hasFileExtensions([".md"])'
+      - rule: ready-to-merge
     then:
-      - '$merge()'
-      - '$deleteHeadBranch()'
+      - $merge()
+      - $deleteHeadBranch()
+

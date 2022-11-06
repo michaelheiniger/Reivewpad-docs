@@ -1,5 +1,8 @@
-rules:
-  - name: changes-transactions
-    kind: patch
-    description: Verifies if changes transactions
-    spec: '$hasFilePattern("src/transactions/**")'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: core-changes
+    if:
+      - $hasFilePattern("src/transactions/**")
+    then:
+      - $assignTeamReviewer(["core"])

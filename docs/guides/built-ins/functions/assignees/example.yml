@@ -1,5 +1,10 @@
-rules:
-  - name: assigned-to-tech-lead
-    kind: patch
-    description: Verifies if pull request was assigned only to a specific tech lead
-    spec: '$assignees() == ["john"]'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: by-default-assign-to-author
+    # Run workflow regardless of previous workflow result
+    always-run: true
+    if:
+      - $assignees() == []
+    then:
+      - $assignAssignees([$author()])

@@ -1,5 +1,13 @@
+api-version: reviewpad.com/v3.x
+
 rules:
-  - name: is-draft
-    kind: patch
-    description: Verifies if the pull request is a draft
-    spec: '$isDraft()'
+  - name: is-ready-to-review
+    # The expression is wrapped in quotes to avoid YAML parsing errors
+    spec: '!$isDraft() && $hasLinkedIssues() && $hasLinearHistory()'
+
+workflows:
+  - name: distribute-review
+    if:
+      - rule: is-ready-to-review
+    then:
+      - $assignRandomReviewer()

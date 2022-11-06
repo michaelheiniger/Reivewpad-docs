@@ -1,7 +1,13 @@
+api-version: reviewpad.com/v3.x
+
+rules:
+  - name: only-changes-documentation
+    spec: $hasFileExtensions([".md"])
+
 workflows:
-  - name: auto-merge-small-pull-request
-    description: Auto-merge small pull request
+  - name: merge
     if:
-      - rule: is-small
+      - rule: only-changes-documentation
     then:
-      - '$merge()'
+      - $merge()
+

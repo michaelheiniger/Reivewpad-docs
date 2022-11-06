@@ -1,7 +1,8 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
   - name: label-small-pull-request
-    description: Label small pull request
     if:
-      - rule: is-small
+      - $size() < 10
     then:
-      - '$addLabel("small")'
+      - $addLabel("small")

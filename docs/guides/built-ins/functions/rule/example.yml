@@ -1,10 +1,16 @@
-rules:
-  - name: is-small
-    description: Small pull request
-    kind: patch
-    spec: '$size() < 10'
+api-version: reviewpad.com/v3.x
 
-  - name: is-not-small
-    description: Not a small pull request
-    kind: patch
-    spec: '!$rule("is-small")'
+rules:
+  - name: size-compliance
+    spec: $size() < 100
+  - name: description-compliance
+    spec: $description() != ""
+  - name: is-compliant
+    spec: $rule("size-compliance") && $rule("description-compliance")
+
+workflows:
+  - name: check-compliance
+    if:
+      - rule: is-compliant
+    then:
+      - $assignRandomReviewer()

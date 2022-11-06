@@ -1,10 +1,9 @@
-labels:
-  has-conflicts:
-    color: ff0000
+api-version: reviewpad.com/v3.x
 
 workflows:
-  - name: find-git-conflicts
+  - name: check-compliance
     if:
-      - rule: '$hasGitConflicts()'
+      - $hasGitConflicts()
     then:
-      - '$addLabel("has-conflicts")'
+      - $error("Pull request has git conflicts")
+      - $fail()

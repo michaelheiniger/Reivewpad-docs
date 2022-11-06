@@ -1,7 +1,8 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: comment-pull-request
-    description: Comment pull request
+  - name: congratulate
     if:
-      - rule: first-contribution
-    then:
-      - '$commentOnce("This is your first contribution! Thank you!")'
+      - rule: $pullRequestCountBy($author()) == 1
+        extra-actions:
+          - $commentOnce("Thank you for your first contribution!")

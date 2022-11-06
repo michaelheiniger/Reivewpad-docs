@@ -1,5 +1,8 @@
-rules:
-  - name: should-notify-tech-lead
-    kind: patch
-    description: Verifies if pull request is going to be pulled into "features" branch
-    spec: '$base() == "features"'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: staging-changes
+    if:
+      - $base() == "stage"
+    then:
+      - $info("Please make sure you've tested your changes in staging environment.")

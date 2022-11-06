@@ -1,7 +1,9 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: info-large-pull-requests
-    description: Info about large pull requests
+  - name: when-transactions
     if:
-      - rule: is-large
+      - $hasFilePattern("**/transactions")
     then:
-      - '$info("This pull request was considered too large.")'
+      - $info("You have changed transactions. Please schedule a meeting.")
+      - $addLabel("critical")

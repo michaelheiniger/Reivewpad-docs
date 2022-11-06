@@ -1,5 +1,11 @@
-rules:
-  - name: is-waiting-for-review
-    kind: patch
-    description: Verifies if the pull request is waiting for review
-    spec: '$isWaitingForReview()'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: attention-set
+    if:
+      - rule: $isWaitingForReview()
+        extra-actions:
+          - $addLabel("waiting-for-review")
+      - rule: $hasUnaddressedThreads()
+        extra-actions:
+          - $addLabel("requires-author-attention")

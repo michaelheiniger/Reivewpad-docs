@@ -1,5 +1,9 @@
-rules:
-  - name: has-description
-    kind: patch
-    description: Verifies if the pull request description is "Testing description"
-    spec: '$description() == "Testing description"'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: check-conventions
+    if:
+      - $description() == ""
+    then:
+      - $error("Pull request description is empty")
+      - $fail()

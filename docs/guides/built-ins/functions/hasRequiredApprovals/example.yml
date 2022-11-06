@@ -1,6 +1,8 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: define-merge-ability
+  - name: merge
     if:
-      - '$hasAnnotation("critical") && !$hasRequiredApprovals(2, $team("core"))'
+      - $hasRequiredApprovals(2, $team("core"))
     then:
-      - '$disableActions(["merge"])'
+      - $merge()

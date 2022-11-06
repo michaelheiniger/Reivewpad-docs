@@ -1,5 +1,9 @@
-rules:
-  - name: has-linear-history
-    kind: patch
-    description: Verifies if the pull request has a linear history
-    spec: '$hasLinearHistory()'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: check-compliance
+    if:
+      - $hasLinearHistory() == false
+    then:
+      - $error("Pull request is out of sync with the base branch")
+      - $fail()

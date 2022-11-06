@@ -1,7 +1,11 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: review-code-from-new-joiners
-    description: Assign senior reviewers randomly to pull requests from new joiners
+  - name: reviewers-assignment
     if:
-      - rule: authored-by-junior
-    then:
-      - '$assignReviewer($group("seniors"), 2, "random")'
+      - rule: $isElementOf($author(), $team("devops"))
+        extra-actions:
+          - $assignReviewer($group("devops"))
+      - rule: $isElementOf($author(), $team("juniors"))
+        extra-actions:
+          - $assignReviewer($group("seniors"), 1, "reviewpad")

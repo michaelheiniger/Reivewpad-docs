@@ -1,5 +1,8 @@
-rules:
-  - name: has-too-many-commits
-    kind: patch
-    description: Verifies if the pull request has more than 3 commits
-    spec: '$commitCount() > 3'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: high-activity
+    if:
+      - $commitCount() > 10
+    then:
+      - $info("Please consider splitting the pull request into smaller pull requests.")

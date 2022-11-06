@@ -1,5 +1,8 @@
-rules:
-  - name: changes-critical
-    kind: patch
-    description: Verifies if the pull request contains changes to critical code
-    spec: '$hasAnnotation("critical")'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: security-changes
+    if:
+      - $hasAnnotation("security")
+    then:
+      - $assignReviewer($team("security"), 1)

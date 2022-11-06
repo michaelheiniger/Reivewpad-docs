@@ -1,11 +1,14 @@
-groups:
-  - name: frontend-and-backend-devs
-    description: Frontend and backend developers
-    kind: developers
-    spec: '$append($team("frontend"), $team("backend"))'
+api-version: reviewpad.com/v3.x
 
-rules:
-  - name: authored-by-web-developer
-    kind: patch
-    description: Authored by web developers
-    spec: '$isElementOf($author(), $group("frontendAndBackendDevs"))'
+groups:
+  - name: all-devs
+    kind: developers
+    spec: $append($team("frontend"), $team("backend"))
+
+workflows:
+  - name: reviewer-assignment
+    if:
+      - $description() != ""
+    then:
+      - $assignReviewer($group("all-devs"), 1)
+

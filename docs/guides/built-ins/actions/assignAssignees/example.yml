@@ -1,6 +1,10 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: assign-to-author
-    description: Assign pull request to author
+  - name: always-assign-to-author
+    # Run workflow regardless of previous workflow result
     always-run: true
+    if:
+      - $description() != ""
     then:
-      - '$assignAssignees([$author()])'
+      - $assignAssignees([$author()])
