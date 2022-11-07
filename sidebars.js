@@ -8,11 +8,17 @@ const sidebars = {
             type: "category",
             label: "Getting Started",
             collapsed: false,
-            items: ["getting-started/installation", "getting-started/security"],
+            items: [
+                "getting-started/installation",
+                "getting-started/configuration",
+                "getting-started/playground",
+                "getting-started/security",
+            ],
         },
         {
             type: "category",
             label: "Guides",
+            collapsed: false,
             items: [
                 "guides/syntax",
                 "guides/semantics",
@@ -35,8 +41,7 @@ const sidebars = {
                 type: "generated-index",
                 title: "Use Cases",
                 slug: "/use-cases",
-        description:
-                    "See how Reviewpad can be used in different scenarios.",
+                description: "See how Reviewpad can be used in different scenarios.",
             },
             items: [
                 "use-cases/auto-merge/auto-merge",

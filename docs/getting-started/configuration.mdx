@@ -1,0 +1,41 @@
+---
+title: "Configuration"
+id: "configuration"
+slug: "configuration"
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import LabelSizeConfiguration from "!!raw-loader!../use-cases/label-size/example.yml";
+
+Now that you have installed Reviewpad it's time to configure it.
+
+**The Reviewpad configuration is a YAML file that defines the workflows that to follow to automate your pull request process.**
+
+In this example we will create a configuration that checks the size of a pull request and adds a label with the size.
+
+## Add `reviewpad.yml` to the root of your repository
+
+Reviewpad will look for a `reviewpad.yml` file in the root of your repository and follow the workflows defined in it.
+
+Create a file called `reviewpad.yml` in the root of your repository and add the following content:
+
+<CodeBlock language="yml">{LabelSizeConfiguration}</CodeBlock>
+
+![Reviewpad Installation - Step 3](/img/installation/step3.gif)
+
+That's it! :tada:
+
+Reviewpad will run on every pull request and follow the workflows defined in the `reviewpad.yml` configuration file.
+
+**👉 Don't forget to commit and push the `reviewpad.yml` file to your repository.**
+
+## Next steps
+
+Now that you have configured Reviewpad you can start using it to automate your pull request process.
+
+Have a look at the [use cases](../use-cases) to see how Reviewpad can help you.
+
+:::info Terms and Conditions
+
+By running Reviewpad, you are agreeing with [Reviewpad's Terms and Conditions](https://reviewpad.com/terms-and-conditions/).
+:::
