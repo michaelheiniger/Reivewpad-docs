@@ -1,5 +1,5 @@
 ---
-title: "Aladino Semantics"
+title: "Aladino semantics"
 id: "semantics"
 slug: "semantics"
 ---

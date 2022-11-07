@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: label-pull-requests-with-git-conflicts
-    if:
-      - '$hasGitConflicts()'
-    then:
-      - '$addLabel("conflicts")'

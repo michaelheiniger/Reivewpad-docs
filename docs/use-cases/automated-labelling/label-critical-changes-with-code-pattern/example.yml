@@ -1,21 +1,22 @@
 api-version: reviewpad.com/v3.x
 
-labels:
-  critical:
-    description: Critical code
-    # color is the hexadecimal color code for the label, without the leading #.
-    color: fd5e53
-
 rules:
-  - name: calls-quicksort
-    kind: patch
-    description: Patch contains the keyword quicksort
-    spec: '$hasCodePattern("quicksort")'
+  - name: changes-env-var
+    description: Patch includes changes to environment variables
+    spec: $hasCodePattern("ENV_*")
+  - name: includes_gh_token
+    description: Patch includes a GitHub token
+    spec: $hasCodePattern("gh_*")
 
 workflows:
   - name: critical
-    description: Modifications of critical code require careful review
     if:
-      - rule: calls-quicksort
+      - rule: changes-env-var
     then:
-      - '$addLabel("critical")'
+      - $addLabel("critical")
+  - name: security
+    if:
+      - rule: includes_gh_token
+    then:
+      - $error("Patch includes a GitHub token")
+      - $fail()

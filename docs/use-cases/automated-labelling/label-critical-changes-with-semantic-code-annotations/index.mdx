@@ -9,7 +9,7 @@ import Example from "!!raw-loader!./example.yml";
 
 The [hasAnnotation](/guides/built-ins#hasannotation) built-in can be used to access code annotations in Reviewpad configurations. A key differentiator is that Reviewpad can understand the context of changes allowing for powerful checks.
 
-To use the annotation in `reviewpad.yml` files, you need to annotate functions of interest with the comment `reviewpad-an: critical`. For example, consider the following [Go function](https://github.com/reviewpad/action-demo/blob/policies/go/quicksort.go#L6):
+To use the annotation in `reviewpad.yml` files, you need to annotate functions of interest with the comment `reviewpad-an: critical`. For example, consider the following Go function:
 
 ```go
 // reviewpad-an: critical
@@ -43,7 +43,5 @@ func quicksort(a []int) []int {
 From now on, we can automatically label PRs that modify the content of this function:
 
 <CodeBlock language="yml">{Example}</CodeBlock>
-
-As an example, check out [reviewpad/action-demo/#10](https://github.com/reviewpad/action-demo/pull/10).
 
 In a future version, we plan to allow such specification in configuration files, for developers that do not want to add such annotations to the source code. Effectively, Reviewpad allows to implement a much more advanced version of CODEOWNERS.

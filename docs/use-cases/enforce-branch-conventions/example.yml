@@ -1,74 +1,44 @@
 api-version: reviewpad.com/v3.x
 
 labels:
-  release-minor:
-    name: 'release:minor :hash::arrow_up::hash:'
-    description: Release the changes as a minor
-    color: E96F70
-  release-patch:
-    name: 'release:patch :hash::hash::arrow_up:'
-    description: Release the changes as a patch
-    color: FF9085
-  release-skip:
-    name: 'release:skip :hash::hash::hash:'
-    description: Do not release changes
-    color: FFE9DE
   type-bugfix:
     name: 'type:bugfix :beetle:'
     description: Provides a bug fix
-    color: F9B1C9
-  type-enhancement:
-    name: 'type:enhancement :ok_hand:'
-    description: Provides an enhancement
-    color: 92E7F3
+    color: '#F9B1C9'
   type-feature:
     name: 'type:feature :rocket:'
     description: Provides a new feature
-    color: 65ECA3
-  type-hotfix:
-    name: 'type:hotfix :ninja:'
-    description: Provides a hot fix
-    color: BBA7E4
+    color: '#65ECA3'
   type-support:
     name: 'type:support :hammer:'
     description: Provides a misc change
-    color: CDDBDC
+    color: '#CDDBDC'
 
 workflows:
   - name: enforce-branch-naming
     if:
-      - rule: '$startsWith($head(), "bugfix/")'
+      - rule: $startsWith($head(), "bugfix/")
         extra-actions:
-          - '$addLabel("release-patch")'
-          - '$addLabel("type-bugfix")'
-      - rule: '$startsWith($head(), "enhancement/")'
+          - $addLabel("type-bugfix")
+      - rule: $startsWith($head(), "feature/")
         extra-actions:
-          - '$addLabel("release-minor")'
-          - '$addLabel("type-enhancement")'
-      - rule: '$startsWith($head(), "feature/")'
+          - $addLabel("type-feature")
+      - rule: $startsWith($head(), "support/")
         extra-actions:
-          - '$addLabel("release-minor")'
-          - '$addLabel("type-feature")'
-      - rule: '$startsWith($head(), "hotfix/")'
-        extra-actions:
-          - '$addLabel("release-patch")'
-          - '$addLabel("type-hotfix")'
-      - rule: '$startsWith($head(), "support/")'
-        extra-actions:
-          - '$addLabel("release-patch")'
-          - '$addLabel("type-support")'
+          - $addLabel("type-support")
 
   - name: default-policy
     description: By default it will put a warning
     if:
       - 'true'
     then:
-      - '$addLabel("needs-review")'
+      - $addLabel("needs-review")
+      # The expression is wrapped in quotes to avoid YAML parsing errors
       - '$warn("All branches must use the following nomenclature: prefix/name where prefix can be one of: bugfix, enhancement, feature, hotfix or support.")'
 
   - name: require-linear-history
     always-run: true
     if:
-      - '!$hasLinearHistory()'
+      - $hasLinearHistory() == false
     then:
-      - '$warn("This pull request does not have linear history - please fix this!")'
+      - $warn("This pull request does not have linear history - please fix this!")

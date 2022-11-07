@@ -7,6 +7,6 @@ workflows:
       - pull_request
     always-run: true
     if:
-      - '$description() == ""'
+      - $description() == ""
     then:
-      - '$error("The description is empty. Please add more information!")'
+      - $error("The description is empty. Please add more information!")

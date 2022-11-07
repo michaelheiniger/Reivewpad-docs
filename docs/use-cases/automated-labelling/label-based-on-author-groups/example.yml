@@ -3,8 +3,7 @@ api-version: reviewpad.com/v3.x
 labels:
   new-joiner:
     description: Pull requests created by new joiners
-    # color is the hexadecimal color code for the label, without the leading #.
-    color: 294b69
+    color: '#294b69'
 
 groups:
   - name: new-joiners
@@ -12,13 +11,11 @@ groups:
     kind: developers
     type: filter
     param: developer
-    where: '$pullRequestCountBy($developer, "all") < 10'
+    where: $pullRequestCountBy($developer, "all") < 10
 
 rules:
   - name: authored-by-new-joiner
-    kind: patch
-    description: Patch authored by new joiner
-    spec: '$isElementOf($author(), $group("new-joiners"))'
+    spec: $isElementOf($author(), $group("new-joiners"))
 
 workflows:
   - name: critical
@@ -26,4 +23,4 @@ workflows:
     if:
       - rule: authored-by-new-joiner
     then:
-      - '$addLabel("new-joiner")'
+      - $addLabel("new-joiner")

@@ -5,13 +5,17 @@ slug: "installation-action-tokenized"
 ---
 
 import CodeBlock from "@theme/CodeBlock";
-import LabelSizeConfiguration from "!!raw-loader!../use-cases/label-size/example.yml";
+import LabelSizeConfiguration from "!!raw-loader!../use-cases/automated-labelling/label-with-size/example.yml";
 
 :::caution GitHub App
 
 To get the most out of Reviewpad we advise [installing the GitHub App](/getting-started/installation). This will allow you to use all Reviewpad features.
 
 If you are not able to install the GitHub App, you can continue with this GitHub Action installation.
+
+Unfortunately, the following use cases will not work:
+- [Attention set](../uses-cases/attention-set)
+- [Auto-merge](../uses-cases/auto-merge)
 :::
 
 :::caution GitHub Token
@@ -20,7 +24,7 @@ The installation requires a GitHub Token to be configured in your repository sec
 
 We advise to create a dedicated GitHub user for this purpose and to use a token generated for this user.
 
-If you wish to execute Reviewpad without a GitHub Token, you can install [Reviewpad as GitHub Action](/getting-started/installation-action). Please note that you won't be able to use all builtins.
+If you wish to execute Reviewpad without a GitHub Token, you can install [Reviewpad as GitHub Action](/getting-started/installation-action). Please note that you won't be able to use all built-ins.
 :::
 
 This guide describes how to install Reviewpad with a GitHub Token.

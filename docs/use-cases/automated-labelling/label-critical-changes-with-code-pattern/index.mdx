@@ -7,6 +7,8 @@ slug: "/use-cases/label-critical-changes-with-code-pattern"
 import CodeBlock from "@theme/CodeBlock";
 import Example from "!!raw-loader!./example.yml";
 
-The [hasCodePattern](/guides/built-ins#hascodepattern) built-in allows you to query the code contained in the diff to understand if, for example, particular function calls were changed or sensitive data (such as passwords or access tokens) are being explicitly added to the code.
+The [hasCodePattern](/guides/built-ins#hascodepattern) built-in allows us to query the code contained in the diff.
+
+This ability let us a query for changes and understand, for instance, if sensitive (e.g. access token) data was explicitly added to the code.
 
 <CodeBlock language="yml">{Example}</CodeBlock>

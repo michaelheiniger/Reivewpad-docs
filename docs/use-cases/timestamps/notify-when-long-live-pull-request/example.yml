@@ -2,14 +2,12 @@ api-version: reviewpad.com/v3.x
 
 rules:
   - name: long-live-change
-    kind: patch
     description: Pull request has been opened for more than 15 days
-    spec: '$createdAt() < 15 days ago'
+    spec: $createdAt() < 15 days ago
 
 workflows:
-  - name: notify-long-live-pr
-    description: Notify author when long live pull request
+  - name: long-live
     if:
       - rule: long-live-change
     then:
-      - '$comment("This pull request has been opened for more than 15 days. Please consider closing it!")'
+      - $commentOnce("This pull request has been opened for more than 15 days. Please consider closing it!")

@@ -2,9 +2,7 @@ api-version: reviewpad.com/v3.x
 
 rules:
   - name: changes-to-configurations
-    kind: patch
-    description: Changes code in configuration folder
-    spec: '$hasFilePattern("src/config/**")'
+    spec: $hasFilePattern("src/config/**")
 
 workflows:
   - name: ask
@@ -12,7 +10,5 @@ workflows:
     if:
       - rule: changes-to-configurations
     then:
-      # Assign the review to john
-      - '$assignReviewer(["john"], "random")'
-      # Assign the review to devops team
-      - '$assignTeamReviewer("devops")'
+      - $assignReviewer(["john"], "random")
+      - $assignTeamReviewer("devops")

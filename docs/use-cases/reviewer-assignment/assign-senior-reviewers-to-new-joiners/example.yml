@@ -1,9 +1,8 @@
 api-version: reviewpad.com/v3.x
 
 labels:
-  priority:
-    description: Priority reviews
-    # color is the hexadecimal color code for the label, without the leading #.
+  critical:
+    description: Critical review
     color: 294b69
 
 groups:
@@ -17,13 +16,11 @@ groups:
     kind: developers
     type: filter
     param: developer
-    where: '$pullRequestCountBy($developer) < 10'
+    where: $pullRequestCountBy($developer, "all") < 10
 
 rules:
   - name: authored-by-junior
-    kind: patch
-    description: Patch is authored by a junior dev
-    spec: '$isElementOf($author(), $group("juniors"))'
+    spec: $isElementOf($author(), $group("juniors"))
 
 workflows:
   - name: critical
@@ -31,5 +28,5 @@ workflows:
     if:
       - rule: authored-by-junior
     then:
-      - '$addLabel("priority")'
-      - '$assignReviewer($group("seniors"), "round-robin")'
+      - $addLabel("critical")
+      - $assignReviewer($group("seniors"), "round-robin")

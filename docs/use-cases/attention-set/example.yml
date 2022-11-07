@@ -1,34 +1,17 @@
 api-version: reviewpad.com/v3.x
 
-rules:
-  - name: waiting-review
-    kind: patch
-    spec: '$isWaitingForReview()'
-
-  - name: not-waiting-review
-    kind: patch
-    spec: '!$rule("waiting-review")'
-
-  - name: author-attention
-    kind: patch
-    spec: '$hasUnaddressedThreads()'
-
-  - name: not-author-attention
-    kind: patch
-    spec: '!$rule("author-attention")'
-
 workflows:
   - name: attention-set
     if:
-      - rule: waiting-review
+      - rule: $isWaitingForReview()
         extra-actions:
-          - '$addLabel("waiting-review")'
-      - rule: not-waiting-review
+          - $addLabel("waiting-review")
+      - rule: $isWaitingForReview() == false
         extra-actions:
-          - '$removeLabel("waiting-review")'
-      - rule: author-attention
+          - $removeLabel("waiting-review")
+      - rule: $hasUnaddressedThreads()
         extra-actions:
-          - '$addLabel("requires-author-attention")'
-      - rule: not-author-attention
+          - $addLabel("requires-author-attention")
+      - rule: $hasUnaddressedThreads() == false
         extra-actions:
-          - '$removeLabel("requires-author-attention")'
+          - $removeLabel("requires-author-attention")

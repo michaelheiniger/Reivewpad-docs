@@ -38,10 +38,8 @@ const sidebars = {
             type: "category",
             label: "Use Cases",
             link: {
-                type: "generated-index",
-                title: "Use Cases",
-                slug: "/use-cases",
-                description: "See how Reviewpad can be used in different scenarios.",
+                type: "doc",
+                id: "use-cases/use-cases",
             },
             items: [
                 "use-cases/auto-merge/auto-merge",
@@ -58,6 +56,8 @@ const sidebars = {
                         'use-cases/automated-labelling/label-critical-changes-with-code-pattern/label-critical-changes-with-code-pattern',
                         'use-cases/automated-labelling/label-critical-changes-with-semantic-code-annotations/label-critical-changes-with-semantic-code-annotations',
                         'use-cases/automated-labelling/label-potential-missing-changes/label-potential-missing-changes',
+                        'use-cases/automated-labelling/label-pull-requests-with-git-conflicts/label-pull-requests-with-git-conflicts',
+                        'use-cases/automated-labelling/label-with-size/label-with-size',
                         'use-cases/automated-labelling/remove-label-based-on-file-paths/remove-label-based-on-file-paths'
                     ],
                 },
@@ -66,7 +66,6 @@ const sidebars = {
                 "use-cases/comment-on-pull-requests/comment-on-pull-requests",
                 "use-cases/enforce-branch-conventions/enforce-branch-conventions",
                 "use-cases/enforce-conventional-commits/enforce-conventional-commits",
-                "use-cases/label-pull-requests-with-git-conflicts/label-pull-requests-with-git-conflicts",
                 {
                     type: "category",
                     label: "Reviewer Assignment",
@@ -82,7 +81,6 @@ const sidebars = {
                     ],
                 },
                 "use-cases/ship-show-ask/ship-show-ask",
-                "use-cases/stale-issues-pull-requests/stale-issues-or-pull-requests",
                 {
                     type: "category",
                     label: "Timestamps",

@@ -1,5 +1,5 @@
 ---
-title: "Aladino Syntax"
+title: "Aladino syntax"
 id: "syntax"
 slug: "syntax"
 ---
