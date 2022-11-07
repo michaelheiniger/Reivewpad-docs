@@ -56,7 +56,7 @@ const sidebars = {
                         'use-cases/automated-labelling/label-critical-changes-with-code-pattern/label-critical-changes-with-code-pattern',
                         'use-cases/automated-labelling/label-critical-changes-with-semantic-code-annotations/label-critical-changes-with-semantic-code-annotations',
                         'use-cases/automated-labelling/label-potential-missing-changes/label-potential-missing-changes',
-                        'use-cases/automated-labelling/label-pull-requests-with-git-conflicts/label-pull-requests-with-git-conflicts',
+                        'use-cases/automated-labelling/label-when-git-conflicts/label-when-git-conflicts',
                         'use-cases/automated-labelling/label-with-size/label-with-size',
                         'use-cases/automated-labelling/remove-label-based-on-file-paths/remove-label-based-on-file-paths'
                     ],

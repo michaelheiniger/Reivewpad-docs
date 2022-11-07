@@ -1,0 +1,24 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Closes an issue / pull request with a given comment - without merging it.
+
+By default, if no parameter is provided, it will close the issue / pull request without a comment.
+
+**Parameters**:
+
+| Parameter            | Type   | Description              |
+| -------------------- | ------ | ------------------------ |
+| `comment` (optional) | string | The body of the comment. |
+
+**Examples**:
+
+```yml
+$close()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Example}</CodeBlock>

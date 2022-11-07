@@ -1,0 +1,13 @@
+api-version: reviewpad.com/v3.x
+
+rules:
+  - name: changes-to-configurations
+    spec: $hasFilePattern("src/config/**")
+
+workflows:
+  - name: ask
+    description: Ask devops team
+    if:
+      - rule: changes-to-configurations
+    then:
+      - $assignTeamReviewer("devops")

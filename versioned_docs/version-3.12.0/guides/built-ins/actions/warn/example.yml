@@ -1,0 +1,8 @@
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: validate-changes
+    if:
+      - $hasFilePattern("*.lock")
+    then:
+      - $warn("Please remove the lock file from the commit.")

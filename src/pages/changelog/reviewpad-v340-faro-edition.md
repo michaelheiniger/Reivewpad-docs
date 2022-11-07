@@ -1,9 +1,5 @@
 ## New features :fire:
 
-### Reviewpad
-
-- Feature: Extends cron job for issues and pull requests. Check the [stale pull request/issue use case](/use-cases/stale-issues-or-pull-requests).
-
 ### Aladino Language
 
 [Lambda expressions](/guides/aladino/syntax) - Aladino now supports lambda functions.
