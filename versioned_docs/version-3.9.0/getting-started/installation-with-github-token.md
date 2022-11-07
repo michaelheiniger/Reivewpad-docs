@@ -16,7 +16,7 @@ _All functions that require a GitHub Token to be provided are marked with the fo
 
 :::caution Requires GitHub token
 
-Please note that this function requires the [Reviewpad to be installed with a GitHub token](/getting-started/installation-with-github-token)
+Please note that this function requires the [Reviewpad to be installed with a GitHub token](/getting-started/installation-action-tokenized)
 :::
 
 Therefore in order to setup Reviewpad with a GitHub Token, follow the following steps:

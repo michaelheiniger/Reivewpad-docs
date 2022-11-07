@@ -10,7 +10,7 @@ This guide describes how to install Reviewpad :zap:
 
 Some actions require a GitHub token :key:
 
-To install Reviewpad with a GitHub token please [follow this tutorial](/getting-started/installation-with-github-token)
+To install Reviewpad with a GitHub token please [follow this tutorial](/getting-started/installation-action-tokenized)
 :::
 
 **Reviewpad runs as a GitHub action** at the level of a single GitHub repository, which means that you need to install Reviewpad for each repository where you wish to run it.

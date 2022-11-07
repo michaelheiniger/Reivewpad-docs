@@ -9,7 +9,7 @@ This guide describes how to install Reviewpad :zap:
 
 Some actions require a GitHub token :key:
 
-To install Reviewpad with a GitHub token please [follow this tutorial](/getting-started/installation-with-github-token)
+To install Reviewpad with a GitHub token please [follow this tutorial](/getting-started/installation-action-tokenized)
 :::
 
 **Reviewpad runs as a GitHub action** at the level of a single GitHub repository, which means that you need to install Reviewpad for each repository where you wish to run it.
@@ -24,7 +24,7 @@ Use your IDE for this since we will be adding new files to the project.
 
 ## Step 2. Add `Reviewpad Action` workflow file
 
-At the root of your repository navigate to `.github > workflows` (This is where your project GitHub actions live. If you don't have these folders, please create them). 
+At the root of your repository navigate to `.github > workflows` (This is where your project GitHub actions live. If you don't have these folders, please create them).
 
 ![root of the repo](https://user-images.githubusercontent.com/43396684/186570617-9dab7df4-35e2-41f2-8dd3-b2823b822813.png)![workspcase folder](https://user-images.githubusercontent.com/43396684/186570760-4a8f72f8-09d5-4e88-97bb-860c40d6364f.png)
 

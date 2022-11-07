@@ -6,7 +6,7 @@ slug: "/use-cases/assign-review-to-a-team"
 
 :::caution Requires GitHub token
 
-Please note that this function requires the [Reviewpad Action to be installed with a GitHub token](/getting-started/installation-with-github-token)
+Please note that this function requires the [Reviewpad Action to be installed with a GitHub token](/getting-started/installation-action-tokenized)
 :::
 
 An example of assigning a review to a team when touching a specific folder.

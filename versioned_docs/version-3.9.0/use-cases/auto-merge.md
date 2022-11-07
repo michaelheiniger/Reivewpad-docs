@@ -6,7 +6,7 @@ title: Auto-merge
 
 :::caution Requires GitHub token
 
-Please note that this function requires the [Reviewpad Action to be installed with a GitHub token](/getting-started/installation-with-github-token)
+Please note that this function requires the [Reviewpad Action to be installed with a GitHub token](/getting-started/installation-action-tokenized)
 :::
 
 The ability to configure automatic PR merges can greatly unblock developers that typically wait for hours, or even days, to receive a LGTM review.
