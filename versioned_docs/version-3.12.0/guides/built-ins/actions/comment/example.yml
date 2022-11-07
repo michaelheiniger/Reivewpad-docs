@@ -5,5 +5,5 @@ workflows:
     if:
       - $hasLinearHistory() == false
     then:
-      - $comment("The pull request is out of sync with the base branch.")
+      - $comment("The pull request does not have a linear history.")
       - $fail()

@@ -2,16 +2,22 @@ api-version: reviewpad.com/v3.x
 
 groups:
   - name: tech-leads
-    kind: developers
     # The expression is wrapped in quotes to avoid YAML parsing errors
     spec: '["john", "maria", "arthur"]'
   - name: juniors
-    kind: developers
     type: filter
     param: developer
-    where: $pullRequestCountBy($developer) < 10
+    where: $pullRequestCountBy($developer, "all") < 10
+  - name: ignore_paths
+    # The expression is wrapped in quotes to avoid YAML parsing errors
+    spec: '["engine/**", "*.yaml"]'
 
 workflows:
+  - name: label-with-size
+    if:
+      - $size($group("ignore_paths")) < 10
+    then:
+      - $label("small")
   - name: review-juniors-changes
     if:
       - $isElementOf($author(), $group("juniors"))
