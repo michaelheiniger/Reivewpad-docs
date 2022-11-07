@@ -6,4 +6,4 @@ workflows:
       - $title() == ""
     then:
       - $error("A pull request must have a title")
-      - $fail()
+      - $fail("title is empty")

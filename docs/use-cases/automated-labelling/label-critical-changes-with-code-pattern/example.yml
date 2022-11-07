@@ -19,4 +19,4 @@ workflows:
       - rule: includes_gh_token
     then:
       - $error("Patch includes a GitHub token")
-      - $fail()
+      - $fail("GitHub token in patch")

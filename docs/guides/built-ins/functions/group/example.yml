@@ -17,7 +17,7 @@ workflows:
     if:
       - $size($group("ignore_paths")) < 10
     then:
-      - $label("small")
+      - $addLabel("small")
   - name: review-juniors-changes
     if:
       - $isElementOf($author(), $group("juniors"))

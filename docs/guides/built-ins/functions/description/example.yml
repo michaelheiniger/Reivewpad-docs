@@ -6,4 +6,4 @@ workflows:
       - $description() == ""
     then:
       - $error("Pull request description is empty")
-      - $fail()
+      - $fail("description is empty")

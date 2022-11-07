@@ -6,4 +6,4 @@ workflows:
       - $hasGitConflicts()
     then:
       - $error("Pull request has git conflicts")
-      - $fail()
+      - $fail("git conflicts")

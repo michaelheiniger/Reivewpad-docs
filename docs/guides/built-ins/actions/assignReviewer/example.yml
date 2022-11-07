@@ -5,7 +5,7 @@ workflows:
     if:
       - rule: $isElementOf($author(), $team("devops"))
         extra-actions:
-          - $assignReviewer($group("devops"))
+          - $assignReviewer($team("devops"))
       - rule: $isElementOf($author(), $team("juniors"))
         extra-actions:
-          - $assignReviewer($group("seniors"), 1, "reviewpad")
+          - $assignReviewer($team("seniors"), 1, "reviewpad")
