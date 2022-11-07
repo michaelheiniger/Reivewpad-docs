@@ -119,8 +119,8 @@ A `reviewpad.yml` example:
 
 **Description**:
 
-This built-in receives two regexes with named capturing groups denoted by the `@X` pattern.  
-These regexes are matched against the set of files in the patch.  
+This built-in receives two regexes with named capturing groups denoted by the `@X` pattern.
+These regexes are matched against the set of files in the patch.
 The built-in checks if the value set of the first regex is contained in the second one.
 
 **Parameters**:
@@ -142,7 +142,7 @@ Returns `true` if the value set of the first regex is contained in the second on
 $changed("@1.go", "@1.md")
 ```
 
-This spec will return `true` if for each file in the patch with the extension `.go`  
+This spec will return `true` if for each file in the patch with the extension `.go`
 there is also a file in the patch with the same name with the extension `.md`.
 
 A `reviewpad.yml` example:
@@ -1570,7 +1570,7 @@ workflows:
 
 **Description**:
 
-Assigns up to 10 assignees to a pull request. 
+Assigns up to 10 assignees to a pull request.
 
 Users already assigned to a pull request are not replaced.
 
@@ -1602,10 +1602,10 @@ A `reviewpad.yml` example:
 
 **Description**:
 
-Assigns a random user of the GitHub organization as the reviewer.  
+Assigns a random user of the GitHub organization as the reviewer.
 This action will always pick a user different than the author of the pull request.
 
-However, if the pull request already has a reviewer, nothing happens. This is to prevent  
+However, if the pull request already has a reviewer, nothing happens. This is to prevent
 adding a reviewer each time the pull request is updated.
 
 When there's no reviewers to assign to, an error is returned.
@@ -1878,7 +1878,7 @@ A `reviewpad.yml` example:
 
 <CodeBlock language="yml">{Built_ins.Fail}</CodeBlock>
 
-### info 
+### info
 
 ***
 
