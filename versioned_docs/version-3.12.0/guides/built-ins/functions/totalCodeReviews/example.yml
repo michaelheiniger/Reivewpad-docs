@@ -1,12 +1,12 @@
+api-version: reviewpad.com/v3.x
+
 rules:
-  - name: are-all-reviewers-juniors
-    description: Verifies if all reviewers are juniors
-    kind: patch
-    spec: '$all($reviewers(), ($rev: String => $totalCodeReviews($rev) < 5))'
+  - name: is-junior-author
+    spec: $totalCodeReviews($author()) < 5
 
 workflows:
-  - name: requires-review-from-senior-dev
+  - name: assign-reviewers
     if:
-      - rule: are-all-reviewers-juniors
+      - rule: is-junior-author
     then:
-      - '$assignReviewer($group("seniors"), 1, "reviewpad")'
+      - $assignReviewer($team("seniors"), 1, "reviewpad")

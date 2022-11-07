@@ -1,5 +1,12 @@
+api-version: reviewpad.com/v3.x
+
 rules:
-  - name: is-authored-by-tech-lead
-    kind: patch
-    description: Verifies if the pull request was authored by tech lead
-    spec: '$author() == "john"'
+  - name: is-author-by-tech-lead
+    spec: $author() == "john"
+
+workflows:
+  - name: share-knowledge
+    if:
+      - rule: is-author-by-tech-lead
+    then:
+      - $assignTeamReviewer(["juniors"])

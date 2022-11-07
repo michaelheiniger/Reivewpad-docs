@@ -1,3 +1,11 @@
-rules:
-    - name: author-has-more-than-10-issues-open
-      spec: '$issueCountBy($author(), "open") > 10'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: congratulate
+    if:
+      - rule: $issueCountBy($author()) == 1
+        extra-actions:
+          - $commentOnce("Congratulations on your first issue!")
+      - rule: $issueCountBy($author()) == 10
+        extra-actions:
+          - $commentOnce("Way to go! You have created 10 issues!")

@@ -1,7 +1,8 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: warn-large-pull-requests
-    description: Warn about large pull requests
+  - name: validate-changes
     if:
-      - rule: is-large
+      - $hasFilePattern(["*.lock"])
     then:
-      - '$warn("This pull request was considered too large.")'
+      - $warn("Please remove the lock file from the commit.")

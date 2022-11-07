@@ -1,5 +1,8 @@
-rules:
-  - name: requires-author-attention
-    kind: patch
-    description: Requires author to take action
-    spec: '$hasUnaddressedThreads()'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: attention-set
+    if:
+      - $hasUnaddressedThreads()
+    then:
+      - $addLabel("requires-author-attention")

@@ -1,7 +1,8 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: remove-small-label-in-pull-request
-    description: Remove small label applied to pull request
+  - name: conflicts
     if:
-      - rule: is-not-small
-    then:
-      - '$removeLabel("small")'
+      - rule: $hasGitConflicts() == false
+        extra-actions:
+          - $removeLabel("git-conflicts")

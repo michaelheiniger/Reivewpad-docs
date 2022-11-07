@@ -1,5 +1,14 @@
+api-version: reviewpad.com/v3.x
+
 rules:
-  - name: is-author-from-organization
-    kind: patch
-    description: Verifies if the author belongs to the organization
-    spec: '$isElementOf($author(), $organization())'
+  - name: external-contributor
+    spec: $isElementOf($author(), $organization()) == false
+
+workflows:
+  - name: external-contributions
+    if:
+      - rule: external-contributor
+    then:
+      - $assignTeamReviewer(["core"])
+      - $addLabel("external-contributor")
+      - $commentOnce("Thank you for your contribution!")

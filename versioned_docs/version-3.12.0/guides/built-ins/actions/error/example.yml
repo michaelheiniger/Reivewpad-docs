@@ -1,7 +1,8 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: error-large-pull-requests
-    description: Error about large pull requests
+  - name: check-compliance
     if:
-      - rule: is-large
+      - $size() > 100
     then:
-      - '$error("This pull request was considered too large.")'
+      - $error("This pull request is too large")

@@ -1,7 +1,9 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: conflict
-    description: Ask to resolve conflict
+  - name: update-to-date
     if:
-      - rule: has-conflicts
+      - $hasLinearHistory() == false
     then:
-      - '$comment("This pull request has git conflicts. Please resolve them.")'
+      - $comment("The pull request is out of sync with the base branch.")
+      - $fail()

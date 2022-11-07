@@ -1,7 +1,13 @@
+api-version: reviewpad.com/v3.x
+
+rules:
+  - name: missing-tests
+    spec: $changed("src/@1.java", "test/@1.java") == false
+
 workflows:
-  - name: fail-on-missing-specs
-    description: Fails the action on missing specs
+  - name: check-compliance
     if:
-      - rule: missing-specs
+      - rule: missing-tests
     then:
-      - '$fail("please review the missing specs")'
+      - $error("Please include tests for your change")
+      - $fail("Missing tests")

@@ -1,12 +1,12 @@
+api-version: reviewpad.com/v3.x
+
 rules:
-  - name: code-changes-without-tests
-    kind: patch
-    description: Changes to src and not to test files
-    spec: '$hasFilePattern("src/**") && !$hasFilePattern("*_test.go")'
+  - name: missing-tests
+    spec: $changed("src/@1.java", "test/@1.java") == false
 
 workflows:
-  - name: request-changes-to-tests
+  - name: validate-changes
     if:
-      - rule: code-changes-without-tests
+      - rule: missing-tests
     then:
-      - '$review("REQUEST_CHANGES", "Please update the associated tests.")'
+      - $review("REQUEST-CHANGES", "Please include the tests for your change")

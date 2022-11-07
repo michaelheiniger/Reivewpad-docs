@@ -1,6 +1,8 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: welcome-first-contributor
+  - name: congratulate
     if:
-      - rule: is-first-contributor
+      - $pullRequestCountBy($author()) == 1
     then:
-      - '$commentOnce($sprintf("Thank you @%s for this first contribution!", [$author()]))'
+      - $commentOnce($sprintf("Thank you @%s for this first contribution!", [$author()]))

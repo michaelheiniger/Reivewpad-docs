@@ -19,26 +19,16 @@ api-version: reviewpad.com/v3.x
 
 labels:
     fast-track:
-        name: fast track # optional
-        description: Fast track mode # optional
-        color: 76dbbe
+        color: "#76dbbe"
 
 rules:
-    - name: changes-one-file
-      kind: patch # optional
-      description: Patch has one file # optional
-      spec: $fileCount == 1
-
     - name: dummy-rule
-      kind: patch # optional
-      description: Simple dummy rule # optional
       spec: 1 == 1
 
 workflows:
     - name: fast-track
-      description: Fast track of pull requests # optional
       if:
-          - rule: changes-one-file
+          - rule: $fileCount == 1
       then:
           - $addLabel("fast-track")
 ```
@@ -54,14 +44,12 @@ api-version: reviewpad.com/v3.x
 
 labels:
     fast-track:
-        description: Fast track mode # optional
-        color: 76dbbe
+        color: "#76dbbe"
 
 rules:
 
 workflows:
     - name: fast-track
-      description: Fast track of pull requests # optional
       if:
           - rule: changes-one-file
       then:

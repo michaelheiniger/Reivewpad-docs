@@ -1,5 +1,9 @@
-rules:
-  - name: changes-placeBet
-    kind: patch
-    description: Verifies if changes placeBet file
-    spec: '$hasFileName("placeBet.js")'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: configuration-changes
+    if:
+      - $hasFileName("Dockerfile")
+    then:
+      - $assignTeamReviewer(["devops"])
+      - $addLabel("devops")

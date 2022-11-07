@@ -1,7 +1,9 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: close-pull-request
-    description: Close pull request
+  - name: stale
     if:
-      - rule: stale-pull-request
+      - rule: $lastEventAt() < 30 days ago
     then:
-      - '$close("Closing for inactivity.")'
+      - $addLabel("stale")
+      - $close("This pull request has been automatically closed due to inactivity")

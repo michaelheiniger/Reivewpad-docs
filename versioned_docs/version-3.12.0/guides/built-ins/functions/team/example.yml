@@ -1,5 +1,8 @@
-rules:
-  - name: is-author-by-devops
-    description: Verifies if author belongs to devops team
-    kind: patch
-    spec: '$isElementOf($author(), $team("devops"))'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: assign-devops-reviewer
+    if:
+      - $isElementOf($author(), $team("devops"))
+    then:
+      - $assignTeamReviewer(["devops"])

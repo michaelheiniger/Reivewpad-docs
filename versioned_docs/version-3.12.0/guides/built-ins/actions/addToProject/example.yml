@@ -1,7 +1,8 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
   - name: add-to-project
-    description: Add to project pull requests without linked issues
     if:
-        - rule: '!$hasLinkedIssues()'
+        - $hasLinkedIssues() == false
     then:
-        - '$addToProject("reviewpad test", "in progress")'
+        - $addToProject("jupiter", "in progress")

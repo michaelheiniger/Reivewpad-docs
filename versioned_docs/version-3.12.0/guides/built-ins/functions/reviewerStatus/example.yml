@@ -1,5 +1,13 @@
+api-version: reviewpad.com/v3.x
+
 rules:
-  - name: approved-by-marcelosousa
-    kind: patch
-    description: Checks if the pull request was approved by marcelosousa
-    spec: '$reviewerStatus("marcelosousa") == "APPROVED"'
+  - name: has-approval
+    # The expression is wrapped in quotes to avoid YAML parsing errors
+    spec: '$any($reviewers(), ($r: String => $reviewerStatus($r) == "APPROVED"))'
+
+workflows:
+  - name: merge
+    if:
+      - rule: has-approval
+    then:
+      - $merge()

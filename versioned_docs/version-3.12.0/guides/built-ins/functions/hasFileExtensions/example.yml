@@ -1,5 +1,8 @@
-rules:
-  - name: changes-are-only-tests
-    kind: patch
-    description: Verifies if changes are only on test files
-    spec: '$hasFileExtensions([".test.ts"])'
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: configuration-changes
+    if:
+      - $hasFileExtensions([".yaml"])
+    then:
+      - $assignTeamReviewer(["devops"])

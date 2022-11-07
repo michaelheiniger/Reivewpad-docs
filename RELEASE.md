@@ -24,6 +24,12 @@ git pull
 git status
 ```
 
+4. You are able to build the project.
+
+```bash
+yarn build
+```
+
 ## Create version
 
 The first step into the release is to defined which version of [docs.reviewpad.com](https://docs.reviewpad.com) is to be released.
@@ -40,7 +46,7 @@ This command will do the following:
 2. Create a copy of the current `sidebars` add it as a new file `version-VERSION-sidebars.json` under `versioned_sidebars`.
 3. Add the `VERSION` into `versions.json` file.
 
-## Run it locally
+## Run and built it locally
 
 The next step is to run the documentation locally to make sure everything is working as expected.
 
@@ -49,6 +55,14 @@ yarn start
 ```
 
 Make sure that the new version is available in the version selector.
+
+Then, build the project.
+
+```bash
+yarn build
+```
+
+You should be able to build the project without any errors.
 
 ## Commit and push it
 

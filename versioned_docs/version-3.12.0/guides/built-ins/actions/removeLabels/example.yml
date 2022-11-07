@@ -1,7 +1,9 @@
+api-version: reviewpad.com/v3.x
+
 workflows:
-  - name: label-size-xs
+  - name: label-size
     if:
-      - rule: '$size() <= 9'
+      - rule: $size() < 10
         extra-actions:
-          - '$addLabel("size/XS")'
-          - '$removeLabels(["size/S", "size/M", "size/L", "size/XL", "size/XXL"])'
+          - $addLabel("small")
+          - $removeLabels(["medium", "large"])
