@@ -45,8 +45,8 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [
-        { name: 'keywords', content: 'reviewpad, pull requests, code review, automation, github action' },
-        { name: 'description', content: 'Reviewpad is an easy to use GitHub Action to automate the GitHub workflow and accelerate the software delivery lifecycle.' },
+        { name: 'keywords', content: 'reviewpad, pull requests, code review, automation, github app' },
+        { name: 'description', content: ' Reviewpad is an open-source service to accelerate the software delivery lifecycle on GitHub.' },
         { name: 'theme-color', content: '#00337e' },
         { property: 'og:image', content: 'https://docs.reviewpad.com/img/Reviewpad-Docs-SEO.png' },
         { property: 'og:image:width', content: '2048' },
@@ -54,13 +54,13 @@ const config = {
         { property: 'og:locale', content: 'en_US' },
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: 'Reviewpad | Documentation' },
-        { property: 'og:description', content: 'Reviewpad is an easy to use GitHub Action to automate the GitHub workflow and accelerate the software delivery lifecycle.' },
+        { property: 'og:description', content: ' Reviewpad is an open-source service to accelerate the software delivery lifecycle on GitHub.' },
         { property: 'og:url', content: 'https://docs.reviewpad.com/' },
         { property: 'og:site_name', content: 'Reviewpad | Pull Request Automation' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: '@reviewpad' },
         { name: 'twitter:title', content: 'Reviewpad | Documentation' },
-        { name: 'twitter:description', content: 'Reviewpad is an easy to use GitHub Action to automate the GitHub workflow and accelerate the software delivery lifecycle.' },
+        { name: 'twitter:description', content: ' Reviewpad is an open-source service to accelerate the software delivery lifecycle on GitHub.' },
         { name: 'twitter:image', content: 'https://docs.reviewpad.com/img/Reviewpad-Docs-SEO.png' },
         { name: 'twitter:image:width', content: '2048' },
         { name: 'twitter:image:height', content: '1024' },

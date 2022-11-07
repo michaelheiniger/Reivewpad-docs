@@ -76,9 +76,9 @@ mode: verbose # optional
 
 ## Ignore errors
 
-The `ignore-errors` property is a flag that allows you to specify if the GitHub action should ignore execution errors.
+The `ignore-errors` property is a flag that allows you to specify if the Reviewpad should ignore execution errors.
 
-By default, this flag is `false` which means the action will fail if an error is raised.
+By default, this flag is `false` which means that Reviewpad will fail if an error is raised.
 
 #### Example
 

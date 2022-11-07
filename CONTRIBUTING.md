@@ -56,7 +56,7 @@ If you decide to fix an issue, please be sure to check the comment thread in cas
 
 ### Sending a Pull Request
 
-The [Reviewpad Action](https://github.com/reviewpad/action) is monitoring the pull requests and notifying the team. We will review your pull request and either merge it, request changes to it, or close it with an explanation. We'll do our best to provide updates and feedback throughout the process.
+Reviewpad is monitoring all pull requests and notifying the team. We will review your pull request and either merge it, request changes to it, or close it with an explanation. We'll do our best to provide updates and feedback throughout the process.
 
 **Before submitting a pull request,** please make sure the following is done:
 

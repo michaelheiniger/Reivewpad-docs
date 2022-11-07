@@ -64,13 +64,12 @@ This interpreter receives the file and an environment as input and, if no error 
 
 ### Environment
 
-The environment used by the interpreter is specified in the [reviewpad/action](https://github.com/reviewpad/action/blob/main/action.yml):
+The environment used by the interpreter is composed of the following elements:
 
 1. GitHub repository (e.g. `google/guava`);
 2. The event that triggers the current run of Reviewpad;
 3. A pull request or issue that is impacted by the trigger event;
-4. Access token. By default, it uses automatic token authentication.
-   For more information read [https://docs.github.com/en/actions/security-guides/automatic-token-authentication](https://docs.github.com/en/actions/security-guides/automatic-token-authentication).
+4. Access token provided by GitHub App.
 
 ### Design decisions
 
