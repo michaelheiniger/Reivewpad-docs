@@ -4,15 +4,15 @@ labels:
   type-bugfix:
     name: 'type:bugfix :beetle:'
     description: Provides a bug fix
-    color: '#F9B1C9'
+    color: F9B1C9
   type-feature:
     name: 'type:feature :rocket:'
     description: Provides a new feature
-    color: '#65ECA3'
+    color: 65ECA3
   type-support:
     name: 'type:support :hammer:'
     description: Provides a misc change
-    color: '#CDDBDC'
+    color: CDDBDC
 
 workflows:
   - name: enforce-branch-naming

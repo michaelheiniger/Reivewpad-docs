@@ -3,7 +3,7 @@ api-version: reviewpad.com/v3.x
 labels:
   missing-specs:
     description: Likely missing specs
-    color: '#294b69'
+    color: 294b69
 
 rules:
   - name: changes_contain_specs

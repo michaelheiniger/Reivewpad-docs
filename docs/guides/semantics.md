@@ -19,7 +19,7 @@ api-version: reviewpad.com/v3.x
 
 labels:
     fast-track:
-        color: "#76dbbe"
+        color: 76dbbe
 
 rules:
     - name: dummy-rule
@@ -44,7 +44,7 @@ api-version: reviewpad.com/v3.x
 
 labels:
     fast-track:
-        color: "#76dbbe"
+        color: 76dbbe
 
 rules:
 

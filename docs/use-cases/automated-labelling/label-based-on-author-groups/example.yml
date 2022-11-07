@@ -3,7 +3,7 @@ api-version: reviewpad.com/v3.x
 labels:
   new-joiner:
     description: Pull requests created by new joiners
-    color: '#294b69'
+    color: 294b69
 
 groups:
   - name: new-joiners

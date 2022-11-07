@@ -3,7 +3,7 @@ api-version: reviewpad.com/v3.x
 labels:
   ship:
     description: Ship mode
-    color: '#76dbbe'
+    color: 76dbbe
 
 rules:
   - name: not-critical-changes
