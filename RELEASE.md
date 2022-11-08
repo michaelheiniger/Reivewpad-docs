@@ -64,6 +64,24 @@ yarn build
 
 You should be able to build the project without any errors.
 
+## Test the Reviewpad configurations
+
+The project contains a set of Reviewpad configurations used for built-ins showcase and use cases.
+
+If you have updated or added any new Reviewpad configuration please make sure you test it.
+
+For that you can use the `checker.sh` script.
+
+```bash
+./checker.sh <local_location_of_your_reviewpad_cli> <directory_to_look_for_yml_configurations> <github_token> <github_repo>
+```
+
+e.g.
+
+```bash
+./checker.sh ~/reviewpad-cli ./docs GITHUB_TOKEN https://github.com/mascarilha/paddy/pull/1
+```
+
 ## Commit and push it
 
 The next step is to commit and push these changes into the `main` branch.
