@@ -138,6 +138,10 @@ git push MY-FORK-NAME THE-NAME-OF-MY-BRANCH
 
 -   `yarn reset` to clear the local cache
 
+## Reach out
+
+If you have any questions, please reach out to us at our [Discord community](https://reviewpad.com/discord) 💪
+
 ## License
 
 This project is licensed under [GNU Lesser General Public License v3.0](LICENSE)
