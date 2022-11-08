@@ -59,8 +59,6 @@ const config = {
         { property: 'og:site_name', content: 'Reviewpad | Pull Request Automation' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: '@reviewpad' },
-        { name: 'twitter:title', content: 'Reviewpad | Documentation' },
-        { name: 'twitter:description', content: ' Reviewpad is an open-source service to accelerate the software delivery lifecycle on GitHub.' },
         { name: 'twitter:image', content: 'https://docs.reviewpad.com/img/Reviewpad-Docs-SEO.png' },
         { name: 'twitter:image:width', content: '2048' },
         { name: 'twitter:image:height', content: '1024' },
