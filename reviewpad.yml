@@ -2,19 +2,16 @@ api-version: reviewpad.com/v3.x
 
 labels:
   ship:
-    description: Ship mode
-    color: "76dbbe"
+    color: 76dbbe
   show:
-    description: Show mode
-    color: "2986cc"
+    color: 2986cc
   ask:
-    description: Ask mode
-    color: "c90076"
+    color: c90076
 
 groups:
   - name: maintainers
-    description: Official maintainers
     kind: developers
+    # The expression is wrapped in quotes to avoid YAML parsing errors
     spec: '["marcelosousa", "ferreiratiago", "shay2025"]'
 
 rules:
@@ -22,19 +19,26 @@ rules:
     spec: $isElementOf($author(), $group("maintainers"))
 
   - name: authored-by-external-contributors
-    spec: '!$isElementOf($author(), $group("maintainers"))'
+    spec: $isElementOf($author(), $group("maintainers")) == false
 
-  - name: ship-state
+  - name: ship-strategy
     spec: $contains($description(), "[x] Ship:") || $isElementOf("ship", $labels())
 
-  - name: show-state
+  - name: show-strategy
     spec: $contains($description(), "[x] Show:") || $isElementOf("show", $labels())
 
-  - name: explicit-ask-state
-    spec: $contains($description(), "[x] Ask:") || $isElementOf("ask", $labels()) || $rule("authored-by-external-contributors")
+  - name: explicit-ask-strategy
+    spec: $contains($description(), "[x] Ask:") || $isElementOf("ask", $labels())
 
-  - name: ask-state
-    spec: '(!$rule("ship-state") && !$rule("show-state")) || $rule("explicit-ask-state")'
+  - name: ask-strategy
+    spec: $rule("authored-by-external-contributors") || $rule("explicit-ask-strategy") || (!$rule("ship-strategy") && !$rule("show-strategy"))
+
+  - name: missing-merge-strategy
+    # The expression is wrapped in quotes to avoid YAML parsing errors
+    spec: '!$rule("ship-strategy") && !$rule("show-strategy") && !$rule("ask-strategy")'
+
+  - name: several-merge-strategies-selected
+    spec: ($rule("ship-strategy") && $rule("show-strategy")) || ($rule("ship-strategy") && $rule("ask-strategy")) || ($rule("show-strategy") && $rule("ask-strategy"))
 
 workflows:
   - name: first-time-issue-contributor
@@ -60,12 +64,12 @@ workflows:
     if:
       - rule: authored-by-maintainers
         extra-actions:
-          - $assignReviewer($group("maintainers"), 1)
+          - $assignReviewer($group("maintainers"), 1, "reviewpad")
           - $assignAssignees([$author()])
       - rule: authored-by-external-contributors
         extra-actions:
           - $addLabel("external-contribution")
-          - $assignReviewer($group("maintainers"), 1)
+          - $assignReviewer($group("maintainers"), 1, "reviewpad")
           - $assignAssignees(["ferreiratiago"])
 
   - name: changes-to-use-cases
@@ -75,23 +79,35 @@ workflows:
     then:
       - $info("If you are adding a new use case, please do not forget to update the `sidebar.js`")
 
-  - name: label-ship-show-ask
-    # at all times we only have one label
+  - name: conventions
     always-run: true
     if:
-      - rule: ship-state
+      - rule: $hasLinkedIssues() == false
         extra-actions:
-          - $removeLabel("ask")
-          - $removeLabel("show")
+          - $warn("Please make sure that you have linked an issue to the pull request.")
+
+  - name: validate-state
+    if:
+      - rule: missing-merge-strategy
+        extra-actions:
+          - $error("Please select a merge strategy - ship, show, or ask")
+      - rule: several-merge-strategies-selected
+        extra-actions:
+          - $error("Please select only one merge strategy - ship, show, or ask")
+
+  - name: label-ship-show-ask
+    if:
+      - rule: ship-strategy
+        extra-actions:
           - $addLabel("ship")
+          - $removeLabels(["ask", "show"])
           - $merge("rebase")
-      - rule: show-state
+      - rule: show-strategy
         extra-actions:
-          - $removeLabel("ask")
-          - $removeLabel("ship")
           - $addLabel("show")
-      - rule: ask-state
+          - $removeLabels(["ship", "ask"])
+          - $commentOnce("Please open an issue to review this PR and merge it!")
+      - rule: ask-strategy
         extra-actions:
-          - $removeLabel("ship")
-          - $removeLabel("show")
           - $addLabel("ask")
+          - $removeLabels(["ship", "show"])
