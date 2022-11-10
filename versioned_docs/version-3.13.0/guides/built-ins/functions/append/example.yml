@@ -1,0 +1,14 @@
+api-version: reviewpad.com/v3.x
+
+groups:
+  - name: all-devs
+    kind: developers
+    spec: $append($team("frontend"), $team("backend"))
+
+workflows:
+  - name: reviewer-assignment
+    if:
+      - $description() != ""
+    then:
+      - $assignReviewer($group("all-devs"), 1)
+
