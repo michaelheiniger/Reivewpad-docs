@@ -32,7 +32,7 @@ workflows:
       - rule: $hasFileExtensions([".md"])
         extra-actions:
           - $assignReviewer($group("seniors"), "reviewpad")
-          - $hasFileExtensions([".test.ts"])
+      - $hasFileExtensions([".test.ts"])
     then:
       - $addLabel("show")
       - $merge("rebase")
