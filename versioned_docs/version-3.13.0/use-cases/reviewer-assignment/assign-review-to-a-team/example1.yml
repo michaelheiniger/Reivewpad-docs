@@ -10,4 +10,4 @@ workflows:
     if:
       - rule: changes-to-configurations
     then:
-      - $assignTeamReviewer("devops")
+      - $assignTeamReviewer(["devops"])

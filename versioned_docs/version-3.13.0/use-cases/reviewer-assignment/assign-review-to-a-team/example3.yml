@@ -11,4 +11,4 @@ workflows:
       - rule: changes-to-configurations
     then:
       - $assignReviewer(["john"], "random")
-      - $assignTeamReviewer("devops")
+      - $assignTeamReviewer(["devops"])
