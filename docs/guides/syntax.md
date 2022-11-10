@@ -74,6 +74,8 @@ The metrics report includes the following metrics:
 - `Pickup Time`: the time since the pull request was issued until its first review;
 - `Review Time`: the time from the first review until the pull request was merged.
 
+![Metrics Report](/img/metricsReport.png)
+
 #### Example
 
 ```yml
