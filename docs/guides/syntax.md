@@ -64,9 +64,15 @@ api-version: reviewpad.com/v3.x
 
 ## Mode
 
-The `mode` property is a flag that allows you to enable or disable a report of Reviewpad as a pull request comment.
+The `mode` property is a flag that allows you to enable or disable reports of Reviewpad as a pull request comment.
 
-By default, Reviewpad runs on `silent` mode. However, you can choose to use `verbose` mode and Reviewpad will comment on the pull request with the execution results.
+By default, Reviewpad runs on `silent` mode. However, you can choose to use `verbose` mode and Reviewpad will comment on the pull request with the execution results and, when the pull request is merged, the metrics.
+
+The metrics report includes the following metrics:
+
+- `Coding Time`: the time it took from the first commit until the pull request was issued;
+- `Pickup Time`: the time since the pull request was issued until its first review;
+- `Review Time`: the time from the first review until the pull request was merged.
 
 #### Example
 
