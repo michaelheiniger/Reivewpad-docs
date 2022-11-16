@@ -44,9 +44,9 @@ Please note that the Reviewpad [Discord](https://reviewpad.com/discord) is the s
 
 ### Proposing a Change {#proposing-a-change}
 
-If you intend to change a piece of Reviewpad that is not yet being addressed on any issue we first invite you to [fill an issue](https://github.com/reviewpad/reviewpad/issues/new?assignees=&labels=enhancement&template=feature_request.md). This lets us reach an agreement on your proposal before you put significant effort into it.
+If you intend to change a piece of Reviewpad that is not yet being addressed on any issue we first invite you to create a [feature request](https://github.com/reviewpad/reviewpad/issues/new?assignees=&labels=enhancement&template=feature_request.md) issue. This lets us reach an agreement on your proposal before you put significant effort into it.
 
-If you're only fixing a bug, it's fine to submit a pull request right away but we still recommend to fill an issue detailing what you're fixing. This is helpful in case we don't accept that specific fix but want to keep track of the issue.
+If you're only fixing a bug, it's fine to submit a pull request right away but we still recommend to create a [Bug report](https://github.com/reviewpad/reviewpad/issues/new?assignees=&labels=bug&template=bug_report.md&title=) issue detailing what you're fixing. This is helpful in case we don't accept that specific fix but want to keep track of the issue.
 
 ### Contribution Prerequisites {#contribution-prerequisites} 
 
