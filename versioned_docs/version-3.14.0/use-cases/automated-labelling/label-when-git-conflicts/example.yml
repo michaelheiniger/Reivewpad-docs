@@ -1,0 +1,9 @@
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: handle-conflicts
+    if:
+      - $hasGitConflicts()
+    then:
+      - $addLabel("conflicts")
+      - $comment("This pull request has merge conflicts. Please resolve them and then rebase on the base branch.")

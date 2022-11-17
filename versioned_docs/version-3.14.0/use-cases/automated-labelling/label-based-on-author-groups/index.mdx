@@ -1,0 +1,16 @@
+---
+title: "Label based on author groups"
+id: "label-based-on-author-groups"
+slug: "/use-cases/label-based-on-author-groups"
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+Here's an example of a `reviewpad.yml` configuration that labels pull requests authored by a member of a group of developers.
+
+Suppose that, as Spotify, you consider developers _new joiner_ until they create/merge their [10th pull request](https://backstage.spotify.com/blog/measuring-backstage-success-at-spotify/).
+Each time a _new joiner_ creates a pull request, you want to label it in order to be able to perform a dedicated code review process.
+Using Reviewpad groups you can easily do such labeling.
+
+<CodeBlock language="yml">{Example}</CodeBlock>
