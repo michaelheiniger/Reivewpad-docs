@@ -1,0 +1,22 @@
+api-version: reviewpad.com/v3.x
+
+rules:
+  - name: changes-env-var
+    description: Patch includes changes to environment variables
+    spec: $hasCodePattern("ENV_*")
+  - name: includes_gh_token
+    description: Patch includes a GitHub token
+    spec: $hasCodePattern("gh_*")
+
+workflows:
+  - name: critical
+    if:
+      - rule: changes-env-var
+    then:
+      - $addLabel("critical")
+  - name: security
+    if:
+      - rule: includes_gh_token
+    then:
+      - $error("Patch includes a GitHub token")
+      - $fail("GitHub token in patch")

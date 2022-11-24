@@ -1,0 +1,24 @@
+api-version: reviewpad.com/v3.x
+
+labels:
+  critical:
+    description: Critical changes
+    color: fd5e53
+
+rules:
+  - name: changes-main-file
+    spec: $hasFileName("main.go")
+  - name: changes-config-file
+    spec: $hasFileName("config.yml")
+
+workflows:
+  - name: critical
+    if:
+      - rule: changes-main-file
+    then:
+      - $addLabel("critical")
+  - name: configurations
+    if:
+      - rule: changes-config-file
+    then:
+      - $assignTeamReviewer(["devops"])
