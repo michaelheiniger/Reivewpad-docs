@@ -32,6 +32,7 @@ const sidebars = {
                         "guides/aladino/semantics",
                     ],
                 },
+                "guides/commands/commands",
             ],
         },
         {
