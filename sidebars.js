@@ -67,6 +67,7 @@ const sidebars = {
                 "use-cases/comment-on-pull-requests/comment-on-pull-requests",
                 "use-cases/enforce-branch-conventions/enforce-branch-conventions",
                 "use-cases/enforce-conventional-commits/enforce-conventional-commits",
+                "use-cases/manage-issues-projects/manage-issues-github-projects",
                 {
                     type: "category",
                     label: "Reviewer Assignment",

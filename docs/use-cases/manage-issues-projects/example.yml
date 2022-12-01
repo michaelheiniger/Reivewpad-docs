@@ -1,0 +1,13 @@
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: manage-issues-in-projects
+    on:
+      - issue
+    if:
+      - rule: $state() == "open" && !$isLinkedToProject("PROJECT-TITLE")
+        extra-actions:
+          - $addToProject("PROJECT-TITLE", "Todo")
+      - rule: $state() == "closed"
+        extra-actions:
+          - $addToProject("PROJECT-TITLE", "Done")
