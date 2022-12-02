@@ -56,7 +56,9 @@ Add the file `reviewpad.yml` with the following content:
 ```yaml
 name: Reviewpad Action
 
-on: pull_request
+on:
+    - issues
+    - pull_request
 
 jobs:
   reviewpad-action:
