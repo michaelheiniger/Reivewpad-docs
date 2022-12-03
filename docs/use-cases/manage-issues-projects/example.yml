@@ -5,7 +5,7 @@ workflows:
     on:
       - issue
     if:
-      - rule: $state() == "open" && !$isLinkedToProject("PROJECT-TITLE")
+      - rule: '$state() == "open" && !$isLinkedToProject("PROJECT-TITLE")'
         extra-actions:
           - $addToProject("PROJECT-TITLE", "Todo")
       - rule: $state() == "closed"
