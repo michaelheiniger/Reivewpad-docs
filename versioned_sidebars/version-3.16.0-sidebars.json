@@ -32,6 +32,7 @@
             "guides/aladino/semantics"
           ]
         },
+        "guides/annotations",
         "guides/commands/commands"
       ]
     },
