@@ -37,6 +37,13 @@ Set of functions to get pull request details.
 
 Returns the list of GitHub user login that are assigned to the pull request.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -65,6 +72,13 @@ A `reviewpad.yml` example:
 
 Retrieves the pull request author GitHub login.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -92,6 +106,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Returns the name of the branch the pull request should be pulled into.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -122,6 +143,13 @@ A `reviewpad.yml` example:
 This built-in receives two regexes with named capturing groups denoted by the `@X` pattern.
 These regexes are matched against the set of files in the patch.
 The built-in checks if the value set of the first regex is contained in the second one.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -157,6 +185,13 @@ A `reviewpad.yml` example:
 
 Returns the total number of comments made into the pull request.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -184,6 +219,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Returns the list of comment body of the pull request.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -213,6 +255,13 @@ A `reviewpad.yml` example:
 
 Returns the total number of commits made into the pull request.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -240,6 +289,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Returns the list of commit messages of the pull request.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -269,6 +325,13 @@ A `reviewpad.yml` example:
 
 Returns the time the pull request was created at.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -296,6 +359,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Returns the description of the pull request.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -325,6 +395,13 @@ A `reviewpad.yml` example:
 
 Returns the total number of files changed in the patch.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -352,6 +429,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Verifies if the patch contains a symbol with the provided annotation, returning `true` or `false` as appropriate.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -385,6 +469,13 @@ Verifies if the patch matches the provided code pattern, returning `true` or `fa
 
 The code pattern needs to be a compilable regular expression.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable       | type   | description                        |
@@ -417,6 +508,13 @@ Determines whether all the extensions of the changed files on the patch are incl
 
 Each extension provided on the list needs to be a [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>).
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable     | type      | description                 |
@@ -446,6 +544,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Determines whether the provided filename is among the files on patch, returning `true` or `false` as appropriate.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -481,6 +586,13 @@ Determines whether the provided file pattern matches any of the files in the pat
 
 The file pattern needs to be a [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>).
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable      | type   | description                            |
@@ -510,6 +622,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Determines if the pull request has git conflicts, returning `true` or `false` as appropriate.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -541,6 +660,13 @@ Checks if a pull request has a linear history.
 
 A linear history is simply a Git history in which all commits come after one another, i.e., you will not find any merges of branches with independent commit histories.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -568,6 +694,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Checks if a pull request has associated issues that might be closed by it.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -599,6 +732,13 @@ Verifies whether the pull request has review threads that are unaddressed, retur
 
 A review thread is unaddressed when it is not `resolved` or `outdated`.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -626,6 +766,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Returns the name of the branch where the pull request changes are implemented.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -656,6 +803,13 @@ A `reviewpad.yml` example:
 Verifies whether the pull request is `Draft`, returning `true` or `false` as appropriate.
 
 To know more about [GitHub Draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/).
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -689,6 +843,13 @@ A pull request is set as waiting for review when there are **requested reviewers
 
 An outdated review is a review submitted before the last pull request update and whose state is not approved.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -717,6 +878,13 @@ A `reviewpad.yml` example:
 
 Returns the list of labels of the pull request.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -744,6 +912,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Returns the timestamp of the last event in the timeline.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -779,6 +954,13 @@ rules:
 
 Returns the milestone title associated to the pull request.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -806,6 +988,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Returns the list of GitHub user login or team slug that were requested to review the pull request.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -835,6 +1024,13 @@ A `reviewpad.yml` example:
 
 Returns the list of GitHub user login that have reviewed the pull request.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -862,6 +1058,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Returns the status of a reviewer in the pull request.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -909,6 +1112,13 @@ function helloWorld() {
 }
 ```
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable                      | type     | description                         |
@@ -939,6 +1149,13 @@ A `reviewpad.yml` example:
 
 Returns the title of the pull request.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -966,6 +1183,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Returns the status of a workflow run.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -1004,6 +1228,13 @@ Set of functions to get organization details.
 Lists all the members of the organization that owns the pull request.
 
 If the authenticated user is an owner of the organization, this will return both concealed and public members, otherwise it will only return public members.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -1049,6 +1280,13 @@ Because of that, in order for the function `team` to work we need to provide a G
 
 [Please follow this link to know more](/getting-started/installation-action-tokenized)
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable   | type   | description                          |
@@ -1084,6 +1322,13 @@ Set of functions to get user details.
 Returns the total number of issues created by the given GitHub user login and issue state.
 
 Note that altough GitHub considers a pull request to be an issue, we exclude pull requests in this request.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -1124,6 +1369,13 @@ rules:
 
 Returns the total number of pull requests created by the given GitHub user login and state.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable           | type   | description                           |
@@ -1163,6 +1415,13 @@ rules:
 
 Returns the total number of code reviews made by the given GitHub user login.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable    | type   | description           |
@@ -1201,6 +1460,13 @@ Replace its usage by `$pullRequestCountBy(CURRENT_ARGUMENT, "all")`.
 
 :::
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable    | type   | description           |
@@ -1236,6 +1502,13 @@ Set of functions to help handle the queried data.
 **Description**:
 
 All determines if all elements of the slice satisfy the given predicate.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -1275,6 +1548,13 @@ workflows:
 
 Any determines if any element of the slice satisfies the given predicate.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable    | type                | description           |
@@ -1313,6 +1593,13 @@ workflows:
 
 Appends elements to the end of a slice and returns the updated slice.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable   | type      | description                                  |
@@ -1343,6 +1630,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Determines whether a text includes a certain sentence, returning `true` or `false` as appropriate.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -1376,6 +1670,13 @@ A `reviewpad.yml` example:
 
 Determines whether a list includes a certain value among its entries, returning `true` or `false` as appropriate.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable        | type       | description             |
@@ -1408,6 +1709,13 @@ A `reviewpad.yml` example:
 
 Length returns the length of an array.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable | type      | description       |
@@ -1437,6 +1745,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Determines whether a text starts with a certain sentence, returning `true` or `false` as appropriate.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -1480,6 +1795,13 @@ Lists all members that belong to the provided group. This group needs to be defi
 
 `group` is a way to refer to a defined set of users in a short way.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable    | type   | description                            |
@@ -1509,6 +1831,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Evaluates a rule. This rule needs to be defined in the same `reviewpad.yml` file.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -1556,6 +1885,13 @@ Here's an example:
 
 <CodeBlock language="yml">{Built_ins.AddLabel1}</CodeBlock>
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable | type   | description       |
@@ -1589,6 +1925,13 @@ Adds a pull request to a project with a particular status.
 If the project doesn't exist, an error is returned.
 
 If the status doesn't exist, an error is returned.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -1631,6 +1974,13 @@ Users already assigned to a pull request are not replaced.
 
 Only users with push access can assign users to a pull request. Assignees are silently ignored otherwise.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable    | type      | description                                         |
@@ -1665,6 +2015,13 @@ adding a reviewer each time the pull request is updated.
 
 When there's no reviewers to assign to, an error is returned.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -1695,6 +2052,13 @@ When there are not enough reviewers to assign to, a warning is returned.
 
 If a reviewer from the defined list has performed a review, their review will be re-requested.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable           | type      | description                                                       |
@@ -1723,6 +2087,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Assigns a list of teams to review the pull request.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -1754,6 +2125,13 @@ Closes an issue / pull request with a given comment.
 
 By default, if no parameter is provided, it will close the issue / pull request without a comment.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable             | type   | description         |
@@ -1782,6 +2160,13 @@ A `reviewpad.yml` example:
 
 Checks if the commits in the pull request follow the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 _none_
@@ -1805,6 +2190,13 @@ A `reviewpad.yml` example:
 Comments a pull request.
 
 Note that this comment will always be added whenever this action is executed.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -1836,6 +2228,13 @@ Comments a pull request once.
 
 If the comment is already present, then the action does nothing.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable  | type   | description         |
@@ -1864,6 +2263,13 @@ A `reviewpad.yml` example:
 
 Disables the list of actions passed as argument.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable  | type      | description                        |
@@ -1888,6 +2294,13 @@ A `reviewpad.yml` example:
 
 Add a message to the errors section of the report.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable  | type   | description                       |
@@ -1911,6 +2324,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Fails the action with a given fail message which will appear in the logs of the GitHub action.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -1939,6 +2359,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Add a message to the info section of the report.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -1970,6 +2397,13 @@ Please note that this function requires the [Reviewpad Action to be installed wi
 Merge a pull request with a specific merge method.
 
 By default, if no parameter is provided, it will perform a standard git merge.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ❌        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -2013,6 +2447,13 @@ Replace its usage by [`$removeLabels`](#removelabels).
 
 :::
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable | type   | description       |
@@ -2047,6 +2488,13 @@ If such label exists, it will use the `name` property of the label; Otherwsise, 
 
 If the label does not exist in the repository, no action will be taken.
 
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
+
 **Parameters**:
 
 | variable | type      | description                      |
@@ -2074,6 +2522,13 @@ A `reviewpad.yml` example:
 **Description**:
 
 Checks if the pull request title follows the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
@@ -2105,6 +2560,13 @@ workflows:
 **Description**:
 
 Add a message to the warnings section of the report.
+
+**Available for:**
+
+| Type           | Available |
+| :------------- | :-------- |
+| `issue`        | ✅        |
+| `pull_request` | ✅        |
 
 **Parameters**:
 
