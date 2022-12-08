@@ -4,9 +4,9 @@ import Example2 from "!!raw-loader!./example2.yml";
 
 **Description**:
 
-Adds a label to the pull request.
+Adds a label to the pull request / issue.
 
-If the label is not applied to the pull request then nothing happens.
+If the label is not applied to the pull request / issue then nothing happens.
 
 It will check if there is a label with this key in the labels section of `reviewpad.yml`.
 
@@ -17,13 +17,6 @@ If such label does not exist in labels, it will use the provided input string an
 Here's an example:
 
 <CodeBlock language="yml">{Example1}</CodeBlock>
-
-**Available for:**
-
-| Type           | Available |
-| :------------- | :-------- |
-| `issue`        | ✅        |
-| `pull_request` | ✅        |
 
 **Parameters**:
 

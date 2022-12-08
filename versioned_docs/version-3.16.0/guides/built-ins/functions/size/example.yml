@@ -7,4 +7,3 @@ workflows:
       - $size(["*.lock"]) > 100
     then:
       - $error("Change is too big")
-      - $fail("patch with more than 100 lines")

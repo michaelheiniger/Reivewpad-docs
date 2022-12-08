@@ -20,24 +20,24 @@ Another example is to annotate a symbol as being critical. This can be used to c
 
 Reviewpad supports the following annotations:
 
-### `@reviewpad-ann: <annotation>`
+### `@reviewpad-an: <annotation>`
 
-This annotation marks a symbol with the provided `<annotation>`. The annotation can be any string, but it is recommended to use a short string that is unique to your project. For example, `@reviewpad-ann: critical`.
+This annotation marks a symbol with the provided `<annotation>`. The annotation can be any string, but it is recommended to use a short string that is unique to your project. For example, `@reviewpad-an: critical`.
 
 This annotation can then be used to identify when a symbol has been changed. We can do that using the built-in [hasAnnotation](/guides/built-ins/#hasannotation).
 
 #### Example
 
-Here's an example of how to use the `@reviewpad-ann` annotation.
+Here's an example of how to use the `@reviewpad-an` annotation.
 
-Let's say we want to identify all pieces of code (i.e. symbols) that are `critical` to our project. We can do that by adding the `@reviewpad-ann: critical` annotation to all of the critical symbols.
+Let's say we want to identify all pieces of code (i.e. symbols) that are `critical` to our project. We can do that by adding the `@reviewpad-an: critical` annotation to all of the critical symbols.
 
 ```go
 package main
 
 import "fmt"
 
-// @reviewpad-ann: critical
+// @reviewpad-an: critical
 func main() {
   fmt.Println("Hello, World!")
 }

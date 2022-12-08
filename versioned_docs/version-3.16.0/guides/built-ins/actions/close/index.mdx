@@ -3,22 +3,15 @@ import Example from "!!raw-loader!./example.yml";
 
 **Description**:
 
-Closes an issue / pull request with a given comment - without merging it.
+Closes an pull request / issue with a given comment - without merging it.
 
-By default, if no comment is provided, it will close the issue / pull request without a comment.
+By default, if no comment is provided, it will close the pull request / issue without a comment.
 
 For issues, it can also be given a closure reason.
 
 By default, if no closure reason is provided, the issue will be closed as `completed`.
 
 When a closure reason is provided and we don't want to close the issue with a comment then we need to pass the comment parameter as `""`.
-
-**Available for:**
-
-| Type           | Available |
-| :------------- | :-------- |
-| `issue`        | ✅        |
-| `pull_request` | ✅        |
 
 **Parameters**:
 
