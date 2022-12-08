@@ -9,5 +9,4 @@ workflows:
     if:
       - rule: missing-tests
     then:
-      - $error("Please include tests for your change")
-      - $fail("missing tests")
+      - $fail("Please include tests for your change.")

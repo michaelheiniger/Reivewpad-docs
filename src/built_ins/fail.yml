@@ -4,4 +4,4 @@ workflows:
     if:
       - rule: missingSpecs
     then:
-      - $fail("missing specs")
+      - $fail("Please add specs for your change.")

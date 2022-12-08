@@ -5,5 +5,4 @@ workflows:
     if:
       - $hasLinearHistory() == false
     then:
-      - $error("The pull request does not have a linear history.")
-      - $fail("non-linear history")
+      - $fail("The pull request does not have a linear history.")

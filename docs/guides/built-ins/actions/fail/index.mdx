@@ -3,14 +3,17 @@ import Example from "!!raw-loader!./example.yml";
 
 **Description**:
 
-Fails the action with a given fail message which will appear in the logs of the GitHub action.
+Fails Reviewpad execution with a custom message.
 
-**Available for:**
+The custom message is added to both the Reviewpad status check and the Reviewpad report.
 
-| Type           | Available |
-| :------------- | :-------- |
-| `issue`        | ✅        |
-| `pull_request` | ✅        |
+:::caution
+
+This built-in forces Reviewpad to fail.
+
+You will see a ❌ in the Reviewpad status check.
+
+:::
 
 **Parameters**:
 
@@ -21,7 +24,7 @@ Fails the action with a given fail message which will appear in the logs of the 
 **Examples**:
 
 ```yml
-$fail("missing specs")
+$fail("Missing specs")
 ```
 
 A `reviewpad.yml` example:

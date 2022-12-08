@@ -5,5 +5,4 @@ workflows:
     if:
       - $hasGitConflicts()
     then:
-      - $error("Pull request has git conflicts")
-      - $fail("git conflicts")
+      - $fail("Pull request has git conflicts")

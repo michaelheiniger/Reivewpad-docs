@@ -5,7 +5,13 @@ import Example from "!!raw-loader!./example.yml";
 
 Deletes the head branch of the pull request.
 
-:::warning WARNING
+:::caution
+
+This buit-in is **not** avaible for [`issue`](/guides/syntax#workflow).
+
+:::
+
+:::caution
 
 This built-in does not work on pull request from forks.
 
@@ -18,13 +24,6 @@ Deleting a branch will cause all pull requests that have the deleted branch as h
 This built-in is only executed if the pull request is either closed or merged.
 
 :::
-
-**Available for:**
-
-| Type           | Available |
-| :------------- | :-------- |
-| `issue`        | ❌        |
-| `pull_request` | ✅        |
 
 **Parameters**:
 
