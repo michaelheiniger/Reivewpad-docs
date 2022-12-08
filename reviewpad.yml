@@ -11,15 +11,14 @@ labels:
 groups:
   - name: maintainers
     kind: developers
-    # The expression is wrapped in quotes to avoid YAML parsing errors
     spec: '["marcelosousa", "ferreiratiago", "shay2025"]'
 
 rules:
-  - name: authored-by-maintainers
+  - name: authored-by-maintainer
     spec: $isElementOf($author(), $group("maintainers"))
 
-  - name: authored-by-external-contributors
-    spec: $isElementOf($author(), $group("maintainers")) == false
+  - name: authored-by-external-contributor
+    spec: '!$isElementOf($author(), $group("maintainers"))'
 
   - name: ship-strategy
     spec: $contains($description(), "[x] Ship:") || $isElementOf("ship", $labels())
@@ -31,17 +30,11 @@ rules:
     spec: $contains($description(), "[x] Ask:") || $isElementOf("ask", $labels())
 
   - name: ask-strategy
-    spec: $rule("authored-by-external-contributors") || $rule("explicit-ask-strategy") || (!$rule("ship-strategy") && !$rule("show-strategy"))
-
-  - name: missing-merge-strategy
-    # The expression is wrapped in quotes to avoid YAML parsing errors
-    spec: '!$rule("ship-strategy") && !$rule("show-strategy") && !$rule("ask-strategy")'
-
-  - name: several-merge-strategies-selected
-    spec: ($rule("ship-strategy") && $rule("show-strategy")) || ($rule("ship-strategy") && $rule("ask-strategy")) || ($rule("show-strategy") && $rule("ask-strategy"))
+    spec: $rule("authored-by-external-contributor") || $rule("explicit-ask-strategy") || (!$rule("ship-strategy") && !$rule("show-strategy"))
 
 workflows:
   - name: first-time-issue-contributor
+    description: Welcome first time issue contributors
     on:
       - "issue"
     always-run: true
@@ -51,6 +44,7 @@ workflows:
           - $commentOnce($sprintf("Welcome @%v! Thank you so much for your first issue!", [$author()]))
 
   - name: first-time-pr-contributor
+    description: Welcome first time pull request contributors
     on:
       - "pull_request"
     always-run: true
@@ -59,43 +53,40 @@ workflows:
         extra-actions:
           - $commentOnce($sprintf("Welcome @%v! Thank you so much for your first pull request!", [$author()]))
 
-  - name: default-review-process
+  - name: review-process
+    description: Assign reviewers and assignees based on the author
     always-run: true
     if:
-      - rule: authored-by-maintainers
+      - rule: authored-by-maintainer
         extra-actions:
           - $assignReviewer($group("maintainers"), 1, "reviewpad")
           - $assignAssignees([$author()])
-      - rule: authored-by-external-contributors
+      - rule: authored-by-external-contributor
         extra-actions:
           - $addLabel("external-contribution")
           - $assignReviewer($group("maintainers"), 1, "reviewpad")
           - $assignAssignees(["ferreiratiago"])
 
   - name: changes-to-use-cases
+    description: Verify that use cases are updated properly
     always-run: true
     if:
       - rule: $hasFilePattern("docs/use-cases/**")
     then:
-      - $info("If you are adding a new use case, please do not forget to update the `sidebar.js`")
+      - $info("Adding a new use case? Please update the [sidebars.js](/reviewpad/docs/blob/main/sidebars.js)")
+      - $info("Adding a new use case? Please run the `checker`. You can find more information about the `checker` in [RELEASE.md](/reviewpad/docs/blob/main/RELEASE.md#test-the-reviewpad-configurations)")
 
   - name: conventions
+    description: Verify that the pull request follows the conventions
     always-run: true
     if:
-      - rule: $hasLinkedIssues() == false
+      - rule: '!$hasLinkedIssues()'
         extra-actions:
           - $warn("Please make sure that you have linked an issue to the pull request.")
 
-  - name: validate-state
-    if:
-      - rule: missing-merge-strategy
-        extra-actions:
-          - $error("Please select a merge strategy - ship, show, or ask")
-      - rule: several-merge-strategies-selected
-        extra-actions:
-          - $error("Please select only one merge strategy - ship, show, or ask")
-
   - name: label-ship-show-ask
+    always-run: true
+    description: Label the pull request based on the merge strategy
     if:
       - rule: ship-strategy
         extra-actions:
@@ -106,8 +97,18 @@ workflows:
         extra-actions:
           - $addLabel("show")
           - $removeLabels(["ship", "ask"])
-          - $commentOnce("Please open an issue to review this PR and merge it!")
+          - $commentOnce("Please open an issue to review this PR before merging it!")
       - rule: ask-strategy
         extra-actions:
           - $addLabel("ask")
           - $removeLabels(["ship", "show"])
+
+  - name: changes-built-ins
+    description: Verify that built-ins are updated properly
+    always-run: true
+    if:
+      - rule: $hasFilePattern("docs/guides/built-ins/actions/**") || $hasFilePattern("docs/guides/built-ins/functions/**")
+    then:
+      - $info("Adding a new built-in? Please update the [built-ins.mdx](/reviewpad/docs/blob/main/docs/guides/built-ins/built-ins.mdx)")
+      - $info("Adding a new built-in? Please add a `caution` section if the built-in is not supported for both pull request and issue")
+      - $info("Adding a new built-in? Please run the `checker` on the built-in reviewpad examples. You can find more information about the `checker` in [RELEASE.md](/reviewpad/docs/blob/main/RELEASE.md#test-the-reviewpad-configurations)")
