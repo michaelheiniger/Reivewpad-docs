@@ -58,6 +58,6 @@ workflows:
           - $warn("This pull request includes critical changes! Please review it carefully.")
 ```
 
-Now, every time a `critical` symbol is changed, reviewpad will add add a warning to the pull request.
+Now, every time a `critical` symbol is changed, reviewpad will add a warning to the pull request.
 
 In this example, if we change the `main` function, because it is a `critical` symbol, reviewpad will add the specified warning to the pull request.
