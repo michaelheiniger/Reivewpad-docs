@@ -1,0 +1,144 @@
+---
+title: "Installation as GitHub action with a GitHub Token"
+id: "installation-action-tokenized"
+slug: "installation-action-tokenized"
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import LabelSizeConfiguration from "!!raw-loader!../use-cases/automated-labelling/label-with-size/example.yml";
+
+:::caution GitHub App
+
+To get the most out of Reviewpad we advise [installing the GitHub App](/getting-started/installation). This will allow you to use all Reviewpad features.
+
+If you are not able to install the GitHub App, you can continue with this GitHub Action installation.
+
+Unfortunately, the following use cases will **not** work:
+- [Attention set](/use-cases/attention-set)
+- [Auto-merge](/use-cases/auto-merge)
+:::
+
+:::caution GitHub Token
+
+The installation requires a GitHub Token to be configured in your repository secrets. This token will be used by Reviewpad to execute the defined actions. **This means, that the actions will appear as if they were executed by the user who created the token**.
+
+We advise to create a dedicated GitHub user for this purpose and to use a token generated for this user.
+
+If you wish to execute Reviewpad without a GitHub Token, you can install [Reviewpad as GitHub Action](/getting-started/installation-action). Please note that you won't be able to use all built-ins.
+:::
+
+This guide describes how to install Reviewpad with a GitHub Token.
+
+### Why?
+
+Reviewpad runs as a GitHub Action and by default a GitHub Action runs with an [automatic token](https://docs.github.com/en/actions/security-guides/automatic-token-authentication) generated and provided by GitHub.
+
+Although this generated token is enough to run most of Reviewpad functions, there are functions that need more permissions to run.
+
+Therefore, in order to setup Reviewpad Action with a GitHub Token, follow the following steps:
+
+## Step 1. Generate a GitHub token
+
+Navigate to the option `Fined-grained access` in your [GitHub Developer Settings](https://github.com/settings/tokens?type=beta) and click the button `Generate new token`.
+
+![GitHub Fined-grained access](/img/installation-action-tokenized/step1.gif)
+
+Fill the form with the following information:
+* Token name: `Reviewpad Token`
+* Expiration: `90 days`
+* Description: `Token to be used by Reviewpad`
+* Repository access: `All repositories` (or select the repositories you want to use Reviewpad with)
+* Permissions: Make sure to select the following permissions for `Repository permissions`
+
+    | Description          | Access         |
+    | -------------------- | -------------- |
+    | Actions              | Read-only      |
+    | Administration       | Read-only      |
+    | Code scanning alerts | Read-only      |
+    | Commit statuses      | Read and write |
+    | Contents             | Read and write |
+    | Dependabot alerts    | Read-only      |
+    | Deployments          | Read-only      |
+    | Issues               | Read and write |
+    | Merge queues         | Read and write |
+    | Metadata             | Read-only      |
+    | Pull requests        | Read and write |
+    | Webhooks             | Read and write |
+
+Once you have filled the form, click the green button `Generate token` and copy the generated token.
+
+## Step 2. Add the generated GitHub token to Actions Secrets
+
+1. Go to your GitHub project (the project where you want the Reviewpad Action to run).
+2. Select the tab `Settings`.
+3. On the left, select `Actions` under `Secrets` section.
+4. Click the button `New repository secret`.
+5. Add the new secret and then click on green button `Add secret`.
+    - Name: `GH_TOKEN`
+    - Value: _THE_GENERATED_TOKEN_ON_STEP_1_
+
+![GitHub add token](/img/installation-action-tokenized/step2.gif)
+
+## Step 3. Open the GitHub project on your IDE
+
+Open the GitHub project where you wish to install Reviewpad.
+
+Use your IDE for this since we will be adding new files to the project.
+
+## Step 4. Add `Reviewpad Action` workflow file
+
+At the root of your repository navigate to `.github > workflows` (this is where your project's GitHub actions live; if you don't have these folders, please create them).
+
+Add the file `reviewpad.yml` with the following content:
+
+```yaml
+name: Reviewpad Action
+
+on:
+    - issues
+    - pull_request
+
+jobs:
+    reviewpad-action:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Running reviewpad action
+              uses: reviewpad/action@v3.x
+              with:
+                  token: ${{ secrets.GH_TOKEN }}
+```
+
+![GitHub add workflow](/img/installation-action-tokenized/step3.gif)
+
+## Step 5. Add `reviewpad.yml` to the root of the repository
+
+In order for Reviewpad to run, you need to add a file named `reviewpad.yml` to the root of your repository.
+
+This file contains the configuration for Reviewpad.
+
+Let's add a simple Reviewpad configuration. You can change it later on :muscle:
+
+On the root of your repository create the `reviewpad.yml` file and copy the following content:
+
+<CodeBlock language="yml">{LabelSizeConfiguration}</CodeBlock>
+
+![Reviewpad add configuration](/img/installation-action-tokenized/step4.gif)
+
+This particular configuration will label every pull requests based on their size.
+
+That's it! :tada:
+
+**Don't forget to commit and push the `reviewpad.yml` file to your repository.**
+
+Reviewpad will run on every pull request and follow the configuration you have set.
+
+## Bonus: Checkout Reviewpad use cases
+
+You can do much more with Reviewpad.
+
+Start by looking at some of Reviewpad [use cases](/use-cases) or jump right into the available [built-ins](/guides/built-ins).
+
+:::info Terms and Conditions
+
+By running Reviewpad, you are agreeing with [Reviewpad's Terms and Conditions](https://reviewpad.com/terms-and-conditions/).
+:::

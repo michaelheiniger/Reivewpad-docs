@@ -1,0 +1,32 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Determines if the pull request has Git conflicts, returning `true` or `false` as appropriate.
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+_none_
+
+**Return value**:
+
+| Type      | Description                                                      |
+| :-------- | :--------------------------------------------------------------- |
+| `boolean` | `true` if the pull request has Git conflicts, `false` otherwise. |
+
+**Examples**:
+
+```yml
+$hasGitConflicts()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Example}</CodeBlock>

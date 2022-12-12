@@ -1,0 +1,32 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Assigns a random user of the GitHub organization as the reviewer.
+This action will always pick a user different than the author of the pull request.
+
+However, if the pull request already has a reviewer, nothing happens. This is to prevent
+adding a reviewer each time the pull request is updated.
+
+When there's no reviewers to assign to, an error is returned.
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+_none_
+
+**Examples**:
+
+```yml
+$assignRandomReviewer()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Example}</CodeBlock>

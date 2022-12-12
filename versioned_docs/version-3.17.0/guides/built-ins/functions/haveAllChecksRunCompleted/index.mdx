@@ -1,0 +1,51 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Checks if all check runs for a pull request have been completed.
+
+If the `check_runs_to_ignore` parameter is provided the checks with a name included in the parameter will be ignored.
+
+If the `conclusion` parameter is provided, all check runs must be complete with the provided conclusion.
+
+The `conclusion` parameter can be one of `action_required`, `cancelled`, `failure`, `neutral`, `success`, `skipped`, `stale` or `timed_out`.
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+| Parameter                         | Type       | Description                                                     |
+| :---------------------------------| :--------- | :---------------------------------------------------------------|
+| `check_runs_to_ignore` (optional) | `[]string` | The names of the check runs to exclude from the completed check |
+| `conclusion` (optional)           | `string`   | The final conclusion of the check                               |
+
+**Return value**:
+
+| Type           | Description                                                 |
+| :------------- | :-----------------------------------------------------------|
+| `boolean`      | `true` if all check runs have completed, `false` otherwise. |
+
+**Examples**:
+
+#### All check runs have completed.
+```yml
+$haveAllChecksRunCompleted()
+```
+
+#### All check runs have been completed except for the `integration-tests` check.
+```yml
+$haveAllChecksRunCompleted(["integration-tests"])
+```
+#### All check runs have been completed with `success`.
+```yml
+$haveAllChecksRunCompleted([], "success")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Example}</CodeBlock>

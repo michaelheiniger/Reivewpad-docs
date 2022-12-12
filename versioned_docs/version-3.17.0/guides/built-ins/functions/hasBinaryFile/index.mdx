@@ -1,0 +1,33 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Checks if a pull request has a binary file in the patch.
+
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+_none_
+
+**Return value**:
+
+| Type      | Description                                                           |
+| :-------- | :-------------------------------------------------------------------- |
+| `boolean` | `true` if the pull request contains a binary file, `false` otherwise. |
+
+**Examples**:
+
+```yml
+$hasBinaryFile()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Example}</CodeBlock>
