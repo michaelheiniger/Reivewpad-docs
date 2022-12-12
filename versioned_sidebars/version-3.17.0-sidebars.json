@@ -34,7 +34,8 @@
         },
         "guides/annotations",
         "guides/commands/commands",
-        "guides/extends"
+        "guides/extends",
+        "guides/migrations"
       ]
     },
     {

@@ -1,5 +1,5 @@
 ---
-title: "Installation as GitHub Action"
+title: "Installation Reviewpad as a GitHub action"
 id: "installation-action"
 slug: "installation-action"
 ---
@@ -7,25 +7,26 @@ slug: "installation-action"
 import CodeBlock from "@theme/CodeBlock";
 import LabelSizeConfiguration from "!!raw-loader!../use-cases/automated-labelling/label-with-size/example.yml";
 
-:::caution GitHub App
+:::info
 
-To get the most out of Reviewpad we strongly advise [installing the GitHub App](/getting-started/installation). This will allow you to use all the features of Reviewpad.
+**To get the most out of Reviewpad we advise you to [install Reviewpad as a GitHub App](/getting-started/installation).**
+This will allow you to access all Reviewpad features.
 
-If you are not able to install the GitHub App, we suggest installing Reviewpad as a [GitHub Action with a GitHub Token](/getting-started/installation-action-tokenized) instead.
+If you are not able to install the Reviewpad GitHub App, please continue with this installation.
+:::
 
-If you are not able to install the GitHub App or use a GitHub Token, you can install Reviewpad as a GitHub Action.
+:::caution
 
-Unfortunately, you will **not** be able to use the following built-ins:
+If you are not able to [install Reviewpad as GitHub App](/getting-started/installation), we suggest to [install Reviewpad as a GitHub action with a GitHub token](/getting-started/installation-action-tokenized) instead.
+
+**Please be aware that installing Reviewpad as a GitHub action without a GitHub will limit the features you can use.**
+Mainly, the following built-ins will not be available:
 - [team](/guides/built-ins#team)
 - [merge](/guides/built-ins#merge)
 - [review](/guides/built-ins#review)
-
-Also, the following use cases will **not** work:
-- [Attention set](/use-cases/attention-set)
-- [Auto-merge](/use-cases/auto-merge)
 :::
 
-You can install Reviewpad as a GitHub Action :zap:
+You can install Reviewpad as a GitHub action :zap:
 
 **Reviewpad runs as a GitHub action** at the level of a single GitHub repository, which means that you need to install Reviewpad for each repository where you wish to run it.
 

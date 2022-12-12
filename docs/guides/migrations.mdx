@@ -13,9 +13,11 @@ This guide explains how to complete Reviewpad migrations.
 
 ## Migrate from the GitHub Action to the GitHub App
 
+### Why?
+
 Using [Reviewpad action](/getting-started/installation-action-tokenized) is a great way to get started with Reviewpad. However, it has some limitations. Depending if you are using [Reviewpad action with a GitHub token](/getting-started/installation-action-tokenized) you won't be able to use all Reviewpad built-ins. Also, some of the [Reviewpad use cases](/use-cases) won't be possible to implement.
 
-To overcome these limitations, you can migrate to the Reviewpad GitHub App. The migration is a simple process that can be completed in a few steps.
+To overcome these limitations, you should migrate to the Reviewpad GitHub App. The migration is a simple process that can be completed in a few steps.
 
 :::caution
 
@@ -25,13 +27,13 @@ If you are not an admin, you can ask your admin to install the [Reviewpad GitHub
 
 :::
 
-## Step 1. Navigate to the Reviewpad GitHub App page
+### Step 1. Navigate to the Reviewpad GitHub App page
 
 Open the [Reviewpad GitHub App page](https://github.com/apps/reviewpad) and click the green button `Install`.
 
 ![Reviewpad Installation - Step 1](/img/installation/step1.png)
 
-## Step 2. Choose which repositories to install Reviewpad on
+### Step 2. Choose which repositories to install Reviewpad on
 
 You can choose to install Reviewpad on all repositories or select specific repositories.
 
@@ -45,7 +47,7 @@ After you click the `Install` button you will be redirected to Reviewpad documen
 
 :::
 
-## Step 3. Configure Reviewpad
+### Step 3. Configure Reviewpad
 
 :::tip
 
@@ -57,8 +59,12 @@ If you don't have a Reviewpad configuration file, create a file called `reviewpa
 
 <CodeBlock language="yml">{LabelSizeConfiguration}</CodeBlock>
 
-## Step 4. Delete Reviewpad action
+### Step 4. Disable Reviewpad action
 
-Finally, delete the Reviewpad action from your repository. To do this, navigate to `.github > workflows` and delete the file `reviewpad.yml`.
+Finally, disable the Reviewpad action from your repository. You can do this by removing the workflow file, that executes the Reviewpad action, from your repository.
+
+If you followed our [configuration guide](/getting-started/installation-action-tokenized), you can find the workflow file in `.github > workflows > reviewpad.yml`.
+
+The workflow file should look like [this](/getting-started/installation-action-tokenized/#step-4-add-reviewpad-action-workflow-file). Remove it and you're done.
 
 ![Reviewpad Delete Action](/img/migrations/delete-action.gif)
