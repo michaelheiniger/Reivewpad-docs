@@ -12,6 +12,12 @@ api-version: reviewpad.com/v3.x
 mode: MODE [OPTIONAL]
 ignore-errors: IGNORE_ERRORS [OPTIONAL]
 
+extends:
+  - configuration_1
+  - configuration_2
+  ...
+  - configuration_N
+
 labels:
   label_1
   label_2
@@ -93,6 +99,23 @@ By default, this flag is `false` which means that Reviewpad will fail if an erro
 ```yml
 ignore-errors: true # optional
 ```
+
+## Extends
+
+The `extends` property allows users to extend other Reviewpad configurations represented as
+GitHub blob urls (e.g. `https://github.com/reviewpad/reviewpad/blob/main/reviewpad.yml`).
+
+An example:
+
+```yml
+extends:
+  - https://github.com/reviewpad/.github/blob/main/common.yml
+  - https://github.com/reviewpad/reviewpad/blob/main/team_a.yml
+```
+
+If the url is not a GitHub blob, Reviewpad will return an error.
+
+The exact semantics of the `extends` mechanism is described in this [page](./extends).
 
 ## Label
 
