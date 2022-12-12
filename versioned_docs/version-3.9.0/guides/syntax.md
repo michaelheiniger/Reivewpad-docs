@@ -169,7 +169,7 @@ groups:
     kind: developers
     type: filter
     param: dev
-    where: $totalCreatedPRs($dev) < 10
+    where: $pullRequestCountBy($dev) < 10
 ```
 
 ## Rule

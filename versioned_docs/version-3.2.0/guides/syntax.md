@@ -63,7 +63,7 @@ The `ignore-errors` property is a flag that allows you to specify if the GitHub 
 
 ## Label
 
-A label specifies a label that can be used as an argument to the label related functions. 
+A label specifies a label that can be used as an argument to the label related functions.
 
 The structure of a label is as follows:
 
@@ -71,7 +71,7 @@ The structure of a label is as follows:
 LABEL-ID:
   name: STRING [OPTIONAL]
   description: STRING [OPTIONAL]
-  color: STRING [OPTIONAL] 
+  color: STRING [OPTIONAL]
 ```
 
 - `ID` of a label is used to reference it in other entities. If no `name` is provided, then the `ID` is considered the `name`.
@@ -135,12 +135,12 @@ There are two ways to specify a group:
   kind: developers
   type: filter
   param: dev
-  where: $totalCreatedPRs($dev) < 10
+  where: $pullRequestCountBy($dev) < 10
 ```
 
 ## Rule
 
-A Reviewpad rule specifies a boolean condition on a pull request. 
+A Reviewpad rule specifies a boolean condition on a pull request.
 
 The structure of a rule is as follows:
 
@@ -151,7 +151,7 @@ The structure of a rule is as follows:
   spec: ALADINO-BOOLEAN-EXPRESSION
 ```
 
-- `name` of a rule is used to reference it in other rules and workflow. 
+- `name` of a rule is used to reference it in other rules and workflow.
 - `kind` of a rule can be either _patch_ or _author._ The kind is related to different properties of pull requests that will be used in the evaluation of the _spec_ field.
 - `description` is a string that can be used to provide more details about the rule.
 - `spec` is a boolean expression in [Aladino](/guides/aladino/specification).
@@ -210,4 +210,4 @@ workflows:
       - $addLabel("small")
 ```
 
-This configuration specifies one workflow called `labelSmall` which automatically labels a pull request with the label `small` if the rule `isSmallPatch` is true. This means that the total number of changed lines i.e. `$size` is lower than 90. 
+This configuration specifies one workflow called `labelSmall` which automatically labels a pull request with the label `small` if the rule `isSmallPatch` is true. This means that the total number of changed lines i.e. `$size` is lower than 90.

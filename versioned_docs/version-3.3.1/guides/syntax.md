@@ -76,7 +76,7 @@ ignore-errors: true # optional
 
 ## Label
 
-A label specifies a label that can be used as an argument to the label related functions. 
+A label specifies a label that can be used as an argument to the label related functions.
 
 The structure of a label is as follows:
 
@@ -84,7 +84,7 @@ The structure of a label is as follows:
 LABEL-ID:
   name: STRING [OPTIONAL]
   description: STRING [OPTIONAL]
-  color: STRING [OPTIONAL] 
+  color: STRING [OPTIONAL]
 ```
 
 - `LABEL-ID` of a label is used to reference it in other entities. If no `name` is provided, then the `LABEL-ID` is considered the `name`.
@@ -161,12 +161,12 @@ groups:
     kind: developers
     type: filter
     param: dev
-    where: $totalCreatedPRs($dev) < 10
+    where: $pullRequestCountBy($dev) < 10
 ```
 
 ## Rule
 
-A Reviewpad rule specifies a boolean condition on a pull request. 
+A Reviewpad rule specifies a boolean condition on a pull request.
 
 The structure of a rule is as follows:
 
@@ -177,7 +177,7 @@ The structure of a rule is as follows:
   spec: ALADINO-BOOLEAN-EXPRESSION
 ```
 
-- `name` of a rule is used to reference it in other rules and workflow. 
+- `name` of a rule is used to reference it in other rules and workflow.
 - `kind` [OPTIONAL] of a rule can be either _patch_ or _author._ The kind is related to different properties of pull requests that will be used in the evaluation of the _spec_ field.
 - `description` [OPTIONAL] is a string that can be used to provide more details about the rule.
 - `spec` is a boolean expression in [Aladino](/guides/aladino/specification).
@@ -189,7 +189,7 @@ rules:
   - name: small-change
     kind: patch # optional
     description: checks pr size is small # optional
-    spec: $size() < 30 
+    spec: $size() < 30
 ```
 
 ## Workflow
