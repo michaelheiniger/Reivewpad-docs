@@ -36,6 +36,7 @@ const sidebars = {
                 "guides/commands/commands",
                 "guides/extends",
                 "guides/migrations",
+                "guides/reports/reports"
             ],
         },
         {
