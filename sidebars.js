@@ -66,6 +66,7 @@ const sidebars = {
                     ],
                 },
                 "use-cases/attention-set/attention-set",
+                "use-cases/blocking-merge/blocking-merge",
                 "use-cases/check-issue-description/check-issue-description",
                 "use-cases/comment-on-pull-requests/comment-on-pull-requests",
                 "use-cases/enforce-branch-conventions/enforce-branch-conventions",

@@ -1,0 +1,29 @@
+---
+title: "Blocking Merge"
+id: "blocking-merge"
+slug: "/use-cases/blocking-merge"
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+Reviewpad can be used to ensure pull requests are safely merged and follow the rules of your repository.
+
+**By taking advantage of GitHub branch protection rules and status checks you can configure Reviewpad to safetly block a pull request from being merged.**
+
+## Example
+
+Let's say we want to block merging pull requests that modify the license of our repository.
+
+We can achieve this by adding a workflow to our Reviewpad that fails when the `LICENSE` file is being modified on a pull request.
+
+<CodeBlock language="yml">{Example}</CodeBlock>
+
+After which we can configure a [branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule) on our
+GitHub repository and add a [status check](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) that prevents merging if the Reviewpad status check fails.
+
+![Configure Status Check](/img/blocking-merge/configure-status-check.png)
+
+With that in place, once a pull request tries to modify the `LICENSE` file in our repository, the merging ability will be blocked.
+
+![Merge button blocked](/img/blocking-merge/merge-blocked.png)
