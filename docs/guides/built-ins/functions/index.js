@@ -1,6 +1,7 @@
 import All from "./all/index.mdx";
 import Any from "./any/index.mdx";
 import Append from "./append/index.mdx";
+import ApprovalsCount from "./approvalsCount/index.mdx";
 import Assignees from "./assignees/index.mdx";
 import Author from "./author/index.mdx";
 import Base from "./base/index.mdx";
@@ -57,6 +58,7 @@ import WorkflowStatus from "./workflowStatus/index.mdx";
 export { All as All };
 export { Any as Any };
 export { Append as Append };
+export { ApprovalsCount as ApprovalsCount };
 export { Assignees as Assignees };
 export { Author as Author };
 export { Base as Base };
