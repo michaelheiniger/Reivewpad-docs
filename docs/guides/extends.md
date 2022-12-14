@@ -8,8 +8,8 @@ title: "Extends"
 
 Through the `extends` property, Reviewpad users can extend the current configuration from other configurations.
 
-This allows the ability to share common specifications for labels, rules and workflows from multiple GitHub repositories
-with the possibility to override the inherited configurations.
+This allows the ability to share common specifications for all the flags, labels, rules and workflows 
+from multiple GitHub repositories with the possibility to override the inherited configurations.
 
 
 ## How it works
@@ -64,6 +64,8 @@ Where `common.yml`:
 ```yml
 api-version: reviewpad.com/v3.x
 
+metrics-on-merge: true
+
 workflows:
   - name: small-size
     always-run: true
@@ -105,6 +107,8 @@ The final configuration will be:
 
 ```yml
 api-version: reviewpad.com/v3.x
+
+metrics-on-merge: true
 
 workflows:
   # we first load the "medium-size" workflow from common.yml (the first configuration in the extends section)

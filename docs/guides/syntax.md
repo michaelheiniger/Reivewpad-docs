@@ -9,8 +9,9 @@ A Reviewpad configuration file has the following shape:
 ```yaml
 api-version: reviewpad.com/v3.x
 
-mode: MODE [OPTIONAL]
-ignore-errors: IGNORE_ERRORS [OPTIONAL]
+mode: silent | verbose [OPTIONAL]
+ignore-errors: true | false [OPTIONAL]
+metrics-on-merge: true | false [OPTIONAL]
 
 extends:
   - configuration_1
@@ -72,7 +73,35 @@ api-version: reviewpad.com/v3.x
 
 The `mode` property is a flag that allows you to enable or disable reports of Reviewpad as a pull request comment.
 
-By default, Reviewpad runs on `silent` mode. However, you can choose to use `verbose` mode and Reviewpad will comment on the pull request with the execution results and, when the pull request is merged, the metrics.
+By default, Reviewpad runs on `silent` mode. 
+However, you can choose to use `verbose` mode and Reviewpad will comment on the pull request with the execution results and, 
+
+#### Example
+
+```yml
+mode: verbose # optional
+```
+
+## Ignore errors
+
+The `ignore-errors` property is a boolean flag that allows you to specify if the Reviewpad should ignore execution errors.
+
+By default, this flag is `false` which means that Reviewpad will fail if an error is raised.
+
+#### Example
+
+```yml
+ignore-errors: true # optional
+```
+
+## Metrics on merge
+
+The `metrics-on-merge` property is a boolean flag that allows you to specify if the Reviewpad 
+should add a metrics report when the pull request is merged.
+
+By default, this flag is `false` which means that Reviewpad will not add this report.
+
+This report is only added if Reviewpad reacts to the `closed` event on a pull request.
 
 The metrics report includes the following metrics:
 
@@ -85,19 +114,7 @@ The metrics report includes the following metrics:
 #### Example
 
 ```yml
-mode: verbose # optional
-```
-
-## Ignore errors
-
-The `ignore-errors` property is a flag that allows you to specify if the Reviewpad should ignore execution errors.
-
-By default, this flag is `false` which means that Reviewpad will fail if an error is raised.
-
-#### Example
-
-```yml
-ignore-errors: true # optional
+metrics-on-merge: true
 ```
 
 ## Extends
