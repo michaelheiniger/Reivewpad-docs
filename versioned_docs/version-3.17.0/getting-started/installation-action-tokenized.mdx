@@ -40,33 +40,25 @@ Therefore, in order to take the most out of Reviewpad, you need to generate a Gi
 
 ## Step 1. Generate a GitHub token
 
-Navigate to the option `Fined-grained access` in your [GitHub Developer Settings](https://github.com/settings/tokens?type=beta) and click the button `Generate new token`.
+Navigate to the option `Tokens (classic)` in your [GitHub Developer Settings](https://github.com/settings/tokens), click the button `Generate new token`, and choose the option `Generate new token (classic)`.
 
 ![GitHub Fined-grained access](/img/installation-action-tokenized/step1.gif)
 
 Fill the form with the following information:
 * Token name: `Reviewpad Token`
-* Expiration: `90 days`
-* Description: `Token to be used by Reviewpad`
-* Repository access: `All repositories` (or select the repositories you want to use Reviewpad with)
-* Permissions: Make sure to select the following permissions for `Repository permissions`
+* Expiration: `No expiration`
 
-    | Description          | Access         |
-    | -------------------- | -------------- |
-    | Actions              | Read-only      |
-    | Administration       | Read-only      |
-    | Code scanning alerts | Read-only      |
-    | Commit statuses      | Read and write |
-    | Contents             | Read and write |
-    | Dependabot alerts    | Read-only      |
-    | Deployments          | Read-only      |
-    | Issues               | Read and write |
-    | Merge queues         | Read and write |
-    | Metadata             | Read-only      |
-    | Pull requests        | Read and write |
-    | Webhooks             | Read and write |
+And select the following scopes:
 
-Once you have filled the form, click the green button `Generate token` and copy the generated token.
+![GitHub add token](/img/installation-action-tokenized/permissions.png)
+
+After that, click the green button `Generate token` and copy the generated token.
+
+:::caution
+
+Please note that if your organization uses SAML single sign-on (SSO), you must first [authorize the token](https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on).
+
+:::
 
 ## Step 2. Add the generated GitHub token to Actions Secrets
 
@@ -76,7 +68,7 @@ Once you have filled the form, click the green button `Generate token` and copy 
 4. Click the button `New repository secret`.
 5. Add the new secret and then click on green button `Add secret`.
     - Name: `GH_TOKEN`
-    - Value: _THE_GENERATED_TOKEN_ON_STEP_1_
+    - Value: _<THE_TOKEN_GENERATED_ON_STEP_1>_
 
 ![GitHub add token](/img/installation-action-tokenized/step2.gif)
 
