@@ -137,7 +137,8 @@ LABEL-ID:
 
 If the label does not exist in the repository, it will be created.
 
-If the label already exists in the repository and the description set in the `reviewpad.yml` file is different from the description in the repository then this descritpion will be updated to the description defined in the `reviewpad.yml` file.
+If the label already exists in the repository and the description or the color set in the `reviewpad.yml` file,
+then both description and the color will be updated based on the `reviewpad.yml` file.
 
 #### Example
 
