@@ -1,0 +1,36 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Determines whether the provided file pattern matches any of the files in the patch, returning `true` or `false` as appropriate.
+
+The file pattern needs to be a [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>).
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+| Parameter      | Type   | Description                                     |
+| :------------- | :----- | :---------------------------------------------- |
+| `file_pattern` | string | The file pattern glob to look for in the patch. |
+
+**Return value**:
+
+| Type      | Description                                                                                   |
+| :-------- | :-------------------------------------------------------------------------------------------- |
+| `boolean` | `true` if any of the files in the patch matches the provided file pattern, `false` otherwise. |
+
+**Examples**:
+
+```yml
+$hasFilePattern("src/transactions/**")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Example}</CodeBlock>

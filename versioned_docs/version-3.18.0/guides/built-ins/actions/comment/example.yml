@@ -1,0 +1,8 @@
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: update-to-date
+    if:
+      - $hasLinearHistory() == false
+    then:
+      - $fail("The pull request does not have a linear history.")

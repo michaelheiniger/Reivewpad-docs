@@ -1,0 +1,32 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Retrieves the name of the branch where the pull request changes are implemented.
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+_none_
+
+**Return value**:
+
+| Type     | Description                                                            |
+| :------- | :--------------------------------------------------------------------- |
+| `string` | The name of the branch where the pull request changes are implemented. |
+
+**Examples**:
+
+```yml
+$head()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Example}</CodeBlock>
