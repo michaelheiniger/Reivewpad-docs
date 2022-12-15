@@ -84,6 +84,17 @@ workflows:
         extra-actions:
           - $warn("Please make sure that you have linked an issue to the pull request.")
 
+  - name: lint-commits
+    always-run: true
+    if:
+      - rule: '!$hasLinearHistory()'
+        extra-actions:
+          - '$warn("The pull request does not have a linear history")'
+      - rule: 'true'
+        extra-actions:
+          - '$commitLint()'
+          - '$titleLint()'
+
   - name: label-ship-show-ask
     always-run: true
     description: Label the pull request based on the merge strategy
