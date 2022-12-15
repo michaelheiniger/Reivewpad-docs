@@ -18,6 +18,7 @@ import RemoveLabel from "./removeLabel/index.mdx";
 import RemoveLabels from "./removeLabels/index.mdx";
 import Review from "./review/index.mdx";
 import TitleLint from "./titleLint/index.mdx";
+import TriggerWorkflow from "./triggerWorkflow/index.mdx";
 import Warn from "./warn/index.mdx";
 
 export { AddLabel as AddLabel };
@@ -40,4 +41,5 @@ export { RemoveLabel as RemoveLabel };
 export { RemoveLabels as RemoveLabels };
 export { Review as Review };
 export { TitleLint as TitleLint };
+export { TriggerWorkflow as TriggerWorkflow };
 export { Warn as Warn };
