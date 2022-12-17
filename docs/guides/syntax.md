@@ -73,8 +73,8 @@ api-version: reviewpad.com/v3.x
 
 The `mode` property is a flag that allows you to enable or disable reports of Reviewpad as a pull request comment.
 
-By default, Reviewpad runs on `silent` mode. 
-However, you can choose to use `verbose` mode and Reviewpad will comment on the pull request with the execution results and, 
+By default, Reviewpad runs on `silent` mode.
+However, you can choose to use `verbose` mode and Reviewpad will comment on the pull request with the execution results and,
 
 #### Example
 
@@ -96,7 +96,7 @@ ignore-errors: true # optional
 
 ## Metrics on merge
 
-The `metrics-on-merge` property is a boolean flag that allows you to specify if the Reviewpad 
+The `metrics-on-merge` property is a boolean flag that allows you to specify if the Reviewpad
 should add a metrics report when the pull request is merged.
 
 By default, this flag is `false` which means that Reviewpad will not add this report.
@@ -109,7 +109,7 @@ The metrics report includes the following metrics:
 - `Pickup Time`: the time since the pull request was issued until its first review;
 - `Review Time`: the time from the first review until the pull request was merged.
 
-![Metrics Report](/img/metricsReport.png)
+![Reviewpad metrics report](/img/reports/metrics.png)
 
 #### Example
 
