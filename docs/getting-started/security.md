@@ -14,6 +14,8 @@ Reviewpad executions do not communicate between them, they are ephemeral and run
 
 Reviewpad requires the following permissions:
 
+### Repository permissions
+
 | Description                                                                                                    | Permissions    |
 | -------------------------------------------------------------------------------------------------------------- | -------------- |
 | [Actions](https://docs.github.com/en/rest/overview/permissions-required-for-github-apps#actions)               | Read-only      |
@@ -31,3 +33,11 @@ Reviewpad requires the following permissions:
 | [Pull requests](https://docs.github.com/v3/apps/permissions#pull-requests)                                     | Read and write |
 | [Secret scanning alerts](https://docs.github.com/v3/apps/permissions#secret-scanning-alerts)                   | Read-only      |
 | [Webhooks](https://docs.github.com/en/rest/overview/permissions-required-for-github-apps#repository-webhooks)  | Read and write |
+
+### Repository permissions
+
+| Description                                                                                                                 | Permissions    |
+| --------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| [Administration](https://docs.github.com/en/rest/overview/permissions-required-for-github-apps#organization-administration) | Read-only      |
+| [Members](https://docs.github.com/v3/apps/permissions#members)                                                              | Read-only      |
+| [Projects](https://docs.github.com/v3/apps/permissions#organization-projects)                                               | Read and write |
