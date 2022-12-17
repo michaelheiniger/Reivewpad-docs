@@ -34,7 +34,7 @@ const sidebars = {
                 },
                 "guides/annotations",
                 "guides/commands/commands",
-                "guides/extends",
+                "guides/extends/extends",
                 "guides/migrations",
                 "guides/reports/reports"
             ],
