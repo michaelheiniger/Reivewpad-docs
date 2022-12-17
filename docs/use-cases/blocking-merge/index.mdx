@@ -17,7 +17,7 @@ Let's say we want to block merging pull requests that modify the license of our 
 
 We can achieve this by adding a workflow to our Reviewpad that fails when the `LICENSE` file is being modified on a pull request.
 
-<CodeBlock language="yml">{Example}</CodeBlock>
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>
 
 After which we can configure a [branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule) on our
 GitHub repository and add a [status check](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) that prevents merging if the Reviewpad status check fails.
