@@ -1,3 +1,5 @@
+## [Reviewpad v2.2.0](/changelog/reviewpad-v220)
+
 ## New features :fire: {#new-features}
 
 ### YAML Specification

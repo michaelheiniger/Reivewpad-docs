@@ -1,3 +1,5 @@
+## [Reviewpad v3.18.0](/changelog/reviewpad-v3180)
+
 ## New features :fire:
 
 ### Configuration

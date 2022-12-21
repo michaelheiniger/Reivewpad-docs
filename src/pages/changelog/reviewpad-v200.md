@@ -1,4 +1,6 @@
-w## New features :fire: {#new-features}
+## [Reviewpad v2.0.0 (Lisbon)](/changelog/reviewpad-v200)
+
+## New features :fire: {#new-features}
 
 ### YAML Specification
 

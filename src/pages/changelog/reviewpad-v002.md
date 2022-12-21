@@ -1,3 +1,5 @@
+## [Reviewpad v0.0.2](/changelog/reviewpad-v002)
+
 ## New features :fire: {#new-features}
 
 ### Revy

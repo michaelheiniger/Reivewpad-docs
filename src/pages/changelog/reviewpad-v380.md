@@ -1,3 +1,5 @@
+## [Reviewpad v3.8.0](/changelog/reviewpad-v380)
+
 ## Improvements :rocket: {#improvements}
 
 - Support escaped strings on `reviewpad.yml` file.

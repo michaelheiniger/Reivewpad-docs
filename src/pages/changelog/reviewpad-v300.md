@@ -1,3 +1,5 @@
+## [Reviewpad v3.0.0 (Faro)](/changelog/reviewpad-v300)
+
 ## New features :fire: {#new-features}
 
 This is a major version of the Reviewpad Action.

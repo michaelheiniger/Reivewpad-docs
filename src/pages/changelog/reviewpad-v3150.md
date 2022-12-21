@@ -1,3 +1,5 @@
+## [Reviewpad v3.15.0](/changelog/reviewpad-v3150)
+
 ## New features :fire:
 
 ### Commands

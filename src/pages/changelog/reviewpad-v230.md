@@ -1,3 +1,5 @@
+## [Reviewpad v2.3.0](/changelog/reviewpad-v230)
+
 ## New features :fire: {#new-features}
 
 ### Aladino Built-ins

@@ -1,3 +1,5 @@
+## [Reviewpad v3.4.0](/changelog/reviewpad-v340)
+
 ## New features :fire:
 
 ### Aladino Language

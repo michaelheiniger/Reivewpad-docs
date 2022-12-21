@@ -1,3 +1,5 @@
+## [Reviewpad v3.5.0](/changelog/reviewpad-v350)
+
 ## Improvements :rocket: {#improvements}
 
 ### Reviewpad
