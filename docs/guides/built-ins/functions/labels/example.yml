@@ -1,12 +1,8 @@
 api-version: reviewpad.com/v3.x
 
-rules:
-  - name: is-bug
-    spec: $isElementOf("bug", $labels())
-
 workflows:
   - name: assign-reviewers
     if:
-      - rule: is-bug
+      - rule: $isElementOf("bug", $labels())
     then:
       - $assignTeamReviewer(["testers"])
