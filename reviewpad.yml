@@ -11,7 +11,7 @@ labels:
 groups:
   - name: maintainers
     kind: developers
-    spec: '["marcelosousa", "ferreiratiago", "shay2025"]'
+    spec: '["marcelosousa", "ferreiratiago", "shay2025", "zolamk"]'
 
 rules:
   - name: authored-by-maintainer
