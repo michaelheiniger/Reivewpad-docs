@@ -50,6 +50,7 @@ import RequestedReviewers from "./requestedReviewers/index.mdx";
 import Reviewers from "./reviewers/index.mdx";
 import ReviewerStatus from "./reviewerStatus/index.mdx";
 import Rule from "./rule/index.mdx";
+import SelectFromJSON from "./selectFromJSON/index.mdx"
 import Size from "./size/index.mdx";
 import Sprintf from "./sprintf/index.mdx";
 import StartsWith from "./startsWith/index.mdx";
@@ -113,6 +114,7 @@ export { RequestedReviewers as RequestedReviewers };
 export { Reviewers as Reviewers };
 export { ReviewerStatus as ReviewerStatus };
 export { Rule as Rule };
+export { SelectFromJSON as SelectFromJSON };
 export { Size as Size };
 export { Sprintf as Sprintf };
 export { StartsWith as StartsWith };
