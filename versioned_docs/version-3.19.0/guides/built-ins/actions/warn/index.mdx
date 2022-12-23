@@ -1,0 +1,22 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Adds a message to the warnings section of the report.
+
+**Parameters**:
+
+| Parameter  | Type    | Description                               |
+| :--------- | :------ | :---------------------------------------- |
+| `comment`  | string  | The comment to be added in the warnings.  |
+
+**Examples**:
+
+```yml
+$warn("Please do not forget to add the tests.")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

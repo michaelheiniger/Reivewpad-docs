@@ -1,0 +1,43 @@
+---
+title: "Auto-merge"
+id: "auto-merge"
+slug: "/use-cases/auto-merge"
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import Example1 from "!!raw-loader!./example1.yml";
+import Example2 from "!!raw-loader!./example2.yml";
+import Example3 from "!!raw-loader!./example3.yml";
+import Example4 from "!!raw-loader!./example4.yml";
+
+The ability to configure automatic pull request merge can greatly unblock developers that typically wait for hours, or even days, to receive a LGTM review.
+
+Since not every pull request needs the same review process, using the semantic features of Reviewpad, you can configure many scenarios where auto-merge seems natural.
+
+Out of the box, Reviewpad supports a [merge action](/guides/built-ins#merge) which can be used in multiple scenarios.
+
+## Auto-merge based on file properties
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example1}</CodeBlock>
+
+## Auto-merge small pull requests
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example2}</CodeBlock>
+
+## Auto-merge non-critical pull requests
+
+The [**hasAnnotation**](/guides/built-ins#hasannotation) built-in can be used to configure powerful auto-merges. See a more in-depth example of the usage of [**hasAnnotation**](/guides/built-ins#hasannotation) in the [automated labelling section](/use-cases/label-critical-changes-with-semantic-code-annotations).
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example3}</CodeBlock>
+
+## Auto-merge on required approvals
+
+In GitHub, repository administrators can require a minimum number of pull request approvals before merging into a protected branch.
+
+However, we may want the required number of approvals to come from a defined set of users/team. In this case, GitHub does not offer this ability.
+
+We can use Reviewpad to verify if a pull request has the required number of approvals from a specific team.
+
+Here's an example of a `reviewpad.yml` configuration that verifies if a pull request has at least 2 approvals from the core team when changes are critical.
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example4}</CodeBlock>
