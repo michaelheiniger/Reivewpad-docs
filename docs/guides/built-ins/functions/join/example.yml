@@ -6,4 +6,4 @@ workflows:
     if:
       - $hasAnnotation("security")
     then:
-      - '$warn($sprintf("This pull request contains security changes. Please, request a 1:1 with security team: %s", [$join($team("security"))]))'
+      - '$warn($sprintf("This pull request contains security changes. Please, request a 1:1 with security team: %s", [$join($team("security", ", "))]))'
