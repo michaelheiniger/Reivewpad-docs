@@ -1,0 +1,47 @@
+
+    Version:reviewpad.com/v3.x
+    Edition:professional
+    Mode:silent
+    IgnoreErrors:<nil>
+    MetricsOnMerge:0xc00061a208
+    Imports:[]
+    Extends:[]
+    Groups:[]
+    Rules:[
+    {
+    Name: is-a-release-pr
+    Kind:patch
+    Description:
+    Spec: $startsWith($title(), "chore(main): release")
+    } {
+    Name: is-draft
+    Kind:patch
+    Description:
+    Spec: $state() == "open" && $isDraft()
+    } {
+    Name:has-no-reviews
+    Kind:patch
+    Description:
+    Spec: $all($reviewers(), ($r: String => $reviewerStatus($r) == ""))
+    } {
+    Name:is-reviewable
+    Kind:patch
+    Description:
+    Spec: !$rule("is-draft") && !$rule("is-a-release-pr")
+    } {
+    Name:is-ready-to-review
+    Kind:patch
+     Description:
+     Spec: $rule("is-reviewable") && $rule("has-no-reviews")
+     } {Name:is-approved Kind:patch Description: Spec:$rule("is-reviewable") && $all($reviewers(), ($r: String => $reviewerStatus($r) == "APPROVED"))} {Name:changes-requested Kind:patch Description: Spec:$rule("is-reviewable") && $any($reviewers(), ($r: String => $reviewerStatus($r) == "CHANGES_REQUESTED"))} {Name:reviewing Kind:patch Description: Spec:$rule("is-reviewable") && !$rule("has-no-reviews") && !$rule("is-a-release-pr") && !$rule("changes-requested")} {Name:ci-succeed Kind:patch Description:CI run successfully Spec:$workflowStatus("ci") == "success"} {Name:can-be-merged Kind:patch Description:Pull request can be merged Spec:$rule("ci-succeed") && $rule("is-approved")} {Name:is-done Kind:patch Description: Spec:$state() == "closed"} {Name:is-linked-to-jira-issue Kind:patch Description: Spec:$contains($description(), "ESDEV-") || $contains($description(), "PLA-") || $contains($description(), "QA-") || $contains($description(), "SEC-")} {Name:$size() <= 20 Kind:patch Description: Spec:$size([]) <= 20} {Name:$size() > 20 && $size() <= 60 Kind:patch Description: Spec:$size([]) > 20 && $size([]) <= 60} {Name:$size() > 60 && $size() <= 200 Kind:patch Description: Spec:$size([]) > 60 && $size([]) <= 200} {Name:$size() > 200 && $size() <= 1000 Kind:patch Description: Spec:$size([]) > 200 && $size([]) <= 1000} {Name:$size() > 1000 && $size() <= 2000 Kind:patch Description: Spec:$size([]) > 1000 && $size([]) <= 2000} {Name:$size() > 2000 Kind:patch Description: Spec:$size([]) > 2000} {
+     Name: $hasFilePattern("apps/trial/**")
+     Kind:patch
+     Description:
+     Spec:$hasFilePattern("apps/trial/**")
+     } {
+     Name:$hasFilePattern("apps/notice/**")
+     Kind:patch
+     Description:
+     Spec:$hasFilePattern("apps/notice/**")
+     } {
+     Name:$hasFilePattern("apps/estate-admin/**/vault/**") || $hasCodePattern("vault") Kind:patch Description: Spec:$hasFilePattern("apps/estate-admin/**/vault/**") || $hasCodePattern("vault")} {Name:$hasFilePattern("apps/estate-admin/**/reports/**") || $hasCodePattern("reports") Kind:patch Description: Spec:$hasFilePattern("apps/estate-admin/**/reports/**") || $hasCodePattern("reports")} {Name:$hasFilePattern("apps/estate-admin/**/frontend/**") ||
