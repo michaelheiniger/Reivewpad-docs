@@ -61,6 +61,7 @@ import Team from "./team/index.mdx";
 import Title from "./title/index.mdx";
 import ToBool from "./toBool/index.mdx";
 import ToJSON from "./toJSON/index.mdx";
+import ToStringArray from "./toStringArray/index.mdx"
 import ToNumber from "./toNumber/index.mdx";
 import TotalCodeReviews from "./totalCodeReviews/index.mdx";
 import TotalCreatedPullRequests from "./totalCreatedPullRequests/index.mdx";
@@ -129,6 +130,7 @@ export { Team as Team };
 export { Title as Title };
 export { ToBool as ToBool };
 export { ToJSON as ToJSON };
+export { ToStringArray as ToStringArray };
 export { ToNumber as ToNumber };
 export { TotalCodeReviews as TotalCodeReviews };
 export { TotalCreatedPullRequests as TotalCreatedPullRequests };
