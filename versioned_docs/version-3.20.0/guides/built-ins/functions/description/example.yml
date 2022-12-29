@@ -1,0 +1,8 @@
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: check-conventions
+    if:
+      - $description() == ""
+    then:
+      - $fail("Pull request description is empty")

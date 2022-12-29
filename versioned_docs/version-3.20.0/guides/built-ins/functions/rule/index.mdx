@@ -1,0 +1,28 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Evaluates a rule. This rule needs to be defined in the same `reviewpad.yml` file.
+
+**Parameters**:
+
+| Parameter   | Type   | Description    |
+| :---------- | :----- | :------------- |
+| `rule_name` | string | The rule name. |
+
+**Return value**:
+
+| Type      | Description                 |
+| :-------- | :-------------------------- |
+| `boolean` | The evaluation of the rule. |
+
+**Examples**:
+
+```yml
+'$rule("is-small")'
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

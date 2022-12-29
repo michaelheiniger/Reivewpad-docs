@@ -1,0 +1,42 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+The `changed` built-in receives two regexes with named capturing groups denoted by the `@X` pattern.
+
+These regexes are matched against the set of files in the patch.
+
+The built-in checks if the value set of the first regex is contained in the second one.
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+| Parameter           | Type   | Description                             |
+| :------------------ | :----- | :-------------------------------------- |
+| `pre_file_pattern`  | string | The antecedent file pattern expression. |
+| `post_file_pattern` | string | The consequent file pattern expression. |
+
+**Return value**:
+
+| Type       | Description                                                                                    |
+| :--------- | :--------------------------------------------------------------------------------------------- |
+| `boolean`  | `true` if the value set of the first regex is contained in the second one, `false` otherwise.  |
+
+**Examples**:
+
+```yml
+$changed("@1.go", "@1.md")
+```
+
+This spec will return `true` if for each file in the patch with the extension `.go`
+there is also a file in the patch with the same name with the extension `.md`.
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>
