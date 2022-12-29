@@ -5,4 +5,4 @@ workflows:
     if:
       - rule: $selectFromContext("$.rebaseable") == "true"
     then:
-      - $addLabel("rebaseable")]
+      - $addLabel("rebaseable")

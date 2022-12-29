@@ -5,4 +5,4 @@ workflows:
     if:
       - rule: $selectFromJSON($toJSON($context), "$.rebaseable") == "true"
     then:
-      - $addLabel("rebaseable")]
+      - $addLabel("rebaseable")
