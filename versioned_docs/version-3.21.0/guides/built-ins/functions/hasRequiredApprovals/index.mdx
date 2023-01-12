@@ -1,0 +1,35 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Checks if a pull request has the required number of approvals from a defined set of users.
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+| Parameter                  | Type       | Description                                                            |
+| :------------------------- | :--------- | :--------------------------------------------------------------------- |
+| `total_required_approvals` | `int`      | The number of required approving reviews.                              |
+| `required_approvals_from`  | `[]string` | The list of users where the required approving reviews must come from. |
+
+**Return value**:
+
+| Type           | Description                                                                                 |
+| :------------- | :------------------------------------------------------------------------------------------ |
+| `boolean`      | `true` if the number of required approvals comes from the list of users, `false` otherwise. |
+
+**Examples**:
+
+```yml
+$hasRequiredApprovals(2, ["john", "jane", "peter"])
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

@@ -1,0 +1,28 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Returns a `JSON` serialized string of the current context.
+
+The context is the pull request or issue where the built-in is running on.
+
+**Parameters**:
+
+_none_
+
+**Return value**:
+
+| Type     | Description                                                             |
+| :------- | :---------------------------------------------------------------------- |
+| `string` | `JSON` serialized string of the current context (pull request /issue )  |
+
+**Examples**:
+
+```yml
+$context()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>
