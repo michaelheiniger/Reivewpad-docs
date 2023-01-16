@@ -103,13 +103,18 @@ const sidebars = {
             ],
         },
         {
+            type: "doc",
+            id: "common-pitfalls",
+            label: "Common Pitfalls",
+        },
+        {
             type: "category",
             label: "Contributing",
             items: ["contributing/how-to-contribute"],
         },
         {
             Tooling: ["tooling/vscode-reviewpad-yaml-schema"],
-        },
+        }
     ],
 };
 
