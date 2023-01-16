@@ -1,0 +1,36 @@
+The `assign-reviewers` command triggers the [`$assignReviewer`](/guides/built-ins#assignreviewer) action.
+
+This command assigns a defined amount of reviewers to the pull request from the provided list of reviewers.
+
+**Arguments**:
+
+| Arguments                            | Description                           |
+| :----------------------------------- | :------------------------------------ |
+| `comma_separated_list_of_reviewers`  | List of GitHub logins to select from. |
+
+**Flags**:
+
+| Flags                     | Description                                                                          |
+| :------------------------ | :----------------------------------------------------------------------------------- |
+| `-t`, `--total-reviewers` | The total number of reviewers to assign to. By default, it assigns to all reviewers. |
+| `-p`, `--review-policy`   | The policy followed for reviewer assignment. By default, the policy is `reviewpad`.  |
+
+**Syntax**:
+
+```shell
+/reviewpad assign-reviewers <comma_separated_list_of_reviewers> [--total-reviewers|-t] <total_required_reviewers> [--review-policy|-p] <review_policy>
+```
+
+**Examples**:
+
+```shell
+/reviewpad assign-reviewers john,jane
+```
+
+```shell
+/reviewpad assign-reviewers john,jane --total-reviewers 1 --review-policy random
+```
+
+```shell
+/reviewpad assign-reviewers jane,john -t 1 -p random
+```
