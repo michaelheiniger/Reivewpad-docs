@@ -1,0 +1,34 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Checks if a pull request has a linear history.
+
+A linear history is simply a Git history in which all commits come after one another, i.e., you will not find any merges of branches with independent commit histories.
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+_none_
+
+**Return value**:
+
+| Type      | Description                                                         |
+| :-------- | :------------------------------------------------------------------ |
+| `boolean` | `true` if the pull request has a linear history, `false` otherwise. |
+
+**Examples**:
+
+```yml
+$hasLinearHistory()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

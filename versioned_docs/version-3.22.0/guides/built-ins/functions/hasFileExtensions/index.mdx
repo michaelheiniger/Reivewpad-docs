@@ -1,0 +1,36 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Determines whether all the extensions of the changed files in the patch are included on the provided list of file extensions, returning `true` or `false` as appropriate.
+
+Each extension provided on the list needs to be a [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>).
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+| Parameter    | Type      | Description                      |
+| :----------- | :-------- | :------------------------------- |
+| `extensions` | \[]string | The list of all file extensions. |
+
+**Return value**:
+
+| Type      | Description                                                                             |
+| :-------- | :-------------------------------------------------------------------------------------- |
+| `boolean` | `true` if all file extensions in the patch are included in the list, `false` otherwise. |
+
+**Examples**:
+
+```yml
+$hasFileExtensions([".test.ts"])
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

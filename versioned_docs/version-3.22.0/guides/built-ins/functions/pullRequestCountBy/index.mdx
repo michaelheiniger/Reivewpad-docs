@@ -1,0 +1,33 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Retrieves the total number of pull requests created by the given GitHub user login and state.
+
+**Parameters**:
+
+| Parameter          | Type   | Description                                   |
+| :----------------- | :----- | :-------------------------------------------- |
+| `user_login`       | string | The GitHub user login.                        |
+| `state` (optional) | string | The pull request state (open, closed or all). |
+
+Passing the empty string `""` to `user_login` returns the number of pull requests with a given state in the repository.
+
+Passing the empty string `""` or nothing to `state` defaults to `all`.
+
+**Return value**:
+
+| Type  | Description                                                                                       |
+| :---- | :------------------------------------------------------------------------------------------------ |
+| `int` | The total number of pull requests created by the given GitHub user login with provided the state. |
+
+**Examples**:
+
+```yml
+$pullRequestCountBy($author(), "all")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

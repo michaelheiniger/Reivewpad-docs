@@ -1,0 +1,19 @@
+api-version: reviewpad.com/v3.x
+
+labels:
+  critical:
+    description: Critical code
+    color: fd5e53
+
+rules:
+  - name: changes-critical-code
+    description: Patch involves a critical method or function
+    spec: $hasAnnotation("critical")
+
+workflows:
+  - name: critical
+    description: Modifications of critical code require careful review
+    if:
+      - rule: changes-critical-code
+    then:
+      - $addLabel("critical")

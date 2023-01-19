@@ -1,0 +1,36 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Verifies if the patch matches the provided code pattern, returning `true` or `false` as appropriate.
+
+The code pattern needs to be a compilable regular expression.
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+| Parameter       | Type   | Description                                 |
+| :-------------- | :----- | :------------------------------------------ |
+| `query_pattern` | string | The query pattern to look for in the patch. |
+
+**Return value**:
+
+| Type      | Description                                                       |
+| :-------- | :---------------------------------------------------------------- |
+| `boolean` | `true` if the patch matches the query pattern, `false` otherwise. |
+
+**Examples**:
+
+```yml
+$hasCodePattern("placeBet\(.*\)")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

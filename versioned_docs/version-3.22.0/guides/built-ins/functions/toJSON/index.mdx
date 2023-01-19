@@ -1,0 +1,29 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Converts a JSON serialized string to a JSON object.
+
+**Parameters**:
+
+| Parameter     | Type   | Description            |
+| :------------ | :----- | :--------------------- |
+| `json_string` | string | JSON serialized string |
+
+**Return value**:
+
+| Type   | Description                                             |
+| :----- | :------------------------------------------------------ |
+| `JSON` | The JSON object corresponding to the serialized string. |
+
+**Examples**:
+
+```yml
+$toJSON($context())
+$toJSON("[1, 2, 3]")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>
