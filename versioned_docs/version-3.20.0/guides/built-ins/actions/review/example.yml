@@ -9,4 +9,4 @@ workflows:
     if:
       - rule: missing-tests
     then:
-      - $review("REQUEST-CHANGES", "Please include the tests for your change")
+      - $review("REQUEST_CHANGES", "Please include the tests for your change")
