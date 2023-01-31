@@ -63,3 +63,15 @@ and `team_a.yml`:
 The final configuration will be:
 
 <CodeBlock language="yml" title="reviewpad.yml">{ReviewpadFinal}</CodeBlock>
+
+## Tracking Overrides with Logs
+
+During the extension process, the properties that are being overridden are logged on the Reviewpad execution details.
+
+For example, taking into account the configurations mentioned above we would have the following logs:
+```yaml
+[warning] Workflow 'medium-size' has been overridden by https://github.com/baz/foo/blob/main/common.yml
+[warning] Workflow 'small-size' has been overridden by https://github.com/baz/foo/blob/main/common.yml
+[warning] Workflow 'medium-size' has been overridden by https://github.com/baz/qux/blob/main/team_a.yml
+[warning] Workflow 'small-size' has been overridden by https://github.com/baz/qux/blob/main/team_a.yml
+```
