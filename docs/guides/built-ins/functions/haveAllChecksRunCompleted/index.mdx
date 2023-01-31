@@ -17,6 +17,31 @@ This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
 
 :::
 
+:::caution Known issue
+
+Please note that Reviewpad will run for every check run that is completed.
+
+This can be an issue if the checks finish around the same time and you use built-ins that are not idempotent (e.g. the [comment](guides/built-ins#comment) built-in).
+In this case, Reviewpad will run the built-in multiple times.
+
+Here's an example of a `reviewpad.yml` configuration:
+
+```yml
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: all-checks-completed
+    if:
+      - $haveAllChecksRunCompleted([], "success")
+    then:
+      - $comment("Hello")
+```
+
+In this example, if you have 5 check runs Reviewpad will run 5 times.
+If all checks finish with `success` around the same time, when Reviewpad runs for each check run, all checks have already been completed with `success` and Reviewpad will run the `$comment` built-in. This will result in 5 comments.
+
+:::
+
 **Parameters**:
 
 | Parameter                         | Type       | Description                                                     |
@@ -26,9 +51,9 @@ This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
 
 **Return value**:
 
-| Type           | Description                                                 |
-| :------------- | :-----------------------------------------------------------|
-| `boolean`      | `true` if all check runs have completed, `false` otherwise. |
+| Type       | Description                                                 |
+| :--------- | :-----------------------------------------------------------|
+| `boolean`  | `true` if all check runs have completed, `false` otherwise. |
 
 **Examples**:
 
@@ -41,6 +66,7 @@ $haveAllChecksRunCompleted()
 ```yml
 $haveAllChecksRunCompleted(["integration-tests"])
 ```
+
 #### All check runs have been completed with `success`.
 ```yml
 $haveAllChecksRunCompleted([], "success")
