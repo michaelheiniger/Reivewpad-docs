@@ -11,6 +11,16 @@ This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
 
 :::
 
+:::caution
+
+Reviewpad checks for check run conclusion based on the `name` of the check run.
+
+This means that if you have multiple check runs with the same name, Reviewpad will only check for the first check run with that name.
+
+It is recommended to use unique names for your check runs.
+
+:::
+
 **Parameters**:
 
 | Parameter | Type   | Description                |
