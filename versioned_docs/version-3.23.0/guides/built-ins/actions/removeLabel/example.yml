@@ -1,0 +1,8 @@
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: conflicts
+    if:
+      - rule: $hasGitConflicts() == false
+        extra-actions:
+          - $removeLabel("git-conflicts")

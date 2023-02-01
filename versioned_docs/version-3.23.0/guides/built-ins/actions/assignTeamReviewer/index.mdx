@@ -1,0 +1,28 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Assigns a list of teams to review the pull request.
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+| Parameter         | Type       | Description                                                      |
+| :---------------- | :--------- | :--------------------------------------------------------------- |
+| `team_reviewers`  | \[]string  | The list of GitHub team slugs that will be requested to review.  |
+
+**Examples**:
+
+```yml
+$assignTeamReviewer(["core", "support"])
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

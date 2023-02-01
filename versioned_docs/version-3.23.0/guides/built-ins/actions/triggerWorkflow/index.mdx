@@ -1,0 +1,34 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Creates a [workflow dispatch event](https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28#create-a-workflow-dispatch-event) to manually trigger a GitHub Action workflow run.
+
+:::caution
+
+Please note that for this built-in to work, the workflow file that you which to trigger must have the [`workflow_dispatch`](https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28#create-a-workflow-dispatch-event) trigger.
+
+:::
+
+:::caution
+
+This built-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+| Parameter   | Type   | Description             |
+| :---------- | :----- | :---------------------- |
+| `file_name` | string | The workflow file name. |
+
+**Examples**:
+
+```yml
+$triggerWorkflow("main.yml")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>
