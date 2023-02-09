@@ -1,0 +1,46 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+:::danger DEPREACTED
+
+This built-in is deprecated and will be removed in the next major version.
+
+Please use the [disableMerge](/guides/built-ins#disablemerge) built-in instead.
+
+:::
+
+**Description**:
+
+Fails Reviewpad execution with a custom message.
+
+The custom message is added to both the Reviewpad status check and the Reviewpad report.
+
+:::caution
+
+This built-in forces Reviewpad to fail.
+
+You will see a ❌ in the Reviewpad status check.
+
+:::
+
+:::tip
+
+This built-in can be used to fail Reviewpad status check and enforce branch protection rules, see [Blocking Merge](/use-cases/blocking-merge).
+
+:::
+
+**Parameters**:
+
+| Parameter       | Type    | Description        |
+| :-------------- | :------ | :----------------- |
+| `fail_message`  | string  | The fail message.  |
+
+**Examples**:
+
+```yml
+$fail("Missing specs")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

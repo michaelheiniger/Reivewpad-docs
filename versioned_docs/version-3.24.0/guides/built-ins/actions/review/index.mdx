@@ -1,0 +1,35 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Submits a pull request review.
+
+The action fails when review type is `REQUEST_CHANGES` or `COMMENT` and no message is provided.
+
+The review will only be performed if the following conditions are met:
+- the last review is not `APPROVED`;
+- the pull request has changes since the last submitted review.
+
+:::caution
+
+This buit-in is **not** available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+| Parameter     | Type    | Description                                                          |
+| :------------ | :------ | :------------------------------------------------------------------- |
+| `review_type` | string  | The kind of review, can be `APPROVE`, `REQUEST_CHANGES`, `COMMENT`.  |
+| `message`     | string  | The message to write as a comment.                                   |
+
+**Examples**:
+
+```yml
+$review("APPROVE", "")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

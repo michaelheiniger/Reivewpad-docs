@@ -1,0 +1,22 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Disables the list of actions passed as an argument.
+
+**Parameters**:
+
+| Parameter  | Type       | Description                          |
+| :--------- | :--------- | :----------------------------------- |
+| `actions`  | \[]string  | The list of actions to be disabled.  |
+
+**Examples**:
+
+```yml
+$disableActions(["assignReviewer"])
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

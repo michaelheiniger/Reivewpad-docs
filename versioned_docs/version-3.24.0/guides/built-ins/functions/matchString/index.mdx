@@ -1,0 +1,32 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Verifies if a provided regular expression pattern is matched by a given text.
+
+See supported [regular expression syntax](https://pkg.go.dev/regexp/syntax)
+
+**Parameters**:
+
+| Parameter | Type   | Description                    |
+| :-------- | :----- | :----------------------------- |
+| `pattern` | string | The regular expression pattern |
+| `text`    | string | The text to match              |
+
+**Return value**:
+
+| Type      | Description                                                |
+| :-------- | :--------------------------------------------------------- |
+| `boolean` | `true` if `text` matches the `pattern`, `false` otherwise. |
+
+**Examples**:
+
+```yml
+$matchString("a(bc)+$", "abcbc") # true
+$matchString("\d+", "text")      # false
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

@@ -1,0 +1,8 @@
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: assign-devops-reviewer
+    if:
+      - $isElementOf($author(), $team("devops"))
+    then:
+      - $assignTeamReviewer(["devops"])

@@ -1,0 +1,43 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Rebases the pull request.
+
+:::caution
+
+This built-in is not available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+:::caution
+
+**Currently, this built-in has some limitations and known issues:**
+
+- For the [Github App](getting-started/installation) **only non-forked and user owned forks are supported**. This is due to GitHub restrictions on committing to a pull request branch from a fork. For more information, see [this Github documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/committing-changes-to-a-pull-request-branch-created-from-a-fork).
+- For the [Github Action](/getting-started/installation-action-tokenized) **only non-forked repositories are supported**.
+
+Overall, the following table shows the current support for the different scenarios:
+
+|                         | Github App | Github Action |
+| ----------------------- | ---------- | ------------- |
+| Non forked              | ✓          | ✓             |
+| User owned fork         | ✓          |               |
+| Organization owned fork |            |               |
+
+:::
+
+**Parameters**:
+
+_none_
+
+**Examples**:
+
+```yml
+$rebase()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

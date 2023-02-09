@@ -1,0 +1,44 @@
+api-version: reviewpad.com/v3.x
+
+labels:
+  type-bugfix:
+    name: 'type:bugfix :beetle:'
+    description: Provides a bug fix
+    color: F9B1C9
+  type-feature:
+    name: 'type:feature :rocket:'
+    description: Provides a new feature
+    color: 65ECA3
+  type-support:
+    name: 'type:support :hammer:'
+    description: Provides a misc change
+    color: CDDBDC
+
+workflows:
+  - name: enforce-branch-naming
+    if:
+      - rule: $startsWith($head(), "bugfix/")
+        extra-actions:
+          - $addLabel("type-bugfix")
+      - rule: $startsWith($head(), "feature/")
+        extra-actions:
+          - $addLabel("type-feature")
+      - rule: $startsWith($head(), "support/")
+        extra-actions:
+          - $addLabel("type-support")
+
+  - name: default-policy
+    description: By default it will put a warning
+    if:
+      - 'true'
+    then:
+      - $addLabel("needs-review")
+      # The expression is wrapped in quotes to avoid YAML parsing errors
+      - '$warn("All branches must use the following nomenclature: prefix/name where prefix can be one of: bugfix, enhancement, feature, hotfix or support.")'
+
+  - name: require-linear-history
+    always-run: true
+    if:
+      - $hasLinearHistory() == false
+    then:
+      - $warn("This pull request does not have linear history - please fix this!")
