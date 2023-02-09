@@ -8,7 +8,7 @@
 
 [`assignAssignees`](/guides/built-ins#assignassignees) - Assigns up to 10 assignees to a pull request.
 
-[`fail`](/guides/built-ins#fail) - Fails the action with a given fail message which will appear in the logs of the GitHub action.
+[`fail`](/guides/built-ins#fail-deprecated) - Fails the action with a given fail message which will appear in the logs of the GitHub action.
 
 ### Functions
 

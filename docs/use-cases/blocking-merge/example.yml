@@ -4,6 +4,6 @@ workflows:
   - name: unauthorized-license-workflow
     description: Protect unauthorized modifications to the LICENSE
     if:
-      - rule: '$hasFileName("LICENSE")'
+      - $hasFileName("LICENSE")
     then:
-      - '$fail("Pull Requests should not touch the LICENSE file")'
+      - $disableMerge("Pull Requests should not change the LICENSE")
