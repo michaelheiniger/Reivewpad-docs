@@ -17,7 +17,7 @@ This release introduces the check `reviewpad merge gate` that enables the use of
 ## Improvements :rocket:
 
 - [`reviewpad.yml` JSON schema](https://github.com/reviewpad/schemas/blob/main/latest/schema.json) updated to the latest version.
-- Loading errors are reported when `extends``](/guides/extends) fails.
+- Loading errors are reported when [`extends`](/guides/extends) fails.
 - Configuration errors are reported when `reviewpad.yml` configuration is invalid.
 
 ## Bugs :bug:
