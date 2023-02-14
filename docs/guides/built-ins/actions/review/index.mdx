@@ -5,10 +5,11 @@ import Example from "!!raw-loader!./example.yml";
 
 Submits a pull request review.
 
-The action fails when review type is `REQUEST_CHANGES` or `COMMENT` and no message is provided.
+The action fails when the review type is `REQUEST_CHANGES` or `COMMENT` and no message is provided.
 
 The review will only be performed if the following conditions are met:
-- the last review is not `APPROVED`;
+- the pull request is open;
+- the pull request is not in draft;
 - the pull request has changes since the last submitted review.
 
 :::caution

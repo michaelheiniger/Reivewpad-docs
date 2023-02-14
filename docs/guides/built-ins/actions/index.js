@@ -1,5 +1,6 @@
 import AddLabel from "./addLabel/index.mdx";
 import AddToProject from "./addToProject/index.mdx";
+import Approve from "./approve/index.mdx";
 import AssignAssignees from "./assignAssignees/index.mdx";
 import AssignRandomReviewer from "./assignRandomReviewer/index.mdx";
 import AssignReviewer from "./assignReviewer/index.mdx";
@@ -26,6 +27,7 @@ import Warn from "./warn/index.mdx";
 
 export { AddLabel as AddLabel };
 export { AddToProject as AddToProject };
+export { Approve as Approve };
 export { AssignAssignees as AssignAssignees };
 export { AssignRandomReviewer as AssignRandomReviewer };
 export { AssignReviewer as AssignReviewer };
