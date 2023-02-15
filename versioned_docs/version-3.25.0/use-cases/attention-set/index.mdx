@@ -1,0 +1,16 @@
+---
+title: "Attention set"
+id: "attention-set"
+slug: "/use-cases/attention-set"
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**The `Attention Set` defines what kind of attention a pull request needs at a certain time**.
+
+For instance, a brand new pull request with an assigned reviewer requires the reviewer's attention but not the author's attention.
+
+Here's an example of a reviewpad.yml configuration that labels a pull request according to the required attention set.
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

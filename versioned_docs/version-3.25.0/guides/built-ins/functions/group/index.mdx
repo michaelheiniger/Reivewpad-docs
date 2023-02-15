@@ -1,0 +1,30 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Lists all the members that belong to the provided group. This group needs to be defined in the same `reviewpad.yml` file.
+
+`group` is a way to refer to a defined set of users in a short way.
+
+**Parameters**:
+
+| Parameter    | Type   | Description                                  |
+| :----------- | :----- | :------------------------------------------- |
+| `group_name` | string | The group name to list all the members from. |
+
+**Return value**:
+
+| Type       | Description                     |
+| :--------- | :------------------------------ |
+| `[]string` | All the members from the group. |
+
+**Examples**:
+
+```yml
+$group("techLeads")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

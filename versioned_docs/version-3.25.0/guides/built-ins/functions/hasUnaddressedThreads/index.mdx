@@ -1,0 +1,34 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Verifies whether the pull request has review threads that are unaddressed, returning `true` or `false` as appropriate.
+
+A review thread is unaddressed when it is not `resolved` or `outdated`.
+
+:::caution
+
+This built-in is not available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+_none_
+
+**Return value**:
+
+| Type      | Description                                                                                               |
+| :-------- | :-------------------------------------------------------------------------------------------------------- |
+| `boolean` | `true` if the pull request has any review thread that is not `resolved` or `outdated`, `false` otherwise. |
+
+**Examples**:
+
+```yml
+$hasUnaddressedThreads()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

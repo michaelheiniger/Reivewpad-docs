@@ -1,0 +1,45 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Posts a comment on the pull request / issue.
+
+:::caution
+
+Please be aware that this built-in may cause unexpected behavior.
+
+The comment built-in is executed on each Reviewpad execution as long as the condition is met.
+
+In the configuration below, the comment will be posted on each Reviewpad execution as long as the pull request has at least one approval.
+
+For instance, if after getting approval there are 5 activities on the pull request (e.g. committing, pushing, labeling), the comment will be posted 5 times.
+
+```yml
+workflows:
+  - name: comment
+    if:
+      - rule: $approvalsCount() > 0
+    then:
+      - $comment("This pull request has been approved.")
+```
+
+You might consider using the [`commentOnce`](guides/built-ins#commentonce) built-in instead.
+
+:::
+
+**Parameters**:
+
+| Parameter  | Type    | Description               |
+| :--------- | :------ | :------------------------ |
+| `comment`  | string  | The body of the comment.  |
+
+**Examples**:
+
+```yml
+$comment("This pull request has git conflicts. Please resolve them.")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>
