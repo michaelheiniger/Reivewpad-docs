@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This release introduces two new built-ins: [`$approve`](/guides/built-ins#approve) and [`$assignCodeAuthorReviewers`](/guides/built-ins#assigncodeauthorreviewers). It also improves the [`deleteHeadBranch`](/guides/built-ins/#deleteheadbranch) built-in to verify if the branch exists before deleting it.
+This release introduces two new built-ins: [`$approve`](/guides/built-ins#approve) and [`$assignCodeAuthorReviewers`](/guides/built-ins#assigncodeauthorreviewers). It also improves the [`$deleteHeadBranch`](/guides/built-ins/#deleteheadbranch) built-in to verify if the branch exists before deleting it.
 
 ## New features :fire:
 
@@ -15,4 +15,4 @@ This release introduces two new built-ins: [`$approve`](/guides/built-ins#approv
 
 ## Improvements :rocket:
 
-- [`deleteHeadBranch`](/guides/built-ins/#deleteheadbranch) built-in verifies if the branch exists before deleting it.
+- [`$deleteHeadBranch`](/guides/built-ins/#deleteheadbranch) built-in verifies if the branch exists before deleting it.
