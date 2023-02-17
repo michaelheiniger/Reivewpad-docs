@@ -1,0 +1,35 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Allows the selection of arbitrary value(s) from a `JSON` type using a [JSONPath](https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html) expression.
+
+:::info
+
+If no value is found for the given expression, an empty string is returned.
+
+:::
+
+**Parameters**:
+
+| Parameter    | Type   | Description                                                                                                             |
+| :----------- | :----- | :---------------------------------------------------------------------------------------------------------------------- |
+| `json`       | JSON   | The JSON value to select from                                                                                           |
+| `expression` | string | The [JSONPath](https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html) expression to evaluate |
+
+**Return value**:
+
+| Type     | Description                                                                                                   |
+| :------- | :------------------------------------------------------------------------------------------------------------ |
+| `string` | The `JSON` serialized string of the value found at the given expression, or empty string if no value is found |
+
+**Examples**:
+
+```yml
+$selectFromJSON($toJSON("[1, 2, 3]"), "$[0]") # select element at index 0
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

@@ -1,0 +1,29 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Determines if any element of the slice satisfies the given predicate.
+
+**Parameters**:
+
+| Parameter   | Type                | Description                |
+| :---------- | :------------------ | :------------------------- |
+| `slice`     | \[]string           | The slice of strings.      |
+| `predicate` | (string => boolean) | The predicate over string. |
+
+**Return value**:
+
+| Type      | Description                                                                      |
+| :-------- | :------------------------------------------------------------------------------- |
+| `boolean` | `true` if the predicate is true for any element of the slice, `false` otherwise. |
+
+**Examples**:
+
+```yml
+'$any(["a", "b"], ($el: String => $el == "a"))' # true
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

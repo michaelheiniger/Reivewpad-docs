@@ -1,0 +1,27 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Retrieves the state of a pull request / issue.
+This state can be either `open` or `closed`.
+
+**Parameters**:
+
+_none_
+
+**Return value**:
+
+| Type     | Description                                                                 |
+| :------- | :-------------------------------------------------------------------------- |
+| `string` | The state of the pull request / issue. The state can be `open` or `closed`. |
+
+**Examples**:
+
+```yml
+$state()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

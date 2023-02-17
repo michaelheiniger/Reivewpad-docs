@@ -1,0 +1,32 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Retrieves the type of the [pull request event](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request).
+
+:::caution
+
+This built-in is not available for [`issue`](/guides/syntax#workflow).
+
+:::
+
+**Parameters**:
+
+_none_
+
+**Return value**:
+
+| Type     | Description                             |
+| :------- | :-------------------------------------- |
+| `string` | The `pull_request` event activity type. |
+
+**Examples**:
+
+```yml
+$eventType()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>
