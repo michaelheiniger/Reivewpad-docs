@@ -21,12 +21,12 @@ We can achieve this by adding a workflow to our Reviewpad that disables the merg
 
 :::info
 
-Using the `disableMerge` built-in Reviewpad will fail the check `reviewpad merge gate` and close the merge gate.
+Using the [`fail`](/guides/built-ins/#fail) built-in we can force `reviewpad` check to fail.
 
 :::
 
 After which we can configure a [branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule) on our
-GitHub repository and add the [status check](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) `reviewpad merge gate` to the list of required status checks.
+GitHub repository and add the [status check](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) `reviewpad` to the list of required status checks.
 
 ![Configure Status Check](/img/blocking-merge/configure-status-check.png)
 
