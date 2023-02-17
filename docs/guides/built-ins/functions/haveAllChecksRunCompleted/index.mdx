@@ -11,6 +11,8 @@ If the `conclusion` parameter is provided, all check runs must be complete with 
 
 The `conclusion` parameter can be one of `action_required`, `cancelled`, `failure`, `neutral`, `success`, `skipped`, `stale` or `timed_out`.
 
+If the `check_conclusions_to_ignore` parameter is set, any checks with a conclusion that appears in the `check_conclusions_to_ignore` list will be ignored.
+
 :::caution
 
 This built-in is not available for [`issue`](/guides/syntax#workflow).
@@ -32,7 +34,7 @@ api-version: reviewpad.com/v3.x
 workflows:
   - name: all-checks-completed
     if:
-      - $haveAllChecksRunCompleted([], "success")
+      - $haveAllChecksRunCompleted([], "success", ["skipped"])
     then:
       - $comment("Hello")
 ```
@@ -44,10 +46,11 @@ If all checks finish with `success` around the same time, when Reviewpad runs fo
 
 **Parameters**:
 
-| Parameter                         | Type       | Description                                                     |
-| :---------------------------------| :--------- | :---------------------------------------------------------------|
-| `check_runs_to_ignore` (optional) | `[]string` | The names of the check runs to exclude from the completed check |
-| `conclusion` (optional)           | `string`   | The final conclusion of the check                               |
+| Parameter                                | Type       | Description                                                                                             |
+| :----------------------------------------| :--------- | :-------------------------------------------------------------------------------------------------------|
+| `check_runs_to_ignore` (optional)        | `[]string` | List of checks to be disregarded.                                                                       |
+| `conclusion` (optional)                  | `string`   | The final conclusion of the check                                                                       |
+| `check_conclusions_to_ignore` (optional) | `[]string` | List of check conclusions to be disregarded. Any checks with a conclusion in that list will be ignored. |
 
 **Return value**:
 
@@ -57,7 +60,7 @@ If all checks finish with `success` around the same time, when Reviewpad runs fo
 
 **Examples**:
 
-#### All check runs have completed.
+#### All check runs have completed with `success`.
 ```yml
 $haveAllChecksRunCompleted()
 ```
@@ -70,6 +73,12 @@ $haveAllChecksRunCompleted(["integration-tests"])
 #### All check runs have been completed with `success`.
 ```yml
 $haveAllChecksRunCompleted([], "success")
+```
+
+
+#### All check runs have been completed with `success` ignoring the checks with `skipped` conclusion.
+```yml
+$haveAllChecksRunCompleted([], "success", ["skipped"])
 ```
 
 A `reviewpad.yml` example:
