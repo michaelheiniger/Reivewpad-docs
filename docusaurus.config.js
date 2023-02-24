@@ -37,6 +37,9 @@ const config = {
           editCurrentVersion: true,
         },
         blog: false,
+        theme: {
+          customCss: [require.resolve('./src/styles/global.css')],
+        },
       }),
     ],
   ],
@@ -89,9 +92,22 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/reviewpad/',
-            label: 'GitHub',
+            href: 'https://github.com/reviewpad/reviewpad',
             position: 'right',
+            className: 'icon',
+            'aria-label': 'GitHub',
+          },
+          {
+            href: 'https://twitter.com/reviewpad',
+            position: 'right',
+            className: 'icon',
+            'aria-label': '@reviewpad on Twitter',
+          },
+          {
+            href: 'https://discord.com/invite/J4tJj3wfgF',
+            position: 'right',
+            className: 'icon',
+            'aria-label': 'Discord',
           },
         ],
       },
@@ -147,7 +163,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.com/reviewpad',
+                href: 'https://discord.com/invite/J4tJj3wfgF',
               },
               {
                 label: 'Twitter',

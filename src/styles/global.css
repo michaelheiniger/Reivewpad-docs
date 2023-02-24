@@ -1,0 +1,46 @@
+/**
+ * Copyright (C) 2023 Explore.dev, Unipessoal Lda - All Rights Reserved
+ * Use of this source code is governed by a license that can be
+ * found in the LICENSE file.
+ */
+
+.icon:hover {
+    opacity: 0.6;
+}
+
+.icon::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+}
+
+.icon[href*=github]::before {
+    background-image: url('/static/img/github-brand.svg');
+}
+
+html[data-theme="dark"] .icon[href*=github]:before {
+    background-image: url('/static/img/github-brand-dark.svg');
+}
+
+.icon[href*=twitter],
+.icon[href*=discord] {
+    padding-left: 0;
+}
+
+.icon[href*=twitter]::before {
+    background-image: url('/static/img/twitter-brand.svg');
+}
+
+html[data-theme="dark"] .icon[href*=twitter]:before {
+    background-image: url('/static/img/twitter-brand-dark.svg');
+}
+
+.icon[href*=discord]::before {
+    background-image: url('/static/img/discord-brand.svg');
+}
+
+html[data-theme="dark"] .icon[href*=discord]:before {
+    background-image: url('/static/img/discord-brand-dark.svg');
+}
