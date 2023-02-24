@@ -1,7 +1,0 @@
-workflows:
-  - name: review-code-from-new-joiners
-    description: Assign senior reviewers to PRs from new joiners
-    if:
-      - rule: authoredByJunior
-    then:
-      - $assignReviewer($group("seniors"), 2)

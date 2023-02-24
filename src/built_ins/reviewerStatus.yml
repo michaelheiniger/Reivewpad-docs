@@ -1,5 +1,0 @@
-rules:
-  - name: approved-by-marcelosousa
-    kind: patch
-    description: Checks if the pull request was approved by marcelosousa
-    spec: '$reviewerStatus("marcelosousa") == "APPROVED"'

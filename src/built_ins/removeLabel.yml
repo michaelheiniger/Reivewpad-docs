@@ -1,6 +1,0 @@
-workflows:
-  - name: remove-size-small
-    if:
-      - rule: $size() > 10
-        extra-actions:
-          - $removeLabel("small")

@@ -1,5 +1,0 @@
-rules:
-  - name: hasTooManyCommits
-    kind: patch
-    description: Verifies if it has than 3 commits
-    spec: $commitCount() > 3

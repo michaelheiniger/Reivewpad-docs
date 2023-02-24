@@ -1,7 +1,0 @@
-workflows:
-  - name: label-small-pull-request
-    description: Label small pull request
-    if:
-      - rule: isSmall
-    then:
-      - $addLabel("small")

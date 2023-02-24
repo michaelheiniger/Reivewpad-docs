@@ -1,5 +1,0 @@
-rules:
-  - name: changesCritical
-    kind: patch
-    description: Verifies if changes critical code
-    spec: $hasAnnotation("critical")

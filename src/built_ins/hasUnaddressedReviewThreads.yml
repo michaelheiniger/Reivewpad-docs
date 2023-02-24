@@ -1,5 +1,0 @@
-rules:
-  - name: requires-author-attention
-    kind: patch
-    description: Requires author to take action
-    spec: $hasUnaddressedReviewThreads()

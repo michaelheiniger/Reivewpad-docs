@@ -1,5 +1,0 @@
-rules:
-  - name: isBigChange
-    kind: patch
-    description: Verifies if change is big
-    spec: $size() > 100

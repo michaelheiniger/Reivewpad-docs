@@ -1,5 +1,0 @@
-rules:
-  - name: wasCreatedOnApril
-    kind: patch
-    description: "Verifies if the pull request was created on the April 14th of 2011 at 16:00:49"
-    spec: $createdAt() == "2011-04-14T16:00:49Z

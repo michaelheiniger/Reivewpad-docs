@@ -1,5 +1,0 @@
-rules:
-  - name: hasLinearHistory
-    kind: patch
-    description: Verifies if the pull request has a linear history
-    spec: $hasLinearHistory()

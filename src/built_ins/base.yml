@@ -1,5 +1,0 @@
-rules:
-  - name: shouldNotifyTechLead
-    kind: patch
-    description: Verifies if pull request is going to be pulled into "features" branch
-    spec: $base() == "features"

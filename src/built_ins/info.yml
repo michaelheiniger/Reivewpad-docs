@@ -1,7 +1,0 @@
-workflows:
-  - name: info-large-pull-requests
-    description: Info about large pull requests
-    if:
-      - rule: isLarge
-    then:
-      - $info("This pull request was considered too large.")

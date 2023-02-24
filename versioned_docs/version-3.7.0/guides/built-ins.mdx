@@ -3,9 +3,6 @@ title: 'Built-ins'
 id: 'built-ins'
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import * as Built_ins from '@site/src/built_ins/index';
-
 One of the key advantages of using Reviewpad is that you can access a set of built-in functions and actions that allow for flexible specifications and actions.
 
 ## Functions
@@ -62,7 +59,13 @@ $assignees()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Assignees}</CodeBlock>
+```yaml
+rules:
+  - name: assignedToTechLead
+    kind: patch
+    description: Verifies if pull request was assigned only to a specific tech lead
+    spec: $assignees() == ["john"]
+```
 
 ### author
 
@@ -97,7 +100,13 @@ $author()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Authors}</CodeBlock>
+```yaml
+rules:
+  - name: isAuthoredByTechLead
+    kind: patch
+    description: Verifies if authored by tech lead
+    spec: $author() == "john"
+```
 
 ### base
 
@@ -132,7 +141,13 @@ $base()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Base}</CodeBlock>
+```yaml
+rules:
+  - name: shouldNotifyTechLead
+    kind: patch
+    description: Verifies if pull request is going to be pulled into "features" branch
+    spec: $base() == "features"
+```
 
 ### changed
 
@@ -175,7 +190,13 @@ there is also a file in the patch with the same name with the extension `.md`.
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Changed}</CodeBlock>
+```yaml
+rules:
+  - name: does-not-modify-tests
+    kind: patch
+    description: Does not modify test files
+    spec: '!$changed("src/@1.java", "test/@1.java")'
+```
 
 ### commentCount
 
@@ -210,7 +231,13 @@ $commentCount()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.CommentCount}</CodeBlock>
+```yaml
+rules:
+  - name: hasNoComments
+    kind: patch
+    description: Verifies if it has no comments
+    spec: $commentCount() == 0
+```
 
 ### comments
 
@@ -245,7 +272,13 @@ $comments()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Comments}</CodeBlock>
+```yaml
+rules:
+  - name: has-comments
+    kind: patch
+    description: Verifies if the issue/pull request has comments
+    spec: $comments() != []
+```
 
 ### commitCount
 
@@ -280,7 +313,13 @@ $commitCount()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.CommitCount}</CodeBlock>
+```yaml
+rules:
+  - name: hasTooManyCommits
+    kind: patch
+    description: Verifies if it has than 3 commits
+    spec: $commitCount() > 3
+```
 
 ### commits
 
@@ -315,7 +354,13 @@ $commits()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Commits}</CodeBlock>
+```yaml
+rules:
+  - name: has-initial-commit-in-commit-body
+    kind: patch
+    description: Verifies if any of the commit messages of the pull request is "initial commit"
+    spec: $isElementOf("initial commit", $commits())
+```
 
 ### createdAt
 
@@ -350,7 +395,13 @@ $createdAt()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.CreatedAt}</CodeBlock>
+```yaml
+rules:
+  - name: wasCreatedOnApril
+    kind: patch
+    description: "Verifies if the pull request was created on the April 14th of 2011 at 16:00:49"
+    spec: $createdAt() == "2011-04-14T16:00:49Z"
+```
 
 ### description
 
@@ -385,7 +436,13 @@ $description()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Description}</CodeBlock>
+```yaml
+rules:
+  - name: hasDescription
+    kind: patch
+    description: Verifies if the pull request description is "Testing description"
+    spec: $description() == "Testing description"
+```
 
 ### fileCount
 
@@ -420,7 +477,13 @@ $fileCount()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.FileCount}</CodeBlock>
+```yaml
+rules:
+  - name: changesTooManyFiles
+    kind: patch
+    description: Verifies if it has than 3 files
+    spec: $fileCount() > 3
+```
 
 ### hasAnnotation
 
@@ -457,7 +520,13 @@ $hasAnnotation("critical")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.HasAnnotation}</CodeBlock>
+```yaml
+rules:
+  - name: changesCritical
+    kind: patch
+    description: Verifies if changes critical code
+    spec: $hasAnnotation("critical")
+```
 
 ### hasCodePattern
 
@@ -496,7 +565,13 @@ $hasCodePattern("placeBet\(.*\)")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.HasCodePattern}</CodeBlock>
+```yaml
+rules:
+  - name: usesPlaceBet
+    kind: patch
+    description: Verifies if uses placeBet
+    spec: $hasCodePattern("placeBet\(.*\)")
+```
 
 ### hasFileExtensions
 
@@ -535,7 +610,13 @@ $hasFileExtensions([".test.ts"])
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.HasFileExtensions}</CodeBlock>
+```yaml
+rules:
+  - name: changesAreOnlyTests
+    kind: patch
+    description: Verifies if changes are only on test files
+    spec: $hasFileExtensions([".test.ts"])
+```
 
 ### hasFileName
 
@@ -574,7 +655,13 @@ $hasFileName("placeBet.js")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.HasFileName}</CodeBlock>
+```yaml
+rules:
+  - name: changesPlaceBet
+    kind: patch
+    description: Verifies if changes place bet file
+    spec: $hasFileName("placeBet.js")
+```
 
 ### hasFilePattern
 
@@ -613,7 +700,13 @@ $hasFilePattern("src/transactions/**")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.HasFilePattern}</CodeBlock>
+```yaml
+rules:
+  - name: changesTransactions
+    kind: patch
+    description: Verifies if changes transactions
+    spec: $hasFilePattern("src/transactions/**")
+```
 
 ### hasGitConflicts
 
@@ -648,7 +741,18 @@ $hasGitConflicts()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.HasGitConflicts}</CodeBlock>
+```yaml
+labels:
+  has-conflicts:
+    color: "ff0000"
+
+workflows:
+  - name: find-git-conflicts
+    if:
+      - rule: $hasGitConflicts()
+    then:
+      - $addLabel("has-conflicts")
+```
 
 ### hasLinearHistory
 
@@ -685,7 +789,13 @@ $hasLinearHistory()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.HasLinearHistory}</CodeBlock>
+```yaml
+rules:
+  - name: hasLinearHistory
+    kind: patch
+    description: Verifies if the pull request has a linear history
+    spec: $hasLinearHistory()
+```
 
 ### hasLinkedIssues
 
@@ -720,7 +830,13 @@ $hasLinkedIssues()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.HasLinkedIssues}</CodeBlock>
+```yaml
+rules:
+  - name: hasLinkedIssues
+    kind: patch
+    description: Verifies if the pull request has linked issues
+    spec: $hasLinkedIssues()
+```
 
 ### hasUnaddressedThreads
 
@@ -757,7 +873,13 @@ $hasUnaddressedThreads()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.HasUnaddressedReviewThreads}</CodeBlock>
+```yaml
+rules:
+  - name: requires-author-attention
+    kind: patch
+    description: Requires author to take action
+    spec: $hasUnaddressedThreads()
+```
 
 ### head
 
@@ -792,7 +914,13 @@ $head()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Head}</CodeBlock>
+```yaml
+rules:
+  - name: changesImplementedInDevelopmentBranch
+    kind: patch
+    description: Verifies if pull request changes are implemented in the "development" branch
+    spec: $head() == "development"
+```
 
 ### isDraft
 
@@ -829,7 +957,13 @@ $isDraft()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.IsDraft}</CodeBlock>
+```yaml
+rules:
+  - name: isDraft
+    kind: patch
+    description: Verifies if is Draft
+    spec: $isDraft()
+```
 
 ### isWaitingForReview
 
@@ -868,7 +1002,13 @@ $isWaitingForReview()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.IsWaitingForReview}</CodeBlock>
+```yaml
+rules:
+  - name: isWaitingForReview
+    kind: patch
+    description: Verifies if pull request is waiting for review
+    spec: $isWaitingForReview()
+```
 
 ### labels
 
@@ -903,7 +1043,13 @@ $labels()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Labels}</CodeBlock>
+```yaml
+rules:
+  - name: onlyHasTestLabelAssigned
+    kind: patch
+    description: Verifies if the pull request only has "test" label assigned
+    spec: $labels() == ["test"]
+```
 
 ### lastEventAt
 ______________
@@ -978,7 +1124,13 @@ $milestone()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Milestone}</CodeBlock>
+```yaml
+rules:
+  - name: isPartOfBugFixesMilestone
+    kind: patch
+    description: Verifies if the pull request is associated with the bug fixes milestone
+    spec: $milestone() == "Bug fixes"
+```
 
 ### requestedReviewers
 
@@ -1013,7 +1165,13 @@ $requestedReviewers()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.RequestedReviewers}</CodeBlock>
+```yaml
+rules:
+  - name: hasRequestedReviewers
+    kind: patch
+    description: Verifies if the pull request has requested reviewers
+    spec: $requestedReviewers() != []
+```
 
 ### reviewers
 
@@ -1048,7 +1206,13 @@ $reviewers()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Reviewers}</CodeBlock>
+```yaml
+rules:
+  - name: hasReviewers
+    kind: patch
+    description: Verifies if the pull request has reviewers
+    spec: $reviewers() != []
+```
 
 ### reviewerStatus
 
@@ -1090,7 +1254,13 @@ $reviewerStatus("marcelosousa")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.ReviewerStatus}</CodeBlock>
+```yaml
+rules:
+  - name: approved-by-marcelosousa
+    kind: patch
+    description: Checks if the pull request was approved by marcelosousa
+    spec: '$reviewerStatus("marcelosousa") == "APPROVED"'
+```
 
 ### size
 
@@ -1139,7 +1309,13 @@ $size()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Size}</CodeBlock>
+```yaml
+rules:
+  - name: isBigChange
+    kind: patch
+    description: Verifies if change is big
+    spec: $size() > 100
+```
 
 ### title
 
@@ -1174,7 +1350,13 @@ $title()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Title}</CodeBlock>
+```yaml
+rules:
+  - name: hasTitle
+    kind: patch
+    description: Verifies if the pull request title is "Test custom built-ins"
+    spec: $title() == "Test custom built-ins"
+```
 
 ### workflowStatus
 
@@ -1211,7 +1393,13 @@ $workflowStatus("reviewpad")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.WorkflowStatus}</CodeBlock>
+```yaml
+rules:
+  - name: reviewpad-successful
+    kind: patch
+    description: Verifies if reviewpad run was successful
+    spec: '$workflowStatus("reviewpad") == "success"'
+```
 
 ## Organization
 
@@ -1254,7 +1442,13 @@ $organization()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Organization}</CodeBlock>
+```yaml
+rules:
+  - name: isAuthorFromOrganization
+    kind: patch
+    description: Verifies if author belongs to organization
+    spec: $isElementOf($author(), $organization())
+```
 
 ### team
 
@@ -1307,7 +1501,13 @@ $team("devops")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Team}</CodeBlock>
+```yaml
+rules:
+  - name: isAuthorByDevops
+    description: Verifies if author belongs to devops team
+    kind: patch
+    spec: $isElementOf($author(), $team("devops"))
+```
 
 ## User
 
@@ -1443,7 +1643,20 @@ $totalCodeReviews($author())
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.TotalCodeReviews}</CodeBlock>
+```yaml
+rules:
+  - name: are-all-reviewers-juniors
+    description: Verifies if all reviewers are juniors
+    kind: patch
+    spec: '$all($reviewers(), ($rev => $totalCodeReviews($rev) < 5))'
+
+workflows:
+  - name: requires-review-from-senior-dev
+    if:
+      - rule: are-all-reviewers-juniors
+    then:
+      - '$assignReviewer($group("seniors"), 1)'
+```
 
 ### totalCreatedPullRequests
 
@@ -1488,7 +1701,13 @@ $totalCreatedPullRequests($author())
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.TotalCreatedPullRequests}</CodeBlock>
+```yaml
+rules:
+  - name: isJunior
+    kind: patch
+    description: Verifies if author is junior
+    spec: $totalCreatedPullRequests($author()) < 3
+```
 
 ## Utilities
 
@@ -1622,7 +1841,19 @@ $append(["a", "b"], ["c"])    # ["a", "b", "c"]
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Append}</CodeBlock>
+```yaml
+groups:
+  - name: frontendAndBackendDevs
+    description: Frontend and backend developers
+    kind: developers
+    spec: $append($team("frontend"), $team("backend"))
+
+rules:
+  - name: authoredByWebDeveloper
+    kind: patch
+    description: Authored by web developers
+    spec: $isElementOf($author(), $group("frontendAndBackendDevs"))
+```
 
 ### contains
 
@@ -1661,7 +1892,13 @@ $contains("Testing string contains", "test")                #false
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Contains}</CodeBlock>
+```yaml
+rules:
+  - name: hasCustomKeywordInTitle
+    kind: patch
+    description: Verifies if the pull request title has "custom" keyword
+    spec: $contains($title(), "custom")
+```
 
 ### isElementOf
 
@@ -1700,7 +1937,13 @@ $isElementOf(3, [1, 2])                  # false
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.IsElementOf}</CodeBlock>
+```yaml
+rules:
+  - name: authoredByJunior
+    description: Verifies if author is junior
+    kind: patch
+    spec: $isElementOf($author(), $group("junior"))
+```
 
 ### length
 
@@ -1737,7 +1980,13 @@ $length(["a", "b"])  # 2
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Length}</CodeBlock>
+```yaml
+rules:
+  - name: has-at-least-one-reviewer
+    kind: patch
+    description: Has more than one reviewer
+    spec: '$length($reviewers()) > 1'
+```
 
 ### startsWith
 
@@ -1776,7 +2025,13 @@ $startsWith("Testing string contains", "string contains")      #false
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.StartsWith}</CodeBlock>
+```yaml
+rules:
+  - name: isDevBranch
+    kind: patch
+    description: Verifies if the head branch of the pull requests starts with dev
+    spec: $startsWith($head(), "dev/")
+```
 
 ## Engine
 
@@ -1823,7 +2078,19 @@ $group("techLeads")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Group}</CodeBlock>
+```yaml
+groups:
+  - name: techLeads
+    description: Group with all tech leads
+    kind: developers
+    spec: '["john", "maria", "arthur"]'
+
+rules:
+  - name: isAuthorByTechLead
+    description: Verifies if author is a tech lead
+    kind: patch
+    spec: $isElementOf($author(), $group("techLeads"))
+```
 
 ### rule
 
@@ -1860,7 +2127,18 @@ $rule("isSmall")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Rule}</CodeBlock>
+```yaml
+rules:
+  - name: isSmall
+    description: Small pull request
+    kind: patch
+    spec: '$size() > 10'
+
+  - name: isNotSmall
+    description: Not a small pull request
+    kind: patch
+    spec: '!$rule("isSmall")'
+```
 
 ## Actions
 
@@ -1884,7 +2162,24 @@ If such label does not exist in labels, it will use the provided input string an
 
 Here's an example:
 
-<CodeBlock language="yml">{Built_ins.AddLabel1}</CodeBlock>
+```yaml
+# ..
+labels:
+  small:
+    name: "Small Change"
+    description: Few files
+  medium:
+    description: Some files
+# ...
+workflows:
+  - name: Add label
+    if:
+      - rule: is-small
+        extra-actions:
+          - $addLabel("small")  # creates the label "Small Change" with description "Few files"
+          - $addLabel("medium") # creates the label "medium" with description "Some files"
+          - $addLabel("large")  # creates the label "large" without description
+```
 
 **Available for:**
 
@@ -1911,7 +2206,15 @@ $addLabel("bug")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.AddLabel2}</CodeBlock>
+```yaml
+workflows:
+  - name: label-small-pull-request
+    description: Label small pull request
+    if:
+      - rule: isSmall
+    then:
+      - $addLabel("small")
+```
 
 ***
 
@@ -2000,7 +2303,14 @@ $assignAssignees(["john", "marie", "peter"])
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.AssignAssignees}</CodeBlock>
+```yaml
+workflows:
+  - name: assign-to-author
+    description: Assign pull request to author
+    always-run: true
+    then:
+      - $assignAssignees([$author()])
+```
 
 ### assignRandomReviewer
 
@@ -2039,7 +2349,15 @@ $assignRandomReviewer()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.AssignRandomReviewer}</CodeBlock>
+```yaml
+workflows:
+  - name: assign-random-reviewer
+    description: Assign random reviewer
+    if:
+      - rule: tautology
+    then:
+      - $assignRandomReviewer()
+```
 
 ### assignReviewer
 
@@ -2079,7 +2397,15 @@ $assignReviewer(["john", "marie", "peter"], 2)
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.AssignReviewer}</CodeBlock>
+```yaml
+workflows:
+  - name: review-code-from-new-joiners
+    description: Assign senior reviewers to PRs from new joiners
+    if:
+      - rule: authoredByJunior
+    then:
+      - $assignReviewer($group("seniors"), 2)
+```
 
 ### assignTeamReviewer
 
@@ -2114,7 +2440,15 @@ $assignTeamReviewer(["core", "support"])
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.AssignTeamReviewer}</CodeBlock>
+```yaml
+workflows:
+  - name: review-core-code
+    description: Assign review to core team when changes are made in critical code
+    if:
+      - rule: changesCritical
+    then:
+      - $assignTeamReviewer(["core"])
+```
 
 ### close
 
@@ -2151,7 +2485,15 @@ $close()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Close}</CodeBlock>
+```yaml
+workflows:
+  - name: close-pull-request
+    description: Close pull request
+    if:
+      - rule: stalePullRequest
+    then:
+      - $close("Closing for inactivity.")
+```
 
 ### commitLint
 
@@ -2181,7 +2523,15 @@ $commitLint()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.CommitLint}</CodeBlock>
+```yaml
+workflows:
+  - name: check-conventional-commits
+    description: Check conventional commits
+    if:
+      - rule: tautology
+    then:
+      - $commitLint()
+```
 
 ### comment
 
@@ -2218,7 +2568,15 @@ $comment("This pull request has git conflicts. Please resolve them.")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Comment}</CodeBlock>
+```yaml
+workflows:
+  - name: conflict
+    description: Ask to resolve conflict
+    if:
+      - rule: hasConflicts
+    then:
+      - $comment("This pull request has git conflicts. Please resolve them.")
+```
 
 ### commentOnce
 
@@ -2255,7 +2613,15 @@ $commentOnce("This is your first contribution! Thank you!")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.CommentOnce}</CodeBlock>
+```yaml
+workflows:
+  - name: comment-pull-request
+    description: Comment pull request
+    if:
+      - rule: firstContribution
+    then:
+      - $commentOnce("This is your first contribution! Thank you!")
+```
 
 ### disableActions
 
@@ -2286,7 +2652,14 @@ $disableActions(["assignReviewer"])
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.DisableActions}</CodeBlock>
+```yaml
+workflows:
+  - name: reviewer-assignment-config
+    if:
+      - rule: is-draft
+    then:
+      - '$disableActions(["assignReviewer", "assignTeamReviewer", "assignRandomReviewer"])'
+```
 
 ### error
 
@@ -2317,7 +2690,15 @@ $error("Please do not touch these files.")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Error}</CodeBlock>
+```yaml
+workflows:
+  - name: error-large-pull-requests
+    description: Error about large pull requests
+    if:
+      - rule: isLarge
+    then:
+      - $error("This pull request was considered too large.")
+```
 
 ### fail
 
@@ -2352,7 +2733,15 @@ $fail("please review the missing specs")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Fail}</CodeBlock>
+```yaml
+workflows:
+  - name: fail-on-missing-specs
+    description: Fails the action on missing specs
+    if:
+      - rule: missingSpecs
+    then:
+      - $fail("Please add specs for your change.")
+```
 
 ### info
 
@@ -2383,7 +2772,15 @@ $info("Please do not forget to add the tests.")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Info}</CodeBlock>
+```yaml
+workflows:
+  - name: info-large-pull-requests
+    description: Info about large pull requests
+    if:
+      - rule: isLarge
+    then:
+      - $info("This pull request was considered too large.")
+```
 
 ### merge
 
@@ -2425,7 +2822,15 @@ $merge()
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Merge}</CodeBlock>
+```yaml
+workflows:
+  - name: auto-merge-small-pull-request
+    description: Auto-merge small pull request
+    if:
+      - rule: isSmall
+    then:
+      - $merge()
+```
 
 ### removeLabel
 
@@ -2464,7 +2869,14 @@ $removeLabel("bug")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.RemoveLabel}</CodeBlock>
+```yaml
+workflows:
+  - name: remove-size-small
+    if:
+      - rule: $size() > 10
+        extra-actions:
+          - $removeLabel("small")
+```
 
 ### titleLint
 
@@ -2533,4 +2945,12 @@ $warn("Please do not forget to add the tests.")
 
 A `reviewpad.yml` example:
 
-<CodeBlock language="yml">{Built_ins.Warn}</CodeBlock>
+```yaml
+workflows:
+  - name: warn-large-pull-requests
+    description: Warn about large pull requests
+    if:
+      - rule: isLarge
+    then:
+      - $warn("This pull request was considered too large.")
+```

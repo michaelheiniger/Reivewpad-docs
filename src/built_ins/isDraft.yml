@@ -1,5 +1,0 @@
-rules:
-  - name: isDraft
-    kind: patch
-    description: Verifies if is Draft
-    spec: $isDraft()
