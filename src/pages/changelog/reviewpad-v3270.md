@@ -1,4 +1,4 @@
-## [Reviewpad v3.27.0](/changelog/reviewpad-v3260)
+## [Reviewpad v3.27.0](/changelog/reviewpad-v3270)
 
 ## Release date - 24 February 2023
 
