@@ -53,17 +53,7 @@ workflows:
   - name: maybe-LGTM
     if:
       # This will fail because we are using seconds
-      - rule: $totalCodeReviews() > 1 && $createdAt() < 60 seconds
+      - rule: $totalCodeReviews() > 1 && $createdAt() < 60 seconds ago
     then:
       - $comment("This PR got a fast review. Is it a LGTM?")
 ```
-
-## 3. `Resource not accessible by integration`
-
-This error happens when Reviewpad has no permission to perform the requested action.
-
-This may happen when you are using [Reviewpad GitHub Action](/getting-started/installation-action-tokenized) with a token that doesn't have the necessary permissions.
-
-Or [not using a token](https://docs.reviewpad.com/getting-started/installation-action) but using built-ins that require a token.
-
-If you are using [Reviewpad GitHub App](/getting-started/installation) you should not encounter this error. If you do, please reach out to us on our *#help* channel on [reviewpad.com/discord](https://discord.com/invite/J4tJj3wfgF) or send us an email at [help@reviewpad.com](mailto:help@reviewpad.com).
