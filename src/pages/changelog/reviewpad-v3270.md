@@ -4,9 +4,9 @@
 
 ## Introduction
 
-This update introduces several new features and improvements. One of the latest additions is the `$isUpdatedWithBaseBranch` built-in that verifies if the pull request has been updated with the base branch. Additionally, the new `/reviewpad run` command has been added to trigger a reviewpad run. The `$haveAllChecksRunCompleted` built-in now includes a new `check_conclusions_to_ignore` parameter, and the algorithm for the `$assignCodeAuthorReviewers` built-in has been enhanced.
+This update introduces several new features and improvements. One of the latest additions is the [`$isUpdatedWithBaseBranch`](/guides/built-ins#isupdatedwithbasebranch) built-in that verifies if the pull request has been updated with the base branch. Additionally, the new [`/reviewpad run`](/guides/commands#run) command has been added to trigger a reviewpad run. The [`$haveAllChecksRunCompleted`](/guides/built-ins/#haveallchecksruncompleted) built-in now includes a new `check_conclusions_to_ignore` parameter, and the algorithm for the [`$assignCodeAuthorReviewers`](/guides/built-ins/#assigncodeauthorreviewers) built-in has been enhanced.
 
-Furthermore, the `$review` built-in has been improved to enable it to perform a review even when the state or body of the review being conducted is different from the current review. Finally, this update addresses a bug where the transform action was missing in the `pipeline`'s `until` expressions.
+Furthermore, the [`$review`](/guides/built-ins/#review) built-in has been improved to enable it to perform a review even when the state or body of the review being conducted is different from the current review. Finally, this update addresses a bug where the transform action was missing in the [`pipeline`](/guides/syntax#pipeline)'s `until` expressions.
 
 ## New features :fire:
 
@@ -26,5 +26,5 @@ Furthermore, the `$review` built-in has been improved to enable it to perform a 
 
 ## Bug :bug:
 
-- `pipeline`'s `until` expressions are now appropriately transformed.
+- [`pipeline`](/guides/syntax#pipeline)'s `until` expressions are now appropriately transformed.
 
