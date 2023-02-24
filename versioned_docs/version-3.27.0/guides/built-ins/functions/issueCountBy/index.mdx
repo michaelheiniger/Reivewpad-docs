@@ -1,0 +1,35 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Retrieves the total number of issues created by the given GitHub user login and issue state.
+
+Note that altough GitHub considers a pull request to be an issue, we exclude pull requests in this request.
+
+**Parameters**:
+
+| Parameter          | Type   | Description                            |
+| :----------------- | :----- | :------------------------------------- |
+| `user_login`       | string | The GitHub user login.                 |
+| `state` (optional) | string | The issue state (open, closed or all). |
+
+Passing the empty string `""` to `user_login` returns the number of issues with a given state in the repository.
+
+Passing the empty string `""` or nothing to `state` defaults to `all`.
+
+**Return value**:
+
+| Type  | Description                                                                       |
+| :---- | :-------------------------------------------------------------------------------- |
+| `int` | The total number of issues created by the given GitHub user login with the state. |
+
+**Examples**:
+
+```yml
+$issueCountBy($author())
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

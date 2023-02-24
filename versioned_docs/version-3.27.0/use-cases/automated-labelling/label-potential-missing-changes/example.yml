@@ -1,0 +1,17 @@
+api-version: reviewpad.com/v3.x
+
+labels:
+  missing-specs:
+    description: Likely missing specs
+    color: 294b69
+
+rules:
+  - name: code-changes-imply-spec-changes
+    spec: $changed("src/@1.java", "spec/@1.java") == false
+
+workflows:
+  - name: check-for-specs
+    if:
+      - rule: code-changes-imply-spec-changes
+    then:
+      - $addLabel("missing-specs")

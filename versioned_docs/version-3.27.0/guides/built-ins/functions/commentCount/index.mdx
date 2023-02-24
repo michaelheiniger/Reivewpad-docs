@@ -1,0 +1,26 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Retrieves the total number of comments made into the pull request / issue.
+
+**Parameters**:
+
+_none_
+
+**Return value**:
+
+| Type  | Description                                               |
+| :---- | :-------------------------------------------------------- |
+| `int` | The total number of comments in the pull request / issue. |
+
+**Examples**:
+
+```yml
+$commentCount()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

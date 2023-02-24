@@ -1,0 +1,28 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Converts a given JSON string into an array of strings. It returns an error the value can not be converted.
+
+**Parameters**:
+
+| Parameter     | Type   | Description                     |
+| :------------ | :----- | :------------------------------ |
+| `json_string` | string | JSON serialized array of string |
+
+**Return value**:
+
+| Type       | Description                 |
+| :--------- | :-------------------------- |
+| `[]string` | The array of string values. |
+
+**Examples**:
+
+```yml
+$toStringArray($selectFromContext("$.labels[*].name"))
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

@@ -1,0 +1,8 @@
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: auto-merge
+    if:
+      - $haveAllChecksRunCompleted([], "success", ["skipped"])
+    then:
+      - $merge()

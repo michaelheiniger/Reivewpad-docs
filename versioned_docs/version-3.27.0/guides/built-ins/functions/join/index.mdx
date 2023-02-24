@@ -1,0 +1,30 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Concatenates an array of strings, using the specified separator between each member.
+
+**Parameters**:
+
+| Parameter   | Type      | Description                                |
+| :---------- | :-------- | :----------------------------------------- |
+| `elements`  | \[]string | The array to join.                         |
+| `separator` | string    | The separator to put between the elements. |
+
+**Return value**:
+
+| Type     | Description                                                          |
+| :------- | :------------------------------------------------------------------- |
+| `string` | The concatenated string of elements with the separator between them. |
+
+**Examples**:
+
+```yml
+$join(["alice", "bob"], " ")    # "alice bob"
+$join(["alice", "bob"], ", ")   # "alice, bob"
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" name="reviewpad.yml">{Example}</CodeBlock>
