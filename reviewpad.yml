@@ -1,128 +1,50 @@
 api-version: reviewpad.com/v3.x
 
-extends: 
+extends:
   - https://github.com/reviewpad/.github/blob/main/reviewpad-models/common.yml
-
-labels:
-  ship:
-    color: 76dbbe
-  show:
-    color: 2986cc
-  ask:
-    color: c90076
 
 groups:
   - name: maintainers
-    kind: developers
     spec: '["marcelosousa", "ferreiratiago", "shay2025", "zolamk"]'
 
 rules:
   - name: authored-by-maintainer
     spec: $isElementOf($author(), $group("maintainers"))
 
-  - name: authored-by-external-contributor
-    spec: '!$isElementOf($author(), $group("maintainers"))'
-
-  - name: ship-strategy
-    spec: $contains($description(), "[x] Ship:") || $isElementOf("ship", $labels())
-
-  - name: show-strategy
-    spec: $contains($description(), "[x] Show:") || $isElementOf("show", $labels())
-
-  - name: explicit-ask-strategy
-    spec: $contains($description(), "[x] Ask:") || $isElementOf("ask", $labels())
-
-  - name: ask-strategy
-    spec: $rule("authored-by-external-contributor") || $rule("explicit-ask-strategy") || (!$rule("ship-strategy") && !$rule("show-strategy"))
-
 workflows:
-  - name: first-time-issue-contributor
-    description: Welcome first time issue contributors
-    on:
-      - "issue"
-    always-run: true
-    if:
-      - rule: $issueCountBy($author(), "all") == 1
-        extra-actions:
-          - $commentOnce($sprintf("Welcome @%v! Thank you so much for your first issue!", [$author()]))
-
-  - name: first-time-pr-contributor
-    description: Welcome first time pull request contributors
-    on:
-      - "pull_request"
-    always-run: true
-    if:
-      - rule: $pullRequestCountBy($author(), "all") == 1
-        extra-actions:
-          - $commentOnce($sprintf("Welcome @%v! Thank you so much for your first pull request!", [$author()]))
-
-  - name: review-process
-    description: Assign reviewers and assignees based on the author
-    always-run: true
-    if:
-      - rule: authored-by-maintainer
-        extra-actions:
-          - $assignReviewer($group("maintainers"), 1, "reviewpad")
-          - $assignAssignees([$author()])
-      - rule: authored-by-external-contributor
-        extra-actions:
-          - $addLabel("external-contribution")
-          - $assignReviewer($group("maintainers"), 1, "reviewpad")
-          - $assignAssignees(["ferreiratiago"])
-
+  # Check that the use cases are updated properly
   - name: changes-to-use-cases
-    description: Verify that use cases are updated properly
     always-run: true
     if:
-      - rule: $hasFilePattern("docs/use-cases/**")
+      - $hasFilePattern("docs/use-cases/**")
     then:
       - $info("Adding a new use case? Please update the [sidebars.js](/reviewpad/docs/blob/main/sidebars.js)")
       - $info("Adding a new use case? Please run the `checker`. You can find more information about the `checker` in [RELEASE.md](/reviewpad/docs/blob/main/RELEASE.md#test-the-reviewpad-configurations)")
 
-  - name: conventions
-    description: Verify that the pull request follows the conventions
-    always-run: true
-    if:
-      - rule: '!$hasLinkedIssues()'
-        extra-actions:
-          - $warn("Please make sure that you have linked an issue to the pull request.")
-
-  - name: lint-commits
-    always-run: true
-    if:
-      - rule: '!$hasLinearHistory()'
-        extra-actions:
-          - '$warn("The pull request does not have a linear history")'
-      - rule: 'true'
-        extra-actions:
-          - '$commitLint()'
-          - '$titleLint()'
-
-  - name: label-ship-show-ask
-    always-run: true
-    description: Label the pull request based on the merge strategy
-    if:
-      - rule: ship-strategy
-        extra-actions:
-          - $addLabel("ship")
-          - $removeLabels(["ask", "show"])
-          - $merge("rebase")
-      - rule: show-strategy
-        extra-actions:
-          - $addLabel("show")
-          - $removeLabels(["ship", "ask"])
-          - $commentOnce("Please open an issue to review this PR before merging it!")
-      - rule: ask-strategy
-        extra-actions:
-          - $addLabel("ask")
-          - $removeLabels(["ship", "show"])
-
+  # Check that the built-ins are updated properly
   - name: changes-built-ins
-    description: Verify that built-ins are updated properly
     always-run: true
     if:
-      - rule: $hasFilePattern("docs/guides/built-ins/actions/**") || $hasFilePattern("docs/guides/built-ins/functions/**")
+      - $hasFilePattern("docs/guides/built-ins/actions/**") || $hasFilePattern("docs/guides/built-ins/functions/**")
     then:
       - $info("Adding a new built-in? Please update the [built-ins.mdx](/reviewpad/docs/blob/main/docs/guides/built-ins/built-ins.mdx)")
       - $info("Adding a new built-in? Please add a `caution` section if the built-in is not supported for both pull request and issue")
       - $info("Adding a new built-in? Please run the `checker` on the built-in reviewpad examples. You can find more information about the `checker` in [RELEASE.md](/reviewpad/docs/blob/main/RELEASE.md#test-the-reviewpad-configurations)")
+
+pipelines:
+  # When the pull request is in ship mode
+  - name: ship-mode
+    trigger: $rule("is-ship")
+    stages:
+      - actions:
+          - $error("Only maintainers can use ship mode. Please choose another pull request merge strategy.")
+        until: $isElementOf($author(), $group("maintainers"))
+      - actions:
+          - $error("Pull request cannot be in ship state when in draft mode.")
+        until: '!$isDraft()'
+      - actions:
+          - $error("Pull request cannot be in ship state when it has do-not-merge label.")
+        until: '!$isElementOf("do-not-merge", $labels())'
+      - actions:
+          - $approve("Pull request is in ship mode.")
+          - $merge("rebase")
