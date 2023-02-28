@@ -1,6 +1,0 @@
-workflows:
-  - name: assign-to-author
-    description: Assign pull request to author
-    always-run: true
-    then:
-      - '$assignAssignees([$author()])'

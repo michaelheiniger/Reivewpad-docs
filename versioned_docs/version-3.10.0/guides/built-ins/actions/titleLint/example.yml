@@ -1,8 +1,0 @@
-workflows:
-  - name: pr-title-lint
-    description: Lint pull request title with conventional commits
-    always-run: true
-    if:
-      - 'true'
-    then:
-      - '$titleLint()'

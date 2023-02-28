@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: label-rebaseable
-    if:
-      - rule: $selectFromJSON($toJSON($context), "$.rebaseable") == "true"
-    then:
-      - $addLabel("rebaseable")

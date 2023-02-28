@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: check-compliance
-    if:
-      - $hasGitConflicts()
-    then:
-      - $fail("Pull request has git conflicts")

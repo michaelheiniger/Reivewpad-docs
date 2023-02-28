@@ -1,9 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: protect-actions
-    if:
-      - $isDraft()
-    then:
-      - $disableActions(["assignReviewer", "assignTeamReviewer", "assignRandomReviewer"])
-      - $disableActions(["merge"])

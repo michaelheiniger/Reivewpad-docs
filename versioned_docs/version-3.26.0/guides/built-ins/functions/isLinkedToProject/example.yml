@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: add-to-project
-    if:
-      - '!$isLinkedToProject("project-title")'
-    then:
-      - $addToProject("project-title", "column")

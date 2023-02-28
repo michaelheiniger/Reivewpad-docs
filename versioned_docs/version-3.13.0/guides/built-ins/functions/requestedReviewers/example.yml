@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: assign-reviewer
-    if:
-      - $requestedReviewers() == []
-    then:
-      - $info("Please assign a reviewer.")

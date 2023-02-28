@@ -1,8 +1,0 @@
-workflows:
-  - name: delete-head-branch-after-merge
-    description: Merge and delete head branch if all changes are to markdown files
-    if:
-      - rule: '$hasFileExtensions([".md"])'
-    then:
-      - '$merge()'
-      - '$deleteHeadBranch()'

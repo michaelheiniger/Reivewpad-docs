@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: debug
-    if:
-      - rule: $isElementOf("debug", $labels())
-    then:
-      - $info($context())

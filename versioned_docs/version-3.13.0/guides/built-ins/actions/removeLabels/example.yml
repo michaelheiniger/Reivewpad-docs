@@ -1,9 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: label-size
-    if:
-      - rule: $size() < 10
-        extra-actions:
-          - $addLabel("small")
-          - $removeLabels(["medium", "large"])

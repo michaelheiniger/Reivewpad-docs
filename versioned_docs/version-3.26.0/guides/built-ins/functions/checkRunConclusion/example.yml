@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: auto-merge-docs-changes
-    if:
-      - $hasFileExtensions([".md"]) && $checkRunConclusion("build") == "success"
-    then:
-      - $merge()

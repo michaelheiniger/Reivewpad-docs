@@ -1,5 +1,0 @@
-rules:
-  - name: is-draft
-    kind: patch
-    description: Verifies if the pull request is a draft
-    spec: '$isDraft()'

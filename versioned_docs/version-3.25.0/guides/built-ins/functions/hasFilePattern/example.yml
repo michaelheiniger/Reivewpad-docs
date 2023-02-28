@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: core-changes
-    if:
-      - $hasFilePattern("src/transactions/**")
-    then:
-      - $assignTeamReviewer(["core"])

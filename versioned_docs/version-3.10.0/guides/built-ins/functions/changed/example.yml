@@ -1,5 +1,0 @@
-rules:
-  - name: does-not-modify-tests
-    kind: patch
-    description: Does not modify test files
-    spec: '!$changed("src/@1.java", "test/@1.java")'

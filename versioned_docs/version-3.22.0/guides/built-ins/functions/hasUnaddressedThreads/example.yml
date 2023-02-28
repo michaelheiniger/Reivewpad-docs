@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: attention-set
-    if:
-      - $hasUnaddressedThreads()
-    then:
-      - $addLabel("requires-author-attention")

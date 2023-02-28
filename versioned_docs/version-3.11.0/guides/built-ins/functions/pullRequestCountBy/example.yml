@@ -1,3 +1,0 @@
-rules:
-    - name: repo-has-more-than-10-pr-open
-      spec: '$pullRequestCountBy("", "open") > 10'

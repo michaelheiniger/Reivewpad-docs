@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: binary-files-not-allowed
-    if:
-      - '$any($filesPath(), ($filePath: String => $isBinary($filePath)))'
-    then:
-      - $fail("Binary files are not allowed.")

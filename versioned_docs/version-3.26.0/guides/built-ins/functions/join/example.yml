@@ -1,9 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: changes-on-security
-    description: Warn when changes include security annotation
-    if:
-      - $hasAnnotation("security")
-    then:
-      - '$warn($sprintf("This pull request contains security changes. Please, request a 1:1 with security team: %s", [$join($team("security", ", "))]))'

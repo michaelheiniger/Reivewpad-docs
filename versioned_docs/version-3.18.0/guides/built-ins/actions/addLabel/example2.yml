@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: label-small-pull-request
-    if:
-      - $size() < 10
-    then:
-      - $addLabel("small")

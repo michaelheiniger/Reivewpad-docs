@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: rebase-pull-request
-    if:
-      - $toBool($selectFromContext("$.rebaseable"))
-    then:
-      - $rebase()

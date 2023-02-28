@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: run-critical-ci
-    if:
-      - $hasAnnotation("critical")
-    then:
-      - $triggerWorkflow("ci-critical-tests.yml")

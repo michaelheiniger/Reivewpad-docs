@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: warn-large-pull-requests
-    if:
-      - rule: $toNumber($selectFromContext("$.additions")) > 100
-    then:
-      - $warn("please break down large pull requests into smaller and easy to review parts.")

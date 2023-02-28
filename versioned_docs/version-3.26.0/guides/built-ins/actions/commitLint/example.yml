@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: check-conventional-commits
-    if:
-      - $base() == "main"
-    then:
-      - $commitLint()

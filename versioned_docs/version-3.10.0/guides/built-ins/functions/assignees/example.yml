@@ -1,5 +1,0 @@
-rules:
-  - name: assigned-to-tech-lead
-    kind: patch
-    description: Verifies if pull request was assigned only to a specific tech lead
-    spec: '$assignees() == ["john"]'

@@ -1,3 +1,0 @@
-rules:
-    - name: author-has-more-than-10-issues-open
-      spec: '$issueCountBy($author(), "open") > 10'

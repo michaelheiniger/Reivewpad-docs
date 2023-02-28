@@ -1,7 +1,0 @@
-workflows:
-  - name: comment-pull-request
-    description: Comment pull request
-    if:
-      - rule: first-contribution
-    then:
-      - '$commentOnce("This is your first contribution! Thank you!")'

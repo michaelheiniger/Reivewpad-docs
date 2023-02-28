@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: labe-change-type
-    if:
-      - $contains($title(), "fix")
-    then:
-      - $addLabel("bug")

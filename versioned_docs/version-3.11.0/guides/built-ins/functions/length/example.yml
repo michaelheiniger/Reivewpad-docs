@@ -1,5 +1,0 @@
-rules:
-  - name: has-at-least-one-reviewer
-    kind: patch
-    description: Has more than one reviewer
-    spec: '$length($reviewers) > 1'

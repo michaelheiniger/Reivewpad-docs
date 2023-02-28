@@ -1,7 +1,0 @@
-workflows:
-  - name: close-pull-request
-    description: Close pull request
-    if:
-      - rule: stale-pull-request
-    then:
-      - '$close("Closing for inactivity.")'

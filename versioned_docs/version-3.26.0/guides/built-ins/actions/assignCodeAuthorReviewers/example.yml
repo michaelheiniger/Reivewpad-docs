@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: assign-reviewer
-    if:
-      - '!$isWaitingForReview() && !isDraft()'
-    then:
-      - $assignCodeAuthorReviewers(2, ["john", "marie"], 3)

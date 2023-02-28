@@ -1,9 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: set-project-field
-    if:
-        - $hasLinkedIssues() == false
-    then:
-        - $addToProject("jupiter", "in progress")
-        - $setProjectField("jupiter", "notes", "missing issue")

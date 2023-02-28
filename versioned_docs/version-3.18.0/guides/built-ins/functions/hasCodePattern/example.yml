@@ -1,9 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: critical-code
-    if:
-      - $hasCodePattern("placeBet\(.*\)")
-    then:
-      - $assignReviewer($team("core"), 1)
-      - $addLabel("critical")

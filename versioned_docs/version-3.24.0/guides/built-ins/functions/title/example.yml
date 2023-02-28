@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: check-compliance
-    if:
-      - $title() == ""
-    then:
-      - $fail("A pull request must have a title")

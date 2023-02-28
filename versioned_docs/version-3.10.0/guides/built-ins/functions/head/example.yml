@@ -1,5 +1,0 @@
-rules:
-  - name: changes-implemented-in-development-branch
-    kind: patch
-    description: Verifies if pull request changes are implemented in the "development" branch
-    spec: '$head() == "development"'

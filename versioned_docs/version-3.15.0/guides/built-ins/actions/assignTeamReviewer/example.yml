@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: reviewers-assignment
-    if:
-      - $hasCodePattern("critical\(.*\)")
-    then:
-      - $assignTeamReviewer(["core"])

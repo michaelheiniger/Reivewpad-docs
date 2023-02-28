@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: congratulate
-    if:
-      - rule: $pullRequestCountBy($author(), "all") == 1
-        extra-actions:
-          - $commentOnce("Thank you for your first contribution!")

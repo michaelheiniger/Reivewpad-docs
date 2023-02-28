@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: security-changes
-    if:
-      - $hasAnnotation("security")
-    then:
-      - $assignReviewer($team("security"), 1)

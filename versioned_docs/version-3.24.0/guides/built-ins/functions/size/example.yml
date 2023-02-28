@@ -1,9 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: check-compliance
-    if:
-      # Verify size ignoring lock files
-      - $size(["*.lock"]) > 100
-    then:
-      - $error("Change is too big")

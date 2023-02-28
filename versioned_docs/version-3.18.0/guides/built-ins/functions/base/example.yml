@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: staging-changes
-    if:
-      - $base() == "stage"
-    then:
-      - $info("Please make sure you've tested your changes in staging environment.")

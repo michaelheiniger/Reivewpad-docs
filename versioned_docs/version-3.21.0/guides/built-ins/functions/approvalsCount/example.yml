@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: auto-merge
-    if:
-      - $approvalsCount() > 2
-    then:
-      - $merge()

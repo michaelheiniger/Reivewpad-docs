@@ -1,5 +1,0 @@
-rules:
-  - name: is-author-from-organization
-    kind: patch
-    description: Verifies if the author belongs to the organization
-    spec: '$isElementOf($author(), $organization())'

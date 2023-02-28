@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: configuration-changes
-    if:
-      - $hasFileExtensions([".yaml"])
-    then:
-      - $assignTeamReviewer(["devops"])

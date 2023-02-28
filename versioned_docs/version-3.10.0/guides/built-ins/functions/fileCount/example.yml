@@ -1,5 +1,0 @@
-rules:
-  - name: changes-too-many-files
-    kind: patch
-    description: Verifies if the pull request has more than 3 files
-    spec: '$fileCount() > 3'

@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: high-activity
-    if:
-      - $commitCount() > 10
-    then:
-      - $info("Please consider splitting the pull request into smaller pull requests.")

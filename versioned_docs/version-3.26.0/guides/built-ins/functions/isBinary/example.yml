@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: blacklist-binary-files
-    if:
-      - rule: '$any(["file", "folder/file"], ($file: String => $isBinary($file)))'
-    then:
-      - $fail("Blacklisted binary files aren't allowed in pull request")

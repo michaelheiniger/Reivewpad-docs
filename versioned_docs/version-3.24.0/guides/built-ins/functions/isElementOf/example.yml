@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: requires-review
-    if:
-      - $isElementOf($author(), $team("juniors"))
-    then:
-      - $assignTeamReviewer(["seniors"])

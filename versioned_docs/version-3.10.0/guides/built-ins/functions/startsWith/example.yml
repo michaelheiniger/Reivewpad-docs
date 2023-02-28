@@ -1,5 +1,0 @@
-rules:
-  - name: is-dev-branch
-    kind: patch
-    description: Verifies if the head branch of the pull requests starts with dev
-    spec: '$startsWith($head(), "dev/")'

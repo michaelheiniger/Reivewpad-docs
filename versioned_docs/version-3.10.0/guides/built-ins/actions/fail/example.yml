@@ -1,7 +1,0 @@
-workflows:
-  - name: fail-on-missing-specs
-    description: Fails the action on missing specs
-    if:
-      - rule: missing-specs
-    then:
-      - $fail("please review the missing specs")

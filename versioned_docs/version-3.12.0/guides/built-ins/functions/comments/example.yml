@@ -1,8 +1,0 @@
-api-version: reviewpad.com/v3.x
-
-workflows:
-  - name: waiting-for-feedback
-    if:
-      - $comments() == []
-    then:
-      - $addLabel("waiting-for-feedback")
