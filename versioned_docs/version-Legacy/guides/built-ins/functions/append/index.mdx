@@ -1,0 +1,29 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Appends elements to the end of a slice and retrieves the updated slice.
+
+**Parameters**:
+
+| Parameter  | Type      | Description                                       |
+| :--------- | :-------- | :------------------------------------------------ |
+| `slice`    | \[]string | The slice that will have elements appended to it. |
+| `elements` | \[]string | The elements to be added to the end of the slice. |
+
+**Return value**:
+
+| Type       | Description                                       |
+| :--------- | :------------------------------------------------ |
+| `[]string` | A new slice by appending the slices passed to it. |
+
+**Examples**:
+
+```yml
+$append(["a", "b"], ["c"]) # ["a", "b", "c"]
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

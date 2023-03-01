@@ -1,0 +1,32 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Rebases the pull request.
+
+:::caution
+
+This built-in is not available for issues.
+
+:::
+
+:::caution
+
+**Only non-forked and user owned forks are supported by this built-in**. This is due to GitHub restrictions on committing to a pull request branch from a fork. For more information, see [this Github documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/committing-changes-to-a-pull-request-branch-created-from-a-fork).
+
+:::
+
+**Parameters**:
+
+_none_
+
+**Examples**:
+
+```yml
+$rebase()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

@@ -1,0 +1,50 @@
+---
+title: "Commands"
+id: "commands"
+slug: "/guides/commands"
+---
+
+import * as Commands from "./index";
+
+Reviewpad commands introduce the ability to trigger Reviewpad actions through a command-like instruction using pull request comments.
+
+This is particularly useful when you want to trigger actions on a pull request that are not specified in the Reviewpad configuration file.
+
+A command is a comment that follows the following format:
+
+```shell
+/reviewpad [ACTION] [ACTION_ARGUMENTS]
+```
+
+Where ACTION is the action to be triggered and ACTION_ARGUMENTS are the arguments to be passed to the action.
+
+## Available commands
+
+* [/reviewpad assign-reviewers](#assign-reviewers) - Assign reviewers to a pull request.
+* [/reviewpad assign-random-reviewer](#assign-random-reviewer) - Assign a random reviewer to a pull request.
+* [/reviewpad dry-run](#dry-run) - Run Reviewpad in dry-run mode and adds a comment with the actions that would be triggered.
+* [/reviewpad run](#run) - Trigger a Reviewpad run.
+
+### assign-reviewers
+
+---
+
+<Commands.AssignReviewers />
+
+### assign-random-reviewer
+
+---
+
+<Commands.AssignRandomReviewer />
+
+### dry-run
+
+---
+
+<Commands.DryRun />
+
+### run
+
+---
+
+<Commands.Run />

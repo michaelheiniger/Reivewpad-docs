@@ -12,8 +12,6 @@ const config = {
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-
-    // GitHub pages deployment config.
     organizationName: 'reviewpad',
     projectName: 'docs',
     deploymentBranch: 'gh-pages',
@@ -21,7 +19,6 @@ const config = {
         defaultLocale: 'en',
         locales: ['en'],
     },
-
     presets: [
         [
             'classic',
@@ -35,6 +32,11 @@ const config = {
                     sidebarPath: require.resolve('./sidebars.js'),
                     editUrl: 'https://github.com/reviewpad/docs/tree/main',
                     editCurrentVersion: true,
+                    versions: {
+                        current: {
+                            label: 'Canary 🚧',
+                        },
+                    },
                 },
                 blog: false,
                 theme: {
@@ -43,7 +45,23 @@ const config = {
             }),
         ],
     ],
-
+    plugins: [
+        [
+            '@docusaurus/plugin-client-redirects',
+            {
+                redirects: [
+                    {
+                        to: '/Legacy/getting-started/installation-action-tokenized',
+                        from: '/getting-started/installation-action-tokenized',
+                    },
+                    {
+                        to: '/Legacy/getting-started/installation-action',
+                        from: '/getting-started/installation-action',
+                    },
+                ],
+            },
+        ],
+    ],
     themeConfig:
         /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({

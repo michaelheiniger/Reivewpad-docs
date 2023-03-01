@@ -1,0 +1,52 @@
+{
+    "DocsSidebar": [
+        "introduction",
+        {
+            "type": "category",
+            "label": "Getting Started",
+            "collapsed": false,
+            "items": [
+                "getting-started/installation",
+                "getting-started/configuration",
+                "getting-started/security"
+            ]
+        },
+        {
+            "type": "category",
+            "label": "Guides",
+            "collapsed": false,
+            "items": [
+                "guides/syntax",
+                "guides/semantics",
+                "guides/built-ins/built-ins",
+                {
+                    "type": "category",
+                    "label": "Aladino",
+                    "link": {
+                        "type": "doc",
+                        "id": "guides/aladino/specification"
+                    },
+                    "items": [
+                        "guides/aladino/syntax",
+                        "guides/aladino/semantics"
+                    ]
+                },
+                "guides/annotations",
+                "guides/commands/commands",
+                "guides/extends/extends",
+                "guides/migrations",
+                "guides/reports/reports"
+            ]
+        },
+        {
+            "type": "doc",
+            "id": "use-cases",
+            "label": "Use cases"
+        },
+        {
+            "type": "doc",
+            "id": "contribute",
+            "label": "Contribute"
+        }
+    ]
+}

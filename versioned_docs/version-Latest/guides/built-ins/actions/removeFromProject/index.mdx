@@ -1,0 +1,24 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Removes a pull request / issue from a project with a particular title.
+
+If the project doesn't exist, an error is returned.
+
+**Parameters**:
+
+| Parameter       | Type    | Description                                 |
+| :-------------- | :------ | :------------------------------------------ |
+| `project_title` | string  | The title of the project  - case sensitive. |
+
+**Examples**:
+
+```yml
+$removeFromProject("reviewpad")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

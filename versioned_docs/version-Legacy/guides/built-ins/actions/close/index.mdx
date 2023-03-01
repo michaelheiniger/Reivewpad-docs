@@ -1,0 +1,36 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Closes an pull request / issue with a given comment - without merging it.
+
+By default, if no comment is provided, it will close the pull request / issue without a comment.
+
+For issues, it can also be given a closure reason.
+
+By default, if no closure reason is provided, the issue will be closed as `completed`.
+
+When a closure reason is provided and we don't want to close the issue with a comment then we need to pass the comment parameter as `""`.
+
+**Parameters**:
+
+| Parameter                          | Type   | Description                                                           |
+| :--------------------------------- | :----- | :-------------------------------------------------------------------- |
+| `comment` (optional)               | string | The body of the comment.                                              |
+| `reason` (optional) (issues only)  | string | The reason for closing. The options are `completed` or `not_planned`. |
+
+Please note that the `reason` parameter is only available for issues.
+
+**Examples**:
+
+```yml
+$close()                                            # close without comment or reason
+$close("Closed due inactivity")                     # close with comment and no reason
+$close("", "not_planned")                           # close with no comment but reason
+$close("This project is deprecated", "not_planned") # close with a comment and reason
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

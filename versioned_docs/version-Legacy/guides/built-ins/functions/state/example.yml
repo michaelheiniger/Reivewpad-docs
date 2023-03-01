@@ -1,0 +1,8 @@
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: thank-contributors
+    if:
+      - $state() == "closed"
+    then:
+      - $info("Thanks for your contribution!")

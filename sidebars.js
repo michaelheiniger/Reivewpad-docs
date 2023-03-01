@@ -107,9 +107,9 @@ const sidebars = {
             label: "Common Pitfalls",
         },
         {
-            type: "category",
-            label: "Contributing",
-            items: ["contributing/how-to-contribute"],
+            type: "doc",
+            id: "contribute",
+            label: "Contribute",
         },
         {
             Tooling: ["tooling/vscode-reviewpad-yaml-schema"],

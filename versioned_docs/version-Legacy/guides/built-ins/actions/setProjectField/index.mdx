@@ -1,0 +1,40 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Sets the value of a GitHub project's [custom field](https://docs.github.com/en/issues/planning-and-tracking-with-projects/understanding-fields)
+for the pull request / issue in the current context.
+
+Currently, we only support setting the value of a custom field in a project.
+
+We don't support creating a custom field or a project.
+
+The current field value is overwritten.
+
+We support the following types of custom fields: text fields, number fields, and single select fields.
+
+An error is returned if:
+ - The project doesn't exist.
+ - The field doesn't exist.
+ - The field is not one of the types above.
+ - The value is not a number for a number field.
+
+**Parameters**:
+
+| Parameter       | Type    | Description                                                                |
+| :-------------- | :------ | :------------------------------------------------------------------------- |
+| `project_title` | string  | The title of the project - case sensitive.                                 |
+| `field`         | string  | The custom field which can be text, number, or single select (must exist). |
+| `value`         | string  | The value of the field.                                                   |
+
+**Examples**:
+
+```yml
+$setProjectField("reviewpad", "priority", "P1")
+$setProjectField("reviewpad", "size", "50")
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>
