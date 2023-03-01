@@ -104,7 +104,7 @@ const config = {
                         'aria-label': '@reviewpad on Twitter',
                     },
                     {
-                        href: 'https://discord.com/invite/J4tJj3wfgF',
+                        href: 'https://reviewpad.com/discord',
                         position: 'right',
                         className: 'icon',
                         'aria-label': 'Discord',
@@ -163,7 +163,7 @@ const config = {
                         items: [
                             {
                                 label: 'Discord',
-                                href: 'https://discord.com/invite/J4tJj3wfgF',
+                                href: 'https://reviewpad.com/discord',
                             },
                             {
                                 label: 'Twitter',
