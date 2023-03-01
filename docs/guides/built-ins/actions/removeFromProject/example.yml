@@ -1,0 +1,8 @@
+api-version: reviewpad.com/v3.x
+
+workflows:
+  - name: remove-from-project
+    if:
+        - '!$isMerged() && $state() == "closed"'
+    then:
+        - $removeFromProject("reviewpad")
