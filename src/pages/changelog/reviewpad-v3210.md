@@ -13,4 +13,3 @@
 ## Bug :bug:
 
 - Fix `close` action to work properly for pull requests and issues.
-

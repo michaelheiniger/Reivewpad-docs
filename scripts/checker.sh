@@ -52,4 +52,3 @@ do
     echo "👉 Checking $file"
     "$1" run -d -u="$4" -t="$3" -f="$file"
 done
-

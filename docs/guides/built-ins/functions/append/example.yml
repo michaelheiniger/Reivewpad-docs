@@ -11,4 +11,3 @@ workflows:
       - $description() != ""
     then:
       - $assignReviewer($group("all-devs"), 1)
-

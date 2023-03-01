@@ -23,14 +23,14 @@ labels:
 
 rules:
     - name: dummy-rule
-      spec: 1 == 1
+    spec: 1 == 1
 
 workflows:
     - name: fast-track
-      if:
-          - rule: $fileCount == 1
-      then:
-          - $addLabel("fast-track")
+    if:
+        - rule: $fileCount == 1
+    then:
+        - $addLabel("fast-track")
 ```
 
 ### Reference to undefined rule
@@ -50,10 +50,10 @@ rules:
 
 workflows:
     - name: fast-track
-      if:
-          - rule: changes-one-file
-      then:
-          - $addLabel("fast-track")
+    if:
+        - rule: changes-one-file
+    then:
+        - $addLabel("fast-track")
 ```
 
 ## Interpreter
@@ -92,41 +92,41 @@ api-version: reviewpad.com/v3.x
 
 rules:
     rule_1
-	rule_2
+    rule_2
     ...
     rule_5
 
 workflows:
     - name: workflow_1
-      description: Workflow 1 # optional
-      on: # optional
-          - pull_request
-      if:
-          - rule: rule_1
-      then:
-          - action_1
+    description: Workflow 1 # optional
+    on: # optional
+        - pull_request
+    if:
+        - rule: rule_1
+    then:
+        - action_1
 
     - name: workflow_2
-      description: Workflow 2 # optional
-      on: # optional
-          - issue
-          - pull_request
-      if:
-          - rule: rule_1
-          - rule: rule_2
-      then:
-          - action_2
+    description: Workflow 2 # optional
+    on: # optional
+        - issue
+        - pull_request
+    if:
+        - rule: rule_1
+        - rule: rule_2
+    then:
+        - action_2
 
 pipelines:
     - name: pipeline_1
-      description: Pipeline 1 # optional
-      trigger: rule_3 # optional
-      stages:
-          - actions:
+    description: Pipeline 1 # optional
+    trigger: rule_3 # optional
+    stages:
+        - actions:
                 - action_3
                 - action_4
             until: rule_4 # optional
-          - actions:
+        - actions:
                 - action_5
             until: rule_5 # optional
 ```
@@ -153,37 +153,37 @@ api-version: reviewpad.com/v2.x
 
 rules:
     rule_1
-	rule_2
+    rule_2
     ...
     rule_5
 
 workflows:
     - name: workflow_X
-      if:
-          - rule: rule_1
+    if:
+        - rule: rule_1
             extra-actions:
                 - rule_1_action_1
                 - rule_1_action_2
-          - rule: rule_2
+        - rule: rule_2
             extra-actions:
                 - rule_2_action_1
-          - rule: rule_3
-          - rule: rule_4
+        - rule: rule_3
+        - rule: rule_4
             extra-actions:
                 - rule_4_action_1
-      then:
-          - gen_action_1
-          - gen_action_2
+    then:
+        - gen_action_1
+        - gen_action_2
 
 pipelines:
     - name: pipeline_Y
-      trigger: rule_5
-      stages:
-          - actions:
+    trigger: rule_5
+    stages:
+        - actions:
                 - stage_1_action_1
                 - stage_2_action_2
             until: rule_6
-          - actions:
+        - actions:
                 - stage_2_action_1
             until: rule_7
 ```
@@ -221,12 +221,12 @@ For example:
 ```yaml
 pipelines:
     - name: pipeline_1
-      trigger: initial-condition
-      stages:
-          - actions:
+    trigger: initial-condition
+    stages:
+        - actions:
                 - ACTION_1
             until: RULE_1
-          - actions:
+        - actions:
                 - ACTION_2
             until: RULE_2
 ```
@@ -236,23 +236,23 @@ Could be encoded as:
 ```yaml
 workflows:
     - name: pipeline_1_stage_1
-      always-run: true
-      if: initial-condition && !RULE_1
-      then:
-          - ACTION_1
+    always-run: true
+    if: initial-condition && !RULE_1
+    then:
+        - ACTION_1
 
     - name: pipeline_1_stage_2
-      always-run: true
-      if: initial-condition && RULE_1 && !RULE_2
-      then:
-          - ACTION_2
+    always-run: true
+    if: initial-condition && RULE_1 && !RULE_2
+    then:
+        - ACTION_2
 ```
 
 However there are two major disadvantages of this approach:
 
 1. As the number of stages increase, the conditions become more and more unnecessary;
 2. Since the evaluation of rules is not cached it is possible for two stages to be enabled.
-   In the example above, assume that while we are evaluating `pipeline_1_stage_1`, the `RULE_1` is false.
-   This means that `ACTION_1` will be added to the program; as we move to the second stage it could be
-   that the state of the issue/pull request changes in the code host in such a way that in the second
-   evaluation of `RULE_1` it is now true.
+    In the example above, assume that while we are evaluating `pipeline_1_stage_1`, the `RULE_1` is false.
+    This means that `ACTION_1` will be added to the program; as we move to the second stage it could be
+    that the state of the issue/pull request changes in the code host in such a way that in the second
+    evaluation of `RULE_1` it is now true.

@@ -34,9 +34,9 @@ api-version: reviewpad.com/v3.x
 workflows:
   - name: all-checks-completed
     if:
-      - $haveAllChecksRunCompleted([], "success", ["skipped"])
+    - $haveAllChecksRunCompleted([], "success", ["skipped"])
     then:
-      - $comment("Hello")
+    - $comment("Hello")
 ```
 
 In this example, if you have 5 check runs Reviewpad will run 5 times.

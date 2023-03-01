@@ -11,4 +11,3 @@ workflows:
     then:
       - $merge()
       - $deleteHeadBranch()
-

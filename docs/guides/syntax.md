@@ -192,9 +192,9 @@ There are two ways to specify a group:
 ```yaml
 groups:
     - name: seniors
-      description: project seniors # optional
-      kind: developers
-      spec: '["peter"]'
+    description: project seniors # optional
+    kind: developers
+    spec: '["peter"]'
 ```
 
 ### Group By Filter
@@ -220,11 +220,11 @@ groups:
 ```yaml
 groups:
     - name: new-joiners
-      description: Groups of developers that have created less than 10 pull requests # optional
-      kind: developers
-      type: filter
-      param: dev
-      where: $pullRequestCountBy($dev) < 10
+    description: Groups of developers that have created less than 10 pull requests # optional
+    kind: developers
+    type: filter
+    param: dev
+    where: $pullRequestCountBy($dev) < 10
 ```
 
 ## Rule
@@ -250,9 +250,9 @@ The structure of a rule is as follows:
 ```yml
 rules:
     - name: small-change
-      kind: patch # optional
-      description: Checks if the pull request size is small # optional
-      spec: $size() < 30
+    kind: patch # optional
+    description: Checks if the pull request size is small # optional
+    spec: $size() < 30
 ```
 
 ## Workflow
@@ -269,7 +269,7 @@ The structure of a workflow is as follows:
     - [pull_request | issue]
   if:
     - rule: REF_TO_RULE_1 | INLINE_RULE_1
-      extra-actions: [OPTIONAL]
+    extra-actions: [OPTIONAL]
         - ACTION_1
         - ACTION_2
         ...
@@ -295,11 +295,11 @@ The structure of a workflow is as follows:
 ```yaml
 workflows:
     - name: size-labelling
-      description: Label pull request based on size # optional
-      on: # optional
-          - pull_request
-      if:
-          - rule: $size() < 90
+    description: Label pull request based on size # optional
+    on: # optional
+        - pull_request
+    if:
+        - rule: $size() < 90
             extra-actions: $addLabel("small")
 ```
 
@@ -339,12 +339,12 @@ The structure of a pipeline is as follows:
 ```yaml
 pipelines:
     - name: security-changes
-      trigger: '$hasFilePattern("services/db/migrations/**")'
-      stages:
-          - actions:
+    trigger: '$hasFilePattern("services/db/migrations/**")'
+    stages:
+        - actions:
                 - '$assignReviewer(["john"], "reviewpad")'
             until: $reviewerStatus("john") == "APPROVED"
-          - actions:
+        - actions:
                 - '$assignTeamReviewer(["security"])'
 ```
 

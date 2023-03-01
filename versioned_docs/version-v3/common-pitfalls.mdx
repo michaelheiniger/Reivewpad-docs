@@ -52,10 +52,10 @@ api-version: reviewpad.com/v3.x
 workflows:
   - name: maybe-LGTM
     if:
-      # This will fail because we are using seconds
-      - rule: $totalCodeReviews() > 1 && $createdAt() < 60 seconds
+    # This will fail because we are using seconds
+    - rule: $totalCodeReviews() > 1 && $createdAt() < 60 seconds
     then:
-      - $comment("This PR got a fast review. Is it a LGTM?")
+    - $comment("This PR got a fast review. Is it a LGTM?")
 ```
 
 ## 3. `Resource not accessible by integration`

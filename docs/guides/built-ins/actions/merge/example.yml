@@ -10,4 +10,3 @@ workflows:
       - rule: only-changes-documentation
     then:
       - $merge()
-

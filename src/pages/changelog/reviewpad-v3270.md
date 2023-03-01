@@ -27,4 +27,3 @@ Furthermore, the [`$review`](/guides/built-ins/#review) built-in has been improv
 ## Bug :bug:
 
 - [`pipeline`](/guides/syntax#pipeline)'s `until` expressions are now appropriately transformed.
-

@@ -12,41 +12,41 @@ prog := stat_list
 stat := expr
 
 expr := expr BINOP expr
-      | UNARYOP expr
-      | TIMESTAMP
-      | RELATIVE_TIMESTAMP
-      | NUMBER
-      | STRING
-      | BOOLEAN
-      | '(' expr ')'
-      | '[' expr_list ']'
-      | '$' IDENTIFIER '(' expr_list ')'
-      | '(' expr_list '=>' expr  ')'
+    | UNARYOP expr
+    | TIMESTAMP
+    | RELATIVE_TIMESTAMP
+    | NUMBER
+    | STRING
+    | BOOLEAN
+    | '(' expr ')'
+    | '[' expr_list ']'
+    | '$' IDENTIFIER '(' expr_list ')'
+    | '(' expr_list '=>' expr  ')'
 
 expr_list :=
         expr ',' expr_list
-      | expr
-      |
+    | expr
+    |
 
 TIMESTAMP :=
         YYYYMMDD
-      | YYYY-MM-DD
-      | YYYYMMDDTHH:MM:SS
-      | YYYY-MM-DDTHH:MM:SS
+    | YYYY-MM-DD
+    | YYYYMMDDTHH:MM:SS
+    | YYYY-MM-DDTHH:MM:SS
 
 RELATIVE_TIMESTAMP := NUMBER TIME_UNIT ago
 
 TIME_UNIT :=
         'year'   | 'years'
-      | 'month'  | 'months'
-      | 'week'   | 'weeks'
-      | 'day'    | 'days'
-      | 'hour'   | 'hours'
-      | 'minute' | 'minutes'
+    | 'month'  | 'months'
+    | 'week'   | 'weeks'
+    | 'day'    | 'days'
+    | 'hour'   | 'hours'
+    | 'minute' | 'minutes'
 
 BINOP :=
         '==' | '>=' | '>' | '<' | '<='
-      | '&&' | '||'
+    | '&&' | '||'
 
 UNARYOP := '!'
 ```

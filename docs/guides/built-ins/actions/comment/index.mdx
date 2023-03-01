@@ -19,9 +19,9 @@ For instance, if after getting approval there are 5 activities on the pull reque
 workflows:
   - name: comment
     if:
-      - rule: $approvalsCount() > 0
+    - rule: $approvalsCount() > 0
     then:
-      - $comment("This pull request has been approved.")
+    - $comment("This pull request has been approved.")
 ```
 
 You might consider using the [`commentOnce`](guides/built-ins#commentonce) built-in instead.

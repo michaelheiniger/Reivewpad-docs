@@ -6,4 +6,3 @@ workflows:
       - $state() == "closed"
     then:
       - $info("Thanks for your contribution!")
-

@@ -25,9 +25,9 @@ There are two requirements when it comes to typing:
 - name: invalid-workflow
   description: Invalid workflow because of action
   if:
-      - rule: rule_1
+    - rule: rule_1
   then:
-      - "hello" # type error
+    - "hello" # type error
 ```
 
 Since, by design, you cannot define functions or variables, the usefulness of the language comes down to the set of built-in variables and functions that are provided.
