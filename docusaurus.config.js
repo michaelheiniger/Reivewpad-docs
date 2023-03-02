@@ -58,6 +58,12 @@ const config = {
             }),
         ],
     ],
+    scripts: [
+        {
+            src: '/hotjar.js',
+            async: true
+        },
+    ],
     plugins: [
         [
             '@docusaurus/plugin-client-redirects',
