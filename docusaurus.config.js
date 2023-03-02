@@ -42,6 +42,17 @@ const config = {
                 theme: {
                     customCss: [require.resolve('./src/styles/global.css')],
                 },
+                sitemap: {
+                    changefreq: 'weekly',
+                    ignorePatterns: [
+                        '/next/**',
+                        '/Legacy/**',
+                        '/guides/built-ins-**',
+                        '/guides/built-ins/actions/**',
+                        '/guides/built-ins/functions/**',
+                        '/changelog/reviewpad-**',
+                    ],
+                },
             }),
         ],
     ],
