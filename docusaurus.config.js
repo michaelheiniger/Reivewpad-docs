@@ -34,7 +34,7 @@ const config = {
                     editCurrentVersion: true,
                     versions: {
                         current: {
-                            label: 'Canary 🚧',
+                            label: 'Next',
                         },
                     },
                 },
