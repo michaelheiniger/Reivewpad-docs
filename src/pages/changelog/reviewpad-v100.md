@@ -1,4 +1,4 @@
-## [Reviewpad v1.0.0 (Porto)](/changelog/reviewpad-v100)
+## Reviewpad v1.0.0
 
 ## New features :fire: {#new-features}
 

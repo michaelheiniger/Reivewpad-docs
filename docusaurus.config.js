@@ -46,7 +46,7 @@ const config = {
                     changefreq: 'weekly',
                     ignorePatterns: [
                         '/next/**',
-                        '/Legacy/**',
+                        '/v3/**',
                         '/guides/built-ins-**',
                         '/guides/built-ins/actions/**',
                         '/guides/built-ins/functions/**',
@@ -70,11 +70,11 @@ const config = {
             {
                 redirects: [
                     {
-                        to: '/Legacy/getting-started/installation-action-tokenized',
+                        to: '/v3/getting-started/installation-action-tokenized',
                         from: '/getting-started/installation-action-tokenized',
                     },
                     {
-                        to: '/Legacy/getting-started/installation-action',
+                        to: '/v3/getting-started/installation-action',
                         from: '/getting-started/installation-action',
                     },
                 ],
