@@ -36,7 +36,7 @@ const pastVersions: Version[] = [
         name: 'v3',
         docsURL: '/v3',
         changelogURL: '/changelog#reviewpad-v3270',
-        stage: 'Deprecated',
+        stage: 'LTS',
     },
     {
         label: 'v2',
