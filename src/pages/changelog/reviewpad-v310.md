@@ -1,10 +1,10 @@
-## [Reviewpad v3.1.0](/changelog/reviewpad-v310)
+## v3.1.0
 
-## New features :fire: {#new-features}
+### New features :fire: {#new-features}
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Functions
+#### Functions
 
 [`reviewerStatus`](/guides/built-ins#reviewerstatus) - Returns the status of a reviewer in the pull request.
 
@@ -14,16 +14,16 @@
 
 [`length`](/guides/built-ins#length) - Returns the length of an array.
 
-### Actions
+#### Actions
 
 [`disableActions`](/guides/built-ins#disableactions) - Disables the list of Aladino actions passed as argument.
 
-## Improvements :rocket: {#improvements}
+### Improvements :rocket: {#improvements}
 
 - Do not re-request a review when the reviewer has already `approved` the review.
 - Run `reviewpad` on `dry-run` when the configuration `reviewpad.yml` has been updated in the pull request.
 - Added `reviewpad-cli` to run reviewpad commands.
 
-## Bugs :bug: {#bugs}
+### Bugs :bug: {#bugs}
 
 - Do not create labels when running on `dry-run`

@@ -1,8 +1,8 @@
-## [Reviewpad v3.16.0](/changelog/reviewpad-v3160)
+## v3.16.0
 
-## New features :fire:
+### New features :fire:
 
-### Built-ins
+#### Built-ins
 
 [`hasBinaryFile`](/guides/built-ins#hasbinaryfile) - Checks if a pull request has a binary file in the patch.
 

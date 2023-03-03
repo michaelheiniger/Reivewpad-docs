@@ -1,9 +1,9 @@
-## [Reviewpad v3.11.0](/changelog/reviewpad-v3110)
+## v3.11.0
 
-## New features :fire:
+### New features :fire:
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Actions
+#### Actions
 
 [`deleteHeadBranch`](/guides/built-ins#deleteheadbranch) - Deletes the head branch of the pull request.

@@ -1,13 +1,13 @@
-## [Reviewpad v3.9.0](/changelog/reviewpad-v390)
+## v3.9.0
 
-## New features :fire:
+### New features :fire:
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Actions
+#### Actions
 
 [`removeLabels`](/guides/built-ins#removelabels) - Removes the provided labels from the issue or pull request.
 
-## Bugs :bug: {#bugs}
+### Bugs :bug: {#bugs}
 
 -   `./reviewpad-cli check` properly checks `pipelines` specification on `reviewpad.yml` file.

@@ -1,16 +1,16 @@
-## [Reviewpad v3.0.0 (Faro)](/changelog/reviewpad-v300)
+## v3.0.0
 
-## New features :fire: {#new-features}
+### New features :fire: {#new-features}
 
 This is a major version of the Reviewpad Action.
 
-### Action
+#### Action
 
 - Feature: Use GitHub event to react to more workflow run triggers beside `pull_request` and `pull_request_target`.
 - Feature: Allow file as input of the GitHub action.
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Functions
+#### Functions
 
 [`workflowStatus`](/guides/built-ins#workflowstatus) - Returns the result of a GitHub workflow run.

@@ -1,5 +1,5 @@
-## [Reviewpad v1.2.0](/changelog/reviewpad-v120)
+## v1.2.0
 
-## Improvements :rocket: {#improvements}
+### Improvements :rocket: {#improvements}
 
 - Add program to reviewpad run's output.

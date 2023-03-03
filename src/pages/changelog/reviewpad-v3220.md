@@ -1,7 +1,7 @@
-## [Reviewpad v3.22.0](/changelog/reviewpad-v3210)
+## v3.22.0
 
-## New features :fire:
+### New features :fire:
 
-### Commands
+#### Commands
 
 - `/reviewpad assign-random-reviewer` - Assigns a random reviewer to a pull request

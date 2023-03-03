@@ -1,16 +1,16 @@
-## [Reviewpad v2.3.0](/changelog/reviewpad-v230)
+## v2.3.0
 
-## New features :fire: {#new-features}
+### New features :fire: {#new-features}
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Action
+#### Action
 
 [`assignAssignees`](/guides/built-ins#assignassignees) - Assigns up to 10 assignees to a pull request.
 
 [`fail`](/guides/built-ins#fail) - Fails the action with a given fail message which will appear in the logs of the GitHub action.
 
-### Functions
+#### Functions
 
 [`commentCount`](/guides/built-ins#commentcount) - Returns the total number of comments made into the pull request.
 

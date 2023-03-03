@@ -1,13 +1,13 @@
-## [Reviewpad v3.12.0](/changelog/reviewpad-v3120)
+## v3.12.0
 
-## New features :fire:
+### New features :fire:
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Functions
+#### Functions
 
 [`hasRequiredApprovals`](/guides/built-ins#hasrequiredapprovals) - Checks if a pull request has the required number of approvals from a defined set of users.
 
-### Actions
+#### Actions
 
 [`review`](/guides/built-ins#review) - Submits a pull request review.

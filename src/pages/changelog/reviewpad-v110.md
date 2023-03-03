@@ -1,13 +1,13 @@
-## [Reviewpad v1.1.0](/changelog/reviewpad-v110)
+## v1.1.0
 
-## New features :fire: {#new-features}
+### New features :fire: {#new-features}
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Functions
+#### Functions
 
 - [`rule`](/guides/built-ins#rule) - Evaluates a rule.
 
-## Improvements :rocket: {#improvements}
+### Improvements :rocket: {#improvements}
 
 - Fix bug in report information of a rule.

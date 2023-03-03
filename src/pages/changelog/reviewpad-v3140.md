@@ -1,25 +1,25 @@
-## [Reviewpad v3.14.0](/changelog/reviewpad-v3140)
+## v3.14.0
 
-## New features :fire:
+### New features :fire:
 
-### Aladino Language
+#### Aladino Language
 
 - New `Func` type - `Func(<PARAMETERS_TYPE_LIST>) <RETURN_TYPE>` (e.g. `Func(Int) String`)
 - Nested array types - `<NESTED_ARRAYS_TYPE><ITEMS_TYPE>` (e.g. `[][]String` or `[][][]Int`)
 
-## Improvements :rocket: {#improvements}
+### Improvements :rocket: {#improvements}
 
-### Aladino Language
+#### Aladino Language
 
 - Array type syntax updated to `[]<RETURN_TYPE>` (e.g. `[]String`)
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Functions
+#### Functions
 
 - Set `pullRequestCountBy` parameter `state` as optional (e.g. `$pullRequestCountBy("username")`)
 - Set `issueCountBy` parameter `state` as optional (e.g. `$issueCountBy("username")`)
 
-## Bugs :bug: {#bugs}
+### Bugs :bug: {#bugs}
 
 - Do not re-request a review unless a new commit has been pushed.

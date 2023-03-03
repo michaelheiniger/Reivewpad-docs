@@ -1,10 +1,10 @@
-## [Reviewpad v3.6.0](/changelog/reviewpad-v360)
+## v3.6.0
 
-## New features :fire:
+### New features :fire:
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Functions
+#### Functions
 
 [`any`](/guides/built-ins#any) - Determines if any element of a slice satisfies a given predicate.
 
@@ -12,6 +12,6 @@
 
 [`hasGitConflicts`](/guides/built-ins#hasgitconflicts) - Determines if the pull request has git conflicts.
 
-## Improvements :rocket: {#improvements}
+### Improvements :rocket: {#improvements}
 
 - Do not re-request a review when the reviewer has already `approved` the review.

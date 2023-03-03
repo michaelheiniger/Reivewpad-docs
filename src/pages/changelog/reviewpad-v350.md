@@ -1,12 +1,12 @@
-## [Reviewpad v3.5.0](/changelog/reviewpad-v350)
+## v3.5.0
 
-## Improvements :rocket: {#improvements}
+### Improvements :rocket: {#improvements}
 
-### Reviewpad
+#### Reviewpad
 
 - Allow number sign in label color hex values.
 
-### Aladino Language
+#### Aladino Language
 
 - Restrict typed expressions to lambda parameters.
 
@@ -16,9 +16,9 @@
 ($dev: String => $isElementOf($dev, $team("security"))))
 ```
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Functions
+#### Functions
 
 - Add excluded patterns to [`size`](/guides/built-ins#size) built-in.
 
@@ -30,6 +30,6 @@ rules:
     spec: $size(["*.lock"]) < 50
 ```
 
-### Actions
+#### Actions
 
 - [`close`](/guides/built-ins#close) issue/pull request with comment.

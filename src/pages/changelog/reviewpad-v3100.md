@@ -1,5 +1,5 @@
-## [Reviewpad v3.10.0](/changelog/reviewpad-v3100)
+## v3.10.0
 
-## Improvements :rocket: {#improvements}
+### Improvements :rocket: {#improvements}
 
 - Add reviewer assignment policy to [`assignReviewer`](/guides/built-ins#assignreviewer).

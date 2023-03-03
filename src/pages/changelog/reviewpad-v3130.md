@@ -1,9 +1,9 @@
-## [Reviewpad v3.13.0](/changelog/reviewpad-v3130)
+## v3.13.0
 
-## New features :fire:
+### New features :fire:
 
 - Get the [metrics report](/guides/syntax#mode) when the pull request is merged.
 
-## Improvements :rocket: {#improvements}
+### Improvements :rocket: {#improvements}
 
 - Add closure reason to [`close`](/guides/built-ins#close). Applicable only for issues.

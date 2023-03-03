@@ -1,21 +1,21 @@
-## [Reviewpad v3.2.0](/changelog/reviewpad-v320)
+## v3.2.0
 
-## New features :fire:
+### New features :fire:
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Functions
+#### Functions
 
 [`hasUnaddressedThreads`](/guides/built-ins#hasunaddressedthreads) - Verifies whether the pull request has review threads that aren't either `resolved` or `outdated`.
 
-### Utilities
+#### Utilities
 
 [`sprintf`](/guides/built-ins#sprintf) - Returns a formatted string.
 
-### Actions
+#### Actions
 
 [`addToProject`](/guides/built-ins#addtoproject) - Adds a pull request to a project with a particular status.
 
-## Improvements :rocket:
+### Improvements :rocket:
 
 - Report simplified to a list of triggered action.

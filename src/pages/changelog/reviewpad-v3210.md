@@ -1,15 +1,15 @@
-## [Reviewpad v3.21.0](/changelog/reviewpad-v3210)
+## v3.21.0
 
-## New features :fire:
+### New features :fire:
 
 - Reviewpad onboarding on installation.
 
-## Improvements :rocket:
+### Improvements :rocket:
 
 - Ability to `re-run` reviewpad check when it fails.
 - Show detailed execution logs for reviewpad check.
 - `review` action only creates a review if the pull request has updates.
 
-## Bug :bug:
+### Bug :bug:
 
 - Fix `close` action to work properly for pull requests and issues.

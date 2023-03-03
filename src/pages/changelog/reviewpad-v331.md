@@ -1,15 +1,15 @@
-## [Reviewpad v3.3.1](/changelog/reviewpad-v331)
+## v3.3.1
 
-## New features :fire:
+### New features :fire:
 
-### Reviewpad
+#### Reviewpad
 
 - Feature: Support for workflows on issues using the `on` field in the `workflows`. Check use case for workflow in issues [here](/use-cases/check-issue-description).
 
 - Feature: All built-ins are now open source.
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Functions
+#### Functions
 
 [`lastEventAt`](/guides/built-ins#lasteventat) - Returns the timestamp of the last event in the timeline.

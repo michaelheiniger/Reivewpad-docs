@@ -1,21 +1,21 @@
-## [Reviewpad v3.15.0](/changelog/reviewpad-v3150)
+## v3.15.0
 
-## New features :fire:
+### New features :fire:
 
-### Commands
+#### Commands
 
 We are introducing a new way to run Reviewpad - Reviewpad Commands 🎉 You can now run Reviewpad using the `/reviewpad` command by commenting the pull request on GitHub. The command will run the selected Reviewpad instruction on the commented pull request.
 
 - `/reviewpad assign-reviewers` - Assigns the provided reviewers to the pull request.
 
-### Built-ins
+#### Built-ins
 
 [`checkRunConclusion`](/guides/built-ins#checkrunconclusion) - Gets the conclusion of the given check run.
 
-## Improvements :rocket: {#improvements}
+### Improvements :rocket: {#improvements}
 
 - Metrics report is now less verbose reporting the time spent on each step.
 
-## Bugs :bug: {#bugs}
+### Bugs :bug: {#bugs}
 
 - Extra arguments on `sprintf` are now ignored.

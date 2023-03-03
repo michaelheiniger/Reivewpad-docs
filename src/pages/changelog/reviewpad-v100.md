@@ -1,19 +1,19 @@
-## Reviewpad v1.0.0
+## v1.0.0
 
-## New features :fire: {#new-features}
+### New features :fire: {#new-features}
 
-### YAML Specification
+#### YAML Specification
 
 - Updated protectionGates syntax to workflows format.
 - Edition property
 
-### Aladino Language
+#### Aladino Language
 
 - [Timestamps](/use-cases/timestamps) - RFC3339 timestamps or relative timestamps.
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Actions
+#### Actions
 
 - [`close`](/guides/built-ins#close) - Closes a pull request.
 - [`comment`](/guides/built-ins#comment) - Adds a comment to the pull request.
@@ -21,6 +21,6 @@
 - [`info`](/guides/built-ins#info) - Add a message to the info section of the report.
 - [`warn`](/guides/built-ins#warn) - Add a message to the warnings section of the report.
 
-### Functions
+#### Functions
 
 - [`changed`](/guides/built-ins#changed) - Checks for correlations between file patterns.

@@ -1,23 +1,23 @@
-## [Reviewpad v3.4.0](/changelog/reviewpad-v340)
+## v3.4.0
 
-## New features :fire:
+### New features :fire:
 
-### Aladino Language
+#### Aladino Language
 
 [Lambda expressions](/guides/aladino/syntax) - Aladino now supports lambda functions.
 
-### Aladino Built-ins
+#### Aladino Built-ins
 
-### Functions
+#### Functions
 
 [`addToProject`](/guides/built-ins#addtoproject) - Adds a pull request to a project with a particular status. It is not supported for GitHub issues.
 [`issueCountBy`](/guides/built-ins#issuecountby) - Returns the total number of issues created by the given GitHub user and issue state.
 [`pullRequestCountBy`](/guides/built-ins#pullrequestcountby) - Returns the total number of pull requests created by the given GitHub user and state.
 
-### Actions
+#### Actions
 
 [`titleLint`](/guides/built-ins#titlelint) - Checks if the pull request title follows the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
 
-## Improvements :rocket: {#improvements}
+### Improvements :rocket: {#improvements}
 
 - Fix `issue_comment` event handling to support GitHub issues and pull requests.
