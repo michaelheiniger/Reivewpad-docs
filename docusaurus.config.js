@@ -53,6 +53,7 @@ const config = {
                         '**/commands/**-**',
                         '**/commands/run',
                         '/changelog/reviewpad-**',
+                        '/changelog/v**',
                     ],
                 },
             }),
