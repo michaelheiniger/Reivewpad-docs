@@ -36,7 +36,7 @@ const pastVersions: Version[] = [
         name: 'v3',
         docsURL: '/v3',
         changelogURL: '/changelog#v3270',
-        stage: 'LTS',
+        stage: 'Deprecated',
     },
     {
         label: 'v2',
