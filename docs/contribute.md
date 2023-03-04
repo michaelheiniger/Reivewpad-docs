@@ -38,7 +38,7 @@ The best way to get your bug fixed is fill our [bug report template](https://git
 ### How to Get in Touch {#how-to-get-in-touch}
 
 -   [Discord](https://reviewpad.com/discord)
--   [GitHub Discussions](https://github.com/reviewpad/reviewpad/discussions)
+-   [GitHub Discussions](https://github.com/orgs/reviewpad/discussions)
 
 Please note that the Reviewpad [Discord](https://reviewpad.com/discord) is the same used by the team. So you'll be talking directly with the team 💪
 

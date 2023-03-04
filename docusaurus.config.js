@@ -121,7 +121,7 @@ const config = {
                     },
                     { to: '/changelog', label: 'Changelog', position: 'left' },
                     {
-                        href: 'https://github.com/reviewpad/reviewpad/discussions',
+                        href: 'https://github.com/orgs/reviewpad/discussions',
                         label: 'Discussions',
                         position: 'left',
                     },
