@@ -43,6 +43,7 @@ for file in $(find "$2" -name "*.yml")
 do
     echo "👉 Checking $file"
     "$1" check --file="$file"
+    echo ""
 done
 
 # Run reviewpad in dry-run mode on all *.yml files in the directory
@@ -50,5 +51,6 @@ echo "👉👉👉👉👉👉 Running reviewpad in dry-run mode"
 for file in $(find "$2" -name "*.yml")
 do
     echo "👉 Checking $file"
-    "$1" run -d -u="$4" -t="$3" -f="$file"
+    "$1" run -d -u="$4" -t="$3" -f="$file" -e="$5"
+    echo ""
 done

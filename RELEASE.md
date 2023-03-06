@@ -70,16 +70,18 @@ The project contains a set of Reviewpad configurations used for built-ins showca
 
 If you have updated or added any new Reviewpad configuration please make sure you test it.
 
-For that you can use the `checker.sh` script.
+For that you can use the `checker.sh` script that lives in the `scripts` directory.
+
+For the argument `-e` you case use a [GitHub event](https://github.com/reviewpad/reviewpad#using-a-github-event-from-a-reviewpad-github-app-run) from a Reviewpad GitHub App run.
 
 ```bash
-./checker.sh <local_location_of_your_reviewpad_cli> <directory_to_look_for_yml_configurations> <github_token> <github_repo>
+./scripts/checker.sh <local_location_of_your_reviewpad_cli> <directory_to_look_for_yml_configurations> <github_token> <github_repo> <local_location_of_JSON_file_with_GitHub_event>
 ```
 
 e.g.
 
 ```bash
-./checker.sh ~/reviewpad-cli ./docs GITHUB_TOKEN https://github.com/mascarilha/paddy/pull/1
+./scripts/checker.sh ~/reviewpad-cli ./docs GITHUB_TOKEN https://github.com/mascarilha/paddy/pull/1 my_event.json
 ```
 
 ## Commit and push it
