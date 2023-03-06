@@ -3,22 +3,22 @@ import Example from "!!raw-loader!./example.yml";
 
 **Description**:
 
-Assigns up to 10 assignees to a pull request / issue.
+Assigns a defined amount of assignees to a pull request / issue.
 
 Users already assigned to a pull request / issue are not replaced.
 
-Only users with push access can assign users to a pull request / issue. Otherwise, assignees are silently ignored.
-
 **Parameters**:
 
-| Parameter    | Type       | Description                                                       |
-| :----------- | :--------- | :---------------------------------------------------------------- |
-| `assignees`  | \[]string  | The list of GitHub logins to assign the pull request / issue to.  |
+| Parameter          | Type       | Description                                                                                            |
+| :----------------- | :--------- | :----------------------------------------------------------------------------------------------------- |
+| `assignees`        | \[]string  | The list of GitHub logins to assign the pull request / issue to.                                       |
+| `total` (optional) | int        | The total number of assignees to assign to, between 1 and 10. By default, it assigns to all assignees. |
 
 **Examples**:
 
 ```yml
 $assignAssignees(["john", "marie", "peter"])
+$assignAssignees($team("engineering"), 2)
 ```
 
 A `reviewpad.yml` example:
