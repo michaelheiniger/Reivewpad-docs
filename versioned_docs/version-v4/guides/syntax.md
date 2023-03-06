@@ -7,8 +7,6 @@ slug: "syntax"
 A Reviewpad configuration file has the following shape:
 
 ```yaml
-api-version: reviewpad.com/v3.x
-
 mode: silent | verbose [OPTIONAL]
 ignore-errors: true | false [OPTIONAL]
 metrics-on-merge: true | false [OPTIONAL]
@@ -64,7 +62,6 @@ The version is necessary so the format can be evolved, and the field is used for
 #### Example
 
 ```yml
-api-version: reviewpad.com/v3.x
 ```
 
 ## Mode

@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 rules:
   - name: changes-env-var
     description: Patch includes changes to environment variables

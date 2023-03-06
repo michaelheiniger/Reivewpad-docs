@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 rules:
   - name: long-live-change
     description: Pull request has been opened for more than 15 days

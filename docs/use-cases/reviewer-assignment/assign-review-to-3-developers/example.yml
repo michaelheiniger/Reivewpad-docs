@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 rules:
   - name: changes-transactions-code
     spec: $hasFilePattern("src/transactions/**")

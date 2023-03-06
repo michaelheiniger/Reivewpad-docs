@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 rules:
   - name: stale-pull-request
     spec: $lastEventAt() < 30 days ago

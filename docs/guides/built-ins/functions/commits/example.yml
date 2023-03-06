@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 rules:
   - name: is-bug
     # Verify if any commit message starts with the word "fix:"

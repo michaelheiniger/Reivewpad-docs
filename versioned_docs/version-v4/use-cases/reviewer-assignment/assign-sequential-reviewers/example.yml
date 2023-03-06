@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 pipelines:
   - name: security-changes
     trigger: $hasFilePattern("services/db/migrations/**")

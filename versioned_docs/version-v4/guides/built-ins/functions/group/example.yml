@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 groups:
   - name: tech-leads
     # The expression is wrapped in quotes to avoid YAML parsing errors

@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 extends:
   - https://github.com/baz/foo/blob/main/common.yml
   - https://github.com/baz/qux/blob/main/team_a.yml

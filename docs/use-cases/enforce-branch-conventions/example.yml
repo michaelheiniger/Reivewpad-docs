@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 labels:
   type-bugfix:
     name: 'type:bugfix :beetle:'

@@ -15,8 +15,6 @@ Each rule specified in the `rules` section must be used in a `workflow`.
 The following file is not valid since `dummy-rule` is not used in any workflow.
 
 ```yaml
-api-version: reviewpad.com/v3.x
-
 labels:
     fast-track:
         color: 76dbbe
@@ -40,8 +38,6 @@ Each rule referenced in a `workflow` must be defined in the `rules` section.
 The following file is not valid as `changes-one-file` is not defined.
 
 ```yaml
-api-version: reviewpad.com/v3.x
-
 labels:
     fast-track:
         color: 76dbbe
@@ -88,8 +84,6 @@ The program that will be executed respects the following rules:
 For example, consider the following pseudo Reviewpad file:
 
 ```yaml
-api-version: reviewpad.com/v3.x
-
 rules:
     rule_1
     rule_2
@@ -149,8 +143,6 @@ This program is simply a sequence of actions.
 We will use an example to illustrate how this program is generated. Assume that we have the following specification:
 
 ```yaml
-api-version: reviewpad.com/v2.x
-
 rules:
     rule_1
     rule_2

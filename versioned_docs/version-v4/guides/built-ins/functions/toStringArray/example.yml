@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 groups:
   - name: deprecated-labels
     description: List of labels that should not be used

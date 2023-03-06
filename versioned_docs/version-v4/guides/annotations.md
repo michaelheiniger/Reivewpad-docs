@@ -48,8 +48,6 @@ We've marked our `main` function as `critical` symbol to our project.
 Now, we can use the [hasAnnotation](./built-ins/#hasannotation) built-in, in our Reviewpad configuration, to identify when a `critical` symbol has been changed, and take the appropriate action.
 
 ```yml
-api-version: reviewpad.com/v3.x
-
 workflows:
   - name: changes-critical-code
     if:

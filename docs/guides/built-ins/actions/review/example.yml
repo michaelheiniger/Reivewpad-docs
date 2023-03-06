@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 rules:
   - name: missing-tests
     spec: $changed("src/@1.java", "test/@1.java") == false

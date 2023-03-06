@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 workflows:
   - name: lint-commits
     if:

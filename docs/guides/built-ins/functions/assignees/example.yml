@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 workflows:
   - name: by-default-assign-to-author
     # Run workflow regardless of previous workflow result

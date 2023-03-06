@@ -1,5 +1,3 @@
-api-version: reviewpad.com/v3.x
-
 rules:
   - name: is-ready-to-review
     # The expression is wrapped in quotes to avoid YAML parsing errors
