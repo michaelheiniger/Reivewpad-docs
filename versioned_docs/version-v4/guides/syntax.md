@@ -53,17 +53,6 @@ pipelines:
 You can check the latest formal version of the format [here](https://github.com/reviewpad/schemas/blob/main/latest/schema.json).
 :::
 
-## API Version
-
-The `api-version` property is the version of Reviewpad specification format.
-
-The version is necessary so the format can be evolved, and the field is used for the parser to know how to interpret the content.
-
-#### Example
-
-```yml
-```
-
 ## Mode
 
 The `mode` property is a flag that allows you to enable or disable reports of Reviewpad as a pull request comment.
