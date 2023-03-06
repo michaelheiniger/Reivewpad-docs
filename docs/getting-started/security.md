@@ -18,7 +18,7 @@ Reviewpad requires the following permissions:
 
 | Description                                                                                                    | Permissions    |
 | -------------------------------------------------------------------------------------------------------------- | -------------- |
-| [Actions](https://docs.github.com/en/rest/overview/permissions-required-for-github-apps#actions)               | Read-only      |
+| [Actions](https://docs.github.com/en/rest/overview/permissions-required-for-github-apps#actions)               | Read and write |
 | [Administration](https://docs.github.com/en/rest/overview/permissions-required-for-github-apps#administration) | Read-only      |
 | [Checks](https://docs.github.com/en/rest/overview/permissions-required-for-github-apps#checks)                 | Read and write |
 | [Code scanning alerts](https://docs.github.com/v3/apps/permissions)                                            | Read-only      |
