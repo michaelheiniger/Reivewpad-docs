@@ -1,0 +1,43 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+:::danger
+
+This built-in is **experimental**.
+
+:::
+
+**Description**:
+
+Checks if a pull request contains only code changes that do not touch the semantics of the software.
+
+
+:::caution
+
+This built-in is not available for issues.
+
+:::
+
+**Parameters**:
+
+| Parameter                            | Type      | Description                                            |
+| :----------------------------------- | :-------- | :----------------------------------------------------- |
+| `file_patterns_to_ignore` (optional) | \[]string | The list of file pattern globs to ignore in the patch. |
+
+
+**Return value**:
+
+| Type      | Description                                                      |
+| :-------- | :--------------------------------------------------------------- |
+| `boolean` | `true` if the pull request changes are not semantic code changes |
+
+**Examples**:
+
+```yml
+$hasCodeWithoutSemanticChanges()
+$$hasCodeWithoutSemanticChanges(["**/*_test.go"])
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

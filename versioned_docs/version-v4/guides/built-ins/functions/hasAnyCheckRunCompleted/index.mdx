@@ -1,0 +1,57 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Checks whether any check runs for a pull request have been completed with the provided conclusions.
+
+If the `check_runs_to_ignore` parameter is provided, any check runs that have a name included in the parameter will be ignored.
+
+If the `check_conclusions` parameter is provided, only check runs that have been completed with one of the provided conclusions will be considered.
+
+The `check_conclusions` parameter accepts the following values: `action_required`, `cancelled`, `failure`, `neutral`, `success`, `skipped`, `stale`, and `timed_out`.
+
+:::caution
+
+This built-in is not available for issues.
+
+:::
+
+**Parameters**:
+
+| Parameter                         | Type       | Description                                                    |
+| :---------------------------------| :--------- | :--------------------------------------------------------------|
+| `check_runs_to_ignore` (optional) | `[]string` | List of checks to be disregarded. By default, is []            |
+| `check_conclusions` (optional)    | `[]string` | List of the final conclusions of the check. By default, is []  |
+
+**Return value**:
+
+| Type       | Description                                                                                             |
+| :--------- | :-------------------------------------------------------------------------------------------------------|
+| `boolean`  | `true` if there is at least on check completed with one of the provided conclusions, `false` otherwise. |
+
+**Examples**:
+
+#### Any check run has completed with any conclusion.
+```yml
+$hasAnyCheckRunCompleted()
+```
+
+#### Any check run has failed.
+```yml
+$hasAnyCheckRunCompleted([], ["failure"])
+```
+
+#### Any check run has been skipped or failed.
+```yml
+$hasAnyCheckRunCompleted([], ["skipped", "failure"])
+```
+
+#### Any check run has been completed with skipped except for integration-tests check run.
+```yml
+$haveAllChecksRunCompleted(["integration-tests"], ["skipped"])
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>

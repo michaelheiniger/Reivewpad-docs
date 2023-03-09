@@ -1,6 +1,6 @@
 workflows:
   - name: assign-reviewer
     if:
-      - '!$isWaitingForReview() && !isDraft()'
+      - '!$isWaitingForReview() && !$isDraft()'
     then:
       - $assignCodeAuthorReviewers(2, ["john", "marie"], 3)

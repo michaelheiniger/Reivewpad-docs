@@ -70,7 +70,7 @@ workflows:
 
   # This workflow labels pull requests based on the total number of lines changed.
   # This helps pick pull requests based on their size and to incentivize small pull requests.
-  - name: size-labeling
+  - name: size-labelling
     description: Label pull request based on the number of lines changed
     always-run: true
     if:

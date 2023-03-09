@@ -182,7 +182,7 @@ groups:
   kind: developers
   type: filter
   param: VARIABLE
-  spec: ALADINO-BOOLEAN-EXPRESSION
+  where: ALADINO-BOOLEAN-EXPRESSION
 ```
 
 -   `name` of a group is used to reference it in other entities.
@@ -190,7 +190,7 @@ groups:
 -   `kind` of group can only be _developers_ at the moment.
 -   `type` with filter specifies that we will require a _param_ and a boolean _spec_.
 -   `param` declares the name of a variable representing a single developer.
--   `spec` is an [Aladino](./aladino/specification) boolean expression that uses the _param_ variable to define a condition on which developers should be part of the group.
+-   `where` is an [Aladino](./aladino/specification) boolean expression that uses the _param_ variable to define a condition on which developers should be part of the group.
 
 #### Example
 

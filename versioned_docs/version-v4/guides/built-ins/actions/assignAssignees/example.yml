@@ -1,8 +1,7 @@
 workflows:
-  - name: always-assign-to-author
-    # Run workflow regardless of previous workflow result
+  - name: assign-core-team
     always-run: true
     if:
-      - $description() != ""
+      - $author() == "renovate[bot]"
     then:
-      - $assignAssignees([$author()])
+      - $assignAssignees($team("core"), 1)
