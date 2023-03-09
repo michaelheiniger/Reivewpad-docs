@@ -37,13 +37,16 @@ Here's an example of a `reviewpad.yml` configuration:
 workflows:
   - name: all-checks-completed
     if:
-    - $haveAllChecksRunCompleted([], "success", ["skipped"])
+    - $haveAllChecksRunCompleted([], "success")
     then:
     - $comment("Hello")
 ```
 
-In this example, if you have 5 check runs Reviewpad will run 5 times.
-If all checks finish with `success` around the same time, when Reviewpad runs for each check run, all checks have already been completed with `success` and Reviewpad will run the `$comment` built-in. This will result in 5 comments.
+In this example, if you have 5 checks Reviewpad will run 5 times.
+
+If checks finish all with `success` around the same time then,
+when Reviewpad runs for each check, the condition of all checks being completed with `success` will be true
+and Reviewpad will run `$comment("Hello")` for each check. This will result in 5 comments.
 
 :::
 
@@ -52,18 +55,18 @@ If all checks finish with `success` around the same time, when Reviewpad runs fo
 | Parameter                                | Type       | Description                                                                                             |
 | :----------------------------------------| :--------- | :-------------------------------------------------------------------------------------------------------|
 | `check_runs_to_ignore` (optional)        | `[]string` | List of checks to be disregarded.                                                                       |
-| `conclusion` (optional)                  | `string`   | The final conclusion of the check                                                                       |
+| `conclusion` (optional)                  | `string`   | The final conclusion of the check. Empty by default. All conclusion values are valid.                   |
 | `check_conclusions_to_ignore` (optional) | `[]string` | List of check conclusions to be disregarded. Any checks with a conclusion in that list will be ignored. |
 
 **Return value**:
 
-| Type       | Description                                                 |
-| :--------- | :-----------------------------------------------------------|
-| `boolean`  | `true` if all check runs have completed, `false` otherwise. |
+| Type       | Description                                                      |
+| :--------- | :----------------------------------------------------------------|
+| `boolean`  | `true` if all check runs have been completed, `false` otherwise. |
 
 **Examples**:
 
-#### All check runs have completed with `success`.
+#### All check runs have been completed (regardless of the conclusion).
 ```yml
 $haveAllChecksRunCompleted()
 ```
@@ -73,7 +76,7 @@ $haveAllChecksRunCompleted()
 $haveAllChecksRunCompleted(["integration-tests"])
 ```
 
-#### All check runs have been completed with `success`.
+#### All check runs have been completed with `success` conclusion.
 ```yml
 $haveAllChecksRunCompleted([], "success")
 ```
