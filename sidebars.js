@@ -103,8 +103,8 @@ const sidebars = {
         },
         {
             type: "doc",
-            id: "common-pitfalls",
-            label: "Common Pitfalls",
+            id: "troubleshooting",
+            label: "Troubleshooting",
         },
         {
             type: "doc",

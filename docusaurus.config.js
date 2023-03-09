@@ -78,6 +78,10 @@ const config = {
                         to: '/v3/getting-started/installation-action',
                         from: '/getting-started/installation-action',
                     },
+                    {
+                        to: '/troubleshooting',
+                        from: '/common-pitfalls',
+                    },
                 ],
             },
         ],

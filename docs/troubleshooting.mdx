@@ -1,0 +1,105 @@
+---
+id: "troubleshooting"
+slug: "/troubleshooting"
+title: "Troubleshooting"
+---
+
+This page is designed to help you solve common problems that you may encounter when using Reviewpad.
+
+Whether you are having issues with setting up your account, integrating with GitHub, configuring your pull request workflow, or anything else related to Reviewpad, you can find answers and solutions here.
+
+Simply browse through the list below to find the problem you are having.
+
+If you don't see your problem listed here, please contact us on #help on our [Discord server](https://reviewpad.com/discord).
+
+We hope this page helps you get the most out of Reviewpad and enjoy a smooth and secure code review process.
+
+## Syntax errors
+
+When there is a syntax error in your configuration, Reviewpad will show an error message:
+
+```yml
+`Parse error: failed to build AST`
+```
+
+This error means that Reviewpad wasn't able to parse a property `spec` defined in the configuration.
+
+Some of the common parsing errors are:
+
+### Using `'` instead of `"` for strings {#single-quotes}
+
+| Bad                  | Good                  |
+| -------------------- | --------------------- |
+| `$addLabel('hello')` |  `$addLabel("hello")` |
+
+### Missing the `$` prefix when using a built-in {#missing-dollar-prefix}
+
+| Bad                        | Good                        |
+| -------------------------- | --------------------------- |
+| `hasFileName("README.md")` | `$hasFileName("README.md")` |
+
+### Missing the parenthesis `()` when using a built-in {#missing-parenthesis}
+
+| Bad         | Good           |
+| ----------- | -------------- |
+| `$isMerged` | `$isMerged()`  |
+
+### Using `seconds` on [relative timestamps](./use-cases/timestamps/#relative-timestamps) {#seconds-on-relative-timestamps}
+
+For now, Reviewpad only supports minutes, hours, days, weeks, months, and years on relative timestamps. Using seconds will result in an error.
+
+| Bad                  | Good            |
+| -------------------- | --------------- |
+| `60 seconds ago`     | `1 minute ago`  |
+
+Here's an example of the error:
+
+```yml
+workflows:
+  - name: maybe-LGTM
+    if:
+    # This will fail because we are using seconds
+    - rule: $totalCodeReviews() > 1 && $createdAt() < 60 seconds ago
+    then:
+    - $comment("This PR got a fast review. Is it a LGTM?")
+```
+
+## Built-ins misuse
+
+### Using GitHub suite name instead of check run name {#use-check-run-name}
+
+When using the built-ins:
+- [`$checkRunConclusion`](./guides/built-ins/#checkrunconclusion)
+- [`$hasAnyCheckRunCompleted`](./guides/built-ins/#hasanycheckruncompleted)
+- [`$haveAllChecksRunCompleted`](./guides/built-ins/#haveallchecksruncompleted)
+- [`$workflowStatus` 🗑️](./guides/built-ins/#workflowstatus)
+
+We need to use the **check run name** instead of the suite name.
+
+In the following GitHub workflow example, the suite name is `CI` and the check run name is `build`:
+
+```yml
+name: CI # check suite name
+
+on:
+  push:
+
+jobs:
+  build: # check run name
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run a one-line script
+        run: echo Hello, world!
+```
+
+Following the example above, we would use `build` instead of `CI`:
+
+```bash
+$checkRunConclusion("build")
+$hasAnyCheckRunCompleted(["build"])
+$haveAllChecksRunCompleted(["build"])
+$workflowStatus("build")
+```

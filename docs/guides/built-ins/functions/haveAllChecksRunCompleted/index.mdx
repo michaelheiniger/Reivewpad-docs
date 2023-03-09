@@ -1,6 +1,6 @@
 ---
 # This slug is a workaround for the links on this page to work.
-slug: "/guides/built-ins-haveallchecksruncompleted"
+slug: "/guides/built-ins-have-all-checks-run-completed"
 ---
 
 import CodeBlock from "@theme/CodeBlock";
@@ -12,9 +12,15 @@ This built-in is not available for issues.
 
 :::
 
+:::caution
+
+[Please make sure you use the **check run name** and not the check suite name.](../../troubleshooting#use-check-run-name)
+
+:::
+
 :::caution Known issue
 
-Please note that Reviewpad will run for every check run that is completed.
+Please note that Reviewpad will run for **every check run** that is completed.
 
 This can be an issue if the checks finish around the same time and you use built-ins that are not idempotent (e.g. the [comment](./built-ins#comment) built-in).
 In this case, Reviewpad will run the built-in multiple times.
@@ -25,12 +31,12 @@ Here's an example of a `reviewpad.yml` configuration:
 workflows:
   - name: all-checks-completed
     if:
-    - $haveAllChecksRunCompleted([], "success")
+      - $haveAllChecksRunCompleted([], "success")
     then:
-    - $comment("Hello")
+      - $comment("Hello")
 ```
 
-In this example, if you have 5 checks Reviewpad will run 5 times.
+In this example, if you have 5 checks Reviewpad comment "Hello" 5 times.
 
 If checks finish all with `success` around the same time then,
 when Reviewpad runs for each check, the condition of all checks being completed with `success` will be true
@@ -54,7 +60,7 @@ If the `check_conclusions_to_ignore` parameter is set, any checks with a conclus
 
 | Parameter                                | Type       | Description                                                                                             |
 | :----------------------------------------| :--------- | :-------------------------------------------------------------------------------------------------------|
-| `check_runs_to_ignore` (optional)        | `[]string` | List of checks to be disregarded.                                                                       |
+| `check_runs_to_ignore` (optional)        | `[]string` | List of check run names to be disregarded.                                                              |
 | `conclusion` (optional)                  | `string`   | The final conclusion of the check. Empty by default. All conclusion values are valid.                   |
 | `check_conclusions_to_ignore` (optional) | `[]string` | List of check conclusions to be disregarded. Any checks with a conclusion in that list will be ignored. |
 
@@ -76,7 +82,7 @@ $haveAllChecksRunCompleted()
 $haveAllChecksRunCompleted(["integration-tests"])
 ```
 
-#### All check runs have been completed with `success` conclusion.
+#### All check runs have been completed with a `success` conclusion.
 ```yml
 $haveAllChecksRunCompleted([], "success")
 ```
