@@ -1,6 +1,12 @@
 import CodeBlock from "@theme/CodeBlock";
 import Example from "!!raw-loader!./example.yml";
 
+:::caution
+
+This built-in is not available for issues.
+
+:::
+
 **Description**:
 
 Checks whether any check runs for a pull request have been completed with the provided conclusions.
@@ -10,12 +16,6 @@ If the `check_runs_to_ignore` parameter is provided, any check runs that have a 
 If the `check_conclusions` parameter is provided, only check runs that have been completed with one of the provided conclusions will be considered.
 
 The `check_conclusions` parameter accepts the following values: `action_required`, `cancelled`, `failure`, `neutral`, `success`, `skipped`, `stale`, and `timed_out`.
-
-:::caution
-
-This built-in is not available for issues.
-
-:::
 
 **Parameters**:
 

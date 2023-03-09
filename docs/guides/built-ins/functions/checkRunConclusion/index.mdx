@@ -1,19 +1,19 @@
 import CodeBlock from "@theme/CodeBlock";
 import Example from "!!raw-loader!./example.yml";
 
-**Description**:
-
-Retrieves the conclusion of the given [check run](https://docs.github.com/en/rest/guides/getting-started-with-the-checks-api#about-check-runs).
-
 :::caution
 
 This built-in is not available for issues.
 
 :::
 
+**Description**:
+
+Retrieves the conclusion of the given [check run](https://docs.github.com/en/rest/guides/getting-started-with-the-checks-api#about-check-runs).
+
 :::caution
 
-Reviewpad checks for check run conclusion based on the `name` of the check run.
+Reviewpad looks for the check run conclusion based on the `name` of the check run.
 
 This means that if you have multiple check runs with the same name, Reviewpad will only check for the first check run with that name.
 
