@@ -3,7 +3,4 @@ workflows:
     if:
       - rule: $length($reviewers()) < 2
         extra-actions:
-          - $info("A pull request must have at least two reviewers")
-      - rule: $length($reviewers()) > 5
-        extra-actions:
-          - $info("A pull request should not more than 5 reviewers")
+          - $info("A pull request needs at least 2 reviews")

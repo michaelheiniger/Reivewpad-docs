@@ -1,0 +1,29 @@
+import CodeBlock from "@theme/CodeBlock";
+import Example from "!!raw-loader!./example.yml";
+
+**Description**:
+
+Filters the elements in the slice based on whether they satisfy a given predicate.
+
+**Parameters**:
+
+| Parameter   | Type                | Description                |
+| :---------- | :------------------ | :------------------------- |
+| `slice`     | \[]string           | The slice of strings.      |
+| `predicate` | (string => boolean) | The predicate over string. |
+
+**Return value**:
+
+| Type      | Description                                                 |
+| :-------- | :---------------------------------------------------------- |
+| \[]string | The elements of the slice that satisfy the given predicate. |
+
+**Examples**:
+
+```yml
+'$filter(["aa", "ab", "bb", "cc"], ($e: String => $startsWith($e, "a")))' # ["aa", "ab"]
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml" title="reviewpad.yml">{Example}</CodeBlock>
