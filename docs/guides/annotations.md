@@ -51,9 +51,9 @@ Now, we can use the [hasAnnotation](./built-ins/#hasannotation) built-in, in our
 workflows:
   - name: changes-critical-code
     if:
-    - rule: $hasAnnotation("critical")
+      - rule: $hasAnnotation("critical")
         extra-actions:
-        - $warn("This pull request includes critical changes! Please review it carefully.")
+          - $warn("This pull request includes critical changes! Please review it carefully.")
 ```
 
 Now, every time a `critical` symbol is changed, Reviewpad will add a warning to the pull request.

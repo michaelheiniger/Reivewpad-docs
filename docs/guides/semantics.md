@@ -16,19 +16,19 @@ The following file is not valid since `dummy-rule` is not used in any workflow.
 
 ```yaml
 labels:
-    fast-track:
-        color: 76dbbe
+  fast-track:
+    color: 76dbbe
 
 rules:
-    - name: dummy-rule
+  - name: dummy-rule
     spec: 1 == 1
 
 workflows:
-    - name: fast-track
+  - name: fast-track
     if:
-        - rule: $fileCount == 1
+      - $fileCount == 1
     then:
-        - $addLabel("fast-track")
+      - $addLabel("fast-track")
 ```
 
 ### Reference to undefined rule
@@ -39,17 +39,17 @@ The following file is not valid as `changes-one-file` is not defined.
 
 ```yaml
 labels:
-    fast-track:
-        color: 76dbbe
+  fast-track:
+    color: 76dbbe
 
 rules:
 
 workflows:
-    - name: fast-track
+  - name: fast-track
     if:
-        - rule: changes-one-file
+      - rule: changes-one-file
     then:
-        - $addLabel("fast-track")
+      - $addLabel("fast-track")
 ```
 
 ## Interpreter
@@ -85,44 +85,44 @@ For example, consider the following pseudo Reviewpad file:
 
 ```yaml
 rules:
-    rule_1
-    rule_2
-    ...
-    rule_5
+  rule_1
+  rule_2
+  ...
+  rule_5
 
 workflows:
-    - name: workflow_1
+  - name: workflow_1
     description: Workflow 1 # optional
     on: # optional
-        - pull_request
+      - pull_request
     if:
-        - rule: rule_1
+      - rule: rule_1
     then:
-        - action_1
+      - action_1
 
-    - name: workflow_2
+  - name: workflow_2
     description: Workflow 2 # optional
     on: # optional
-        - issue
-        - pull_request
+      - issue
+      - pull_request
     if:
-        - rule: rule_1
-        - rule: rule_2
+      - rule: rule_1
+      - rule: rule_2
     then:
-        - action_2
+      - action_2
 
 pipelines:
-    - name: pipeline_1
+  - name: pipeline_1
     description: Pipeline 1 # optional
     trigger: rule_3 # optional
     stages:
-        - actions:
-                - action_3
-                - action_4
-            until: rule_4 # optional
-        - actions:
-                - action_5
-            until: rule_5 # optional
+      - actions:
+          - action_3
+          - action_4
+        until: rule_4 # optional
+      - actions:
+          - action_5
+        until: rule_5 # optional
 ```
 
 The interpreter starts by evaluating the rules of `workflow_1` and only if all the rules are false it will go evaluate the rules of `workflow_2`. At the moment, there is no caching between rules.
@@ -144,40 +144,40 @@ We will use an example to illustrate how this program is generated. Assume that 
 
 ```yaml
 rules:
-    rule_1
-    rule_2
-    ...
-    rule_5
+  rule_1
+  rule_2
+  ...
+  rule_5
 
 workflows:
-    - name: workflow_X
+  - name: workflow_X
     if:
-        - rule: rule_1
-            extra-actions:
-                - rule_1_action_1
-                - rule_1_action_2
-        - rule: rule_2
-            extra-actions:
-                - rule_2_action_1
-        - rule: rule_3
-        - rule: rule_4
-            extra-actions:
-                - rule_4_action_1
+      - rule: rule_1
+        extra-actions:
+          - rule_1_action_1
+          - rule_1_action_2
+      - rule: rule_2
+        extra-actions:
+          - rule_2_action_1
+      - rule: rule_3
+      - rule: rule_4
+        extra-actions:
+          - rule_4_action_1
     then:
-        - gen_action_1
-        - gen_action_2
+      - gen_action_1
+      - gen_action_2
 
 pipelines:
-    - name: pipeline_Y
+  - name: pipeline_Y
     trigger: rule_5
     stages:
-        - actions:
-                - stage_1_action_1
-                - stage_2_action_2
-            until: rule_6
-        - actions:
-                - stage_2_action_1
-            until: rule_7
+      - actions:
+          - stage_1_action_1
+          - stage_2_action_2
+        until: rule_6
+      - actions:
+          - stage_2_action_1
+        until: rule_7
 ```
 
 Assume that `rule_1`, `rule_3`, `rule_4`, `rule_5` and `rule_6` evaluate to `true` and `rule_2` and `rule_7` to `false`.
@@ -212,32 +212,32 @@ For example:
 
 ```yaml
 pipelines:
-    - name: pipeline_1
+  - name: pipeline_1
     trigger: initial-condition
     stages:
-        - actions:
-                - ACTION_1
-            until: RULE_1
-        - actions:
-                - ACTION_2
-            until: RULE_2
+      - actions:
+          - ACTION_1
+        until: RULE_1
+      - actions:
+          - ACTION_2
+        until: RULE_2
 ```
 
 Could be encoded as:
 
 ```yaml
 workflows:
-    - name: pipeline_1_stage_1
+  - name: pipeline_1_stage_1
     always-run: true
     if: initial-condition && !RULE_1
     then:
-        - ACTION_1
+      - ACTION_1
 
-    - name: pipeline_1_stage_2
+  - name: pipeline_1_stage_2
     always-run: true
     if: initial-condition && RULE_1 && !RULE_2
     then:
-        - ACTION_2
+      - ACTION_2
 ```
 
 However there are two major disadvantages of this approach:
