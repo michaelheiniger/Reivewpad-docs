@@ -1,0 +1,9 @@
+workflows:
+  - name: merge
+    if:
+      # Filter the list of reviewers to only those who are in the maintainers team
+      # and check that there is at least one reviewer in the list.
+      # The expression is wrapped in quotes to avoid YAML parsing errors.
+      - '$length($filter($reviewers(), ($r: String => $isElementOf($r, $team("maintainers"))))) == 0'
+    then:
+      - $info("No maintainer has reviewed the pull request yet")

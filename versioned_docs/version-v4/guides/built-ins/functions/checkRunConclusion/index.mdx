@@ -1,9 +1,10 @@
+---
+# This slug is a workaround for the links on this page to work.
+slug: "/guides/built-ins-check-run-conclusion"
+---
+
 import CodeBlock from "@theme/CodeBlock";
 import Example from "!!raw-loader!./example.yml";
-
-**Description**:
-
-Retrieves the conclusion of the given [check run](https://docs.github.com/en/rest/guides/getting-started-with-the-checks-api#about-check-runs).
 
 :::caution
 
@@ -13,7 +14,13 @@ This built-in is not available for issues.
 
 :::caution
 
-Reviewpad checks for check run conclusion based on the `name` of the check run.
+[Please make sure you use the **check run name** and not the check suite name.](../../troubleshooting#use-check-run-name)
+
+:::
+
+:::caution
+
+Reviewpad looks for the check run conclusion based on the `name` of the check run.
 
 This means that if you have multiple check runs with the same name, Reviewpad will only check for the first check run with that name.
 
@@ -21,11 +28,15 @@ It is recommended to use unique names for your check runs.
 
 :::
 
+**Description**:
+
+Retrieves the conclusion of the given [check run](https://docs.github.com/en/rest/guides/getting-started-with-the-checks-api#about-check-runs).
+
 **Parameters**:
 
-| Parameter | Type   | Description                |
-| :-------- | :----- | :------------------------- |
-| `name`    | string | The name of the check run. |
+| Parameter         | Type   | Description                |
+| :---------------- | :----- | :------------------------- |
+| `check_run_name`  | string | The name of the check run. |
 
 **Return value**:
 

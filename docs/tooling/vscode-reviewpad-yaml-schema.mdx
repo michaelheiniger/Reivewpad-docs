@@ -11,12 +11,14 @@ To minimize errors when editing Reviewpad files, you can setup the `reviewpad.ym
 You just need to download the latest JSON schema from [schemas/reviewpad](https://github.com/reviewpad/schemas/tree/main) and add the following settings to your VSCode workspace:
 
 ```json
-"settings": {
+{
+    // Associate Reviewpad schema to reviewpad.(yml|yaml) files
     "yaml.schemas": {
-        "PATH/schema.json": [
+        "https://raw.githubusercontent.com/reviewpad/schemas/main/latest/schema.json": [
             "reviewpad.yml",
+            "reviewpad.yaml",
         ]
-    }
+    },
 }
 ```
 

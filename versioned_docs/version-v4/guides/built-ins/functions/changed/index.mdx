@@ -1,6 +1,12 @@
 import CodeBlock from "@theme/CodeBlock";
 import Example from "!!raw-loader!./example.yml";
 
+:::caution
+
+This built-in is not available for issues.
+
+:::
+
 **Description**:
 
 The `changed` built-in receives two regexes with named capturing groups denoted by the `@X` pattern.
@@ -8,12 +14,6 @@ The `changed` built-in receives two regexes with named capturing groups denoted 
 These regexes are matched against the set of files in the patch.
 
 The built-in checks if the value set of the first regex is contained in the second one.
-
-:::caution
-
-This built-in is not available for issues.
-
-:::
 
 **Parameters**:
 
