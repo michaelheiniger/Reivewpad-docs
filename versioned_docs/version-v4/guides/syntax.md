@@ -120,9 +120,9 @@ The structure of a label is as follows:
 
 ```yaml
 LABEL-ID:
-    name: STRING [OPTIONAL]
-    description: STRING [OPTIONAL]
-    color: STRING [OPTIONAL]
+  name: STRING [OPTIONAL]
+  description: STRING [OPTIONAL]
+  color: STRING [OPTIONAL]
 ```
 
 -   `LABEL-ID` of a label is used to reference it in other entities. If no `name` is provided, then the `LABEL-ID` is considered the `name`.
@@ -138,10 +138,10 @@ If the label already exists in the repository and the description or the color s
 
 ```yml
 labels:
-    small:
-        name: small # optional
-        description: Defines a small pull request # optional
-        color: d2697a # optional
+  small:
+    name: small # optional
+    description: Defines a small pull request # optional
+    color: d2697a # optional
 ```
 
 ## Group
@@ -155,22 +155,22 @@ There are two ways to specify a group:
 ```yaml
 - name: STRING
   description: STRING [OPTIONAL]
-  kind: developers
+  kind: developers [OPTIONAL]
   spec: "[LIST OF GITHUB USERS]"
 ```
 
 -   `name` of a group is used to reference it in other entities.
 -   `description` [OPTIONAL] is a string that can be used to provide more details about the group.
--   `kind` of group can only be _developers_ at the moment.
+-   `kind` [OPTIONAL] of group can only be _developers_ at the moment.
 -   `spec` is an [Aladino](./aladino/specification) array.
 
 #### Example
 
 ```yaml
 groups:
-    - name: seniors
+  - name: seniors
     description: project seniors # optional
-    kind: developers
+    kind: developers # optional
     spec: '["peter"]'
 ```
 
@@ -196,7 +196,7 @@ groups:
 
 ```yaml
 groups:
-    - name: new-joiners
+  - name: new-joiners
     description: Groups of developers that have created less than 10 pull requests # optional
     kind: developers
     type: filter
@@ -226,7 +226,7 @@ The structure of a rule is as follows:
 
 ```yml
 rules:
-    - name: small-change
+  - name: small-change
     kind: patch # optional
     description: Checks if the pull request size is small # optional
     spec: $size() < 30
@@ -246,7 +246,7 @@ The structure of a workflow is as follows:
     - [pull_request | issue]
   if:
     - rule: REF_TO_RULE_1 | INLINE_RULE_1
-    extra-actions: [OPTIONAL]
+      extra-actions: [OPTIONAL]
         - ACTION_1
         - ACTION_2
         ...
@@ -271,13 +271,13 @@ The structure of a workflow is as follows:
 
 ```yaml
 workflows:
-    - name: size-labelling
+  - name: size-labelling
     description: Label pull request based on size # optional
     on: # optional
-        - pull_request
+      - pull_request
     if:
-        - rule: $size() < 90
-            extra-actions: $addLabel("small")
+      - rule: $size() < 90
+        extra-actions: $addLabel("small")
 ```
 
 This configuration specifies one workflow called `size-labelling` which automatically labels a `pull_request` with the label `small` if the inline rule `$size() < 90` is true. This means that the total number of changed lines i.e. `$size` is lower than 90.
@@ -289,21 +289,21 @@ The structure of a pipeline is as follows:
 ```yaml
 - name: STRING
   description: STRING [OPTIONAL]
-  trigger: [STRING | RULE] # optional
+  trigger: [STRING | RULE] [OPTIONAL]
   stages:
     - actions:
-        - ACTION_1
-        - ACTION_2
-        ...
-        - ACTION_N
-        until: [STRING | RULE] # optional
+      - ACTION_1
+      - ACTION_2
+      ...
+      - ACTION_N
+      until: [STRING | RULE] [OPTIONAL]
     ...
     - actions:
-        - ACTION_1
-        - ACTION_2
-        ...
-        - ACTION_N
-        until: [STRING | RULE] # optional
+      - ACTION_1
+      - ACTION_2
+      ...
+      - ACTION_N
+      until: [STRING | RULE] [OPTIONAL]
 ```
 
 -   `name` is a string that identifies the pipeline.
